@@ -1,0 +1,6 @@
+// put values & rename this file ".env"
+
+COOKIE_SECRET=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
