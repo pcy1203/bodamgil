@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </head>
+  <body>
+	<h1>로그인</h1>
+	<form action="/auth/signup" method="post">
+	  <div>
+	    <label for="email">이메일</label>	  
+		<input id="email" type="email" name="email" require autofocus>
+	  </div>
+	  <div>
+		<label for="password">비밀번호</label>	  
+	    <input id="password" type="password" name="password" require>
+	  </div>
+	  <div>
+		<label for="confirm">비밀번호 확인</label>	  
+	    <input id="confirm" type="password" name="confirm" require>
+	  </div>
+	  <button type="submit">회원가입</button>
+	</form>
+  </body>
+</html>
