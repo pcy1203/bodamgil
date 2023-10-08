@@ -1,0 +1,5 @@
+.env
+.git
+config
+goorm.manifest
+node_modules
