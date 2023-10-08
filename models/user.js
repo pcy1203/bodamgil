@@ -17,7 +17,6 @@ class User extends Sequelize.Model {
 		allowNull: false,
 		defaultValue: 'local',
 	  },
-	  /*
 	  name: {
 		type: Sequelize.STRING(20),
 		allowNull: false,
@@ -26,7 +25,10 @@ class User extends Sequelize.Model {
 		type: Sequelize.STRING(200),
 		allowNull: true,
 	  },
-	  */
+	  snsId: {
+		type: Sequelize.STRING(30),
+		allowNull: true,
+	  },
 	  signupDate: {
 		type: Sequelize.DATE,
 		allowNull: false,

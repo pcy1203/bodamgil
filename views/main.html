@@ -9,6 +9,7 @@
   <body>
 	<h1>Node.js Server</h1>
 	{% if user and user.id %}
+	  <h2>{{ user.name }} 님, 안녕하세요!</h2>
 	  <a href="/auth/logout">로그아웃</a>
 	{% else %}
 	  <a href="/login">로그인</a>

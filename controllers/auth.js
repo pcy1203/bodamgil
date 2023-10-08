@@ -29,7 +29,7 @@ exports.logout = (req, res) => {
 };
 	
 exports.signup = async (req, res, next) => {
-  const { email, password, confirm } = req.body;
+  const { email, password, confirm, name } = req.body;
   try {
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
@@ -42,6 +42,7 @@ exports.signup = async (req, res, next) => {
 	await User.create({
 	  email,
 	  password: hash,
+	  name,
 	});
 	return res.redirect('/?message=signupSuccess');
   } catch (error) {
