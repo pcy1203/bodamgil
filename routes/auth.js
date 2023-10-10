@@ -23,4 +23,13 @@ router.get('/kakao/result', passport.authenticate('kakao', {
   res.redirect('/');
 });
 
+// GET /google
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+router.get('/google/result', passport.authenticate('google', {
+  failureRedirect: '/login?message=googleError',
+}), (req, res) => {
+  res.redirect('/');
+});
+
 module.exports = router;
