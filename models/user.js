@@ -17,16 +17,28 @@ class User extends Sequelize.Model {
 		allowNull: false,
 		defaultValue: 'local',
 	  },
+	  snsId: {
+		type: Sequelize.STRING(30),
+		allowNull: true,
+	  },
 	  name: {
 		type: Sequelize.STRING(20),
 		allowNull: false,
 	  },
 	  introduction: {
-		type: Sequelize.STRING(200),
+		type: Sequelize.STRING(100),
 		allowNull: true,
 	  },
-	  snsId: {
-		type: Sequelize.STRING(30),
+	  image: {
+		type: Sequelize.STRING(100),
+		allowNull: true,
+	  },
+	  gender: {
+		type: Sequelize.ENUM('man', 'woman'),
+		allowNull: true,
+	  },
+	  birthDate: {
+		type: Sequelize.DATEONLY,
 		allowNull: true,
 	  },
 	  signupDate: {

@@ -3,3 +3,4 @@
 config
 goorm.manifest
 node_modules
+uploads

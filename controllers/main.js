@@ -9,3 +9,15 @@ exports.renderLogin = (req, res, next) => {
 exports.renderSignup = (req, res, next) => {
   res.render('signup');
 };
+
+exports.renderMyProfile = (req, res, next) => {
+  res.render('myprofile');
+};
+
+exports.renderSetProfile = (req, res, next) => {
+  res.render('setprofile');
+};
+
+exports.renderChangePassword = (req, res, next) => {
+  res.render('changepassword');
+};

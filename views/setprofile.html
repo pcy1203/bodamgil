@@ -7,20 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
   <body>
-	<h1>회원가입</h1>
-	<form action="/auth/signup" method="post" enctype="multipart/form-data">
-	  <div>
-	    <label for="email">이메일</label>	  
-		<input id="email" type="email" name="email" require autofocus>
-	  </div>
-	  <div>
-		<label for="password">비밀번호</label>	  
-	    <input id="password" type="password" name="password" require>
-	  </div>
-	  <div>
-		<label for="confirm">비밀번호 확인</label>	  
-	    <input id="confirm" type="password" name="confirm" require>
-	  </div>
+	<h1>프로필 입력</h1>
+	<form action="/setprofile" method="post">
 	  <div>
 		<label for="name">이름</label>	  
 	    <input id="name" name="name" require>
