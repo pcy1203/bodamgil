@@ -1,6 +1,9 @@
 // put values & rename this file ".env"
 
 COOKIE_SECRET=
+KAKAO_ID=
+GOOGLE_ID=
+GOOGLE_SECRET=
 DB_DATABASE=
 DB_USERNAME=
 DB_PASSWORD=

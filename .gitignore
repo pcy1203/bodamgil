@@ -2,4 +2,9 @@
 .git
 config
 goorm.manifest
+<<<<<<< HEAD
 node_modules
+=======
+node_modules
+uploads
+>>>>>>> backend
