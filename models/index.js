@@ -30,14 +30,9 @@ fs
     );
   })
   .forEach(file => {
-<<<<<<< HEAD
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    db[model.name] = model;
-=======
     const model = require(path.join(__dirname, file));
     db[model.name] = model;
 	model.initiate(sequelize);
->>>>>>> backend
   });
 
 Object.keys(db).forEach(modelName => {
