@@ -21,3 +21,7 @@ exports.renderSetProfile = (req, res, next) => {
 exports.renderChangePassword = (req, res, next) => {
   res.render('changepassword');
 };
+
+exports.renderAbout = (req, res, next) => {
+  res.render('about');
+};

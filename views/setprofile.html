@@ -8,7 +8,7 @@
   </head>
   <body>
 	<h1>프로필 입력</h1>
-	<form action="/setprofile" method="post">
+	<form action="/auth/setprofile" method="post" enctype="multipart/form-data">
 	  <div>
 		<label for="name">이름</label>	  
 	    <input id="name" name="name" require>
@@ -23,16 +23,16 @@
 	  </div>
 	  <div>
 		<label for="gender">성별</label>	  
-	    <input id="gender" type="radio" name="gender" value="man" require checked>남
-	    <input id="gender" type="radio" name="gender" value="woman" require>여
+	    <input id="gender-man" type="radio" name="gender" value="man" require checked>남
+	    <input id="gender-woman" type="radio" name="gender" value="woman" require>여
 	  </div>
 	  <div>
 		<label for="birth">생년월일</label>	  
-	    <input id="birth" name="birth" require>년
-	    <input id="birth" name="birth" require>월
-	    <input id="birth" name="birth" require>일
+	    <input id="birth-year" name="birth" require>년
+	    <input id="birth-month" name="birth" require>월
+	    <input id="birth-day" name="birth" require>일
 	  </div>
-	  <button type="submit">회원가입</button>
+	  <button type="submit">프로필 정보 저장</button>
 	</form>
   </body>
 </html>

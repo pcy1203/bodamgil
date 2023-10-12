@@ -55,3 +55,25 @@ exports.signup = async (req, res, next) => {
 	return next(error);
   }
 };
+
+exports.setprofile = async (req, res, next) => {
+  // TODO - 유효성 검사 추가하기
+  const { name, introduction, gender, birth } = req.body;
+  try {
+	await User.update({
+	  name,
+	  introduction,
+	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
+	  gender,
+	  birthDate: new Date(birth[0], Number(birth[1]) - 1, birth[2]),
+	}, {
+      where: {
+        id: req.user.dataValues.id,
+  	  }
+	});
+	return res.redirect('/?message=signupSuccess');
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  }
+};

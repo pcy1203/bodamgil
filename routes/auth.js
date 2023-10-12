@@ -4,7 +4,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path =require('path');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
-const { login, logout, signup } = require('../controllers/auth');
+const { login, logout, signup, setprofile } = require('../controllers/auth');
 
 const router = express.Router();
 
@@ -28,9 +28,12 @@ const upload = multer({
 	  cb(null, 'uploads/profile');
 	},
 	filename(req, file, cb) {
-	  // TODO - 데이터 저장 방식 고민하기 (현재 이메일 의존)
 	  const ext = path.extname(file.originalname);
-	  cb(null, `${req.body.email}_${Date.now()}${ext}`);
+	  if (req.user && req.user.dataValues.provider !== 'local') {
+		cb(null, `${req.user.dataValues.provider}-user-${req.user.dataValues.id}_${Date.now()}${ext}`);
+	  } else {
+		cb(null, `${req.body.email}_${Date.now()}${ext}`);
+	  }
 	},
   }),
   limits: { fileSize: 5 * 1024 * 1024 },
@@ -51,7 +54,11 @@ router.get('/kakao', passport.authenticate('kakao'));
 router.get('/kakao/result', passport.authenticate('kakao', {
   failureRedirect: '/login?message=kakaoError',
 }), (req, res) => {
-  res.redirect('/');
+  if (!req.user.introduction) {
+    res.redirect('/setprofile');
+  } else {
+	res.redirect('/');
+  }
 });
 
 // GET /google
@@ -60,7 +67,14 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 router.get('/google/result', passport.authenticate('google', {
   failureRedirect: '/login?message=googleError',
 }), (req, res) => {
-  res.redirect('/');
+  if (!req.user.introduction) {
+    res.redirect('/setprofile');
+  } else {
+	res.redirect('/');
+  }
 });
+
+// POST /setprofile
+router.post('/setprofile', isLoggedIn, upload.single('image'), setprofile);
 
 module.exports = router;
