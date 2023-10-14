@@ -1,0 +1,31 @@
+{% extends '../layout.html' %}
+
+{% block content %}
+  <h1>프로필 입력</h1>
+  <form action="/auth/setprofile" method="post" enctype="multipart/form-data">
+    <div>
+	  <label for="name">이름</label>	  
+	  <input id="name" name="name" require>
+    </div>
+    <div>
+	  <label for="introduction">한 줄 소개</label>	  
+	  <input id="introduction" name="introduction" require>
+    </div>
+    <div>
+	  <label for="image">프로필 사진</label>	  
+	  <input id="image" type="file" name="image" accept="image/*">
+    </div>
+    <div>
+	  <label for="gender">성별</label>	  
+	  <input id="gender-man" type="radio" name="gender" value="man" require checked>남
+	  <input id="gender-woman" type="radio" name="gender" value="woman" require>여
+    </div>
+    <div>
+	  <label for="birth">생년월일</label>	  
+	  <input id="birth-year" name="birth" require>년
+	  <input id="birth-month" name="birth" require>월
+	  <input id="birth-day" name="birth" require>일
+    </div>
+    <button type="submit">프로필 정보 저장</button>
+  </form>
+{% endblock %}

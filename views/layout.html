@@ -7,15 +7,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
   <body>
-	<h1>Node.js Server</h1>
+	<a href="/">Com:pass 로고</a>
 	<a href="/about">소개</a>
+	<a href="/myself">나 알아보기</a>
 	{% if user and user.id %}
-	  <h2>{{ user.name }} 님, 안녕하세요!</h2>
+	  <h2>{{ user.name }} 님</h2>
 	  <a href="/myprofile">마이페이지</a>
 	  <a href="/auth/logout">로그아웃</a>
 	{% else %}
 	  <a href="/login">로그인</a>
 	  <a href="/signup">회원가입</a>
 	{% endif %}
+	  
+	{% block content %}
+	{% endblock %}
   </body>
 </html>

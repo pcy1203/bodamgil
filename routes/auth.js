@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const multer = require('multer');
 const fs = require('fs');
-const path =require('path');
+const path = require('path');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 const { login, logout, signup, setprofile } = require('../controllers/auth');
 
@@ -39,16 +39,16 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
-// POST /login
+// POST /auth/login
 router.post('/login', isNotLoggedIn, login);
 
-// GET /logout
+// GET /auth/logout
 router.get('/logout', isLoggedIn, logout);
 
-// POST /signup
+// POST /auth/signup
 router.post('/signup', isNotLoggedIn, upload.single('image'), signup);
 
-// GET /kakao
+// GET /auth/kakao
 router.get('/kakao', passport.authenticate('kakao'));
 
 router.get('/kakao/result', passport.authenticate('kakao', {
@@ -61,7 +61,7 @@ router.get('/kakao/result', passport.authenticate('kakao', {
   }
 });
 
-// GET /google
+// GET /auth/google
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/google/result', passport.authenticate('google', {
@@ -74,7 +74,7 @@ router.get('/google/result', passport.authenticate('google', {
   }
 });
 
-// POST /setprofile
+// POST /auth/setprofile
 router.post('/setprofile', isLoggedIn, upload.single('image'), setprofile);
 
 module.exports = router;

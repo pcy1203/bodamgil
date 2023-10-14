@@ -58,7 +58,11 @@ class User extends Sequelize.Model {
 	});
   }
 	
-  static associate(db) {}
+  static associate(db) {
+    db.User.hasMany(db.Polaroid, { foreignKey: 'writer', sourceKey: 'id' });
+    db.User.hasOne(db.GlassBottle, { foreignKey: 'owner', sourceKey: 'id' });
+    db.User.hasMany(db.PaperPlane, { foreignKey: 'writer', sourceKey: 'id' });
+  }
 };
 
 module.exports = User;

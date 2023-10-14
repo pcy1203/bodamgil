@@ -13,6 +13,7 @@ const { sequelize } = require('./models');
 const passportConfig = require('./passport');
 const mainRouter = require('./routes/main');
 const authRouter = require('./routes/auth');
+const myselfRouter = require('./routes/myself');
 
 const app = express();
 passportConfig();
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 
 app.use('/', mainRouter);
 app.use('/auth', authRouter);
+app.use('/myself', myselfRouter);
 
 app.use((req, res, next) => {  // 404 응답 미들웨어
   const error = new Error(`${req.method} ${req.url} 라우터가 존재하지 않습니다.`);
