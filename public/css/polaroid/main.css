@@ -1,0 +1,127 @@
+
+@font-face {
+    font-family: 'TTTtangsbudaejjigaeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 전체화면 */
+.header{
+	position: relative;
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #EFEDF7;
+
+}
+
+/* 어릴 때의 내가 좋아했던 것은? */
+
+h1{
+position: absolute;
+width: 220px;
+height: 90px;
+left: calc(50% - 220px/2);
+top: 60px;
+
+font-family: 'TTTtangsbudaejjigaeB';
+font-weight: 700;
+font-style: normal;
+font-size: 32px;
+line-height: 142%;
+/* or 45px */
+text-align: center;
+	
+color: #000000;
+}
+
+/* 시작하기 */
+.start{
+border: 1px solid #5F2987;
+background-color: #5F2987;
+border-radius: 30px;
+
+position: absolute;
+width: 255px;
+height: 50px;
+left: calc(50% - 255px/2 + 0.5px);
+bottom: 120px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+/* identical to box height, or 16px */
+display: block;
+text-align: center;
+line-height: 50px;
+text-decoration: none;
+
+color: white;
+}
+
+.confirm{
+border: 1px solid #5F2987;
+border-radius: 30px;
+
+position: absolute;
+width: 255px;
+height: 50px;
+left: calc(50% - 255px/2 + 0.5px);
+bottom: 60px;
+
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+/* identical to box height, or 16px */
+display: block;
+text-align: center;
+line-height: 50px;
+text-decoration: none;
+
+color: #5F2987;
+}
+
+/* main_photo 1 */
+.main_photo{
+position: absolute;
+width: 81.37px;
+height: 113.54px;
+left: 85px;
+top: 210px;
+transform: rotate(20deg);
+}
+
+/* main_camera 1 */
+.main_camera{
+position: absolute;
+width: 124.9px;
+height: 131.79px;
+left: 160px;
+top: 240px;
+transform: rotate(-12.88deg);
+}
+
+/* main_flower 1 */
+.main_flower{
+position: absolute;
+width: 108.64px;
+height: 143.55px;
+left: 80px;
+top: 280px;
+transform: rotate(-121.07deg);
+}
+
+
+
+
+
+
+
+

@@ -39,6 +39,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // TODO - 파일 경로 설정하기
+app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/profile', express.static(path.join(__dirname, 'uploads/profile')));
 app.use('/polaroid', express.static(path.join(__dirname, 'uploads/polaroid')));
 app.use(cookieParser(process.env.COOKIE_SECRET));

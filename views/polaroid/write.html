@@ -2,9 +2,11 @@
 
 {% block content %}
   <h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
+  <p>
+	  어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고 이에 대해 설명해주세요. 어렸을 때의 사진이나 기억 나는 장소 등에 대해 적어도 좋아요.
+</p>
   <form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
     <div>
-	  <label for="image">사진</label>	  
 	  <input id="image" type="file" name="image" accept="image/*">
     </div>
 	<p id="inner-content"></p>
@@ -12,7 +14,7 @@
 	  <label for="content">내용</label>	  
 	  <input id="content" name="content" require>
     </div>
-    <button type="submit">다음</button>
+    <button type="submit">NEXT</button>
   </form>
   <script>
 	const innerContent = document.getElementById('inner-content');
