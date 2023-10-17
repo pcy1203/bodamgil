@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+.header{
+	position: relative;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #EFEDF7;
+
+}
+
+/*스티커*/
+.sticker{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 164px;
+	top: 73px;
+	border-radius: 50%;
+	background: rgba(197, 187, 227, 0.8);
+}
+
+/*폴라로이드 뒤에 하얀색*/
+.polaroid{
+	position: absolute;
+	width: 250px;
+	height: 227px;
+	left: calc(50% - 250px/2);
+	top: 89px;
+	background: #FFFFFF;
+	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+/*안에 사진*/
+.photo{
+	position: absolute;
+	width: 202px;
+	height: 151px;
+	left: calc(50% - 202px/2);
+	top: 113px;
+	background: #D9D9D9;
+}
+
+/*사진 안의 글씨*/
+.polaroid-content{
+    position: absolute;
+    width: auto;
+    height: 23px;
+	left: calc(50% - 190px/2);
+    top: 262px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    color: #000000;
+}
+
+.explain{
+    position: absolute;
+    width: auto;
+    left: calc(50% - 287px/2 + 0.5px);
+    top: 395px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 142%;
+    text-align: center;
+    color: #000000;
+}
+
+/*위에 두 개 버튼*/
+.button1 li {
+	position: relative;
+	border: 1px solid #5F2987;
+	border-radius: 10px;
+    margin: 430px 7px 0 0;
+    height: 50px;
+    width: 150px;
+	list-style: none;
+	float: left;
+	left: -14px;
+	cursor: pointer;
+    transition: all .4s;
+}
+
+.button2 li {
+	position: relative;
+	border: 1px solid #5F2987;
+	border-radius: 10px;
+    margin: 10px 7px 0 0;
+    height: 50px;
+    width: 150px;
+	list-style: none;
+	float: left;
+	left: -14px;
+	cursor: pointer;
+    transition: all .4s;
+}
+
+li:hover{
+    background-color: #5F2987;
+	color: white;
+}
+
+.last-save {  
+    position: absolute;
+    top: 17px;
+    left: 35px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+
+.last-save-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    line-height: 50px;
+    font-size: 14px;
+    padding: 0 0 0 65px;
+    text-align: center;
+}
+
+.last-link {  
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+ 
+.last-link-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0 0 0 48px;
+	text-align: center;
+}
+
+.last-again {  
+    position: absolute;
+    top: 16px;
+    left: 35px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+
+.last-again-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    line-height: 50px;
+    font-size: 14px;
+    padding: 0 0 0 65px;
+    text-align: center;
+}
+
+.last-image {  
+    position: absolute;
+    top: 15px;
+    left: 22px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+ 
+.last-image-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0 0 0 50px;
+	text-align: center;
+}

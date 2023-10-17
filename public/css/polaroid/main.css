@@ -11,6 +11,14 @@
 	position: relative;
 }
 
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
 .main{
 	position: absolute;
 	width: 360px;

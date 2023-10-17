@@ -1,25 +1,66 @@
-{% extends '../layout.html' %}
-
-{% block content %}
-  <h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
-  <p>
-	  어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고 이에 대해 설명해주세요. 어렸을 때의 사진이나 기억 나는 장소 등에 대해 적어도 좋아요.
-</p>
-  <form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
-    <div>
-	  <input id="image" type="file" name="image" accept="image/*">
-    </div>
-	<p id="inner-content"></p>
-    <div>
-	  <label for="content">내용</label>	  
-	  <input id="content" name="content" require>
-    </div>
-    <button type="submit">NEXT</button>
-  </form>
-  <script>
-	const innerContent = document.getElementById('inner-content');
-    document.getElementById('content').addEventListener('input', (e) => {
-	  innerContent.innerHTML = e.target.value;
-	});
-  </script>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title></title>	  
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	</style>  
+	<link rel="stylesheet" href="../../css/polaroid/write.css">
+  </head>
+  <body>
+	<div style="display: flex; justify-content: center;">
+	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
+	  <div style="width: 360px; height: 45px; background-color:red" class="header">
+	    <a href="/">Com:pass 로고</a>
+		<img src="../../photo/polaroid/menu.png" class="menu">
+		  
+	<div class="main">
+		<h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
+  		<p>어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고<br> 이에 대해 설명해주세요. 어렸을 때의 사진이나 <br>기억 나는 장소 등에 대해 적어도 좋아요.</p>
+		<ul>
+			<li><img src="../../photo/polaroid/select-color.png" class="select-color"><span>색깔</span></li>
+			<li><img src="../../photo/polaroid/select-size.png" class="select-size"><span>크기</span></li>
+			<li><img src="../../photo/polaroid/select-example.png" class="select-example"><span>예시</span></li>
+    	</ul>
+	</div>
+	
+	<div class="color-select"></div>	  
+	<div class="select-red"></div>
+	<div class="select-yellow"></div>
+	<div class="select-green"></div>
+	<div class="select-blue"></div>
+	<div class="select-purple"></div>
+		  
+	<div class="size-select"></div>
+	<div class="select-horizontal">가로</div>
+	<div class="select-vertical">세로</div>
+		  
+	<form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
+		<div class="polaroid"></div>
+		<div class="sticker"></div>
+		<div class="photo">
+		  <input id="image" type="file" name="image" accept="image/*">
+		</div>
+		<p id="inner-content"></p>
+		<div> 
+		  <input id="content" name="content" require>
+		</div>
+		<button type="submit" class="next">NEXT</button>
+   	</form>
+   	<script>
+		const innerContent = document.getElementById('inner-content');
+		document.getElementById('content').addEventListener('input', (e) => {
+		  innerContent.innerHTML = e.target.value;
+		});
+   </script>
+    </div>	  
+	</div>
+	</div>
+  </body>
+</html>
+	
+	
+	
