@@ -1,7 +1,55 @@
-{% extends '../layout.html' %}
-
-{% block content %}
-  <h1>당신은 어떤 능력을 가지고 있나요?</h1>
-  <a href="/myself/paperplane/{{ user.id }}/view">확인하기</a>
-  <a href="/myself/paperplane/write">작성하기</a>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title></title>	  
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	</style> 
+	<link rel="stylesheet" href="../../css/paperplane/glassbottle.css">
+  </head>
+  <body>
+	<div style="display: flex; justify-content: center;">
+	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
+	  <div style="width: 360px; height: 45px; background-color:red" class="header">
+	    <a href="/">Com:pass 로고</a>
+		<img src="../../photo/polaroid/menu.png" class="menu">
+		  
+	<div class="main">	  
+		<h1>당신은 어떤 능력을 가지고 있나요?</h1>
+  		<p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
+		<!--<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 ___의 장점을 자유롭게 적어주세요.</p> -->
+		<ul>
+			<li><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
+			<li><a href="/myself/paperplane/{{ user.id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
+			<li><a href="/myself/paperplane/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
+    	</ul>
+	</div>
+		  
+	<img src="../../photo/paperplane/jar.png" class="jar">
+		  
+	<div>
+	 	<img src="../../photo/paperplane/airplane-red.png" class="airplane1">
+		<img src="../../photo/paperplane/airplane-blue.png" class="airplane2">
+		<img src="../../photo/paperplane/airplane-green.png" class="airplane3">
+		<img src="../../photo/paperplane/airplane-red.png" class="airplane4">
+		<img src="../../photo/paperplane/airplane-yellow.png" class="airplane5">
+		<img src="../../photo/paperplane/airplane-red.png" class="airplane6">
+		<img src="../../photo/paperplane/airplane-green.png" class="airplane7">
+		<img src="../../photo/paperplane/airplane-blue.png" class="airplane8">
+		<img src="../../photo/paperplane/airplane-yellow.png" class="airplane9">
+		<img src="../../photo/paperplane/airplane-blue.png" class="airplane10">
+	</div>
+	  
+	<div>	
+		<div class="alert"></div>
+		<div class="alert-content">※ 메시지 확인은 해당 콘텐츠의 주인만 가능합니다.</div>
+	</div>	  
+		  
+	</div>
+	</div>
+	</div>
+  </body>
+</html>

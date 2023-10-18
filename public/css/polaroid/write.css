@@ -47,13 +47,13 @@ li {
 	position: relative;
 	border: 1px solid #BFBFBF;
 	border-radius: 30px;
-    margin: 140px 5px 0 0;
+    margin: 140px 4px 0 0;
     height: 40px;
     line-height: 40px;
-    width: 100px;
+    width: 90px;
 	list-style: none;
 	float: left;
-	left: -18px;
+	left: auto;
 	cursor: pointer;
     transition: all .4s;
 }
@@ -65,18 +65,21 @@ li:hover{
  
 .main img {  
     position: absolute;
-    top:11px;
-    left: 20px;
+    top:12.5px;
+    left: 22px;
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     text-indent: -1000px;
     overflow: hidden;
     }
  
 span {
-    padding: 0 0 0 48px;
+    padding: 0 0 0 46px;
 	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
 }
 
 /*스티커*/

@@ -1,0 +1,75 @@
+/* 전체화면 */
+.header{
+	position: relative;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #F5F8FF;
+}
+
+h1{
+position: absolute;
+width: auto;
+margin: 0 59px;
+top: 40px;
+
+font-family: 'Noto Sans KR';
+font-weight: 700;
+font-size: 20px;
+line-height: 142%;
+text-align: center;
+color: #000000;	
+}
+
+.relationship{
+	border: 1px solid #5F2987;
+	border-radius: 30px;
+	background-color: #F2F2F2;
+
+	position: absolute;
+	width: 81px;
+	height: 26px;
+	right: 16px;
+	top: 538px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	text-align: center;
+	line-height: 20px;
+
+}
+
+.line{
+	position: absolute;
+	width: 256px;
+	height: 0px;
+	left: 52px;
+	top: 175px;
+	border: 0.1px solid #BFBFBF;
+}
+
+.note{
+	box-sizing: border-box;
+	position: absolute;
+	width: 304px;
+	height: 401px;
+	left: calc(50% - 304px/2);
+	top: 115px;
+
+	background: #FFFFFF;
+	border: 1px solid #BFBFBF;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}

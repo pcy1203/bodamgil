@@ -1,0 +1,248 @@
+/* 전체화면 */
+.header{
+	position: relative;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #F5F8FF;
+}
+
+h1{
+	position: absolute;
+	width: auto;
+	left: calc(50% - 286px/2);
+	top: 35px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 700;
+	font-size: 20px;
+	text-align: center;
+	color: #000000;
+}
+
+p{
+	position: absolute;
+	width: auto;
+	margin: 0 auto;
+	top: 92px;
+	margin: 0px 0px 0px 28px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 13px;
+	line-height: 142%;
+	text-align: center;
+	color: #000000;
+}
+
+/*세 개 버튼*/
+li {
+	position: relative;
+	border: 1px solid #BFBFBF;
+	border-radius: 30px;
+    margin: 150px 5px 0 0;
+    height: 40px;
+    line-height: 40px;
+    width: 98px;
+	list-style: none;
+	float: left;
+	left: -10px;
+	cursor: pointer;
+    transition: all .4s;
+}
+
+li:last-child{
+	 margin: 150px 0px 0 0;
+}
+
+li:hover{
+    background-color: #0066FF;
+}
+ 
+.main img {  
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+ 
+span {
+    padding: 0 0 0 34px;
+	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	font-weight: 40px;
+}
+
+a {
+    padding: 0 0 0 36px;
+	text-align: center;
+	text-decoration: none;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	font-weight: 40px;
+	color: black;
+}
+
+.jar{
+	position: absolute;
+	width: calc(83*2.5px);
+	height: calc(128*2.5px);
+	left: calc(50% - 83*2.5px/2 + 0.5px);
+	top: 280px;
+}
+
+
+/*병 안에 종이비행기*/
+.airplane10{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 85px;
+	top: 460px;
+	transform: rotate(42.22deg);	
+}
+
+.airplane9{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 215px;
+	top: 490px;
+	transform: rotate(-12.16deg);
+}
+
+.airplane8{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 185px;
+	top: 482px;
+	transform: rotate(20.78deg);	
+}
+
+.airplane7{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 170px;
+	top: 495px;
+	transform: rotate(158.2deg);	
+}
+
+.airplane6{
+	position: absolute;
+	width: 60px;
+	height: 47.14px;
+	left: 120px;
+	top: 485px;
+	transform: rotate(18.34deg);
+}
+
+.airplane5{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 85px;
+	top: 495px;
+	transform: rotate(85.35deg);
+}
+
+.airplane4{
+	position: absolute;
+	width: 60px;
+	height: 47.14px;
+	left: 205px;
+	top: 517px;
+	transform: rotate(32.43deg);
+}
+
+.airplane3{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 167px;
+	top: 539px;
+}
+
+.airplane2{
+	position: absolute;
+	width: 60px;
+	height: 47.66px;
+	left: 135px;
+	top: 520px;
+	transform: rotate(31.77deg);
+}
+
+.airplane1{
+	position: absolute;
+	width: 60px;
+	height: 47.14px;
+	left: 93px;
+	top: 531px;
+}
+
+/*확인하기 경고문*/
+.alert { 
+	position: absolute;
+	background: #FFFFFF; 
+	width: 302px; 
+	height: 10px;
+	border-radius: 30px;
+	border: 1px solid #BFBFBF;
+	padding: 15px;
+	top: 152px;
+	left: 14px;
+	
+}
+.alert:after { /*말풍선 꼭지*/
+	top: 40px; /*말풍선꼭지위치 위아래*/
+	left: 10%; /*말풍선위치 좌우*/
+	transform: rotate(-180deg);
+	border: 1px solid #BFBFBF;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
+	border-width: 12px; /*말풍선 꼭지 사이즈*/
+	margin-left: 125px; /*말풍선 상세위치 조정*/
+}
+
+.alert-content{
+	position: absolute;
+	width: auto;
+	left: 52px;
+	top: 163px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #FF0000;
+}
+
+
+
+

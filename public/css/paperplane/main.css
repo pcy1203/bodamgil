@@ -1,0 +1,102 @@
+@font-face {
+     font-family: 'S-CoreDream-9Black';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+/* 전체화면 */
+.header{
+	position: relative;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #F5F8FF;
+
+}
+
+h1{
+	position: absolute;
+	width: auto;
+	left: calc(50% - 237px/2 + 0.5px);
+	top: 35px;
+
+	font-family: 'S-CoreDream-9Black';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 142%;
+	text-align: center;
+	color: #000000;
+}
+
+.jar{
+	position: absolute;
+	width: calc(83*2.8px);
+	height: calc(128*2.8px);
+	left: calc(50% - 83*2.8px/2 + 0.5px);
+	top: 195px;
+}
+
+.start{
+	position: absolute;
+	width: 165px;
+	height: 70px;
+	top: 358px;
+	left: 97.5px;
+	background: #FFFFFF;
+	box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.25);
+}
+
+.start-content{
+	position: absolute;
+	width: auto;
+	left: 144px;
+	top: 382px;
+
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 100%;
+	/* identical to box height, or 20px */
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: #000000;
+}
+
+.sticker1{
+	position: absolute;
+	width: 40px;
+	height: 15px;
+	left: 87px;
+	top: 358px;
+
+	background: rgba(101, 163, 255, 0.85);
+	transform: rotate(-42deg);
+}
+
+.sticker2{
+	position: absolute;
+	width: 40px;
+	height: 15px;
+	left: 233px;
+	top: 413px;
+
+	background: rgba(101, 163, 255, 0.85);
+	transform: rotate(-42deg);
+}
