@@ -23,7 +23,7 @@ h1{
 position: absolute;
 width: auto;
 margin: 0 59px;
-top: 40px;
+top: 30px;
 
 font-family: 'Noto Sans KR';
 font-weight: 700;
@@ -34,22 +34,37 @@ color: #000000;
 }
 
 .relationship{
-	border: 1px solid #5F2987;
 	border-radius: 30px;
 	background-color: #F2F2F2;
 
 	position: absolute;
 	width: 81px;
 	height: 26px;
-	right: 16px;
-	top: 538px;
+	left: 50px;
+	top: 125px;
 	
 	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 14px;
+	font-weight: 400;
+	font-size: 12px;
 	text-align: center;
-	line-height: 20px;
+	line-height: 26px;
+}
 
+.name{
+	border-radius: 30px;
+	background-color: #F2F2F2;
+
+	position: absolute;
+	width: 166px;
+	height: 26px;
+	left: 143px;
+	top: 125px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
+	line-height: 26px;
 }
 
 .line{
@@ -57,8 +72,8 @@ color: #000000;
 	width: 256px;
 	height: 0px;
 	left: 52px;
-	top: 175px;
-	border: 0.1px solid #BFBFBF;
+	top: 165px;
+	border: 0.01px solid #BFBFBF;
 }
 
 .note{
@@ -67,9 +82,65 @@ color: #000000;
 	width: 304px;
 	height: 401px;
 	left: calc(50% - 304px/2);
-	top: 115px;
+	top: 108px;
 
 	background: #FFFFFF;
 	border: 1px solid #BFBFBF;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/*next 버튼*/
+.next{
+	border: 1px solid #0066FF;
+	border-radius: 30px;
+
+	position: absolute;
+	width: 100px;
+	height: 32px;
+	right: 16px;
+	top: 538px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	line-height: 20px;
+	color: #0066FF;
+	
+	cursor: pointer;
+    transition: all .4s;
+}
+
+.next:hover{
+    background-color: #0066FF;
+	color: white;
+}
+
+/*back 버튼*/
+.back{
+	border: 1px solid #0066FF;
+	border-radius: 30px;
+
+	position: absolute;
+	width: 100px;
+	height: 32px;
+	left: 16px;
+	top: 538px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	line-height: 20px;
+	color: #0066FF;
+	
+	cursor: pointer;
+    transition: all .4s;
+}
+
+.back:hover{
+    background-color: #0066FF;
+	color: white;
 }

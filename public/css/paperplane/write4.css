@@ -1,0 +1,119 @@
+/* 전체화면 */
+.header{
+	position: relative;
+}
+
+.previous{
+	width: 13px;
+	height: 10px;
+	position: absolute;
+	left: 16px;
+	top: 17.5px;
+}
+
+.home{
+	position: absolute;
+	left: 38px;
+	top: 17.5px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 10px;
+	text-align: center;
+
+	color: #000000;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #F5F8FF;
+}
+
+.main img{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 70px/2 + 1px);
+    top: 150px;
+}
+
+.main p{
+    position: absolute;
+    left: calc(50% - 188px/2 + 1px);
+    top: 230px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.more{
+    position: absolute;
+    width: 255px;
+    height: 40px;
+    left: calc(50% - 255px/2 - 0.5px);
+    top: 300px;
+    background: #FFFFFF;
+    border: 1px solid #0066FF;
+    border-radius: 30px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    color: #0066FF;
+
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.more:hover{
+    background-color: #0066FF;
+	color: white;
+}
+
+.check{
+    position: absolute;
+    width: 255px;
+    height: 40px;
+    left: calc(50% - 255px/2 - 0.5px);
+    top: 350px;
+    background: #FFFFFF;
+    border: 1px solid #0066FF;
+    border-radius: 30px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    color: #0066FF;
+
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.check:hover{
+    background-color: #0066FF;
+	color: white;
+}
