@@ -35,6 +35,7 @@ class PaperPlane extends Sequelize.Model {
 	
   static associate(db) {
     db.PaperPlane.belongsTo(db.User, { foreignKey: 'writer', targetKey: 'id' });
+    db.PaperPlane.belongsTo(db.GlassBottle, { foreignKey: 'recipient', targetKey: 'id' });
   }
 };
 

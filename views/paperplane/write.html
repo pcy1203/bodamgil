@@ -2,4 +2,24 @@
 
 {% block content %}
   <h1>~ 님이 잘하는 일을 적어주세요</h1>
+  <form action="/myself/paperplane/{{ id }}/write" method="post">
+    <div>
+	  <label for="relationship">관계</label>	  
+	  <input id="relationship-friend" type="radio" name="relationship" value="friend">친구
+	  <input id="relationship-couple" type="radio" name="relationship" value="couple">연인
+	  <input id="relationship-family" type="radio" name="relationship" value="family">가족
+	  <input id="relationship-school" type="radio" name="relationship" value="school">선후배
+	  <input id="relationship-colleague" type="radio" name="relationship" value="colleague">직장동료
+	  <input id="relationship-etc" type="radio" name="relationship" value="etc">기타
+	</div>
+	<div>
+	  <label for="name">닉네임</label>	  
+	  <input id="name" name="name" require>
+	</div>
+	<div>
+	  <label for="content">내용</label>	  
+	  <input id="content" name="content" require>
+    </div>
+    <button type="submit">다음</button>
+  </form>
 {% endblock %}

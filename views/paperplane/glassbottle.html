@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>당신은 어떤 능력을 가지고 있나요?</h1>
-  <a href="/myself/paperplane/{{ user.id }}/view">확인하기</a>
-  <a href="/myself/paperplane/write">작성하기</a>
+  <!-- id 가져오는 방식 window.location.pathname로 수정하기 -->
+  <a href="/myself/paperplane/{{ id }}/view">확인하기</a>
+  <a href="/myself/paperplane/{{ id }}/write">작성하기</a>
 {% endblock %}
