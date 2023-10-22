@@ -5,7 +5,10 @@ const GlassBottle = require('../models/glassbottle');
 const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
 	const glassBottle = await GlassBottle.findOne({ where: { id: glassBottleId } });
-    return glassBottle.owner === userId;
+    return {
+	  isOwner: glassBottle.owner === userId,
+	  glassBottle,
+	};
   } catch (error) {
 	throw error;
   }
@@ -33,11 +36,13 @@ exports.makeGlassBottleIfNotExist = async (req, res, next) => {
 exports.renderGlassBottle = async (req, res, next) => {
   const id = req.params.id;
   try {
-	const glassBottle = await GlassBottle.findOne({ where: { id } });
+	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
 	const owner = await glassBottle.getUser();
     res.render('paperplane/glassbottle', {
 	  id,
+	  isOwner,
 	  owner: owner.dataValues.name,
+	  numPaperPlane: glassBottle.numPaperPlane,
 	});
   } catch (error) {
 	console.error(error);
@@ -48,7 +53,8 @@ exports.renderGlassBottle = async (req, res, next) => {
 exports.renderPaperPlane = async (req, res, next) => {
   const id = req.params.id;
   try {
-	if (!(await isGlassBottleOwner(req.user.dataValues.id, id))) {
+	const { isOwner } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	if (!isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=notOwnerError`);
     }
     const paperPlanes = await PaperPlane.findAll({
@@ -65,10 +71,15 @@ exports.renderPaperPlane = async (req, res, next) => {
 exports.renderWrite = async (req, res, next) => {
   const id = req.params.id;
   try {
-	if (await isGlassBottleOwner(req.user.dataValues.id, id)) {
+	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	if (isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=ownerError`);
     }
-    res.render('paperplane/write', { id });
+	const owner = await glassBottle.getUser();  
+    res.render('paperplane/write', {
+	  id,
+	  owner: owner.dataValues.name,
+	});
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -79,7 +90,8 @@ exports.writePaperPlane = async (req, res, next) => {
   const id = req.params.id;
   const { relationship, name, content } = req.body;
   try {
-	if (isGlassBottleOwner(req.user.dataValues.id, id)) {
+	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	if (isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=ownerError`);
     }
 	const paperplane = await PaperPlane.create({
@@ -89,6 +101,7 @@ exports.writePaperPlane = async (req, res, next) => {
 	  writer: req.user.dataValues.id,
 	  recipient: id,
 	});
+	glassBottle.increment({ numPaperPlane: 1 });
     return res.redirect(`/myself/paperplane/${id}/write/success`);
   } catch (error) {
 	console.error(error);

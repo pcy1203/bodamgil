@@ -79,6 +79,7 @@
     line-height: 40px;
     display: block;
     text-align: center;
+	text-decoration: none;
     color: #0066FF;
 
     cursor: pointer;
@@ -107,6 +108,7 @@
     line-height: 40px;
     display: block;
     text-align: center;
+	text-decoration: none;
     color: #0066FF;
 
     cursor: pointer;

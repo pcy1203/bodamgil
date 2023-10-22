@@ -19,8 +19,11 @@
 		  
 	<div class="main">	  
 		<h1>당신은 어떤 능력을 가지고 있나요?</h1>
+		{% if isOwner %}
   		<p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
-		<!--<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 ___의 장점을 자유롭게 적어주세요.</p> -->
+		{% else %}
+		<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}의 장점을 자유롭게 적어주세요.</p>
+		{% endif %}
 		<ul>
 			<li><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
 			<li><a href="/myself/paperplane/{{ id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
@@ -31,19 +34,19 @@
 	<img src="../../photo/paperplane/jar.png" class="jar">
 		  
 	<div>
-	 	<img src="../../photo/paperplane/airplane-red.png" class="airplane1">
-		<img src="../../photo/paperplane/airplane-blue.png" class="airplane2">
-		<img src="../../photo/paperplane/airplane-green.png" class="airplane3">
-		<img src="../../photo/paperplane/airplane-red.png" class="airplane4">
-		<img src="../../photo/paperplane/airplane-yellow.png" class="airplane5">
-		<img src="../../photo/paperplane/airplane-red.png" class="airplane6">
-		<img src="../../photo/paperplane/airplane-green.png" class="airplane7">
-		<img src="../../photo/paperplane/airplane-blue.png" class="airplane8">
-		<img src="../../photo/paperplane/airplane-yellow.png" class="airplane9">
-		<img src="../../photo/paperplane/airplane-blue.png" class="airplane10">
+		{% if numPaperPlane >= 1 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane1">{% endif %}
+		{% if numPaperPlane >= 2 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane2">{% endif %}
+		{% if numPaperPlane >= 3 %}<img src="../../photo/paperplane/airplane-green.png" class="airplane3">{% endif %}
+		{% if numPaperPlane >= 4 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane4">{% endif %}
+		{% if numPaperPlane >= 5 %}<img src="../../photo/paperplane/airplane-yellow.png" class="airplane5">{% endif %}
+		{% if numPaperPlane >= 6 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane6">{% endif %}
+		{% if numPaperPlane >= 7 %}<img src="../../photo/paperplane/airplane-green.png" class="airplane7">{% endif %}
+		{% if numPaperPlane >= 8 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane8">{% endif %}
+		{% if numPaperPlane >= 9 %}<img src="../../photo/paperplane/airplane-yellow.png" class="airplane9">{% endif %}
+		{% if numPaperPlane >= 10 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane10">{% endif %}
 	</div>
 	  
-	<div>	
+	<div class="alert-modal">	
 		<div class="alert"></div>
 		<div class="alert-content">※ 메시지 확인은 해당 콘텐츠의 주인만 가능합니다.</div>
 	</div>	  
@@ -52,4 +55,14 @@
 	</div>
 	</div>
   </body>
+  <script>
+	window.onload = () => {
+	  if ((new URLSearchParams(location.search)).get('message') === 'notOwnerError') {
+		document.querySelector('.alert-modal').style.display = 'block';
+		setTimeout(() => {
+		  document.querySelector('.alert-modal').style.display = 'none';
+		}, 3000);
+	  }
+	};
+  </script>
 </html>

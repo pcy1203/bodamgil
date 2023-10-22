@@ -8,21 +8,21 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-	<link rel="stylesheet" href="../../../css/paperplane/write4.css">
+	<link rel="stylesheet" href="../../../../css/paperplane/success.css">
   </head>
   <body>
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane"> <img src="../../photo/paperplane/previous.png" class="previous"></a>
+	    <a href="/myself/paperplane"> <img src="../../../../photo/paperplane/previous.png" class="previous"></a>
 		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/menu.png" class="menu">
+		<img src="../../../../photo/polaroid/menu.png" class="menu">
 		  
 	<div class="main">	 
-		<img src="../../photo/paperplane/airplane-last.png">
+		<img src="../../../../photo/paperplane/airplane-last.png">
 		<p>편지를 성공적으로 보냈어요.</p>
-        <span class="more">더 보내기</span>
-        <span class="check">내꺼 확인하기</span>
+        <a href="/myself/paperplane/{{ id }}/write" class="more">더 보내기</a>
+        <a href="/myself/paperplane/start" class="check">내꺼 확인하기</a>
 	</div>	
     
 	</div>
@@ -30,8 +30,3 @@
 	</div>
   </body>
 </html>
-		
-<!--
-  <h1>편지를 성공적으로 보냈어요.</h1>
-  <a href="/myself/paperplane/{{ id }}/write">하나 더 작성하기</a> <!-- 주소 변경하기 -->
--->
