@@ -18,7 +18,7 @@
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 		  
 	<div class="main">	  
- 		<h1>{{ user.name }} 님에게 <br>총 N개의 편지가 도착했어요!</h1>
+ 		<h1>{{ user.name }} 님에게 <br>총 {{ paperPlanes.length }}개의 편지가 도착했어요!</h1>
 		<div class="note"></div>
 		<span class="relationship">[관계]</span>
 		<span class="name">[이름]</span>
@@ -32,4 +32,9 @@
 	</div>
   </body>
 </html>
-		
+<!--
+  {% for paperPlane in paperPlanes %}
+  <p>{{ paperPlane.content }}</p>
+  <p>{{ paperPlane.name }}</p>
+  <p>{{ paperPlane.relationship }}</p>
+-->

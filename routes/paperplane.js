@@ -1,14 +1,21 @@
 const express = require('express');
 const { isLoggedIn } = require('../middlewares');
-const { renderMain, renderGlassBottle, renderPaperPlane, renderWrite, writePaperPlane } = require('../controllers/paperplane');
+const { renderMain, makeGlassBottleIfNotExist, renderGlassBottle, renderPaperPlane,
+	   renderWrite, writePaperPlane, renderSuccess } = require('../controllers/paperplane');
 
 const router = express.Router();
 
-// GET /myself/paperplane/write
-router.get('/write', isLoggedIn, renderWrite);
+// GET /myself/paperplane/start
+router.get('/start', isLoggedIn, makeGlassBottleIfNotExist);
 
-// POST /myself/paperplane/write
-router.post('/write', isLoggedIn, writePaperPlane);
+// GET /myself/paperplane/:id/write/success
+router.get('/:id/write/success', isLoggedIn, renderSuccess);
+
+// GET /myself/paperplane/:id/write
+router.get('/:id/write', isLoggedIn, renderWrite);
+
+// POST /myself/paperplane/:id/write
+router.post('/:id/write', isLoggedIn, writePaperPlane);
 
 // GET /myself/paperplane/:id/view
 router.get('/:id/view', isLoggedIn, renderPaperPlane);
@@ -16,7 +23,7 @@ router.get('/:id/view', isLoggedIn, renderPaperPlane);
 // GET /myself/paperplane/:id
 router.get('/:id', isLoggedIn, renderGlassBottle);
 
-// GET /myself/polaroid
+// GET /myself/paperplane
 router.get('/', renderMain);
 
 module.exports = router;

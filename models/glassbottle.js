@@ -17,8 +17,8 @@ class GlassBottle extends Sequelize.Model {
 	  sequelize,
 	  timestamps: false,
 	  underscored: false,
-	  modelName: 'PaperPlane',
-	  tableName: 'paperplanes',
+	  modelName: 'GlassBottle',
+	  tableName: 'glassbottles',
 	  paranoid: false,
 	  charset: 'utf8mb4',
 	  collate: 'utf8mb4_general_ci', 
@@ -27,6 +27,7 @@ class GlassBottle extends Sequelize.Model {
 	
   static associate(db) {
     db.GlassBottle.belongsTo(db.User, { foreignKey: 'owner', targetKey: 'id' });
+    db.GlassBottle.hasMany(db.PaperPlane, { foreignKey: 'recipient', sourceKey: 'id' });
   }
 };
 

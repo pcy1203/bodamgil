@@ -4,8 +4,21 @@ exports.renderMain = (req, res, next) => {
   res.render('polaroid/main');
 };
 
-exports.renderPolaroid = (req, res, next) => {
-  res.render('polaroid/view');
+exports.renderPolaroids = async (req, res, next) => {
+  const polaroids = await Polaroid.findAll({
+	where: { writer: req.user.dataValues.id },
+	order: [[ 'createdAt', 'DESC' ]],
+  });
+  res.render('polaroid/viewall', { polaroids });
+};
+
+
+exports.renderPolaroid = async (req, res, next) => {
+  const id = req.params.id;
+  const polaroid = await Polaroid.findOne({
+	where: { id },
+  });
+  res.render('polaroid/view', { polaroid });
 };
 
 exports.renderWrite = (req, res, next) => {
@@ -20,7 +33,7 @@ exports.writePolaroid = async (req, res, next) => {
 	  image: `polaroid/${req.file.filename}`,
 	  content,
 	  writer: req.user.dataValues.id,
-	})
+	});
     return res.redirect(`/myself/polaroid/${polaroid.id}`);
   } catch (error) {
 	console.error(error);
