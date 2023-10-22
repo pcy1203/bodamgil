@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="../../css/polaroid/view.css">
   </head>
   <body>
+	{% for polaroid in polaroids %}
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
@@ -45,5 +46,6 @@
 </div>
 </div>
 </div>
+{% endfor %}
 </body>
 </html>

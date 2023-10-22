@@ -23,6 +23,12 @@
 		<span class="relationship">[관계]</span>
 		<span class="name">[이름]</span>
 		<div class="line"></div>
+		
+        {% for paperPlane in paperPlanes %}
+		{{ paperPlane.relationship }}
+		{{ paperPlane.name }}
+		{{ paperPlane.content }}
+		{% endfor %}
 		<button class="back">BACK</button>
 		<button class="next">NEXT</button>
 	</div>	  
@@ -33,7 +39,6 @@
   </body>
 </html>
 <!--
-  {% for paperPlane in paperPlanes %}
   <p>{{ paperPlane.content }}</p>
   <p>{{ paperPlane.name }}</p>
   <p>{{ paperPlane.relationship }}</p>

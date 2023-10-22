@@ -27,12 +27,14 @@
     	</ul>
 	</div>
 	
-	<div class="color-select"></div>	  
-	<div class="select-red"></div>
-	<div class="select-yellow"></div>
-	<div class="select-green"></div>
-	<div class="select-blue"></div>
-	<div class="select-purple"></div>
+	<div class="color-select-box">
+		<div class="color-select"></div>	  
+		<div class="select-red"></div>
+		<div class="select-yellow"></div>
+		<div class="select-green"></div>
+		<div class="select-blue"></div>
+		<div class="select-purple"></div>
+	</div>
 		  
 	<div class="size-select"></div>
 	<div class="select-horizontal">가로</div>
@@ -55,6 +57,12 @@
 		document.getElementById('content').addEventListener('input', (e) => {
 		  innerContent.innerHTML = e.target.value;
 		});
+		
+		const colorSelectBox = document.querySelector('.color-select-box');
+		const colorSelectButton = document.querySelector('.main > ul > li:first-child');
+		colorSelectButton.addEventListener('click', (e) => {
+			colorSelectBox.style.display = 'none';
+		})
    </script>
     </div>	  
 	</div>

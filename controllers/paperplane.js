@@ -5,9 +5,6 @@ const GlassBottle = require('../models/glassbottle');
 const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
 	const glassBottle = await GlassBottle.findOne({ where: { id: glassBottleId } });
-	console.log(glassBottle.owner);
-	console.log(userId);
-	console.log(glassBottle.owner === userId);
     return glassBottle.owner === userId;
   } catch (error) {
 	throw error;
