@@ -8,14 +8,14 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../css/polaroid/view.css">
+	<link rel="stylesheet" href="../../css/polaroid/viewimage.css">
   </head>
   <body>
 	<!--{% for polaroid in polaroids %}-->
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
+	    <a href="/myself/polaroid"> <img src="images/previous.png" class="previous"></a>
 		<span class="home">홈 화면</span>
 		<img src="../../photo/polaroid/trash.png" class="trash">
 		<img src="../../photo/polaroid/menu.png" class="menu">
@@ -29,31 +29,10 @@
         <span class="name2">/</span>
         <span class="name3">3</span>
 
-		<ul>
-			<li><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
-			<li><img src="../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></li>
-        </ul>
-
-        <div class="link-select-box">
-            <div class="link-select"></div>
-            <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
-            <img src="../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
-            <img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span>
-        </div>
-
 		<button class="back">BACK</button>
 		<button class="next">NEXT</button>
 	</div>	
 		  
-	<div class="delete">
-		<div class="black"></div>
-		<div class="alert"></div>
-		<div class="line1"></div>
-		<div class="line2"></div>
-		<p>해당 결과를 삭제하면<br>더이상 확인할 수 없어요.<br>결과를 정말 삭제하시겠어요?</p>
-		<span class="no">취소</span>
-		<span class="yes">삭제</span>
-	</div>
 		  
 </div>
 </div>

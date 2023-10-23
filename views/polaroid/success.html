@@ -8,32 +8,37 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../../css/polaroid/write-final.css">
+	<link rel="stylesheet" href="../../css/polaroid/success.css">
   </head>
   <body>
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:red" class="header">
 	    <a href="/">Com:pass 로고</a>
-		<img src="../../../photo/polaroid/menu.png" class="menu">
+		<img src="../../photo/polaroid/menu.png" class="menu">
 
     <div class="main">
+        <span class="name1">1</span>
+        <span class="name2">/</span>
+        <span class="name3">3</span>
+
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../../{{ polaroid.image }}" class="photo">
         <p class="polaroid-content">{{ polaroid.content }}</p>
 
-        <p class="explain">※저장하기 버튼을 누르면 다음에 다시 확인이 가능합니다.</p>
-
-        <ul class="button1">
-			<li><img src="../../../photo/polaroid/last-save.png" class="last-save"><span class="last-save-content">저장하기</span></li>
-			<li><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
-        </ul>
-        <ul class="button2">
-			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
-			<li><img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></li>
+        <ul class="button">
+			<li><img src="../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
+			<li><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
         </ul>
     </div>	  
+
+    <div class="link-select-box">
+        <div class="link-select"></div>
+        <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+        <img src="../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
+        <img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span>
+    </div>
 		  
 </div>
 </div>

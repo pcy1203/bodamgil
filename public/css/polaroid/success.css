@@ -1,0 +1,253 @@
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+.header{
+	position: relative;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;	
+	background: #EFEDF7;
+
+}
+
+/* 맨 위에 현재 숫자*/
+.name1{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 20px 157px;
+	text-align: center;
+}
+
+.name2{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 20px 180px;
+	text-align: center;
+}
+
+.name3{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 20px 198px;
+	text-align: center;
+}
+
+/*스티커*/
+.sticker{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 164px;
+	top: 120px;
+	border-radius: 50%;
+	background: rgba(197, 187, 227, 0.8);
+}
+
+/*폴라로이드 뒤에 하얀색*/
+.polaroid{
+	position: absolute;
+	width: 250px;
+	height: 227px;
+	left: calc(50% - 250px/2);
+	top: 136px;
+	background: #FFFFFF;
+	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+/*안에 사진*/
+.photo{
+	position: absolute;
+	width: 202px;
+	height: 151px;
+	left: calc(50% - 202px/2);
+	top: 160px;
+	background: #D9D9D9;
+}
+
+/*사진 안의 글씨*/
+.polaroid-content{
+    position: absolute;
+    width: auto;
+    height: 23px;
+	left: calc(50% - 190px/2);
+    top: 305px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    color: #000000;
+}
+
+/*위에 두 개 버튼*/
+.button li {
+	position: relative;
+	border: 1px solid #5F2987;
+	border-radius: 10px;
+    margin: 480px 7px 0 0;
+    height: 50px;
+    width: 150px;
+	list-style: none;
+	float: left;
+	left: -14px;
+	cursor: pointer;
+    transition: all .4s;
+}
+
+li:hover{
+    background-color: #5F2987;
+	color: white;
+}
+
+.last-again {  
+    position: absolute;
+    top: 16px;
+    left: 35px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+
+.last-again-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    line-height: 50px;
+    font-size: 14px;
+    padding: 0 0 0 65px;
+    text-align: center;
+}
+
+.last-link {  
+    position: absolute;
+    top: 15px;
+    left: 22px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-indent: -1000px;
+    overflow: hidden;
+    }
+ 
+.last-link-content {
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 0 0 0 50px;
+	text-align: center;
+}
+
+/*링크복사하기 누르면 나오는 선택사항*/
+.link-select { 
+	position: absolute;
+	background: #FFFFFF; 
+	width: 155px; 
+	height: 50px;
+	border-radius: 10px;
+	border: 1px solid #BFBFBF;
+	padding:15px;
+	top: 438px;
+	right: 22px;
+	
+}
+.link-select:after { /*말풍선 꼭지*/
+	top: 80px; /*말풍선꼭지위치 위아래*/
+	transform: rotate(-180deg);
+	border: 1px solid #BFBFBF;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
+	border-width: 12px; /*말풍선 꼭지 사이즈*/
+	margin-left: 100px; /*말풍선 상세위치 조정*/
+}
+
+.kakaotalk{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 174px;
+    top: 455px;
+	cursor: pointer;
+}
+
+.kakaotalkcontent{
+    position: absolute;
+    left: 174px;
+    top: 493px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
+}
+
+.instagram{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 231px;
+    top: 454px;
+    cursor: pointer;
+}
+
+.instagramcontent{
+    position: absolute;
+    left: 226px;
+    top: 492px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
+}
+
+.link{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 287px;
+    top: 455px;
+    cursor: pointer;
+}
+
+.linkcontent{
+    position: absolute;
+    left: 284px;
+    top: 492px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
+}

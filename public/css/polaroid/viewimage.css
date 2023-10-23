@@ -140,7 +140,7 @@ top: 11.5px;
     width: auto;
     height: 23px;
 	left: calc(50% - 190px/2);
-    top: 290px;
+    top: 295px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -157,7 +157,7 @@ top: 11.5px;
     width: auto;
     height: 23px;
 	left: calc(50% - 181px/2 + 0.5px);
-    top: 360px;
+    top: 361px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -199,155 +199,6 @@ top: 11.5px;
 }
 
 
-/*밑에 버튼 2개*/
-li {
-	position: relative;
-	border: 1px solid #5F2987;
-	border-radius: 10px;
-    margin: 440px 7px 0 0;
-    height: 50px;
-    width: 150px;
-	list-style: none;
-	float: left;
-	left: -14px;
-	cursor: pointer;
-    transition: all .4s;
-}
-
-li:hover{
-    background-color: #5F2987;
-	color: white;
-}
-
-.last-link {  
-    position: absolute;
-    top: 14px;
-    left: 20px;
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    text-indent: -1000px;
-    overflow: hidden;
-    }
- 
-.last-link-content {
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 50px;
-    padding: 0 0 0 48px;
-	text-align: center;
-}
-
-.last-image {  
-    position: absolute;
-    top: 15px;
-    left: 22px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    text-indent: -1000px;
-    overflow: hidden;
-    }
- 
-.last-image-content {
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 50px;
-    padding: 0 0 0 50px;
-	text-align: center;
-}
-
-/*링크복사하기 누르면 나오는 선택사항*/
-.link-select { 
-	position: absolute;
-	background: #FFFFFF; 
-	width: 155px; 
-	height: 50px;
-	border-radius: 10px;
-	border: 1px solid #BFBFBF;
-	padding:15px;
-	top: 350px;
-	left: 24px;
-	
-}
-.link-select:after { /*말풍선 꼭지*/
-	top: 80px; /*말풍선꼭지위치 위아래*/
-	transform: rotate(-180deg);
-	border: 1px solid #BFBFBF;
-	content: "";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
-	border-width: 12px; /*말풍선 꼭지 사이즈*/
-	margin-left: 50px; /*말풍선 상세위치 조정*/
-}
-
-.kakaotalk{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 45px;
-    top: 368px;
-	cursor: pointer;
-}
-
-.kakaotalkcontent{
-    position: absolute;
-    left: 43px;
-    top: 404px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 9px;
-    text-align: center;
-    color: #000000;
-}
-
-.instagram{
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    left: 102px;
-    top: 367px;
-    cursor: pointer;
-}
-
-.instagramcontent{
-    position: absolute;
-    left: 97px;
-    top: 404px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 9px;
-    text-align: center;
-    color: #000000;
-}
-
-.link{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 160px;
-    top: 368px;
-    cursor: pointer;
-}
-
-.linkcontent{
-    position: absolute;
-    left: 157px;
-    top: 404px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 9px;
-    text-align: center;
-    color: #000000;
-}
 
 /*다음 버튼*/
 .next{
@@ -377,7 +228,7 @@ li:hover{
 	color: white;
 }
 
-/*이전 버튼*/
+/*다음 버튼*/
 .back{
 	border: 1px solid #5F2987;
 	border-radius: 30px;
@@ -405,7 +256,7 @@ li:hover{
 	color: white;
 }
 
-/*이미지 삭제 => 휴지통 버튼 누르면 뜨도록*/
+/*이미지 삭제*/
 .black{
 	position: relative;
 	width: 360px;
@@ -415,72 +266,3 @@ li:hover{
 	background: rgba(0, 0, 0, 0.3);
 }
 
-.alert{
-	position: absolute;
-	width: 290px;
-	height: 190px;
-	left: calc(50% - 290px/2);
-	top: 200px;
-	background: #FFFFFF;
-	border-radius: 10px;	
-}
-
-.line1{
-	position: absolute;
-	width: 288px;
-	left: calc(50% - 290px/2);
-	top: 337px;
-	border: 0.1px solid #BFBFBF;
-}
-
-.line2{
-	position: absolute;
-	width: 50px;
-	left: 160px;
-	top: 363px;
-	border: 0.1px solid #BFBFBF;
-	transform: rotate(90deg);
-}
-
-.delete p{
-	position: absolute;
-	width: auto;
-	left: 90px;
-	top: 220px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 16px;
-	text-align: center;
-	color: #000000;
-}
-
-.no{
-	position: absolute;
-	width: 34px;
-	height: 26px;
-	left: 95px;
-	top: 350px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 400;
-	font-size: 18px;
-	text-align: center;
-	color: #000000;
-	cursor: pointer;
-}
-
-.yes{
-	position: absolute;
-	width: 34px;
-	height: 26px;
-	left: 240px;
-	top: 350px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 400;
-	font-size: 18px;
-	text-align: center;
-	color: #FF0000;
-	cursor: pointer;
-}

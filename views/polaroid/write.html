@@ -35,22 +35,24 @@
 		<div class="select-blue"></div>
 		<div class="select-purple"></div>
 	</div>
-		  
-	<div class="size-select"></div>
-	<div class="select-horizontal">가로</div>
-	<div class="select-vertical">세로</div>
+	
+	<div class="size=select-box">
+		<div class="size-select"></div>
+		<div class="select-horizontal">가로</div>
+		<div class="select-vertical">세로</div>
+	</div>
 		  
 	<form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
 		<div class="polaroid"></div>
 		<div class="sticker"></div>
 		<div class="photo">
-		  <input id="image" type="file" name="image" accept="image/*">
+			<input id="image" type="file" name="image" accept="image/*">
 		</div>
 		<p id="inner-content"></p>
 		<div> 
-		  <input id="content" name="content" require>
+		  <input id="content" name="content" maxlength="32" require>
+		  <button type="submit" class="next">NEXT</button>
 		</div>
-		<button type="submit" class="next">NEXT</button>
    	</form>
    	<script>
 		const innerContent = document.getElementById('inner-content');

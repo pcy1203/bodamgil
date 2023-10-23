@@ -1,8 +1,0 @@
-{% extends '../layout.html' %}
-
-{% block content %}
-  {% for polaroid in polaroids %}
-  <img src="../../{{ polaroid.image }}" width="100" alt="폴라로이드 이미지">
-  <p>{{ polaroid.content }}</p>
-  {% endfor %}
-{% endblock %}
