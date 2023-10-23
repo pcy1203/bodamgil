@@ -72,20 +72,17 @@
 				<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요." require>
 				<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요." require></textarea>
 				<button class="back" type="button">BACK</button>
-				<button class="next" type="submit">SEND</button>
+				<button class="next" type="button">SEND</button>
 			</div>
-		</div>	  
-
-
-		<!--
+		</div>
+		
 		<div class="delete">
 			<div class="black"></div>
 			<div class="alert"></div>
-			<p>편지 작성이 완료되었습니다.<br>편지를 보내겠습니까?</p>
-			<span class="no">취소</span>
-			<span class="yes">보내기</span>
+				<p>편지 작성이 완료되었습니다.<br>편지를 보내겠습니까?</p>
+				<button class="no" type="button">취소</button>
+				<button class="yes" type="submit">보내기</button>
 		</div>
-			  -->
 	</form>
 	</div>
 	</div>
@@ -113,10 +110,18 @@
 	
 	document.querySelectorAll('.next').forEach((button) => {
 	  button.addEventListener('click', () => {
-		page++;
-		if (page <= 4) changePage(page);
+		if (page === 4) {
+		  document.querySelector('.delete').style.display = 'block';
+		} else {
+		  page++;
+		  changePage(page);
+		}
 	  });
 	});
+	  
+	document.querySelector('.no').addEventListener('click', () => {
+	  document.querySelector('.delete').style.display = 'none';
+	});	
 	  
 	const checkRelationship = (relationship) => {
 	  document.querySelectorAll('.button1 > li, .button2 > li').forEach((tag) => {
@@ -136,21 +141,3 @@
 	});
   </script>
 </html>
-		
-<!--
-  
-    <div>
-	  <label for="relationship">관계</label>	  
-	  
-	</div>
-	<div>
-	  <label for="name">닉네임</label>	  
-	  <input id="name" name="name" require>
-	</div>
-	<div>
-	  <label for="content">내용</label>	  
-	  <input id="content" name="content" require>
-    </div>
-    <button type="submit">다음</button>
-  </form>
--->

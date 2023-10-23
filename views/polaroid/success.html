@@ -27,7 +27,7 @@
 
         <ul class="button1">
 			<li><img src="../../../photo/polaroid/last-save.png" class="last-save"><span class="last-save-content">저장하기</span></li>
-			<li><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
+			<li><button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button></li>
         </ul>
         <ul class="button2">
 			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
@@ -39,4 +39,17 @@
 </div>
 </div>
 </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+  <script>
+	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -8)}`);
+	const clipboard = new ClipboardJS('.url-copy');
+      
+        clipboard.on('success', function(e) {
+            alert("URL 복사 완료!");
+        });
+      
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+  </script>
 </html>

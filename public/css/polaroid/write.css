@@ -82,6 +82,10 @@ span {
 	font-size: 14px;
 }
 
+.color-select-box, .size-select-box {
+	display: none;
+}
+
 /*스티커*/
 .sticker{
 	position: absolute;
@@ -112,6 +116,50 @@ span {
 	left: calc(50% - 202px/2);
 	top: 302px;
 	background: #D9D9D9;
+}
+
+.upload-view {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;  /* image crop */
+}
+
+.select-image {
+	border: 1px solid #5F2987;
+	border-radius: 30px;
+
+	position: absolute;
+	right: calc((202px - 101.33px) / 2);
+	bottom: 10px;
+	z-index: 1;
+	width: 100px;
+	height: 32px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	line-height: 30px;
+	color: #5F2987;
+	
+	cursor: pointer;
+    transition: all .4s;
+	
+}
+
+.select-image:hover {
+    background-color: #5F2987;
+	color: white;
+}
+
+#image {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
 }
 
 #inner-content{

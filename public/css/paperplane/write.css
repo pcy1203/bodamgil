@@ -309,7 +309,6 @@ li:hover, li.check {
 	color: white;
 }
 
-
 /*이미지 삭제*/
 .black{
 	position: relative;
@@ -328,6 +327,12 @@ li:hover, li.check {
 	top: 243px;
 	background: #FFFFFF;
 	border-radius: 10px;	
+}
+
+.delete {
+	display: none;
+	position: absolute;
+	top: 8.5px;
 }
 
 .delete p{

@@ -104,6 +104,12 @@
     transition: all .4s;
 }
 
+.url-copy {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
+
 .button2 li {
 	position: relative;
 	border: 1px solid #5F2987;

@@ -25,7 +25,7 @@
 		<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}의 장점을 자유롭게 적어주세요.</p>
 		{% endif %}
 		<ul>
-			<li><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
+			<li><button class="url-copy" data-clipboard-text=""><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></button></li>
 			<li><a href="/myself/paperplane/{{ id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
 			<li><a href="/myself/paperplane/{{ id }}/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
     	</ul>
@@ -55,7 +55,18 @@
 	</div>
 	</div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script>
+	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname}`);
+	const clipboard = new ClipboardJS('.url-copy');
+      
+        clipboard.on('success', function(e) {
+            alert("URL 복사 완료!");
+        });
+      
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
 	window.onload = () => {
 	  if ((new URLSearchParams(location.search)).get('message') === 'notOwnerError') {
 		document.querySelector('.alert-modal').style.display = 'block';
