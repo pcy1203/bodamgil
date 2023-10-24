@@ -21,16 +21,26 @@
  		<h1>{{ user.name }} 님에게 <br>총 {{ paperPlanes.length }}개의 편지가 도착했어요!</h1>
 		<div class="note"></div>
 
-        <!--{% for paperPlane in paperPlanes %}-->
-		<span class="relationship">{{ paperPlane.relationship }}</span>
-		<span class="name">{{ paperPlane.name }}</span>
-		<div class="line"></div>
-		<div class="content">{{ paperPlane.content }}</div>
-		 <!--{% endfor %}-->
+        {% for paperPlane in paperPlanes %}
+		<div class="paperplane paperplane-{{ loop.index }}">
+			<span class="relationship">
+				{% if paperPlane.relationship === "friend" %}친구
+				{% elif paperPlane.relationship === "couple" %}연인
+				{% elif paperPlane.relationship === "family" %}가족
+				{% elif paperPlane.relationship === "school" %}선후배
+				{% elif paperPlane.relationship === "colleague" %}직장동료
+				{% elif paperPlane.relationship === "etc" %}기타
+				{% endif %}
+			</span>
+			<span class="name">{{ paperPlane.name }}</span>
+			<div class="line"></div>
+			<div class="content">{{ paperPlane.content }}</div>
+		</div>
+		{% endfor %}
         
-        <span class="name1">1</span>
+        <span class="name1"></span>
         <span class="name2">/</span>
-        <span class="name3">3</span> 
+        <span class="name3">{{ paperPlanes.length }}</span> 
 
 		<img src="../../../photo/paperplane/back.png" class="back">
 		<img src="../../../photo/paperplane/next.png" class="next">
@@ -40,9 +50,36 @@
 	</div>
 	</div>
   </body>
+  <script>
+	const numPaperPlane = Number(document.querySelector('.name3').innerHTML);
+	const startPageNumber = (numPaperPlane !== 0 ? 1 : 0);
+	let page = startPageNumber;
+	const changePage = (currentPage) => {
+	  for (let i = 1; i <= numPaperPlane; i++) {
+		if (i !== currentPage) {
+	      document.querySelector(`.paperplane-${i}`).style.display = 'none';
+		} else {
+	      document.querySelector(`.paperplane-${i}`).style.display = 'block';
+		}
+	  }
+	  document.querySelector('.back').style.display = (currentPage === startPageNumber ? 'none' : 'block');
+	  document.querySelector('.next').style.display = (currentPage === numPaperPlane ? 'none' : 'block');
+	  document.querySelector('.name1').innerHTML = currentPage;
+	};
+	changePage(page);
+	
+	document.querySelectorAll('.back').forEach((button) => {
+	  button.addEventListener('click', () => {
+		page--;
+	    changePage(page);
+	  });
+	});
+	
+	document.querySelectorAll('.next').forEach((button) => {
+	  button.addEventListener('click', () => {
+		page++;
+		changePage(page);
+	  });
+	});
+  </script>
 </html>
-<!--
-  <p>{{ paperPlane.content }}</p>
-  <p>{{ paperPlane.name }}</p>
-  <p>{{ paperPlane.relationship }}</p>
--->

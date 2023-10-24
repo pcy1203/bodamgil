@@ -107,7 +107,7 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 157px;
+    padding: 545px 0 0 157px;
 	text-align: center;
 }
 
@@ -116,7 +116,7 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 180px;
+    padding: 545px 0 0 180px;
 	text-align: center;
 }
 
@@ -125,7 +125,7 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 198px;
+    padding: 545px 0 0 198px;
 	text-align: center;
 }
 
