@@ -25,36 +25,6 @@
 
 }
 
-/* 맨 위에 현재 숫자*/
-.name1{
-    position: absolute;
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    font-size: 14px;
-    padding: 20px 157px;
-	text-align: center;
-	z-index: 1;
-}
-
-.name2{
-    position: absolute;
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    font-size: 14px;
-    padding: 20px 180px;
-	text-align: center;
-	z-index: 1;
-}
-
-.name3{
-    position: absolute;
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    font-size: 14px;
-    padding: 20px 198px;
-	text-align: center;
-	z-index: 1;
-}
 
 /*스티커*/
 .sticker{
@@ -97,17 +67,17 @@
 
 /*사진 안의 글씨*/
 .polaroid-content{
-    position: absolute;
-    width: auto;
-    height: 23px;
-	left: calc(50% - 190px/2);
-    top: 265px;
+   position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+    top: 263px;
 
     font-family: 'InkLipquid';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    
     text-align: center;
     color: #000000;
 }

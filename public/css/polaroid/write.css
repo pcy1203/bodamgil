@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
 /* 전체화면 */
 .header{
 	position: relative;
@@ -134,7 +140,7 @@ span {
 
 	position: absolute;
 	right: calc((202px - 101.33px) / 2);
-	bottom: 10px;
+	bottom: 58px;
 	z-index: 1;
 	width: 100px;
 	height: 32px;
@@ -171,8 +177,12 @@ span {
 	width: 200px;
 	height: 40px;
 	left: calc(50% - 200px/2);
-	top: 450px;
-	font-size: 12px;
+	top: 445px;
+	font-size: 16px;
+	
+	font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
 }
 
 #content{
@@ -183,6 +193,11 @@ span {
 	top: 525px;
 	background: #FFFFFF;
 	border: 0.8px solid #BFBFBF;
+	
+	font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+	font-size: 16px;
 
 }
 

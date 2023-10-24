@@ -349,60 +349,24 @@ li:hover{
     color: #000000;
 }
 
-/*다음 버튼*/
+/*next 버튼*/
 .next{
-	border: 1px solid #5F2987;
-	border-radius: 30px;
-
 	position: absolute;
-	width: 100px;
+	width: 32px;
 	height: 32px;
-	right: 16px;
+	right: 20px;
 	top: 538px;
-	
-	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 14px;
-	background-color: white;
-	text-align: center;
-	line-height: 20px;
-	color: #5F2987;
-	
 	cursor: pointer;
-    transition: all .4s;
 }
 
-.next:hover{
-    background-color: #5F2987;
-	color: white;
-}
-
-/*이전 버튼*/
+/*back 버튼*/
 .back{
-	border: 1px solid #5F2987;
-	border-radius: 30px;
-
 	position: absolute;
-	width: 100px;
+	width: 32px;
 	height: 32px;
-	left: 16px;
+	left: 20px;
 	top: 538px;
-	
-	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 14px;
-	background-color: white;
-	text-align: center;
-	line-height: 20px;
-	color: #5F2987;
-	
 	cursor: pointer;
-    transition: all .4s;
-}
-
-.back:hover{
-    background-color: #5F2987;
-	color: white;
 }
 
 /*이미지 삭제 => 휴지통 버튼 누르면 뜨도록*/
