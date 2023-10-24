@@ -21,10 +21,8 @@
 	width: 360px;
 	height: 595px;
 	top: 45px;	
-	background: #EFEDF7;
-
+	/*background: #EFEDF7;*/
 }
-
 
 /*스티커*/
 .sticker{
@@ -34,7 +32,7 @@
 	left: 164px;
 	top: 80px;
 	border-radius: 50%;
-	background: rgba(197, 187, 227, 0.8);
+	/*background: rgba(197, 187, 227, 0.8);*/
 }
 
 .polaroid-download {
