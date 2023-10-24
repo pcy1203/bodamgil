@@ -8,7 +8,7 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-	<link rel="stylesheet" href="../../../css/paperplane/paperplane.css">
+	<link rel="stylesheet" href="../../css/paperplane/paperplane.css">
   </head>
   <body>
 	<div style="display: flex; justify-content: center;">
@@ -20,18 +20,21 @@
 	<div class="main">	  
  		<h1>{{ user.name }} 님에게 <br>총 {{ paperPlanes.length }}개의 편지가 도착했어요!</h1>
 		<div class="note"></div>
-		<span class="relationship">[관계]</span>
-		<span class="name">[이름]</span>
+
+        <!--{% for paperPlane in paperPlanes %}-->
+		<span class="relationship">{{ paperPlane.relationship }}</span>
+		<span class="name">{{ paperPlane.name }}</span>
 		<div class="line"></div>
-		
-        {% for paperPlane in paperPlanes %}
-		{{ paperPlane.relationship }}
-		{{ paperPlane.name }}
-		{{ paperPlane.content }}
-		{% endfor %}
-		<button class="back">BACK</button>
-		<button class="next">NEXT</button>
-	</div>	  
+		<div class="content">{{ paperPlane.content }}</div>
+		 <!--{% endfor %}-->
+        
+        <span class="name1">1</span>
+        <span class="name2">/</span>
+        <span class="name3">3</span> 
+
+		<img src="../../../photo/paeprplane/back.png" class="back">
+		<img src="../../../photo/paeprplane/next.png" class="next">
+	</div>	 
 		  
 	</div>
 	</div>

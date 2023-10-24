@@ -76,6 +76,18 @@ color: #000000;
 	border: 0.01px solid #BFBFBF;
 }
 
+.content{
+    position: absolute;
+    width: 256px;
+	left: 52px;
+	top: 175px;
+
+    font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 12px;
+	text-align: left;
+}
+
 .note{
 	box-sizing: border-box;
 	position: absolute;
@@ -89,58 +101,50 @@ color: #000000;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-/*next 버튼*/
-.next{
-	border: 1px solid #0066FF;
-	border-radius: 30px;
-
-	position: absolute;
-	width: 100px;
-	height: 32px;
-	right: 16px;
-	top: 538px;
-	
-	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 14px;
-	background-color: white;
+/* 맨 위에 현재 숫자*/
+.name1{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 545px 157px;
 	text-align: center;
-	line-height: 20px;
-	color: #0066FF;
-	
-	cursor: pointer;
-    transition: all .4s;
 }
 
-.next:hover{
-    background-color: #0066FF;
-	color: white;
+.name2{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 545px 180px;
+	text-align: center;
+}
+
+.name3{
+    position: absolute;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    padding: 545px 198px;
+	text-align: center;
+}
+
+/*next 버튼*/
+.next{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	right: 20px;
+	top: 538px;
+	cursor: pointer;
 }
 
 /*back 버튼*/
 .back{
-	border: 1px solid #0066FF;
-	border-radius: 30px;
-
 	position: absolute;
-	width: 100px;
+	width: 32px;
 	height: 32px;
-	left: 16px;
+	left: 20px;
 	top: 538px;
-	
-	font-family: 'Noto Sans KR';
-	font-weight: 300;
-	font-size: 14px;
-	background-color: white;
-	text-align: center;
-	line-height: 20px;
-	color: #0066FF;
-	
 	cursor: pointer;
-    transition: all .4s;
-}
-
-.back:hover{
-    background-color: #0066FF;
-	color: white;
 }
