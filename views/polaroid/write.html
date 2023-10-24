@@ -35,18 +35,18 @@
 		<div class="select-blue"></div>
 		<div class="select-purple"></div>
 	</div>
-	
-	<div class="size=select-box">
+	<div class="size-select-box">
 		<div class="size-select"></div>
 		<div class="select-horizontal">가로</div>
 		<div class="select-vertical">세로</div>
-	</div>
-		  
+	</div> 
 	<form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
 		<div class="polaroid"></div>
 		<div class="sticker"></div>
 		<div class="photo">
-			<input id="image" type="file" name="image" accept="image/*">
+		  <img class="upload-view">
+		  <label class="select-image" for="image">파일 선택</label>
+		  <input id="image" type="file" name="image" accept="image/*">
 		</div>
 		<p id="inner-content"></p>
 		<div> 
@@ -61,10 +61,38 @@
 		});
 		
 		const colorSelectBox = document.querySelector('.color-select-box');
-		const colorSelectButton = document.querySelector('.main > ul > li:first-child');
+		const colorSelectButton = document.querySelector('.main > ul > li:nth-child(1)');
+		
+		const sizeSelectBox = document.querySelector('.size-select-box');
+		const sizeSelectButton = document.querySelector('.main > ul > li:nth-child(2)');
+		
 		colorSelectButton.addEventListener('click', (e) => {
+		  let colorSelectBoxState = colorSelectBox.style.display;
+		  if (colorSelectBoxState === 'none') {
+			colorSelectBox.style.display = 'block';
+			sizeSelectBox.style.display = 'none';
+		  } else {
 			colorSelectBox.style.display = 'none';
-		})
+		  }
+		});
+		
+		sizeSelectButton.addEventListener('click', (e) => {
+		  let sizeSelectBoxState = sizeSelectBox.style.display;
+		  if (sizeSelectBoxState === 'none') {
+			sizeSelectBox.style.display = 'block';
+			colorSelectBox.style.display = 'none';
+		  } else {
+			sizeSelectBox.style.display = 'none';
+		  }
+		});
+		
+		document.querySelector('input#image').addEventListener('change', (e) => {
+          let reader = new FileReader();
+	      reader.onload = function(event) {
+		    document.querySelector('.upload-view').setAttribute("src", event.target.result);
+          };
+          reader.readAsDataURL(event.target.files[0]);
+		});		
    </script>
     </div>	  
 	</div>

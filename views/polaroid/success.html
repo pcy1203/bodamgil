@@ -8,40 +8,73 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../css/polaroid/success.css">
+	<link rel="stylesheet" href="../../../css/polaroid/success.css">
   </head>
   <body>
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:red" class="header">
 	    <a href="/">Com:pass 로고</a>
-		<img src="../../photo/polaroid/menu.png" class="menu">
+		<img src="../../../photo/polaroid/menu.png" class="menu">
 
     <div class="main">
         <span class="name1">1</span>
         <span class="name2">/</span>
         <span class="name3">3</span>
-
+		<div class="polaroid-download">
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../../{{ polaroid.image }}" class="photo">
         <p class="polaroid-content">{{ polaroid.content }}</p>
-
+    	</div>	  
         <ul class="button">
-			<li><img src="../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
-			<li><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
+			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
+			<li><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
+		</ul>
+		<!--
+        <ul class="button1">
+			<li><img src="../../../photo/polaroid/last-save.png" class="last-save"><span class="last-save-content">저장하기</span></li>
+			<li><button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button></li>
         </ul>
-    </div>	  
+        <ul class="button2">
+			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
+			<li><button class="image-download"><img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button></li>
+        </ul>
+		-->
 
     <div class="link-select-box">
         <div class="link-select"></div>
-        <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
-        <img src="../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
-        <img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span>
+        <img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+        <img src="../../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
+		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
     </div>
+		
+	<button class="image-download"><span class="last-image-content">이미지로 저장</span></button>
 		  
 </div>
 </div>
 </div>
+</div>
 </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
+  <script>
+	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -8)}`);
+	const clipboard = new ClipboardJS('.url-copy');
+      
+        clipboard.on('success', function(e) {
+            alert("URL 복사 완료!");
+        });
+      
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+	
+  document.querySelector('.image-download').addEventListener('click', (e) => {
+    domtoimage.toBlob(document.querySelector('.polaroid-download')).then(function (blob) {
+      window.saveAs(blob, 'image.png');
+    }); 
+  });
+  </script>
 </html>

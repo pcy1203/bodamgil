@@ -70,6 +70,12 @@ li:last-child{
 li:hover{
     background-color: #0066FF;
 }
+
+.url-copy {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
  
 .main img {  
     position: absolute;
@@ -201,6 +207,11 @@ a {
 }
 
 /*확인하기 경고문*/
+.alert-modal {
+	display: none;
+	transition: 0.3s;
+}
+
 .alert { 
 	position: absolute;
 	background: #FFFFFF; 
