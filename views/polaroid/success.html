@@ -18,11 +18,12 @@
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 
     <div class="main">
+		<div class="polaroid-download">
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../../{{ polaroid.image }}" class="photo">
         <p class="polaroid-content">{{ polaroid.content }}</p>
-
+		</div>
         <p class="explain">※저장하기 버튼을 누르면 다음에 다시 확인이 가능합니다.</p>
 
         <ul class="button1">
@@ -31,7 +32,7 @@
         </ul>
         <ul class="button2">
 			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
-			<li><img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></li>
+			<li><button class="image-download"><img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button></li>
         </ul>
     </div>	  
 		  
@@ -40,6 +41,8 @@
 </div>
 </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
   <script>
 	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -8)}`);
 	const clipboard = new ClipboardJS('.url-copy');
@@ -51,5 +54,11 @@
         clipboard.on('error', function(e) {
             console.log(e);
         });
+	
+  document.querySelector('.image-download').addEventListener('click', (e) => {
+    domtoimage.toBlob(document.querySelector('.polaroid-download')).then(function (blob) {
+      window.saveAs(blob, 'image.png');
+    }); 
+  });
   </script>
 </html>

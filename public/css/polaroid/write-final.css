@@ -36,6 +36,12 @@
 	background: rgba(197, 187, 227, 0.8);
 }
 
+.polaroid-download {
+	position: relative;
+	height: 400px;
+	background: inherit;
+}
+
 /*폴라로이드 뒤에 하얀색*/
 .polaroid{
 	position: absolute;
@@ -55,6 +61,7 @@
 	left: calc(50% - 202px/2);
 	top: 113px;
 	background: #D9D9D9;
+	object-fit: cover;
 }
 
 /*사진 안의 글씨*/
@@ -94,7 +101,7 @@
 	position: relative;
 	border: 1px solid #5F2987;
 	border-radius: 10px;
-    margin: 430px 7px 0 0;
+    margin: 30px 7px 0 0;
     height: 50px;
     width: 150px;
 	list-style: none;
@@ -104,7 +111,7 @@
     transition: all .4s;
 }
 
-.url-copy {
+.url-copy, .image-download {
 	border: none;
 	background-color: transparent;
 	padding: 0;
