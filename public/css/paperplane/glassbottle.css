@@ -239,10 +239,13 @@ a {
 	margin-left: 125px; /*말풍선 상세위치 조정*/
 }
 
-.alert-content{
+.alert.right-alert:after {
+	left: 42%;
+}
+
+.alert-content {
 	position: absolute;
 	width: auto;
-	left: 52px;
 	top: 163px;
 
 	font-family: 'Noto Sans KR';
@@ -252,8 +255,19 @@ a {
 	align-items: center;
 	text-align: center;
 	color: #FF0000;
+	
 }
 
+.alert-content.not-owner-alert {
+	left: 52px;
+}
 
+.alert-content.owner-alert {
+	left: 59px;
+}
 
-
+.alert-content.no-paperplane-alert {
+	top: 157px;
+	left: 61px;
+	line-height: 15px;
+}

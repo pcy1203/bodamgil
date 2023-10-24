@@ -61,6 +61,9 @@ exports.renderPaperPlane = async (req, res, next) => {
 	  where: { recipient: id },
 	  order: [[ 'createdAt', 'DESC' ]],
     });
+	if (paperPlanes.length === 0) {
+	  return res.redirect(`/myself/paperplane/${id}?message=noPaperPlane`);
+	}
     res.render('paperplane/paperplane', { paperPlanes });
   } catch (error) {
 	console.error(error);
