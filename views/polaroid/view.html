@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="../../css/polaroid/view.css">
   </head>
   <body>
-	<!--{% for polaroid in polaroids %}-->
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
@@ -20,18 +19,23 @@
 		<img src="../../photo/polaroid/trash.png" class="trash">
 		<img src="../../photo/polaroid/menu.png" class="menu">
     <div class="main">
+		<div class="number-block">
+        <span class="name1"></span>
+        <span class="name2">/</span>
+        <span class="name3">{{ polaroids.length }}</span>
+		</div>
+	    {% for polaroid in polaroids %}
+		<div class="polaroid-download polaroid-{{ polaroid.color }} contents-{{ loop.index }}">
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../{{ polaroid.image }}" class="photo">
         <p class="polaroid-content">{{ polaroid.content }}</p>
-		
-        <span class="name1">1</span>
-        <span class="name2">/</span>
-        <span class="name3">3</span>
+		</div>
+		{% endfor %}
 
 		<ul>
 			<li><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
-			<li><img src="../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></li>
+			<li><button class="image-download"><img src="../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button></li>
         </ul>
 
         <div class="link-select-box">
@@ -58,6 +62,27 @@
 </div>
 </div>
 </div>
-<!--{% endfor %}-->
 </body>
+  <script src="../../../js/changepage.js"></script>
+  <script src="../../../js/polaroidcolor.js"></script>
+  <script>
+	document.querySelector('.back').addEventListener('click', () => {
+	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
+	  changePolaroidColor(color);
+	});
+	document.querySelector('.next').addEventListener('click', () => {
+	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
+	  changePolaroidColor(color);
+	});
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script> 
+  <script>
+	document.querySelector('.image-download').addEventListener('click', (e) => {
+      domtoimage.toBlob(document.querySelector(`.polaroid-download.contents-${page}`)).then(function (blob) {
+        window.saveAs(blob, 'image.png');
+	  });
+	});
+  </script>
 </html>
