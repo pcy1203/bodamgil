@@ -13,8 +13,9 @@
   <body>
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:red" class="header">
-	    <a href="/">Com:pass 로고</a>
+	  <div style="width: 360px; height: 45px; background-color:white" class="header">
+	    <a href="/myself/polaroid/write"> <img src="../../../photo/polaroid/previous.png" class="previous"></a>
+		<img src="../../../photo/polaroid/trash.png" class="trash">
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 
     <div class="main">
@@ -24,22 +25,23 @@
         <img src="../../../{{ polaroid.image }}" class="photo">
         <p class="polaroid-content">{{ polaroid.content }}</p>
     	</div>	  
-        <ul class="button">
+        <div class="button">
 			<a href="/myself/polaroid/write">
-				<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
+				<button class="button1">
+					<img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span>
+				</button>
 			</a>
-			<li><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></li>
-		</ul>
-		<!--
-        <ul class="button1">
-			<li><img src="../../../photo/polaroid/last-save.png" class="last-save"><span class="last-save-content">저장하기</span></li>
-			<li><button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button></li>
-        </ul>
-        <ul class="button2">
-			<li><img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span></li>
-			<li><button class="image-download"><img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button></li>
-        </ul>
-		-->
+			<button class="button2"><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button>
+			<a href="/myself/polaroid/">
+				<button class="button3">
+					<img src="../../../photo/polaroid/home.png" class="last-home"><span class="last-home-content">홈으로 가기</span>
+				</button>
+			</a>
+			<button class="image-download">
+				<img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span>
+			</button>
+		</div>
+		
 
     <div class="link-select-box">
         <div class="link-select"></div>
@@ -47,8 +49,6 @@
         <img src="../../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
 		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
     </div>
-		
-	<button class="image-download"><span class="last-image-content">이미지로 저장</span></button>
 		  
 </div>
 </div>

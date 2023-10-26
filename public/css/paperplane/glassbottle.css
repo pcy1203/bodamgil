@@ -3,12 +3,36 @@
 	position: relative;
 }
 
+.previous{
+	position: absolute;
+	width: 13px;
+	height: 10px;
+	left: 16px;
+	top: 17.5px;
+	cursor: pointer;
+}
+
+.home{
+	position: absolute;
+	left: 38px;
+	top: 17.5px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 10px;
+	text-align: center;
+
+	color: #000000;
+}
+
 .menu{
 	position: absolute;
 	width: 25px;
 	height: 25px;
 	left: 319px;
 	top: 9.5px;	
+	cursor: pointer;
 }
 
 .main{
@@ -63,6 +87,10 @@ li {
     transition: all .4s;
 }
 
+li button{
+	cursor: pointer;
+}
+
 li:last-child{
 	 margin: 150px 0px 0 0;
 }
@@ -79,7 +107,7 @@ li:hover{
  
 .main img {  
     position: absolute;
-    top: 12px;
+    top: 13px;
     left: 14px;
     display: inline-block;
     width: 16px;
@@ -88,23 +116,24 @@ li:hover{
     overflow: hidden;
     }
  
-span {
+.main span {
     padding: 0 0 0 34px;
 	text-align: center;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 400;
 	font-size: 14px;
-	font-weight: 40px;
+	line-height: 30px;
+	color: black;
 }
 
-a {
+.main a {
     padding: 0 0 0 36px;
 	text-align: center;
 	text-decoration: none;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 400;
 	font-size: 14px;
-	font-weight: 40px;
+	line-height: 40px;
 	color: black;
 }
 
@@ -270,4 +299,95 @@ a {
 	top: 157px;
 	left: 61px;
 	line-height: 15px;
+}
+
+
+/*링크복사하기 누르면 나오는 선택사항*/
+.link-select { 
+	position: absolute;
+	background: #FFFFFF; 
+	width: 152px; 
+	height: 50px;
+	border-radius: 10px;
+	border: 1px solid #BFBFBF;
+	padding:15px;
+	top: 109px;
+	left: 30px;
+	
+}
+.link-select:after { /*말풍선 꼭지*/
+	top: 80px; /*말풍선꼭지위치 위아래*/
+	transform: rotate(-180deg);
+	border: 1px solid #BFBFBF;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
+	border-width: 12px; /*말풍선 꼭지 사이즈*/
+	margin-left: 20px; /*말풍선 상세위치 조정*/
+}
+
+.kakaotalk{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50px;
+    top: 128px;
+	cursor: pointer;
+}
+
+.kakaotalkcontent{
+    position: absolute;
+    left: 48px;
+    top: 163px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
+}
+
+.instagram{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 107px;
+    top: 128px;
+    cursor: pointer;
+}
+
+.instagramcontent{
+    position: absolute;
+    left: 102px;
+    top: 163px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
+}
+
+.link{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 165px;
+    top: 128px;
+    cursor: pointer;
+}
+
+.linkcontent{
+    position: absolute;
+    left: 162px;
+    top: 163px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    text-align: center;
+    color: #000000;
 }

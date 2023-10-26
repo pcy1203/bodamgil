@@ -13,8 +13,9 @@
   <body>
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:red" class="header">
-	    <a href="/">Com:pass 로고</a>
+	  <div style="width: 360px; height: 45px; background-color:white" class="header">
+	    <a href="/myself/paperplane"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
+		<span class="home">홈 화면</span>
 		<img src="../../photo/polaroid/menu.png" class="menu">
 		  
 	<div class="main">	  
@@ -22,7 +23,7 @@
 		{% if isOwner %}
   		<p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
 		{% else %}
-		<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}의 장점을 자유롭게 적어주세요.</p>
+		<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}님의 장점을 자유롭게 적어주세요.</p>
 		{% endif %}
 		<ul>
 			<li><button class="url-copy" data-clipboard-text=""><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></button></li>
@@ -30,6 +31,13 @@
 			<li><a href="/myself/paperplane/{{ id }}/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
     	</ul>
 	</div>
+		  
+	<div class="link-select-box">
+        <div class="link-select"></div>
+        <img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+        <img src="../../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
+		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+    </div>
 		  
 	<img src="../../photo/paperplane/jar.png" class="jar">
 		  

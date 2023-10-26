@@ -9,12 +9,36 @@
 	position: relative;
 }
 
+.previous{
+	width: 13px;
+	height: 10px;
+	position: absolute;
+	left: 16px;
+	top: 17.5px;
+}
+
+.home{
+	position: absolute;
+	left: 38px;
+	top: 17.5px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 10px;
+	text-align: center;
+
+	color: #000000;
+}
+
+
 .menu{
 	position: absolute;
 	width: 25px;
 	height: 25px;
 	left: 319px;
 	top: 9.5px;	
+	cursor: pointer;
 }
 
 /* 당신은 어릴 때 무엇을 좋아했나요? */
@@ -139,14 +163,14 @@ li:hover{
 	border-radius: 30px;
 
 	position: absolute;
-	right: calc((202px - 101.33px) / 2);
-	bottom: 58px;
-	width: 100px;
-	height: 32px;
+	right: 60px;
+	bottom: 10px;
+	width: 80px;
+	height: 30px;
 
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 12px;
 	background-color: white;
 	text-align: center;
 	line-height: 30px;
@@ -176,12 +200,14 @@ li:hover{
 	width: 200px;
 	height: 40px;
 	left: calc(50% - 200px/2);
-	top: 445px;
+	top: 440px;
 	font-size: 16px;
 	
 	font-family: 'InkLipquid';
     font-style: normal;
     font-weight: 400;
+	text-align: center;
+	
 }
 
 #content{
@@ -489,4 +515,5 @@ li:hover{
     height: 20px;
     left: 20px;
     top:20px;
+	cursor: pointer;
 }

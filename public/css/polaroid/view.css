@@ -31,11 +31,12 @@
 }
 
 .trash{
-position: absolute;
-width: 22px;
-height: 22px;
-left: 274px;
-top: 11.5px;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	left: 274px;
+	top: 11.5px;
+	cursor: pointer;
 }
 
 .menu{
@@ -44,6 +45,7 @@ top: 11.5px;
 	height: 25px;
 	left: 319px;
 	top: 9.5px;	
+	cursor: pointer;
 }
 
 .main{
@@ -148,10 +150,10 @@ top: 11.5px;
 /*사진 안의 글씨*/
 .polaroid-content{
     position: absolute;
-    width: auto;
-    height: 23px;
-	left: calc(50% - 190px/2);
-    top: 264px;
+    width: 200px;
+	height: 40px;
+	left: calc(50% - 198px/2);
+    top: 262px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -213,30 +215,24 @@ top: 11.5px;
 	z-index: 1;
 }
 
-/*밑에 버튼 2개*/
-li {
-	position: relative;
+/*링크 복사하기 버튼*/
+.link-copy {
+	position: absolute;
 	border: 1px solid #5F2987;
+	background-color: white;
 	border-radius: 10px;
-    margin: 25px 7px 0 0;
     height: 50px;
     width: 150px;
 	list-style: none;
-	float: left;
-	left: -14px;
+	left: 25px;
+	bottom: 75px;
 	cursor: pointer;
-    transition: all .4s;
+    transition: background-color .4s, color .4s;
 }
 
-li:hover{
+.link-copy:hover{
     background-color: #5F2987;
 	color: white;
-}
-
-li button {
-	border: none;
-	padding: 0;
-	background: transparent;
 }
 
 .last-link {  
@@ -254,11 +250,29 @@ li button {
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
-    line-height: 50px;
-    padding: 0 0 0 48px;
+    line-height: 45px;
+    padding: 0 0 0 38px;
 	text-align: center;
 }
 
+/*이미지 다운로드 버튼*/
+.image-download {
+	position: absolute;
+	border: 1px solid #5F2987;
+	background-color: white;
+	border-radius: 10px;
+    height: 50px;
+    width: 150px;
+	list-style: none;
+	right: 25px;
+	bottom: 75px;
+	cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+.image-download:hover{
+    background-color: #5F2987;
+	color: white;
+}
 .last-image {  
     position: absolute;
     top: 15px;
@@ -274,8 +288,8 @@ li button {
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
-    line-height: 50px;
-    padding: 0 0 0 50px;
+    line-height: 45px;
+    padding: 0 0 0 38px;
 	text-align: center;
 }
 
