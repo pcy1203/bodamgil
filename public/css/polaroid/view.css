@@ -59,6 +59,17 @@ top: 11.5px;
 	/*purple: #EFEDF7*/
 }
 
+.number-block {
+	position: relative;
+	height: 26px;
+	background: inherit;
+}
+
+.polaroid-download {
+	position: relative;
+	height: 400px;
+	background: inherit;
+}
 
 /*스티커*/
 .sticker{
@@ -66,7 +77,7 @@ top: 11.5px;
 	width: 32px;
 	height: 32px;
 	left: 164px;
-	top: 106px;
+	top: 80px;
 	border-radius: 50%;
 	background: rgba(197, 187, 227, 0.8);
 	/*red: rgba(255, 189, 189, 0.8)*/
@@ -82,7 +93,7 @@ top: 11.5px;
 	width: 32px;
 	height: 32px;
 	left: 164px;
-	top: 55px;
+	top: 55px;  (-26px)
 	border-radius: 50%;
 	background: rgba(197, 187, 227, 0.8);
 	/*red: rgba(255, 189, 189, 0.8)*/
@@ -98,7 +109,7 @@ top: 11.5px;
 	width: 250px;
 	height: 227px;
 	left: calc(50% - 250px/2);
-	top: 122px;
+	top: 96px;
 	background: #FFFFFF;
 	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
 }
@@ -109,7 +120,7 @@ top: 11.5px;
 	width: 256px;
 	height: 344px;
 	left: calc(50% - 256px/2);
-	top: 70px;
+	top: 70px;  (-26px)
 	background: #FFFFFF;
 	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
 }*/
@@ -120,7 +131,7 @@ top: 11.5px;
 	width: 202px;
 	height: 151px;
 	left: calc(50% - 202px/2);
-	top: 146px;
+	top: 120px;
 	background: #D9D9D9;
 }
 
@@ -130,7 +141,7 @@ top: 11.5px;
 	width: 201px;
 	height: 268px;
 	left: calc(50% - 201px/2 + 0.5px);
-	top: 95px;
+	top: 95px;  (-26px)
 	background: #D9D9D9;
 }*/
 
@@ -140,7 +151,7 @@ top: 11.5px;
     width: auto;
     height: 23px;
 	left: calc(50% - 190px/2);
-    top: 290px;
+    top: 264px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -157,7 +168,7 @@ top: 11.5px;
     width: auto;
     height: 23px;
 	left: calc(50% - 181px/2 + 0.5px);
-    top: 360px;
+    top: 360px;(-26px)
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -198,13 +209,16 @@ top: 11.5px;
 	text-align: center;
 }
 
+.name1, .name2, .name3 {
+	z-index: 1;
+}
 
 /*밑에 버튼 2개*/
 li {
 	position: relative;
 	border: 1px solid #5F2987;
 	border-radius: 10px;
-    margin: 440px 7px 0 0;
+    margin: 25px 7px 0 0;
     height: 50px;
     width: 150px;
 	list-style: none;
@@ -217,6 +231,12 @@ li {
 li:hover{
     background-color: #5F2987;
 	color: white;
+}
+
+li button {
+	border: none;
+	padding: 0;
+	background: transparent;
 }
 
 .last-link {  
@@ -268,7 +288,7 @@ li:hover{
 	border-radius: 10px;
 	border: 1px solid #BFBFBF;
 	padding:15px;
-	top: 350px;
+	top: 370px;
 	left: 24px;
 	
 }
@@ -291,14 +311,14 @@ li:hover{
     width: 30px;
     height: 30px;
     left: 45px;
-    top: 368px;
+    top: 388px;
 	cursor: pointer;
 }
 
 .kakaotalkcontent{
     position: absolute;
     left: 43px;
-    top: 404px;
+    top: 424px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -312,14 +332,14 @@ li:hover{
     width: 32px;
     height: 32px;
     left: 102px;
-    top: 367px;
+    top: 387px;
     cursor: pointer;
 }
 
 .instagramcontent{
     position: absolute;
     left: 97px;
-    top: 404px;
+    top: 424px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -333,14 +353,14 @@ li:hover{
     width: 30px;
     height: 30px;
     left: 160px;
-    top: 368px;
+    top: 388px;
     cursor: pointer;
 }
 
 .linkcontent{
     position: absolute;
     left: 157px;
-    top: 404px;
+    top: 424px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -404,6 +424,10 @@ li:hover{
 	top: 363px;
 	border: 0.1px solid #BFBFBF;
 	transform: rotate(90deg);
+}
+
+.delete {
+    display: none;
 }
 
 .delete p{

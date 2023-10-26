@@ -11,6 +11,16 @@ class Polaroid extends Sequelize.Model {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
+	  color: {
+	    type: Sequelize.ENUM('red', 'yellow', 'green', 'blue', 'purple'),
+		allowNull: false,
+		defaultValue: 'purple',
+	  },
+	  size: {
+	    type: Sequelize.ENUM('horizontal', 'vertical'),
+		allowNull: false,
+		defaultValue: 'horizontal',
+	  },
 	  createdAt: {
 		type: Sequelize.DATE,
 		allowNull: false,

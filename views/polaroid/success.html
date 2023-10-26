@@ -18,7 +18,7 @@
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 
     <div class="main">
-		<div class="polaroid-download">
+		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}">
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../../{{ polaroid.image }}" class="photo">
@@ -55,6 +55,20 @@
 </div>
 </div>
 </body>
+  <script src="../../../js/polaroidcolor.js"></script>
+  <script src="../../../js/polaroidsize.js"></script>
+  <script>
+	const color = document.querySelector('.polaroid-download').classList[1].split("-")[1];
+	changePolaroidColor(color);
+	const size = document.querySelector('.polaroid-download').classList[2].split("-")[1];
+	changePolaroidSize(size);
+	if (size === 'vertical') {
+	  document.querySelector('.polaroid-download').style.height = "520px";
+	  document.querySelectorAll('.button li').forEach((button) => {
+		button.style.margin = "-40px 7px 0 0";
+	  });
+	}
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
