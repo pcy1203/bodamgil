@@ -1,32 +1,5 @@
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <title>CSS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/main/main.css">
-  </head>
+{% extends '../layout.html' %}
 
-  <body>
-    <div id="container">
-      <div id="header">
-        <h1>로고</h1>
-      </div>
-      <div id="content">
-        <h2>Content</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
-      </div>
-      <div id="sidebar">
-        <h2>Sidebar</h2>
-        <ul>
-          <li>Lorem</li>
-          <li>Ipsum</li>
-          <li>Dolor</li>
-        </ul>
-      </div>
-      <div id="footer">
-        <p>Copyright</p>
-      </div>
-    </div>
-  </body>
-</html>
+{% block content %}
+  <h1>메인 화면</h1>
+{% endblock %}
