@@ -58,10 +58,12 @@
 		  <label class="select-image" for="image">파일 선택</label>
 		  <input id="image" type="file" name="image" accept="image/*">
 		</div>
-		<p id="inner-content"></p>
-		<div> 
-		  <input id="content" name="content" maxlength="38" require>
-		  <button type="submit" class="next">NEXT</button>
+		<div class="write-block">
+			<p id="inner-content"></p>
+			<div> 
+			  <input id="content" name="content" maxlength="38" require>
+			  <button type="submit" class="next">NEXT</button>
+			</div>
 		</div>
    	</form>
 		  
@@ -79,6 +81,7 @@
         <img src="../../photo/polaroid/arrow2.png" class="arrow2">
 	</div>	  
 	<script src="../../js/polaroidcolor.js"></script>
+	<script src="../../js/polaroidsize.js"></script>
    	<script>
 		const innerContent = document.getElementById('inner-content');
 		document.getElementById('content').addEventListener('input', (e) => {
@@ -130,6 +133,33 @@
 		    button.checked = false;
 	      });
 	      document.querySelector(`#size-${size}`).checked = true;
+		  changePolaroidSize(size);
+		
+		  if (size === 'horizontal') {
+			  document.querySelector('.write-block p').style.margin = "16px 0";
+			  document.querySelector('.write-block input').style.margin = "0";
+			  document.querySelector('.write-block button').style.margin = "0";
+			  document.querySelector('.select-image').style.bottom = "58px";
+			  document.querySelector('.container').style.height = "640px";
+			  document.querySelector('.main-block').style.height = "595px";
+			  document.querySelector('.example-block').style.height = "595px";
+			  document.querySelector('.example-block').style.height = "595px";
+			  document.querySelector('.example-block > .polaroid-content').style.top = "352px";
+			  document.querySelector('.example-block > .example-content2').style.top = "430px";
+			  document.querySelector('.arrow2').style.top = "400px";
+		  } else {
+			  document.querySelector('.write-block p').style.margin = "123px 0";
+			  document.querySelector('.write-block input').style.margin = "107px 0 0 0";
+			  document.querySelector('.write-block button').style.margin = "107px 0 0 0";
+			  document.querySelector('.select-image').style.bottom = "113px";
+			  document.querySelector('.container').style.height = "747px";
+			  document.querySelector('.main').style.height = "702px";
+			  document.querySelector('.example-block').style.height = "702px";
+			  document.querySelector('.example-block > .polaroid-content').style.top = "459px";
+			  document.querySelector('.example-block > .example-content2').style.top = "537px";
+			  document.querySelector('.arrow2').style.top = "507px";
+			  
+		  }
 	    };
 		
 		document.querySelectorAll('.size-select-box > div:nth-child(n+2)').forEach((size) => {

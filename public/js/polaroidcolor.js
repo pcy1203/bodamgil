@@ -45,7 +45,4 @@ const changePolaroidColor = (color) => {
 	  });
 	  break;
   }
-
-
-	
-}
+};

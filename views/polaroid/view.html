@@ -25,7 +25,7 @@
         <span class="name3">{{ polaroids.length }}</span>
 		</div>
 	    {% for polaroid in polaroids %}
-		<div class="polaroid-download polaroid-{{ polaroid.color }} contents-{{ loop.index }}">
+		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }}">
         <div class="polaroid"></div>
         <div class="sticker"></div>
         <img src="../../{{ polaroid.image }}" class="photo">
@@ -65,14 +65,26 @@
 </body>
   <script src="../../../js/changepage.js"></script>
   <script src="../../../js/polaroidcolor.js"></script>
+  <script src="../../../js/polaroidsize.js"></script>
+  <script>
+	const color = document.querySelector('.polaroid-download').classList[1].split("-")[1];
+	changePolaroidColor(color);
+	const size = document.querySelector('.polaroid-download').classList[2].split("-")[1];
+	changePolaroidSize(size);
+  </script>
   <script>
 	document.querySelector('.back').addEventListener('click', () => {
 	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
+	  let size = document.querySelector(`.polaroid-download.contents-${page}`).classList[2].split("-")[1];
 	  changePolaroidColor(color);
+	  changePolaroidSize(size);
 	});
 	document.querySelector('.next').addEventListener('click', () => {
 	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
+	  let size = document.querySelector(`.polaroid-download.contents-${page}`).classList[2].split("-")[1];
+		console.log(size);
 	  changePolaroidColor(color);
+	  changePolaroidSize(size);
 	});
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
