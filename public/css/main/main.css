@@ -1,0 +1,44 @@
+#container {
+    margin: 0;
+    padding: 0px;
+ }
+#header {
+    padding: 20px;
+    background-color: blue;
+    height: 15px;
+  }
+#content {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bcbcbc;
+  }
+  #sidebar {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bcbcbc;
+  }
+  #footer {
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+  }
+
+  @media ( min-width: 1201px ) {
+    #container {
+      width: 1024px;
+      margin: auto;
+    }
+    #header{
+        height: 30px;
+    }
+    #content {
+      width: 580px;
+      float: left;
+    }
+    #sidebar {
+      width: 260px;
+      float: right;
+    }
+    #footer {
+      clear: both;
+    }
+  }
