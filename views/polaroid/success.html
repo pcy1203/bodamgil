@@ -18,12 +18,13 @@
 		<img src="../../../photo/polaroid/trash.png" class="trash">
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 
-    <div class="main">
+    <div class="main polaroid-{{ polaroid.color }}">
+		{% if polaroid.size == "horizontal" %}<div style="height: 53px; background: inherit;"></div>{% endif %}
 		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}">
-        <div class="polaroid"></div>
-        <div class="sticker"></div>
-        <img src="../../../{{ polaroid.image }}" class="photo">
-        <p class="polaroid-content">{{ polaroid.content }}</p>
+        <div class="polaroid polaroid-{{ polaroid.size }}"></div>
+        <div class="sticker polaroid-{{ polaroid.color }}"></div>
+        <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+        <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
     	</div>	  
         <div class="button">
 			<a href="/myself/polaroid/write">
@@ -31,7 +32,9 @@
 					<img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span>
 				</button>
 			</a>
-			<button class="button2"><img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button>
+			<button class="button2">
+				<img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span>
+			</button>
 			<a href="/myself/polaroid/">
 				<button class="button3">
 					<img src="../../../photo/polaroid/home.png" class="last-home"><span class="last-home-content">홈으로 가기</span>
@@ -51,28 +54,45 @@
     </div>
 		  
 </div>
+		  
+		  
+	<div class="delete">
+		<div class="black"></div>
+		<div class="alert"></div>
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<p>해당 결과를 삭제하면<br>더이상 확인할 수 없어요.<br>결과를 정말 삭제하시겠어요?</p>
+		<span class="no">취소</span>
+		<span class="yes">삭제</span>
+	</div>
 </div>
 </div>
 </div>
 </body>
-  <script src="../../../js/polaroidcolor.js"></script>
-  <script src="../../../js/polaroidsize.js"></script>
-  <script>
-	const color = document.querySelector('.polaroid-download').classList[1].split("-")[1];
-	changePolaroidColor(color);
-	const size = document.querySelector('.polaroid-download').classList[2].split("-")[1];
-	changePolaroidSize(size);
-	if (size === 'vertical') {
-	  document.querySelector('.polaroid-download').style.height = "520px";
-	  document.querySelectorAll('.button li').forEach((button) => {
-		button.style.margin = "-40px 7px 0 0";
-	  });
-	}
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
   <script>
+	const linkSelectBox = document.querySelector('.link-select-box');  
+	document.querySelector('.button2').addEventListener('click', (e) => {
+		linkSelectBox.style.display = (linkSelectBox.style.display === 'none') ? 'block' : 'none';
+	});
+	  
+	const deleteAlert = document.querySelector('.delete');  
+	document.querySelector('.trash').addEventListener('click', (e) => {
+		deleteAlert.style.display = (deleteAlert.style.display === 'none') ? 'block' : 'none';
+	});
+	  
+	document.querySelector('.yes').addEventListener('click', (e) => {
+		// 구현하기
+	});
+	  
+	document.querySelector('.no').addEventListener('click', (e) => {
+		deleteAlert.style.display = 'none';
+	});
+	  
+	  
+	// URL 복사
 	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -8)}`);
 	const clipboard = new ClipboardJS('.url-copy');
       
@@ -84,6 +104,7 @@
             console.log(e);
         });
 	
+  // 이미지 저장  
   document.querySelector('.image-download').addEventListener('click', (e) => {
     domtoimage.toBlob(document.querySelector('.polaroid-download')).then(function (blob) {
       window.saveAs(blob, 'image.png');

@@ -12,13 +12,13 @@
   </head>
   <body>
 	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
+	  <div style="width: 360px; border: 1px solid black;" class="container size-horizontal">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
 	    <a href="/myself/polaroid"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
 		<span class="home">홈 화면</span>
 		<img src="../../photo/polaroid/menu.png" class="menu">
 		  
-	<div class="main main-block">
+	<div class="main main-block size-horizontal">
 		<h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
   		<p>어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고<br> 이에 대해 설명해주세요. 어렸을 때의 사진이나 <br>기억 나는 장소 등에 대해 적어도 좋아요.</p>
 		<ul>
@@ -56,34 +56,35 @@
 		<div class="sticker"></div>
 		<div class="photo">
 		  <img class="upload-view">
-		  <label class="select-image" for="image">파일 선택</label>
+		  <label class="select-image size-horizontal" for="image">파일 선택</label>
 		  <input id="image" type="file" name="image" accept="image/*">
 		</div>
 		<div class="write-block">
-			<p id="inner-content"></p>
+			<p id="inner-content" class="size-horizontal"></p>
 			<div> 
-			  <input id="content" name="content" maxlength="30" require>
-			  <button type="submit" class="next">NEXT</button>
+			  <input id="content" class="size-horizontal" name="content" maxlength="30" require>
+			  <button type="submit" class="next size-horizontal">NEXT</button>
 			</div>
 		</div>
    	</form>
 		  
-	<div class="main example-block">
+	<div class="main example-block size-horizontal">
         <img src="../../photo/polaroid/exit.png" class="exit">
 
         <div class="polaroid"></div>
         <div class="sticker"></div>
 		<img src="../../photo/polaroid/beach.jpg" class="photo">
-        <p class="polaroid-content">바다 보는 것을 좋아했던 어린 시절의 나</p>
+        <p class="polaroid-content size-horizontal">바다 보는 것을 좋아했던 어린 시절의 나</p>
 
         <p class="example-content1">어릴 때의 꿈이나 즐겼던 활동 사진, <br>장소의 사진을 넣어주세요 <br>ex.어렸을 때 가장 좋아했던 바다사진</p>
-        <p class="example-content2">좋았던 내용에 대해 <br>최대한 구체적으로 적어주세요. <br> ex. 바다가 좋다(X) <br> 푸른 바다를 보는 것이 좋다(O)</p>
+        <p class="example-content2 size-horizontal">좋았던 내용에 대해 <br>최대한 구체적으로 적어주세요. <br> ex. 바다가 좋다(X) <br> 푸른 바다를 보는 것이 좋다(O)</p>
         <img src="../../photo/polaroid/arrow1.png" class="arrow1">
-        <img src="../../photo/polaroid/arrow2.png" class="arrow2">
+        <img src="../../photo/polaroid/arrow2.png" class="arrow2 size-horizontal">
 	</div>	  
 	<script src="../../js/polaroidcolor.js"></script>
 	<script src="../../js/polaroidsize.js"></script>
    	<script>
+		// 폴라로이드 안쪽 글씨
 		const innerContent = document.getElementById('inner-content');
 		document.getElementById('content').addEventListener('input', (e) => {
 		  innerContent.innerHTML = e.target.value;
@@ -95,6 +96,7 @@
 		const sizeSelectBox = document.querySelector('.size-select-box');
 		const sizeSelectButton = document.querySelector('.main > ul > li:nth-child(2)');
 		
+		// 색깔 선택 버튼
 		colorSelectButton.addEventListener('click', (e) => {
 		  let colorSelectBoxState = colorSelectBox.style.display;
 		  if (colorSelectBoxState === 'none') {
@@ -119,6 +121,7 @@
 	      });
 	    });
 		
+		// 크기 선택 버튼
 		sizeSelectButton.addEventListener('click', (e) => {
 		  let sizeSelectBoxState = sizeSelectBox.style.display;
 		  if (sizeSelectBoxState === 'none') {
@@ -135,32 +138,6 @@
 	      });
 	      document.querySelector(`#size-${size}`).checked = true;
 		  changePolaroidSize(size);
-		
-		  if (size === 'horizontal') {
-			  document.querySelector('.write-block p').style.margin = "16px 0";
-			  document.querySelector('.write-block input').style.margin = "0";
-			  document.querySelector('.write-block button').style.margin = "0";
-			  document.querySelector('.select-image').style.bottom = "58px";
-			  document.querySelector('.container').style.height = "640px";
-			  document.querySelector('.main-block').style.height = "595px";
-			  document.querySelector('.example-block').style.height = "595px";
-			  document.querySelector('.example-block').style.height = "595px";
-			  document.querySelector('.example-block > .polaroid-content').style.top = "352px";
-			  document.querySelector('.example-block > .example-content2').style.top = "430px";
-			  document.querySelector('.arrow2').style.top = "400px";
-		  } else {
-			  document.querySelector('.write-block p').style.margin = "123px 0";
-			  document.querySelector('.write-block input').style.margin = "107px 0 0 0";
-			  document.querySelector('.write-block button').style.margin = "107px 0 0 0";
-			  document.querySelector('.select-image').style.bottom = "113px";
-			  document.querySelector('.container').style.height = "747px";
-			  document.querySelector('.main').style.height = "702px";
-			  document.querySelector('.example-block').style.height = "702px";
-			  document.querySelector('.example-block > .polaroid-content').style.top = "459px";
-			  document.querySelector('.example-block > .example-content2').style.top = "537px";
-			  document.querySelector('.arrow2').style.top = "507px";
-			  
-		  }
 	    };
 		
 		document.querySelectorAll('.size-select-box > div:nth-child(n+2)').forEach((size) => {

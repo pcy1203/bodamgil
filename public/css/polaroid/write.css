@@ -5,6 +5,14 @@
     font-style: normal;}
 
 /* 전체화면 */
+.container.size-horizontal{
+	height: 640px;
+}
+
+.container.size-vertical{
+	height: 747px;
+}
+
 .header{
 	position: relative;
 }
@@ -39,6 +47,14 @@
 	left: 319px;
 	top: 9.5px;	
 	cursor: pointer;
+}
+
+.main-block.size-horizontal{
+	height: 595px;
+}
+
+.main-block.size-vertical{
+	height: 702px;
 }
 
 /* 당신은 어릴 때 무엇을 좋아했나요? */
@@ -85,7 +101,7 @@ li {
 	float: left;
 	left: auto;
 	cursor: pointer;
-    transition: all .4s;
+    transition: background-color .4s, color .4s;
 }
 
 li:hover{
@@ -195,22 +211,35 @@ li:hover{
     border: 0;
 }
 
-#inner-content{
+#inner-content.size-horizontal{
 	position: absolute;
 	width: 200px;
 	height: 40px;
 	left: calc(50% - 200px/2);
-	top: 440px;
+	top: 446px;
 	font-size: 16px;
 	
 	font-family: 'InkLipquid';
     font-style: normal;
     font-weight: 400;
 	text-align: center;
-	
 }
 
-#content{
+#inner-content.size-vertical{
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+	top: 553px;
+	font-size: 16px;
+	
+	font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+	text-align: center;
+}
+
+#content.size-horizontal{
 	position: absolute;
 	width: 250px;
 	height: 40px;
@@ -226,8 +255,24 @@ li:hover{
 
 }
 
+#content.size-vertical{
+	position: absolute;
+	width: 250px;
+	height: 40px;
+	left: calc(50% - 250px/2);
+	top: 632px;
+	background: #FFFFFF;
+	border: 0.8px solid #BFBFBF;
+	
+	font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+	font-size: 16px;
+
+}
+
 /*다음 버튼*/
-.next{
+.next.size-horizontal{
 	border: 1px solid #5F2987;
 	border-radius: 30px;
 
@@ -236,6 +281,29 @@ li:hover{
 	height: 32px;
 	right: 16px;
 	top: 590px;
+	
+
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	line-height: 20px;
+	color: #5F2987;
+	
+	cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+
+.next.size-vertical{
+	border: 1px solid #5F2987;
+	border-radius: 30px;
+
+	position: absolute;
+	width: 100px;
+	height: 32px;
+	right: 16px;
+	top: 697px;
 	
 
 	font-family: 'Noto Sans KR';
@@ -411,6 +479,14 @@ li:hover{
 	display: none;
 }
 
+.example-block.size-horizontal{
+	height: 595px;
+}
+
+.example-block.size-vertical{
+	height: 702px;
+}
+
 .example-block > .sticker{
 	position: absolute;
 	width: 32px;
@@ -443,12 +519,28 @@ li:hover{
 }
 
 /*사진 안의 글씨*/
-.example-block > .polaroid-content{
+.example-block > .polaroid-content.size-horizontal{
     position: absolute;
     width: auto;
     height: 23px;
 	left: calc(50% - 190px/2);
     top: 352px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    color: #000000;
+}
+
+.example-block > .polaroid-content.size-vertical{
+    position: absolute;
+    width: auto;
+    height: 23px;
+	left: calc(50% - 190px/2);
+    top: 459px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -476,7 +568,7 @@ li:hover{
 }
 
 /*예시 설명 문장2*/
-.example-content2{
+.example-content2.size-horizontal{
     position: absolute;
     width: auto;
     left: calc(50% - 260px/2);
@@ -491,6 +583,22 @@ li:hover{
     color: #000000;
 }
 
+.example-content2.size-vertical{
+    position: absolute;
+    width: auto;
+    left: calc(50% - 260px/2);
+    top: 537px;
+    
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    color: #000000;
+}
+
+
 .arrow1{
     position: absolute;
     width: 36px;
@@ -500,12 +608,21 @@ li:hover{
     transform: rotate(10deg);
 }
 
-.arrow2{
+.arrow2.size-horizontal{
     position: absolute;
     width: 18px;
     height: 38px;
     left: 140px;
     top: 400px;
+    transform: rotate(5deg);
+}
+
+.arrow2.size-vertical{
+    position: absolute;
+    width: 18px;
+    height: 38px;
+    left: 140px;
+    top: 507px;
     transform: rotate(5deg);
 }
 
