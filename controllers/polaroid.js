@@ -17,7 +17,7 @@ exports.renderPolaroid = async (req, res, next) => {
   const polaroid = await Polaroid.findOne({
 	where: { id },
   });
-  res.render('polaroid/view', { polaroid });
+  res.render('polaroid/polaroid', { polaroid });
 };
 
 exports.renderWrite = (req, res, next) => {

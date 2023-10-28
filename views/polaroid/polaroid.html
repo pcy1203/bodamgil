@@ -8,35 +8,26 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../css/polaroid/viewimage.css">
+	<link rel="stylesheet" href="../../css/polaroid/polaroid.css">
   </head>
   <body>
-	<!--{% for polaroid in polaroids %}-->
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"> <img src="images/previous.png" class="previous"></a>
+	    <a href="/myself/polaroid"><img src="../../photo/polaroid/previous.png" class="previous"></a>
 		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/trash.png" class="trash">
 		<img src="../../photo/polaroid/menu.png" class="menu">
-    <div class="main">
-        <div class="polaroid"></div>
-        <div class="sticker"></div>
-        <img src="../../{{ polaroid.image }}" class="photo">
-        <p class="polaroid-content">{{ polaroid.content }}</p>
-		
-        <span class="name1">1</span>
-        <span class="name2">/</span>
-        <span class="name3">3</span>
 
-		<button class="back">BACK</button>
-		<button class="next">NEXT</button>
+    <div class="main polaroid-{{ polaroid.color }}">
+        <div class="polaroid polaroid-{{ polaroid.size }}"></div>
+        <div class="sticker polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}"></div>
+        <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+        <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
 	</div>	
 		  
 		  
 </div>
 </div>
 </div>
-<!--{% endfor %}-->
 </body>
 </html>
