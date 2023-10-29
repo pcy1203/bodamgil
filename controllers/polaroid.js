@@ -1,5 +1,17 @@
 const Polaroid = require('../models/polaroid');
 
+const isPolaroidOwner = async (userId, polaroidId) => {
+  try {
+	const polaroid = await Polaroid.findOne({ where: { id: polaroidId } });
+    return {
+	  isOwner: polaroid.writer === userId,
+	  polaroid,
+	};
+  } catch (error) {
+	throw error;
+  }
+};
+
 exports.renderMain = (req, res, next) => {
   res.render('polaroid/main');
 };
@@ -9,6 +21,9 @@ exports.renderPolaroids = async (req, res, next) => {
 	where: { writer: req.user.dataValues.id },
 	order: [[ 'createdAt', 'DESC' ]],
   });
+  if (polaroids.length === 0) {
+	return res.redirect(`/myself/polaroid?message=noPolaroid`);
+  }
   res.render('polaroid/view', { polaroids });
 };
 
@@ -26,9 +41,10 @@ exports.renderWrite = (req, res, next) => {
 
 exports.renderSuccess = async (req, res, next) => {
   const id = req.params.id;
-  const polaroid = await Polaroid.findOne({
-	where: { id },
-  });
+  const { isOwner, polaroid } = await isPolaroidOwner(req.user.dataValues.id, id);
+  if (!isOwner) {
+	return res.redirect(`/myself/polaroid/write?message=notOwnerError`);
+  }
   res.render('polaroid/success', { polaroid });
 };
 

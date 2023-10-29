@@ -3,6 +3,7 @@
 {% block content %}
   <h1>로그인</h1>
   <form action="/auth/login" method="post">
+	<input id="redirect" name="redirect" value="{{ redirectURL }}" style="display: none;" readonly>
     <div>
 	  <label for="email">이메일</label>	  
 	  <input id="email" type="email" name="email" require autofocus>

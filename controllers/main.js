@@ -3,7 +3,12 @@ exports.renderMain = (req, res, next) => {
 };
 
 exports.renderLogin = (req, res, next) => {
-  res.render('main/login');
+  let redirectURL = "/";
+  if (req.session.redirectURL) {
+	redirectURL = req.session.redirectURL;
+	req.session.redirectURL = null;
+  }
+  res.render('main/login', { redirectURL });
 };
 
 exports.renderSignup = (req, res, next) => {
