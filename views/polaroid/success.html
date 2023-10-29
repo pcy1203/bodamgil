@@ -20,7 +20,7 @@
 
     <div class="main polaroid-{{ polaroid.color }}">
 		{% if polaroid.size == "horizontal" %}<div style="height: 53px; background: inherit;"></div>{% endif %}
-		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}">
+		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} id-{{ polaroid.id }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }}"></div>
         <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
@@ -69,6 +69,7 @@
 </div>
 </div>
 </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
@@ -84,13 +85,19 @@
 	});
 	  
 	document.querySelector('.yes').addEventListener('click', (e) => {
-		// 구현하기
+		let id = document.querySelector('.polaroid-download').classList[3].split("-")[1];
+		axios.delete(`/myself/polaroid/${id}`)
+		  .catch((err) => {
+			console.error(err);
+		  })
+		  .finally(() => {
+			window.location.href = `${location.origin + '/myself/polaroid'}`;
+		});
 	});
 	  
 	document.querySelector('.no').addEventListener('click', (e) => {
 		deleteAlert.style.display = 'none';
 	});
-	  
 	  
 	// URL 복사
 	document.querySelector('.url-copy').setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -8)}`);

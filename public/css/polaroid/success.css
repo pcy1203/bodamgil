@@ -191,9 +191,8 @@
     color: #000000;
 }
 
-.url-copy, .image-download {
+.url-copy {
 	border: none;
-	background-color: transparent;
 	padding: 0;
 }
 

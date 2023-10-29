@@ -6,7 +6,7 @@ const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
 	const glassBottle = await GlassBottle.findOne({ where: { id: glassBottleId } });
     return {
-	  isOwner: glassBottle.owner === userId,
+	  isOwner: glassBottle?.owner === userId,
 	  glassBottle,
 	};
   } catch (error) {

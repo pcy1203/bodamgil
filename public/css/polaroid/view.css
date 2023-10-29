@@ -53,23 +53,37 @@
 	width: 360px;
 	height: 595px;
 	top: 45px;	
-	background: #EFEDF7;
-	/*red: #FFF3F3*/
-	/*yellow: #FDF9E9/
-	/*green: #EEF8E4*/
-	/*blue: #EBFAFF*/
-	/*purple: #EFEDF7*/
 }
 
-.number-block {
+.main.polaroid-red {
+	background: #FFF3F3;
+}
+
+.main.polaroid-yellow {
+	background: #FDF9E9;
+}
+
+.main.polaroid-green {
+	background: #EEF8E4;
+}
+
+.main.polaroid-blue {
+	background: #EBFAFF;
+}
+
+.main.polaroid-purple {
+	background: #EFEDF7;
+}
+
+.polaroid-download.polaroid-horizontal {
 	position: relative;
-	height: 26px;
+	height: 408px;
 	background: inherit;
 }
 
-.polaroid-download {
+.polaroid-download.polaroid-vertical {
 	position: relative;
-	height: 400px;
+	height: 515px;
 	background: inherit;
 }
 
@@ -79,109 +93,104 @@
 	width: 32px;
 	height: 32px;
 	left: 164px;
-	top: 80px;
+	top: 65px;
 	border-radius: 50%;
-	background: rgba(197, 187, 227, 0.8);
-	/*red: rgba(255, 189, 189, 0.8)*/
-	/*yellow: rgba(246, 227, 146, 0.8)*/
-	/*green: rgba(171, 220, 122, 0.8)*/
-	/*blue: rgba(151, 228, 255, 0.8)*/
-	/*purple: rgba(197, 187, 227 0.8)*/
 }
 
-/*스티커(세로) => 세로: sticker, polaroid, photo, polaroid-content
-.sticker{
-	position: absolute;
-	width: 32px;
-	height: 32px;
-	left: 164px;
-	top: 55px;  (-26px)
-	border-radius: 50%;
-	background: rgba(197, 187, 227, 0.8);
-	/*red: rgba(255, 189, 189, 0.8)*/
-	/*yellow: rgba(246, 227, 146, 0.8)*/
-	/*green: rgba(171, 220, 122, 0.8)*/
-	/*blue: rgba(151, 228, 255, 0.8)*/
-	/*purple: rgba(197, 187, 227 0.8)*/
+.sticker.polaroid-red {
+	background: rgba(255, 189, 189, 0.8);
+}
 
+.sticker.polaroid-yellow {
+	background: rgba(246, 227, 146, 0.8);
+}
+
+.sticker.polaroid-green {
+	background: rgba(171, 220, 122, 0.8);
+}
+
+.sticker.polaroid-blue {
+	background: rgba(151, 228, 255, 0.8);
+}
+
+.sticker.polaroid-purple {
+	background: rgba(197, 187, 227, 0.8);
+}
 
 /*폴라로이드 뒤에 하얀색*/
-.polaroid{
+.polaroid.polaroid-horizontal{
 	position: absolute;
 	width: 250px;
 	height: 227px;
 	left: calc(50% - 250px/2);
-	top: 96px;
+	top: 81px;
 	background: #FFFFFF;
 	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
 }
 
-/*폴라로이드 뒤에 하얀색(세로)
-.polaroid{
+.polaroid.polaroid-vertical {
 	position: absolute;
-	width: 256px;
-	height: 344px;
-	left: calc(50% - 256px/2);
-	top: 70px;  (-26px)
+	width: 250px;
+	height: 334px;
+	left: calc(50% - 250px/2);
+	top: 81px;
 	background: #FFFFFF;
 	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
-}*/
+}
 
 /*안에 사진*/
-.photo{
+.photo.polaroid-horizontal{
 	position: absolute;
 	width: 202px;
 	height: 151px;
 	left: calc(50% - 202px/2);
-	top: 120px;
+	top: 105px;
 	background: #D9D9D9;
+	object-fit: cover;
 }
 
-/*안에 사진(세로)
-.photo{
+.photo.polaroid-vertical{
 	position: absolute;
-	width: 201px;
-	height: 268px;
-	left: calc(50% - 201px/2 + 0.5px);
-	top: 95px;  (-26px)
+	width: 202px;
+	height: 260px;
+	left: calc(50% - 202px/2);
+	top: 105px;
 	background: #D9D9D9;
-}*/
+	object-fit: cover;
+}
 
 /*사진 안의 글씨*/
-.polaroid-content{
-    position: absolute;
-    width: 200px;
+.polaroid-content.polaroid-horizontal{
+   position: absolute;
+	width: 200px;
 	height: 40px;
-	left: calc(50% - 198px/2);
-    top: 262px;
+	left: calc(50% - 200px/2);
+	top: 250px;
 
     font-family: 'InkLipquid';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    
     text-align: center;
     color: #000000;
 }
 
-/*사진 안의 글씨(세로)
-.polaroid-content{
-    position: absolute;
-    width: auto;
-    height: 23px;
-	left: calc(50% - 181px/2 + 0.5px);
-    top: 360px;(-26px)
+.polaroid-content.polaroid-vertical{
+   position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+	top: 357px;
 
     font-family: 'InkLipquid';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 142%;
+    
     text-align: center;
     color: #000000;
-}*/
-
-
+}
 
 /* 맨 위에 현재 숫자*/
 .name1{
@@ -293,7 +302,16 @@
 	text-align: center;
 }
 
+.url-copy {
+	border: none;
+	padding: 0;
+}
+
 /*링크복사하기 누르면 나오는 선택사항*/
+.link-select-box {
+	display: none;
+}
+
 .link-select { 
 	position: absolute;
 	background: #FFFFFF; 
