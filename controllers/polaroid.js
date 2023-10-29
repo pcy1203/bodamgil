@@ -22,7 +22,7 @@ exports.renderPolaroids = async (req, res, next) => {
 	order: [[ 'createdAt', 'DESC' ]],
   });
   if (polaroids.length === 0) {
-	return res.redirect(`/myself/polaroid?message=noPolaroid`);
+	return res.redirect('/myself/polaroid?message=noPolaroid');
   }
   res.render('polaroid/view', { polaroids });
 };
@@ -33,7 +33,7 @@ exports.renderPolaroid = async (req, res, next) => {
 	where: { id },
   });
   if (!polaroid) {
-	return res.redirect(`/myself/polaroid?message=wrongAddressError`);
+	return res.redirect('/myself/polaroid?message=wrongAddressError');
   }
   res.render('polaroid/polaroid', { polaroid });
 };
@@ -45,17 +45,17 @@ exports.renderWrite = (req, res, next) => {
 exports.renderSuccess = async (req, res, next) => {
   const id = req.params.id;
   const { isOwner, polaroid } = await isPolaroidOwner(req.user.dataValues.id, id);
-  if (!polaroid) {
-	return res.redirect(`/myself/polaroid?message=wrongAddressError`);
-  } else if (!isOwner) {
-	return res.redirect(`/myself/polaroid/write?message=notOwnerError`);
+  if (!polaroid || !isOwner) {
+	return res.redirect('/myself/polaroid?message=wrongAddressError');
   }
   res.render('polaroid/success', { polaroid });
 };
 
 exports.writePolaroid = async (req, res, next) => {
-  // TODO - 유효성 검사 추가하기
   const { content, color, size } = req.body;
+  if (!req.file) return res.redirect('/myself/polaroid/write?message=noPhotoError');
+  if (content.length === 0) return res.redirect('/myself/polaroid/write?message=noDataError');
+  if (content.length > 30) return res.redirect('/myself/polaroid/write?message=longDataError');
   try {
 	const polaroid = await Polaroid.create({
 	  image: `polaroid/${req.file.filename}`,

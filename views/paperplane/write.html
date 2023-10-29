@@ -14,7 +14,7 @@
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane/1"> <img src="../../../photo/paperplane/previous.png" class="previous"></a>
+	    <a href="/myself/paperplane/{{ id }}"> <img src="../../../photo/paperplane/previous.png" class="previous"></a>
 		<img src="../../../photo/polaroid/menu.png" class="menu">
 	  </div>
 	
@@ -68,8 +68,8 @@
 
 			<div class="block-4">
 				<h1>{{ owner }}님이 잘하는 일을 적어주세요!</h1>
-				<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요." require>
-				<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요." require></textarea>
+				<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요. (14글자 이내)" maxlength="14" require>
+				<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요." maxlength="437" require></textarea>
 				<button class="back" type="button">BACK</button>
 				<button class="next" type="button">SEND</button>
 			</div>
@@ -87,6 +87,21 @@
 	</div>
   </body>
   <script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	
+	  if (message) {
+		switch (message) {
+  		  case 'noDataError':
+			alert('닉네임, 텍스트 모두 입력해주세요!');
+    		break;
+  		  case 'longDataError':
+			alert('닉네임은 14자 이내, 텍스트는 437자 이내로 입력해주세요!');
+    		break;
+		}
+	  }
+	};  
+	  
 	let page = 1;
 	const changePage = (currentPage) => {
 	  for (let i = 1; i <= 4; i++) {

@@ -96,6 +96,7 @@ color: #000000;
 	font-weight: 300;
 	font-size: 12px;
 	text-align: left;
+	word-break: break-all;
 }
 
 .note{

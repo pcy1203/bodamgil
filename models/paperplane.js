@@ -8,13 +8,13 @@ class PaperPlane extends Sequelize.Model {
 		allowNull: false,
 	  },
 	  name: {
-		type: Sequelize.STRING(20),
+		type: Sequelize.STRING(14),
 		allowNull: false,
 	  },
 	  relationship: {
 	    type: Sequelize.ENUM('friend', 'couple', 'family', 'school', 'colleague', 'etc'),
 		allowNull: false,
-		defaultValue: 'etc',
+		defaultValue: 'friend',
 	  },
 	  createdAt: {
 		type: Sequelize.DATE,

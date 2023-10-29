@@ -37,6 +37,9 @@ exports.renderGlassBottle = async (req, res, next) => {
   const id = req.params.id;
   try {
 	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	if (!glassBottle) {
+	  return res.redirect('/myself/paperplane?message=wrongAddressError');
+	}
 	const owner = await glassBottle.getUser();
     res.render('paperplane/glassbottle', {
 	  id,
@@ -53,8 +56,10 @@ exports.renderGlassBottle = async (req, res, next) => {
 exports.renderPaperPlane = async (req, res, next) => {
   const id = req.params.id;
   try {
-	const { isOwner } = await isGlassBottleOwner(req.user.dataValues.id, id);
-	if (!isOwner) {
+	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	if (!glassBottle) {
+	  return res.redirect('/myself/paperplane?message=wrongAddressError');
+	} else if (!isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=notOwnerError`);
     }
     const paperPlanes = await PaperPlane.findAll({
@@ -64,7 +69,10 @@ exports.renderPaperPlane = async (req, res, next) => {
 	if (paperPlanes.length === 0) {
 	  return res.redirect(`/myself/paperplane/${id}?message=noPaperPlane`);
 	}
-    res.render('paperplane/paperplane', { paperPlanes });
+    res.render('paperplane/paperplane', {
+	  id,
+	  paperPlanes,
+	});
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -75,7 +83,9 @@ exports.renderWrite = async (req, res, next) => {
   const id = req.params.id;
   try {
 	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
-	if (isOwner) {
+	if (!glassBottle) {
+	  return res.redirect('/myself/paperplane?message=wrongAddressError');
+	} else if (isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=ownerError`);
     }
 	const owner = await glassBottle.getUser();  
@@ -92,9 +102,13 @@ exports.renderWrite = async (req, res, next) => {
 exports.writePaperPlane = async (req, res, next) => {
   const id = req.params.id;
   const { relationship, name, content } = req.body;
+  if (name.length === 0 || content.length === 0) return res.redirect(`/myself/paperplane/${id}/write?message=noDataError`);
+  if (name.length > 14 || content.length > 437) return res.redirect(`/myself/paperplane/${id}/write?message=longDataError`);
   try {
 	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
-	if (isOwner) {
+	if (!glassBottle) {
+	  return res.redirect('/myself/paperplane?message=wrongAddressError');
+	} else if (isOwner) {
 	  return res.redirect(`/myself/paperplane/${id}?message=ownerError`);
     }
 	const paperplane = await PaperPlane.create({
@@ -104,7 +118,7 @@ exports.writePaperPlane = async (req, res, next) => {
 	  writer: req.user.dataValues.id,
 	  recipient: id,
 	});
-	glassBottle.increment({ numPaperPlane: 1 });
+	await glassBottle.increment({ numPaperPlane: 1 });
     return res.redirect(`/myself/paperplane/${id}/write/success`);
   } catch (error) {
 	console.error(error);

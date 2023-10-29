@@ -84,6 +84,24 @@
 	<script src="../../js/polaroidcolor.js"></script>
 	<script src="../../js/polaroidsize.js"></script>
    	<script>
+		window.onload = () => {
+		  let message = (new URLSearchParams(location.search)).get('message');
+
+		  if (message) {
+			switch (message) {
+			  case 'noPhotoError':
+				alert('사진을 선택해주세요!');
+				break;
+			  case 'noDataError':
+				alert('텍스트를 입력해주세요!');
+				break;
+			  case 'longDataError':
+				alert('텍스트는 30자 이내로 입력해주세요!');
+				break;
+			}
+		  }
+		};  
+		
 		// 폴라로이드 안쪽 글씨
 		const innerContent = document.getElementById('inner-content');
 		document.getElementById('content').addEventListener('input', (e) => {
