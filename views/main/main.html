@@ -1,5 +1,112 @@
-{% extends '../layout.html' %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/main.css">
+  </head>
 
-{% block content %}
-  <h1>메인 화면</h1>
-{% endblock %}
+  <body>
+    <div id="container">
+      <div class="header">
+          <div class="title"><a href="/">LOGO</a></div>
+          <nav>
+            <ul class="nav">
+              <li><a href="/about">소개</a></li>
+              <li><a href="/myself">나 알아보기</a>
+                <ul>
+                  <li><a href="/myself">진로게임</a></li>
+                  <li><a href="/myprofile">마이페이지</a></li>
+                </ul>
+              </li>
+              <li><a href="#">세상 알아보기</a>
+                <ul>
+                  <li><a href="#">직무 알아보기</a></li>
+                  <li><a href="#">직업 탐구하기</a></li>
+                  <li><a href="#">진로 검사 실시하기</a></li>
+                  <li><a href="#">도움이 되는 사이트</a></li>
+                </ul>
+              </li>
+              <li><a href="#">이용안내</a>
+              </li>
+              <li><a href="#"><img src="../../photo/main/person.png" class="person"></a>
+                <ul>
+                  <li><a href="/login">로그인</a></li>
+                  <li><a href="/signup">회원가입</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <li><a href="#" class="down"><img src="../../photo/main/menu.png" class="menuimage"></a></li>
+      </div>
+
+      <div class="content">
+        <img src="../../photo/main/main-image.jpg" class="main-image">
+        <h1>Who are you?</h1>
+        <ul>
+          <li>Q. 당신이 가장 행복했던 순간은 언제인가요? </li>
+          <li>Q. 당신이 어떤 사람으로 기억되고 싶나요?</li>
+          <li>Q. 당신이 가장 기분 좋았던 칭찬은 무엇인가요?</li>
+        </ul>
+        <p>몇 십년을 함께 한 나 자신이지만 아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면 우리 함께 찾아봐요.</p>
+        <a href="/myself">여정 시작하기</a>
+      </div>
+
+      <div class="contentme">
+        <span class="contentme_title">나 알아보기</span>
+        <div class="flexbox">
+          <div class="item">
+            <a href="#"><img src="../../photo/main/world-image.jpg"></a>
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+          <div class="item">
+            <a href="#"><img src="../../photo/main/world-image.jpg"></a>
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+          <div class="item">
+            <a href="#"><img src="../../photo/main/world-image.jpg"></a>
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+          <div class="item">
+            <a href="#"><img src="../../photo/main/world-image.jpg"></a>
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+        </div>
+        <a href="/myself" class="more">VIEW MORE</a>
+      </div>
+
+      <div class="contentworld">
+        <img src="../../photo/main/world-image.jpg" class="world-image">
+        <span class="contentworld_title">세상 알아보기</span>
+        <p class="contentworld_explain">현재 세상이 어떻고 어떤 것들을 활용할 수 있는 지 알아봐요.</p>
+        <a href="#" class="more">VIEW MORE</a>
+      </div>
+
+      <div class="footer">
+        <p class="logo">LOGO</p>
+        <a href="#"><img src="../../photo/main/instagram_black.png" class="instagram"></a>
+        <a href="#"><img src="../../photo/main/blog_black.png" class="blog"></a>
+        <a href="#"><img src="../../photo/main/youtube_black.png" class="youtube"></a>
+        <a href="/about" class="aboutus">브랜드 소개</a>
+        <div class="line1"></div>
+        <a href="#" class="notice">공지사항</a>
+        <div class="line2"></div>
+        <a href="#" class="FAQ">FAQ</a>
+        <p class="write">만든이: 박찬영, 김민아</p>
+        <p class="contact">Contact: 010-1111-1111</p>
+      </div>
+	</div>
+</body>
+</html>
