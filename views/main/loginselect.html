@@ -7,7 +7,7 @@
     <style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
-    <link rel="stylesheet" href="../../css/main/login.css">
+    <link rel="stylesheet" href="../../css/main/loginselect.css">
   </head>
 
   <body>
@@ -21,17 +21,9 @@
       <span class="logo">LOGO</span>
 	  <h1 class="logincontent">로그인</h1>
 
-	  <form action="/auth/login" method="post">
-		<div>
-		  <input id="email" type="email" name="email" require autofocus>
-          <label for="email" class="email">이메일 주소</label>  <!--input 클릭 시 없어짐-->
-		</div>
-		<div>
-          <input id="password" type="password" name="password" require>
-		  <label for="password" class="password">비밀번호</label>	   <!--input 클릭 시 없어짐-->
-		</div>
-		<button type="submit" class="login">로그인</button>
-	  </form>
+      <a href="/login" class="email"><img src="../../photo/main/email.png" class="email_image">이메일로 로그인</a>
+	  <a href="/auth/kakao" class="kakaotalk"><img src="../../photo/main/kakaotalk.png" class="kakaotalk_image">카카오톡으로 로그인</a>
+	  <a href="/auth/google" class="google"><img src="../../photo/main/google.png" class="google_image">구글로 로그인</a>
       
       <p class="nosignup">아직 회원이 아니신가요?</p>
       <a href="/signup" class="signup">회원가입</a>

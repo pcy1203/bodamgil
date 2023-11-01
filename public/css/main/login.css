@@ -1,0 +1,158 @@
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*content*/
+.logo{
+    position: absolute;
+    left: calc(50% - 43px/2 - 0.5px);
+    top: 89px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+h1{
+    position: absolute;
+    left: calc(50% - 43px/2 + 0.5px);
+    top: 133px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.email{
+    position: absolute;
+    top: 190px;
+    left: calc(50% - 280px/2);
+    padding: 19px 0 19px 20px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: #BFBFBF;
+}
+#email{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 190px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.password{
+    position: absolute;
+    top: 255px;
+    left: calc(50% - 280px/2);
+    padding: 19px 0 19px 20px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: #BFBFBF;
+}
+#password{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 255px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.login{
+    border-style: none;
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    left: calc(50% - 280px/2);
+    top: 330px;
+    background: #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer
+}
+
+.nosignup{
+    position: absolute;
+    left: calc(50% - 126px/2 - 30px);
+    top: 375px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: #000000;
+}
+.signup{
+    position: absolute;
+    left: calc(50% - 45px/2 + 68.5px);
+    top: 387px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    color: #FF731D;
+}
+.findid{
+    position: absolute;
+    left: calc(50% - 58px/2 - 48px);
+    top: 418px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: #000000;
+}
+.findpassword{
+    position: absolute;
+    left: calc(50% - 69px/2 + 41.5px);
+    top: 418px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: #000000;
+}
