@@ -25,36 +25,41 @@ a {
     text-decoration: none;
     color: black;
 }
-
-/*content*/
-.logo{
+.previous{
     position: absolute;
-    left: calc(50% - 43px/2 - 0.5px);
-    top: 89px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 68px;
+    cursor: pointer;
 }
-h1{
+.findid{
     position: absolute;
-    left: calc(50% - 43px/2 + 0.5px);
-    top: 133px;
+    left: calc(50% - 92px/2 - 1px);
+    top: 100px;
     font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
+    font-weight: 700;
     font-size: 16px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #000000;
 }
+.findid_context{
+    position: absolute;
+    left: calc(50% - 251px/2 - 0.5px);
+    top: 130px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
 
-#email{
+/*폼*/
+#name{
     position: absolute;
     width: 280px;
     height: 50px;
@@ -63,7 +68,7 @@ h1{
     border: 1px solid #BFBFBF;
     border-radius: 10px;
 }
-#password{
+#tel{
     position: absolute;
     width: 280px;
     height: 50px;
@@ -75,7 +80,7 @@ h1{
 input::placeholder{
     font-family: 'Noto Sans KR';
     font-weight: 300;
-    font-size: 10px;
+    font-size: 12px;
     padding: 0 0 0 15px;
 }
 .login{
@@ -94,56 +99,19 @@ input::placeholder{
     cursor: pointer
 }
 
-.nosignup{
-    position: absolute;
-    left: calc(50% - 126px/2 - 30px);
-    top: 375px;
-
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    color: #000000;
-}
-.signup{
-    position: absolute;
-    left: calc(50% - 45px/2 + 68.5px);
-    top: 387px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    color: #FF731D;
-}
-.findid{
-    position: absolute;
-    left: calc(50% - 58px/2 - 48px);
-    top: 418px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    text-decoration-line: underline;
-    color: #000000;
-}
-.findpassword{
-    position: absolute;
-    left: calc(50% - 69px/2 + 41.5px);
-    top: 418px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    text-decoration-line: underline;
-    color: #000000;
-}
 
 @media ( min-width: 1025px ) {
-    #email{
+    .findid{
+        font-size: 18px;
+    }
+    .findid_context{
+        font-size: 14px;
+    }
+    #name{
         width: 400px;
         left: calc(50% - 400px/2);
     }
-    #password{
+    #tel{
         width: 400px;
         left: calc(50% - 400px/2);
     }
@@ -151,25 +119,10 @@ input::placeholder{
         left: calc(50% - 300px/2);
         width: 300px;
         height: 50px;
-        top: 325px;
+        top: 340px;
     }
     input::placeholder{
-        font-size: 12px;
+        font-size: 14px;
         padding: 0 0 0 20px;
-    }
-    .nosignup{
-        font-size: 14px;
-        left: calc(50% - 166px/2 - 30px);
-        top: 373px;
-    }
-    .signup{
-        font-size: 14px;
-        left: calc(50% - 45px/2 + 68.5px);
-    }
-    .findid{
-        font-size: 14px;
-    }
-    .findpassword{
-        font-size: 14px;
     }
 }

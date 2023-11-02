@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    background-color: #f7f7f7;
+}
+ul>li{
+    list-style: none
+}
+a{
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.previous{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 68px;
+    cursor: pointer;
+}
+.contract{
+    position: absolute;
+    left: calc(50% - 92px/2 - 1px);
+    top: 100px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.contract_context{
+    position: absolute;
+    left: calc(50% - 251px/2 - 0.5px);
+    top: 140px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+/*form*/
+#joinForm{
+    width: 320px;
+    margin: 150px auto;
+}
+ul.join_box{
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.checkBox,.checkBox>ul{
+    position: relative;
+    margin: 10px 10px 0 10px;
+}
+.checkBox>ul>li{
+    float: left;
+}
+.checkBox>ul>li:first-child{
+    width: 85%;
+    padding: 15px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+}
+.checkBox>ul>li:nth-child(2){
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -12px;
+}
+.checkBox textarea{
+    width: 96%;
+    height: 90px; 
+    margin: 0 2%;
+    background-color: #f7f7f7;
+    color: #888; 
+    border: none;
+}
+.footBtwrap{
+    margin-top: 20px;
+} 
+.footBtwrap>li{
+    float: left;
+    width: 50%;
+    height: 50px;
+}
+.footBtwrap>li>button{
+    display: block; 
+    width: 98%;
+    height: 100%; 
+    padding: 0 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+}
+.fpmgBt1{
+    background-color: #fff;
+    color:black;
+    border: 0.5px solid #BFBFBF;
+    cursor: pointer;
+}
+.fpmgBt2{
+    border: none;
+    background-color: #FF731D;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+@media ( min-width: 1025px ) {
+    #joinForm {
+        width: 500px;
+    }
+    .contract{
+        font-size: 18px;
+    }
+    .contract_context{
+        font-size: 14px;
+    }
+    .checkBox>ul>li:first-child{
+        font-size: 16px;
+    }
+    .checkBox textarea{
+        height: 150px;
+    }
+}

@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    background-color: #f7f7f7;
+}
+a{
+    text-decoration: none;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.previous{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 68px;
+    cursor: pointer;
+}
+.contract{
+    position: absolute;
+    left: calc(50% - 59px/2 - 0.5px);
+    top: 100px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.contract_context{
+    position: absolute;
+    left: calc(50% - 251px/2 - 0.5px);
+    top: 140px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+/*가운데 콘텐츠*/
+.emailcontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 150px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#email{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 175px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.passwordcontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 240px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#password{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 265px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.passwordcheckcontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 330px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#passwordcheck{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 355px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.namecontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 420px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#name{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 445px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.telcontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 510px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#tel{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 535px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.gendercontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 600px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#gender{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 625px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+.birthcontext {
+    position: absolute;
+    height: 14px;
+    left: calc(50% - 280px/2);
+    top: 690px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+#birthyear{
+    position: absolute;
+    width: 135px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 715px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+#birthmonth{
+    position: absolute;
+    width: 67px;
+    height: 50px;
+    left: calc(50% - 1px);
+    top: 715px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+#birthday{
+    position: absolute;
+    width: 67px;
+    height: 50px;
+    left: calc(50% + 70px);
+    top: 715px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+input::placeholder{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 10px;
+    padding: 0 0 0 15px;
+}
+.gender select{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    padding: 0 0 0 10px;
+}
+.birth select{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    padding: 0 0 0 10px;
+}
+
+/*가입완료 버튼*/
+#joinForm{
+    width: 300px;
+    margin: 740px auto 20px;
+}
+ul.join_box{
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.fpmgBt{
+    display: block; 
+    width: 100%;
+    height: 100%; 
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    border: none;
+    background-color: #FF731D;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+@media ( min-width: 1025px ) {
+    .contract{
+        font-size: 18px;
+    }
+    .emailcontext {
+        left: calc(50% - 380px/2);
+    }
+    #email{
+        left: calc(50% - 380px/2);
+        width: 380px;
+    }
+    .passwordcontext {
+        left: calc(50% - 380px/2);
+    }
+    #password{
+        left: calc(50% - 380px/2);
+        width: 380px;
+    }
+    .passwordcheckcontext {
+        left: calc(50% - 380px/2);
+    }
+    #passwordcheck{
+        left: calc(50% - 380px/2);
+        width: 380px;    
+    }
+    .namecontext {
+        left: calc(50% - 380px/2);
+    }
+    #name{
+        left: calc(50% - 380px/2);
+        width: 380px;    
+    }
+    .telcontext {
+        left: calc(50% - 380px/2);
+    }
+    #tel{
+        left: calc(50% - 380px/2);
+        width: 380px;    
+    }
+    .gendercontext {
+        left: calc(50% - 380px/2);
+    }
+    #gender{
+        left: calc(50% - 380px/2);
+        width: 380px;    
+    }
+    .birthcontext {
+        left: calc(50% - 380px/2);
+    }
+    #birthyear{
+        left: calc(50% - 380px/2);
+        width: 185px;
+    }
+    #birthmonth{
+        left: calc(50% -1px);
+        width: 92.5px;
+    }
+    #birthday{
+        left: calc(50% + 95px);
+        width: 92.5px;
+    }
+    input::placeholder{
+        font-size: 12px;
+        padding: 0 0 0 20px;
+    }
+    .gender select{
+        font-size: 14px;
+        padding: 0 0 0 15px;
+    }
+    .birth select{
+        font-size: 14px;
+        padding: 0 0 0 15px;
+    }
+}

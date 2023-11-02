@@ -1,43 +1,71 @@
-{% extends '../layout.html' %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/signup.css">
+  </head>
 
-{% block content %}
-  <h1>회원가입</h1>
-  <form action="/auth/signup" method="post" enctype="multipart/form-data">
-    <div>
-	  <label for="email">이메일</label>	  
-	  <input id="email" type="email" name="email" require autofocus>
-    </div>
-    <div>
-	  <label for="password">비밀번호</label>	  
-	  <input id="password" type="password" name="password" require>
-    </div>
-    <div>
-	  <label for="confirm">비밀번호 확인</label>	  
-	  <input id="confirm" type="password" name="confirm" require>
-    </div>
-    <div>
-	  <label for="name">이름</label>	  
-	  <input id="name" name="name" require>
-    </div>
-    <div>
-	  <label for="introduction">한 줄 소개</label>	  
-	  <input id="introduction" name="introduction" require>
-    </div>
-    <div>
-	  <label for="image">프로필 사진</label>	  
-	  <input id="image" type="file" name="image" accept="image/*">
-    </div>
-    <div>
-	  <label for="gender">성별</label>	  
-	  <input id="gender-man" type="radio" name="gender" value="man" require checked>남
-	  <input id="gender-woman" type="radio" name="gender" value="woman" require>여
-    </div>
-    <div>
-	  <label for="birth">생년월일</label>	  
-	  <input id="birth-year" name="birth" require>년
-	  <input id="birth-month" name="birth" require>월
-	  <input id="birth-day" name="birth" require>일
-    </div>
-    <button type="submit">회원가입</button>
-  </form>
-{% endblock %}
+  <body>
+
+     <div class="header">
+         <div class="title"><a href="/">LOGO</a></div>
+		 <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+	 </div>
+
+    <img src="../../photo/main/previous.png" class="previous">
+     
+     <span class="contract">이용약관 동의</span>
+     <p class="contract_context">서비스 이용을 위하여 필수 약관 동의가 필요합니다.</p>
+
+     <form action="" id="joinForm">
+        <ul class="join_box">
+            <li class="checkBox check01">
+                <ul class="clearfix">
+                    <li>모두 동의합니다.</li>
+                    <li class="checkAllBtn">
+                        <input type="checkbox" name="chkAll" id="chk" class="chkAll">
+                    </li>
+                </ul>
+            </li>
+            <li class="checkBox check02">
+                <ul class="clearfix">
+                    <li>__(브랜드이름)____이용약관 동의(필수)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk"> 
+                    </li>
+                </ul>
+                <textarea name="" id="">여러분을 환영합니다. 네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+            </li>
+            <li class="checkBox check03">
+                <ul class="clearfix">
+                    <li>개인정보 수집 및 이용동의(필수)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+                <textarea name="" id="">여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+            </li>
+            <li class="checkBox check03">
+                <ul class="clearfix">
+                    <li>마케팅 정보 알림 수신 동의(선택)</li>
+                    <li class="checkBtn">
+                        <input type="checkbox" name="chk">
+                    </li>
+                </ul>
+                <textarea name="" id="">여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+            </li>
+        </ul>
+        
+        <ul class="footBtwrap clearfix">
+            <li><button class="fpmgBt1">비동의</button></li>
+            <li><button class="fpmgBt2">동의</button></li>
+        </ul>
+    </form>
+
+</body>
+</html>

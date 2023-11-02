@@ -168,3 +168,33 @@ h1{
     text-decoration-line: underline;
     color: #000000;
 }
+
+@media ( min-width: 1025px ) {
+    .email{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .kakaotalk{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .google{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .nosignup{
+        font-size: 14px;
+        left: calc(50% - 166px/2 - 30px);
+        top: 373px;
+    }
+    .signup{
+        font-size: 14px;
+        left: calc(50% - 45px/2 + 68.5px);
+    }
+    .findid{
+        font-size: 14px;
+    }
+    .findpassword{
+        font-size: 14px;
+    }
+}

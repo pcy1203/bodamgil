@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/findid1.css">
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="title"><a href="/">LOGO</a></div>
+		  <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+	 </div>
+		  
+   <img src="../../photo/main/previous.png" class="previous">
+   <span class="findid">아이디찾기</span>
+   <p class="findid_context">가입 시 입력하셨던 휴대폰 번호를 입력해주세요</p>
+
+	  <form>
+      <div>
+        <input id="name" type="text" name="name" require placeholder="이름을 입력해주세요">
+      </div>
+      <div>
+        <input id="tel" type="tel" name="tel" require placeholder="가입 시 휴대폰 번호를 입력해주세요" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13">
+      </div>
+      <button type="submit" class="login">아이디 찾기</button>
+	  </form>
+    
+	
+
+	</body>
+</html>
+	  
