@@ -9,9 +9,7 @@
 	  </style> 
     <link rel="stylesheet" href="../../css/main/login.css">
   </head>
-
   <body>
-
      <div class="header">
          <div class="title"><a href="/">LOGO</a></div>
 		 <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
@@ -22,6 +20,7 @@
 	  <h1 class="logincontent">로그인</h1>
 
 	  <form action="/auth/login" method="post">
+	    <input id="redirect" name="redirect" value="{{ redirectURL }}" style="display: none;" readonly>
 		<div>
 		  <input id="email" type="email" name="email" require autofocus placeholder="이메일 주소">
 		</div>
@@ -36,7 +35,23 @@
       <a href="#" class="findid">아이디 찾기</a>
       <a href="#" class="findpassword">비밀번호 찾기</a>
 	</div>  
-	
 	</body>
 </html>
 	  
+<!--
+  <h1>로그인</h1>
+  <form action="/auth/login" method="post">
+    <div>
+	  <label for="email">이메일</label>	  
+	  <input id="email" type="email" name="email" require autofocus>
+    </div>
+    <div>
+	  <label for="password">비밀번호</label>	  
+	  <input id="password" type="password" name="password" require>
+    </div>
+    <button type="submit">로그인</button>
+  </form>
+  <a href="/auth/kakao">카카오톡으로 로그인</a>
+  <a href="/auth/google">구글로 로그인</a>
+  <a href="/signup">회원가입</a>
+-->

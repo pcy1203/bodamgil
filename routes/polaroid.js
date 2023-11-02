@@ -3,7 +3,8 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const { isLoggedIn } = require('../middlewares');
-const { renderMain, renderPolaroids, renderPolaroid, renderWrite, renderSuccess, writePolaroid } = require('../controllers/polaroid');
+const { renderMain, renderPolaroids, renderPolaroid, renderWrite,
+	   renderSuccess, writePolaroid, deletePolaroid } = require('../controllers/polaroid');
 
 const router = express.Router();
 
@@ -49,6 +50,9 @@ router.get('/:id/success', isLoggedIn, renderSuccess);
 // TODO - URL을 공유한다면 id를 숫자 말고 암호로 만들기
 // GET /myself/polaroid/:id
 router.get('/:id', isLoggedIn, renderPolaroid);
+
+// DELETE /myself/polaroid/:id
+router.delete('/:id', isLoggedIn, deletePolaroid);
 
 // GET /myself/polaroid
 router.get('/', renderMain);

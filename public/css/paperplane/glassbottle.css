@@ -83,8 +83,15 @@ li {
 	list-style: none;
 	float: left;
 	left: -10px;
+}
+
+li.active {
+    transition: background-color .4s;
 	cursor: pointer;
-    transition: all .4s;
+}
+
+li.inactive {
+	background: #BFBFBF;
 }
 
 li button{
@@ -95,7 +102,7 @@ li:last-child{
 	 margin: 150px 0px 0 0;
 }
 
-li:hover{
+li.active:hover{
     background-color: #0066FF;
 }
 
@@ -303,6 +310,10 @@ li:hover{
 
 
 /*링크복사하기 누르면 나오는 선택사항*/
+.link-select-box {
+	display: none;
+}
+
 .link-select { 
 	position: absolute;
 	background: #FFFFFF; 

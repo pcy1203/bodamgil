@@ -7,6 +7,10 @@ const changePolaroidSize = (size) => {
 	  document.querySelectorAll('.photo').forEach((element) => {
 		element.style.height = "151px";
 	  });
+	  document.querySelectorAll('.size-vertical').forEach((element) => {
+		element.classList.remove('size-vertical');
+		element.classList.add('size-horizontal');
+	  });
 	  break;
 		  
 	case 'vertical':
@@ -15,6 +19,10 @@ const changePolaroidSize = (size) => {
 	  });
 	  document.querySelectorAll('.photo').forEach((element) => {
 		element.style.height = "260px";
+	  });
+	  document.querySelectorAll('.size-horizontal').forEach((element) => {
+		element.classList.remove('size-horizontal');
+		element.classList.add('size-vertical');
 	  });
 	  break;
   }

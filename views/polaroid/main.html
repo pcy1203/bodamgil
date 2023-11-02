@@ -23,10 +23,25 @@
 		<img src="../../photo/polaroid/main_camera.png" class="main_camera">
 
 	</div>	  
-	  
-	  </div>
 	</div>
 	</div>
+	</div>
+	<script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	
+	  if (message) {
+		switch (message) {
+  		  case 'wrongAddressError':
+			alert('주소에 오류가 있거나 폴라로이드 사진이 삭제된 것 같아요.');
+    		break;
+  		  case 'noPolaroid':
+			alert('작성한 폴라로이드 사진이 없어요. 시작하기 버튼을 눌러보세요!')
+    		break;
+		}
+	  }
+	};  
+	</script>
   </body>
 </html>
 	

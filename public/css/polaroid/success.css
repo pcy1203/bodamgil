@@ -53,56 +53,118 @@
 	width: 360px;
 	height: 595px;
 	top: 45px;	
-	/*background: #EFEDF7;*/
 }
 
+.main.polaroid-red {
+	background: #FFF3F3;
+}
+
+.main.polaroid-yellow {
+	background: #FDF9E9;
+}
+
+.main.polaroid-green {
+	background: #EEF8E4;
+}
+
+.main.polaroid-blue {
+	background: #EBFAFF;
+}
+
+.main.polaroid-purple {
+	background: #EFEDF7;
+}
 /*스티커*/
 .sticker{
 	position: absolute;
 	width: 32px;
 	height: 32px;
 	left: 164px;
-	top: 60px;
+	top: 65px;
 	border-radius: 50%;
-	/*background: rgba(197, 187, 227, 0.8);*/
 }
 
-.polaroid-download {
+.sticker.polaroid-red {
+	background: rgba(255, 189, 189, 0.8);
+}
+
+.sticker.polaroid-yellow {
+	background: rgba(246, 227, 146, 0.8);
+}
+
+.sticker.polaroid-green {
+	background: rgba(171, 220, 122, 0.8);
+}
+
+.sticker.polaroid-blue {
+	background: rgba(151, 228, 255, 0.8);
+}
+
+.sticker.polaroid-purple {
+	background: rgba(197, 187, 227, 0.8);
+}
+
+.polaroid-download.polaroid-horizontal {
 	position: relative;
-	height: 400px;
+	height: 408px;
+	background: inherit;
+}
+
+.polaroid-download.polaroid-vertical {
+	position: relative;
+	height: 515px;
 	background: inherit;
 }
 
 /*폴라로이드 뒤에 하얀색*/
-.polaroid{
+.polaroid.polaroid-horizontal{
 	position: absolute;
 	width: 250px;
 	height: 227px;
 	left: calc(50% - 250px/2);
-	top: 76px;
+	top: 81px;
+	background: #FFFFFF;
+	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+.polaroid.polaroid-vertical {
+	position: absolute;
+	width: 250px;
+	height: 334px;
+	left: calc(50% - 250px/2);
+	top: 81px;
 	background: #FFFFFF;
 	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
 }
 
 /*안에 사진*/
-.photo{
+.photo.polaroid-horizontal{
 	position: absolute;
 	width: 202px;
 	height: 151px;
 	left: calc(50% - 202px/2);
-	top: 100px;
+	top: 105px;
+	background: #D9D9D9;
+	object-fit: cover;
+}
+
+.photo.polaroid-vertical{
+	position: absolute;
+	width: 202px;
+	height: 260px;
+	left: calc(50% - 202px/2);
+	top: 105px;
 	background: #D9D9D9;
 	object-fit: cover;
 }
 
 /*사진 안의 글씨*/
-.polaroid-content{
+.polaroid-content.polaroid-horizontal{
    position: absolute;
 	width: 200px;
 	height: 40px;
 	left: calc(50% - 200px/2);
-	top: 240px;
-    /*세로일 때) top: 348px;  */
+	top: 250px;
 
     font-family: 'InkLipquid';
     font-style: normal;
@@ -113,9 +175,24 @@
     color: #000000;
 }
 
-.url-copy, .image-download {
+.polaroid-content.polaroid-vertical{
+   position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+	top: 357px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    
+    text-align: center;
+    color: #000000;
+}
+
+.url-copy {
 	border: none;
-	background-color: transparent;
 	padding: 0;
 }
 
@@ -278,6 +355,10 @@
 }
 
 /*링크복사하기 누르면 나오는 선택사항*/
+.link-select-box {
+	display: none;
+}
+
 .link-select { 
 	position: absolute;
 	background: #FFFFFF; 
@@ -365,4 +446,88 @@
     font-size: 9px;
     text-align: center;
     color: #000000;
+}
+
+/*이미지 삭제 => 휴지통 버튼 누르면 뜨도록*/
+.black{
+	position: relative;
+	width: 360px;
+	height: 640px;
+	left: 0px;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.alert{
+	position: absolute;
+	width: 290px;
+	height: 190px;
+	left: calc(50% - 290px/2);
+	top: 200px;
+	background: #FFFFFF;
+	border-radius: 10px;	
+}
+
+.line1{
+	position: absolute;
+	width: 288px;
+	left: calc(50% - 290px/2);
+	top: 337px;
+	border: 0.1px solid #BFBFBF;
+}
+
+.line2{
+	position: absolute;
+	width: 50px;
+	left: 160px;
+	top: 363px;
+	border: 0.1px solid #BFBFBF;
+	transform: rotate(90deg);
+}
+
+.delete {
+    display: none;
+}
+
+.delete p{
+	position: absolute;
+	width: auto;
+	left: 90px;
+	top: 220px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+	color: #000000;
+}
+
+.no{
+	position: absolute;
+	width: 34px;
+	height: 26px;
+	left: 95px;
+	top: 350px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	color: #000000;
+	cursor: pointer;
+}
+
+.yes{
+	position: absolute;
+	width: 34px;
+	height: 26px;
+	left: 240px;
+	top: 350px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 18px;
+	text-align: center;
+	color: #FF0000;
+	cursor: pointer;
 }

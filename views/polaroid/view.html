@@ -14,22 +14,22 @@
 	<div style="display: flex; justify-content: center;">
 	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
 	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
+	    <a href="/myself/polaroid"><img src="../../photo/polaroid/previous.png" class="previous"></a>
 		<span class="home">홈 화면</span>
 		<img src="../../photo/polaroid/trash.png" class="trash">
 		<img src="../../photo/polaroid/menu.png" class="menu">
-    <div class="main">
-		<div class="number-block">
+    <div class="main polaroid-{{ polaroids[0].color }}">
         <span class="name1"></span>
         <span class="name2">/</span>
         <span class="name3">{{ polaroids.length }}</span>
-		</div>
 	    {% for polaroid in polaroids %}
-		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }}">
-        <div class="polaroid"></div>
-        <div class="sticker"></div>
-        <img src="../../{{ polaroid.image }}" class="photo">
-        <p class="polaroid-content">{{ polaroid.content }}</p>
+		{% if polaroid.size == "horizontal" %}<div class="contents-{{ loop.index }}" style="height: 53px; background: inherit;"></div>{% endif %}
+		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }} id-{{ polaroid.id }}">
+        <div class="polaroid polaroid-{{ polaroid.size }}"></div>
+        <div class="sticker polaroid-{{ polaroid.color }}"></div>
+        <img src="../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+        <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
+			
 		</div>
 		{% endfor %}
 
@@ -42,7 +42,9 @@
             <div class="link-select"></div>
             <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
             <img src="../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
-            <img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span>
+			{% for polaroid in polaroids %}
+			<button class="url-copy contents-{{ loop.index }}" data-clipboard-text="{{ polaroid.id }}"><img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+			{% endfor %}
         </div>
 
 		<img src="../../../photo/paperplane/back.png" class="back">
@@ -65,32 +67,63 @@
 </body>
   <script src="../../../js/changepage.js"></script>
   <script src="../../../js/polaroidcolor.js"></script>
-  <script src="../../../js/polaroidsize.js"></script>
-  <script>
-	const color = document.querySelector('.polaroid-download').classList[1].split("-")[1];
-	changePolaroidColor(color);
-	const size = document.querySelector('.polaroid-download').classList[2].split("-")[1];
-	changePolaroidSize(size);
-  </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
 	document.querySelector('.back').addEventListener('click', () => {
 	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
-	  let size = document.querySelector(`.polaroid-download.contents-${page}`).classList[2].split("-")[1];
 	  changePolaroidColor(color);
-	  changePolaroidSize(size);
 	});
+	  
 	document.querySelector('.next').addEventListener('click', () => {
 	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
-	  let size = document.querySelector(`.polaroid-download.contents-${page}`).classList[2].split("-")[1];
-		console.log(size);
 	  changePolaroidColor(color);
-	  changePolaroidSize(size);
+	});
+	  
+	const linkSelectBox = document.querySelector('.link-select-box');  
+	document.querySelector('.link-copy').addEventListener('click', (e) => {
+		linkSelectBox.style.display = (linkSelectBox.style.display === 'none') ? 'block' : 'none';
+	});
+	  
+	const deleteAlert = document.querySelector('.delete');  
+	document.querySelector('.trash').addEventListener('click', (e) => {
+		deleteAlert.style.display = (deleteAlert.style.display === 'none') ? 'block' : 'none';
+	});
+	  
+	document.querySelector('.yes').addEventListener('click', (e) => {
+		let id = document.querySelector(`.polaroid-download.contents-${page}`).classList[4].split("-")[1];
+		axios.delete(`/myself/polaroid/${id}`)
+		  .catch((err) => {
+			console.error(err);
+		  })
+		  .finally(() => {
+			location.reload();
+		});
+	});
+	  
+	document.querySelector('.no').addEventListener('click', (e) => {
+		deleteAlert.style.display = 'none';
 	});
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script> 
   <script>
+	// URL 복사
+	document.querySelectorAll('.url-copy').forEach((button) => {
+	  let id = button.getAttribute("data-clipboard-text");
+	  button.setAttribute("data-clipboard-text", `${location.origin + location.pathname.slice(0, -4) + id}`);
+	});
+	const clipboard = new ClipboardJS('.url-copy');
+      
+        clipboard.on('success', function(e) {
+            alert("URL 복사 완료!");
+        });
+      
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+	
+	// 이미지 저장 
 	document.querySelector('.image-download').addEventListener('click', (e) => {
       domtoimage.toBlob(document.querySelector(`.polaroid-download.contents-${page}`)).then(function (blob) {
         window.saveAs(blob, 'image.png');

@@ -4,9 +4,13 @@ let page = startPageNumber;
 const changePage = (currentPage) => {
   for (let i = 1; i <= numContents; i++) {
 	if (i !== currentPage) {
-	  document.querySelector(`.contents-${i}`).style.display = 'none';
+	  document.querySelectorAll(`.contents-${i}`).forEach((element) => {
+		element.style.display = 'none';
+	  });
 	} else {
-	  document.querySelector(`.contents-${i}`).style.display = 'block';
+	  document.querySelectorAll(`.contents-${i}`).forEach((element) => {
+		element.style.display = 'block';
+	  });
 	}
   }
   document.querySelector('.back').style.display = (currentPage === startPageNumber ? 'none' : 'block');

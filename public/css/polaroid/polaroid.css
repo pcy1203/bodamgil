@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+.header{
+	position: relative;
+}
+
+.previous{
+	width: 13px;
+	height: 10px;
+	position: absolute;
+	left: 16px;
+	top: 17.5px;
+}
+
+.home{
+	position: absolute;
+	left: 38px;
+	top: 17.5px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 10px;
+	text-align: center;
+
+	color: #000000;
+}
+
+.menu{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 319px;
+	top: 9.5px;	
+}
+
+.main{
+	position: absolute;
+	width: 360px;
+	height: 595px;
+	top: 45px;
+}
+
+.main.polaroid-red {
+	background: #FFF3F3;
+}
+
+.main.polaroid-yellow {
+	background: #FDF9E9;
+}
+
+.main.polaroid-green {
+	background: #EEF8E4;
+}
+
+.main.polaroid-blue {
+	background: #EBFAFF;
+}
+
+.main.polaroid-purple {
+	background: #EFEDF7;
+}
+
+/*스티커*/
+.sticker{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 164px;
+	border-radius: 50%;
+}
+
+.sticker.polaroid-red {
+	background: rgba(255, 189, 189, 0.8);
+}
+
+.sticker.polaroid-yellow {
+	background: rgba(246, 227, 146, 0.8);
+}
+
+.sticker.polaroid-green {
+	background: rgba(171, 220, 122, 0.8);
+}
+
+.sticker.polaroid-blue {
+	background: rgba(151, 228, 255, 0.8);
+}
+
+.sticker.polaroid-purple {
+	background: rgba(197, 187, 227, 0.8);
+}
+
+.sticker.polaroid-horizontal {
+	top: 135px;
+}
+
+.sticker.polaroid-vertical {
+	top: 85px;
+}
+
+/*폴라로이드 뒤에 하얀색*/
+.polaroid.polaroid-horizontal{
+	position: absolute;
+	width: 250px;
+	height: 227px;
+	left: calc(50% - 250px/2);
+	top: 151px;
+	background: #FFFFFF;
+	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+.polaroid.polaroid-vertical {
+	position: absolute;
+	width: 250px;
+	height: 334px;
+	left: calc(50% - 250px/2);
+	top: 101px;
+	background: #FFFFFF;
+	box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+/*안에 사진*/
+.photo.polaroid-horizontal{
+	position: absolute;
+	width: 202px;
+	height: 151px;
+	left: calc(50% - 202px/2);
+	top: 175px;
+	background: #D9D9D9;
+	object-fit: cover;
+}
+
+.photo.polaroid-vertical{
+	position: absolute;
+	width: 202px;
+	height: 260px;
+	left: calc(50% - 202px/2);
+	top: 125px;
+	background: #D9D9D9;
+	object-fit: cover;
+}
+
+/*사진 안의 글씨*/
+.polaroid-content.polaroid-horizontal{
+   position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+	top: 320px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    
+    text-align: center;
+    color: #000000;
+}
+
+.polaroid-content.polaroid-vertical{
+   position: absolute;
+	width: 200px;
+	height: 40px;
+	left: calc(50% - 200px/2);
+	top: 377px;
+
+    font-family: 'InkLipquid';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    
+    text-align: center;
+    color: #000000;
+}

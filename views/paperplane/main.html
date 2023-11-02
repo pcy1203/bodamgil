@@ -31,5 +31,18 @@
 	  </div>
 	</div>
 	</div>
+	<script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	
+	  if (message) {
+		switch (message) {
+  		  case 'wrongAddressError':
+			alert('주소에 오류가 있거나 유리병이 삭제된 것 같아요.');
+    		break;
+		}
+	  }
+	};  
+	</script>
   </body>
 </html>

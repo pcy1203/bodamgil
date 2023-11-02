@@ -16,7 +16,8 @@ exports.login = (req, res, next) => {
 		console.error(loginError);
 		return next(loginError);
 	  }
-	  return res.redirect('/');
+	  const redirectURL = req.body.redirect ? req.body.redirect : "/";
+	  return res.redirect(redirectURL);
 	})
   })(req, res, next);
 };
