@@ -1,0 +1,435 @@
+#container {
+    margin: 0;
+    padding: 0px;
+ }
+
+ /*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+.nav{
+    display: none;
+    position: absolute;
+    right: 0px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header li {
+    list-style-type: none;
+}
+     
+.person{
+  width: 22px;
+  height: 22px;
+} 
+.mypage{
+    position: absolute;
+    left: calc(50% - 175px/2 - 63.5px);
+    top: 83px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+/*content*/
+.photo{
+    position: absolute;
+    width: 90px;
+    height: 120px;
+    left: calc(50% - 175px/2 - 63.5px);
+    top: 133px;
+    background: #D9D9D9;
+}
+.name{
+    position: absolute;
+    left: calc(50% - 50px/2 - 13px);
+    top: 136px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: #FF731D;
+}
+.namecontent{
+    position: absolute;
+    height: 16px;
+    left: calc(50% - 70px/2 - 3px);
+    top: 140px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.introduction{
+    position: absolute;
+    left: calc(50% - 102px/2 + 13px);
+    top: 190px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: #FF731D;
+}
+.introductioncontent{
+    position: absolute;
+    width: 190px;
+    left: calc(50% - 189px/2 + 56.5px);
+    top: 195px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.issue{
+    position: absolute;
+    left: calc(50% - 89px/2 - 85.5px);
+    top: 270px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+.issuecontent{
+    position: absolute;
+    left: calc(50% - 90px/2 - 85px);
+    top: 275px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;    
+}
+.expire{
+    position: absolute;
+    left: calc(50% - 114px/2 + 73px);
+    top: 270px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+.expirecontent{
+    position: absolute;
+    left: calc(50% - 111px/2 + 72.5px);
+    top: 275px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.profile{
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    left: calc(50% - 80px/2 + 72.5px);
+    top: 332px;
+    border: 1px solid #BFBFBF;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+    color: #6E6E6E;   
+}
+.profile:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+    font-weight: 400;
+}
+
+/*contentme*/
+.line{
+    position: absolute;
+    width: 320px;
+    height: 0px;
+    left: calc(50% - 320px/2);
+    top: 385px;
+    opacity: 0.3;
+    border: 1px solid #BFBFBF;
+}
+.contentme img{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: calc(50% - 175px/2 - 63.5px);
+}
+.contentme a{
+    position: absolute;
+    left: calc(50% - 106px/2 - 50.5px);
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.write{
+    top: 405px;
+}
+.writecontent{
+    top: 408px;
+}
+.heart{
+    top: 455px;
+}
+.heartcontent{
+    top: 458px;
+}
+.success{
+    top: 505px;
+}
+.successcontent{
+   top: 508px;
+}
+.logout{
+    position: absolute;
+    width: 255px;
+    height: 40px;
+    left: calc(50% - 130px);
+    top: 578px;
+    border: 1px solid #BFBFBF;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 40px;
+    align-items: center;
+    text-align: center;
+    color: #6E6E6E;     
+    margin: 0 0 20px 0; 
+}
+.logout:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+    font-weight: 400;
+}
+
+
+
+
+@media ( min-width: 1025px ) {
+    #container {
+      width: 1024px;
+      margin: auto;
+    }
+  
+
+    /*header*/
+    .header{
+        height: 45px;
+    }
+    .nav{
+        display: flex;
+
+    }
+    .header ul li{
+      padding: 0px 20px;
+      font-family: 'Noto Sans KR';
+	    font-weight: 400;
+	    font-size: 16px;
+      line-height: 100%;
+    }
+
+    .menuimage{
+        display: none;
+    }
+
+    /*노트북: 메뉴바 드롭다운*/
+    .black{
+        display: none;
+      }
+      .white{
+        display: none;
+      }
+      .header nav ul {
+        font-size: 0;
+        margin: 0;
+        padding: 0;
+      }
+      .header nav ul li {
+        display: inline-block;
+        position: relative;
+      }
+      .header nav ul li a {
+        color: black;
+        display: block;
+        font-size: 14px;
+        padding: 15px 14px;
+        transition: 0.3s linear;
+      }
+      .header nav ul li:hover { 
+        font-weight: 700;
+      }
+      .header nav ul li ul {
+        display: none;
+        position: absolute;
+        width: 200px;
+        right: -10px;
+      }
+      .header nav ul li ul li {
+        display: block;
+      }
+      .header nav ul li ul li a {
+        background: #FF731D ;
+        color: white;
+        display: block;
+        padding: 10px 14px;
+      }
+      .menu_mobile{
+        display: none;
+      }
+
+      /*content*/
+      .mypage{
+        left: calc(50% - 175px/2 - 354.5px);        
+        font-size: 22px;
+      }
+      .photo{
+        width: 200px;
+        height: 260px;
+        left: calc(50% - 175px/2 - 354.5px);
+      }
+      .name{
+        left: calc(50% - 60px/2 - 186px);
+        font-size: 12px;
+      }
+      .namecontent{
+        left: calc(50% - 60px/2 - 186px);
+        font-size: 18px;
+        top: 145px;
+      }
+      .introduction{
+        left: calc(50% - 60px/2 - 186px);
+        font-size: 12px;
+        top: 205px;
+      }
+      .introductioncontent{
+        width: 800px;
+        left: calc(50% - 60px/2 - 186px);
+        font-size: 18px;
+        top: 210px;
+      }
+      .issue{
+        left: calc(50% - 60px/2 - 186px);
+        font-size: 12px;
+        top: 270px;
+      }
+      .issuecontent{
+        width: 800px;
+        left: calc(50% - 60px/2 - 186px);  
+        font-size: 18px;
+        top: 275px;
+      }
+      .expire{
+        left: calc(50% - 137px/2 + 28.5px);
+        font-size: 12px;
+        top: 270px;
+      }
+      .expirecontent{
+        width: 800px;
+        left: calc(50% - 137px/2 + 28.5px);
+        font-size: 18px;
+        top: 275px;
+      }
+      .profile{
+        width: 140px;
+        height: 40px;
+        line-height: 40px;
+        left: calc(50% - 60px/2 - 186px);
+        top: 340px;
+      }
+
+      /*contentme*/
+      .line{
+        left: calc(50% - 175px/2 - 354.5px);
+        top: 415px;
+        width: 1000px;
+      }
+      .contentme img{
+        left: calc(50% - 175px/2 - 354.5px);
+      }
+      .contentme a{
+        left: calc(50% - 80px/2 - 354.5px);
+      }
+      .write{
+        top: 435px;
+      }
+      .writecontent{
+        top: 438px;
+      }
+      .heart{
+        top: 485px;
+      }
+      .heartcontent{
+        top: 488px;
+      }
+      .success{
+        top: 535px;
+      }
+      .successcontent{
+       top: 538px;
+      }
+      .logout{
+        width: 160px;
+        height: 40px;
+        left: calc(50% - 140px/2 - 354.5px);
+        top: 600px;
+        font-size: 12px;
+      }
+}
