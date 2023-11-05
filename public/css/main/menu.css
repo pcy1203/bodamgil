@@ -27,6 +27,66 @@
     border-bottom: 2px solid #BFBFBF;
 }
 
+.menu-container .header-login{
+    position: relative;
+    background-color: #FF731D;
+    height: 200px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+}
+
+.menu-container .header-login .profile {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 25px;
+    top: 69px;
+}
+
+.menu-container .header-login .name{
+    position: absolute;
+    width: 115px;
+    left: 120px;
+    top: 82px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.menu-container .header-login .mypage{
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 250px;
+    top: 74px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: #FF731D;
+}
+
+.menu-container .header-login .intro{
+    position: absolute;
+    width: 65%;
+    left: 120px;
+    top: 118px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
 .menu-container a{
     text-decoration: none;
     color: inherit;
@@ -35,6 +95,7 @@
 .menu-container button{
 	padding: 0;
 	cursor: pointer;
+	border: 0;
 }
 
 /*header*/
@@ -75,7 +136,7 @@
     width: 12px;
     height: 12px;
     right: 25px;
-    top: 154px;
+    /* top: 154px; */ /* 로그인 시 282px */
     transform: rotate(90deg)  /*안눌러진 경우는 없애면 됨*/
 }
 .menu-container .right2{
@@ -83,7 +144,7 @@
     width: 12px;
     height: 12px;
     right: 25px;
-    top: 210px;
+    /* top: 210px; */ /* 로그인 시 338px */
     /* 나 알아보기 안펼쳤을 때는 top: 210px 펼쳤을 때는 top: 279px */
     transform: rotate(90deg) /*안눌러진 경우는 없애면 됨*/
 }
@@ -112,7 +173,7 @@
     width: 320px;
     height: 50px;
     left: calc(50% - 320px/2);
-    top: 540px;
+    /* top: 540px; */
 
     border: 1px solid #FF731D;
     border-radius: 30px;
@@ -126,12 +187,13 @@
     text-align: center;
     color: #FF731D;
 }
+
 .menu-container .signup{
     position: absolute;
     width: 320px;
     height: 50px;
     left: calc(50% - 320px/2);
-    top: 600px;
+    /* top: 600px; */
     margin: 0 0 40px 0;
 
     border: 1px solid #BFBFBF;
@@ -145,4 +207,22 @@
     align-items: center;
     text-align: center;
     color: #000000;
+}
+
+.menu-container .logout{
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: calc(50% - 320px/2);
+    /* top: 715px; */
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
 }
