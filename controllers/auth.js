@@ -30,7 +30,10 @@ exports.logout = (req, res) => {
 	
 exports.signup = async (req, res, next) => {
   // TODO - 유효성 검사 추가하기
-  const { email, password, confirm, name, introduction, gender, birth } = req.body;
+  // introduction 없음
+  // 전화번호 저장 필요
+  const { email, password, confirm, name, introduction, gender,
+		 birthyear, birthmonth, birthday } = req.body;
   try {
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
@@ -48,9 +51,9 @@ exports.signup = async (req, res, next) => {
 	  introduction,
 	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
 	  gender,
-	  birthDate: new Date(birth[0], Number(birth[1]) - 1, birth[2]),
+	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	});
-	return res.redirect('/?message=signupSuccess');
+	return res.redirect('/signupsuccess');
   } catch (error) {
 	console.error(error);
 	return next(error);

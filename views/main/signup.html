@@ -11,18 +11,17 @@
   </head>
 
   <body>
-
-     <div class="header">
-         <div class="title"><a href="/">LOGO</a></div>
-		 <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
-	 </div>
-
+    <div class="header">
+      <div class="title"><a href="/">LOGO</a></div>
+	  <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+	</div>
     <img src="../../photo/main/previous.png" class="previous">
      
+	<div class="block-1">
      <span class="contract">이용약관 동의</span>
      <p class="contract_context">서비스 이용을 위하여 필수 약관 동의가 필요합니다.</p>
 
-     <form action="" id="joinForm">
+     <form id="checkForm">
         <ul class="join_box">
             <li class="checkBox check01">
                 <ul class="clearfix">
@@ -39,7 +38,7 @@
                         <input type="checkbox" name="chk"> 
                     </li>
                 </ul>
-                <textarea name="" id="">여러분을 환영합니다. 네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+                <textarea>여러분을 환영합니다. 네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
             </li>
             <li class="checkBox check03">
                 <ul class="clearfix">
@@ -48,7 +47,7 @@
                         <input type="checkbox" name="chk">
                     </li>
                 </ul>
-                <textarea name="" id="">여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+                <textarea>여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
             </li>
             <li class="checkBox check03">
                 <ul class="clearfix">
@@ -57,7 +56,7 @@
                         <input type="checkbox" name="chk">
                     </li>
                 </ul>
-                <textarea name="" id="">여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+                <textarea>여러분을 환영합니다.네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
             </li>
         </ul>
         
@@ -65,7 +64,111 @@
             <li><button class="fpmgBt1">비동의</button></li>
             <li><button class="fpmgBt2">동의</button></li>
         </ul>
-    </form>
+      </form>
+	</div>
 
+	<div class="block-2">
+     <span class="contract">정보입력</span>
+
+     <form action="/auth/signup" method="post" id="joinForm">
+		<div>
+          <span class="emailcontext">아이디</span>
+		  <input id="email" type="email" name="email" require autofocus placeholder="아이디를 입력해주세요">
+		</div>
+		<div>
+          <span class="passwordcontext">비밀번호</span>
+          <input id="password" type="password" name="password" require minlength="8" maxlength="20" placeholder="비밀번호를 입력해주세요(문자, 숫자, 특수문자 포함 8~20자)">
+		</div>
+        <div>
+            <span class="confirmcontext">비밀번호확인</span>
+            <input id="confirm" type="password" name="confirm" require placeholder="비밀번호를 한 번 더 입력해주세요">
+        </div>
+        <div>
+            <span class="namecontext">이름</span>
+            <input id="name" type="text" name="name" require placeholder="이름을 입력해주세요">
+        </div>
+        <div>
+          <span class="telcontext">전화번호</span>
+          <input id="tel" type="tel" name="tel" require placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13">
+        </div>
+        <div class="gender">
+            <span class="gendercontext">성별</span>
+            <select name="gender" id="gender">    
+                <option value="man">남자</option>
+                <option value="woman">여자</option>
+            </select>
+        </div>
+        <div class="birth">
+            <span class="birthcontext">생년월일</span>
+            <select name="birthyear" class="box" id="birthyear">
+			  <option disabled selected>년도</option>
+			  {% for i in range(1900, 2024) %}
+			    <option value="{{ i }}">{{ i }}년</option>
+              {% endfor %}
+            </select>
+            <select name="birthmonth" class="box" id="birthmonth">
+			  <option disabled selected>월</option>
+			  {% for i in range(1, 13) %}
+			    <option value="{{ i }}">{{ i }}월</option>
+              {% endfor %}
+            </select>
+            <select name="birthday" class="box" id="birthday">
+			  <option disabled selected>일</option>
+			  {% for i in range(1, 32) %}
+			    <option value="{{ i }}">{{ i }}일</option>
+              {% endfor %}
+			</select>
+        </div>
+        <button class="fpmgBt">가입완료</button>
+	  </form>
+
+		
+	</div>
 </body>
+<script>
+  document.querySelector('#checkForm').addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+	
+  document.querySelector('.fpmgBt1').addEventListener("click", (e) => {
+    alert("이용약관 비동의 시 서비스 이용이 제한됩니다.");
+  });
+	
+  const checkButtons = document.querySelectorAll('.checkBtn input');
+  const checkAllButton = document.querySelector('.checkAllBtn input');
+	
+  let allChecked = false;
+  const isChecked = () => {
+	allChecked = true;
+	checkButtons.forEach((button) => {
+	  if (!button.checked) allChecked = false;
+	});
+  };
+	
+  document.querySelector('.fpmgBt2').addEventListener("click", (e) => {
+	isChecked();
+	if (!allChecked) {
+	  alert("이용약관에 모두 동의해주세요!");
+	} else {
+	  document.querySelector('.block-1').style.display = 'none';
+	  document.querySelector('.block-2').style.display = 'block';
+	}
+  });
+	
+  checkAllButton.addEventListener("click", (e) => {
+    checkButtons.forEach((button) => {
+	  button.checked = checkAllButton.checked;
+    });
+	allChecked = checkAllButton.checked;
+  });
+	
+  checkButtons.forEach((button) => {
+	button.addEventListener("click", (e) => {
+	  isChecked();
+	  checkAllButton.checked = allChecked;
+	})
+  });
+	
+</script>
+	
 </html>

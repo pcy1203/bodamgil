@@ -79,17 +79,14 @@ a {
 
 
 /*가입완료 버튼*/
-#joinForm{
-    width: 300px;
-    margin: 360px auto 0;
-}
 ul.join_box{
     border: 1px solid #ddd;
     background-color: #fff;
 }
 .fpmgBt{
     display: block; 
-    width: 100%;
+    width: 300px;
+    margin: 360px auto 0;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;
@@ -109,11 +106,9 @@ ul.join_box{
     .welcome{
         font-size: 16px;
     }
-    #joinForm{
-        margin: 370px auto 0;
-    }
     .fpmgBt{
         font-size: 16px;
+        margin: 370px auto 0;
     }
 
 }

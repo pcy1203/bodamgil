@@ -15,6 +15,10 @@ exports.renderSignup = (req, res, next) => {
   res.render('main/signup');
 };
 
+exports.renderSignupSuccess = (req, res, next) => {
+  res.render('main/signupsuccess');
+};
+
 exports.renderMyProfile = (req, res, next) => {
   res.render('main/myprofile');
 };
