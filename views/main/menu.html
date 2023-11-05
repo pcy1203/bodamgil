@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html lang="ko">
   <head>
@@ -11,38 +12,122 @@
   </head>
 
   <body>
+-->
+  <div class="menu-back">
+  </div>
+  <div class="menu-container">
     <div class="header">
         <a href="/"><img src="../../photo/main/home.png" class="home"></a>
-        <a href="#"><img src="../../photo/main/exit.png" class="exit"></a>
+        <button class="exit-btn"><img src="../../photo/main/exit.png" class="exit"></button>
     </div> 
 
     <nav>
         <ul class="nav">
-          <li><a href="/about">소개</a></li>
-          <li><a href="/myself">나 알아보기</a>
-          <img src="../../photo/main/right.png" class="right1">
+          <li class="menu-1"><a href="/about">소개</a></li>
+          <li class="menu-2"><a href="/myself">나 알아보기</a>
+          <img src="../../photo/main/right.png" class="right1 menu-2-close">
             <ul>
-                <li><a href="#">진로게임</a></li>
-                <li><a href="/myprofile">마이페이지</a></li>
+                <li class="submenu"><a href="#">진로게임</a></li>
+                <li class="submenu"><a href="/myprofile">마이페이지</a></li>
             </ul>
           </li>
-          <li><a href="#">세상 알아보기</a>
-          <img src="../../photo/main/right.png" class="right2">
+          <li class="menu-3"><a href="#">세상 알아보기</a>
+          <img src="../../photo/main/right.png" class="right2 menu-3-close">
             <ul>
-              <li><a href="#">직무 알아보기</a></li>
-              <li><a href="#">직업 탐구하기</a></li>
-              <li><a href="#">진로 검사 실시하기</a></li>
-              <li><a href="#">도움이 되는 사이트</a></li>
+              <li class="submenu"><a href="#">직무 알아보기</a></li>
+              <li class="submenu"><a href="#">직업 탐구하기</a></li>
+              <li class="submenu"><a href="#">진로 검사 실시하기</a></li>
+              <li class="submenu"><a href="#">도움이 되는 사이트</a></li>
             </ul>
           </li>
-          <li><a href="#">이용안내</a></li>
+          <li class="menu-4"><a href="#">이용안내</a></li>
         </ul>
       </nav>
-
       <div class="button">
-        <a href="/login" class="login">로그인</a>
-        <a href="/signup" class="signup">회원가입</a>
+        <a href="/login" class="login menu-button" style="top: 334px">로그인</a>
+        <a href="/signup" class="signup menu-button" style="top: 394px">회원가입</a>
       </div>
-      
+  </div>
+  <script>
+  const menuBlock = document.querySelector('.menu-container');
+  menuBlock.style.height = `${document.documentElement.scrollHeight}px`;
+  const menuBack = document.querySelector('.menu-back');
+  menuBack.style.height = `${document.documentElement.scrollHeight}px`;
+	  
+  document.querySelector('.menu-btn').addEventListener('click', () => {
+	menuBack.style.display = 'block';
+	menuBlock.style.display = 'block';
+  });
+	  
+  document.querySelector('.menu-container .exit-btn').addEventListener('click', () => {
+	menuBack.style.display = 'none';
+	menuBlock.style.display = 'none';
+  });
+	  
+  const menu2Arrow = document.querySelector('.menu-2-close');
+  const menu3Arrow = document.querySelector('.menu-3-close');
+  const menuButtons = document.querySelectorAll('.menu-button');
+	  
+  document.querySelector('.menu-2').addEventListener('click', () => {
+	if (menu2Arrow.classList[1] === 'menu-2-close') {
+	  document.querySelectorAll('.menu-2 li.submenu').forEach((submenu) => {
+		submenu.style.display = 'block';
+	  })
+	  menu2Arrow.style.transform = 'rotate(270deg)';
+	  menu3Arrow.style.top = '279px';
+	  menuButtons.forEach((button) => {
+		button.style.top = `${Number(button.style.top.slice(0, -2)) + 69}px`;
+	  });
+	  menu2Arrow.classList.remove('menu-2-close');
+	  menu2Arrow.classList.add('menu-2-open');
+	} else {
+	  document.querySelectorAll('.menu-2 li.submenu').forEach((submenu) => {
+		submenu.style.display = 'none';
+	  })
+	  menu2Arrow.style.transform = 'rotate(90deg)';
+	  menu3Arrow.style.top = '210px';
+	  menuButtons.forEach((button) => {
+		button.style.top = `${Number(button.style.top.slice(0, -2)) - 69}px`;
+	  });
+	  menu2Arrow.classList.remove('menu-2-open');
+	  menu2Arrow.classList.add('menu-2-close');
+	}
+  });
+	  
+  document.querySelector('.menu-3').addEventListener('click', () => {
+	if (menu3Arrow.classList[1] === 'menu-3-close') {
+	  document.querySelectorAll('.menu-3 li.submenu').forEach((submenu) => {
+		submenu.style.display = 'block';
+	  })
+	  menu3Arrow.style.transform = 'rotate(270deg)';
+	  menuButtons.forEach((button) => {
+		button.style.top = `${Number(button.style.top.slice(0, -2)) + 137}px`;
+	  });
+	  menu3Arrow.classList.remove('menu-3-close');
+	  menu3Arrow.classList.add('menu-3-open');
+	} else {
+	  document.querySelectorAll('.menu-3 li.submenu').forEach((submenu) => {
+		submenu.style.display = 'none';
+	  })
+	  menu3Arrow.style.transform = 'rotate(90deg)';
+	  menuButtons.forEach((button) => {
+		button.style.top = `${Number(button.style.top.slice(0, -2)) - 137}px`;
+	  });
+	  menu3Arrow.classList.remove('menu-3-open');
+	  menu3Arrow.classList.add('menu-3-close');
+	}
+  });
+	  
+  window.addEventListener('resize', (e) => {
+	menuBlock.style.height = `${document.documentElement.scrollHeight}px`;
+	if (window.innerWidth >= 1025) {
+	  menuBack.style.display = 'none';
+	  menuBlock.style.display = 'none';
+	}
+  });
+	  
+  </script>
+<!--    
   </body>
 </html>
+-->
