@@ -19,39 +19,59 @@
       <span class="logo">LOGO</span>
 	  <h1 class="logincontent">로그인</h1>
 
-	  <form action="/auth/login" method="post">
-	    <input id="redirect" name="redirect" value="{{ redirectURL }}" style="display: none;" readonly>
-		<div>
-		  <input id="email" type="email" name="email" require autofocus placeholder="이메일 주소">
-		</div>
-		<div>
-          <input id="password" type="password" name="password" require  placeholder="비밀번호">
-		</div>
-		<button type="submit" class="login">로그인</button>
-	  </form>
-      
-      <p class="nosignup">아직 회원이 아니신가요?</p>
-      <a href="/signup" class="signup">회원가입</a>
-      <a href="#" class="findid">아이디 찾기</a>
-      <a href="#" class="findpassword">비밀번호 찾기</a>
-	</div>  
-	</body>
-</html>
+	  <div class="block-1">
+		  <div class="email"><img src="../../photo/main/email.png" class="email_image">이메일로 로그인</div>
+		  <a href="/auth/kakao" class="kakaotalk"><img src="../../photo/main/kakaotalk.png" class="kakaotalk_image">카카오톡으로 로그인</a>
+		  <a href="/auth/google" class="google"><img src="../../photo/main/google.png" class="google_image">구글로 로그인</a>
+
+		  <p class="nosignup">아직 회원이 아니신가요?</p>
+		  <a href="/signup" class="signup">회원가입</a>
+		  <a href="#" class="findid">아이디 찾기</a>
+		  <a href="#" class="findpassword">비밀번호 찾기</a>  
+		  
+	  </div>
 	  
-<!--
-  <h1>로그인</h1>
-  <form action="/auth/login" method="post">
-    <div>
-	  <label for="email">이메일</label>	  
-	  <input id="email" type="email" name="email" require autofocus>
-    </div>
-    <div>
-	  <label for="password">비밀번호</label>	  
-	  <input id="password" type="password" name="password" require>
-    </div>
-    <button type="submit">로그인</button>
-  </form>
-  <a href="/auth/kakao">카카오톡으로 로그인</a>
-  <a href="/auth/google">구글로 로그인</a>
-  <a href="/signup">회원가입</a>
--->
+	  <div class="block-2" style="display: none">
+		  <form action="/auth/login" method="post">
+			<input id="redirect" name="redirect" value="{{ redirectURL }}" style="display: none;" readonly>
+			<div>
+			  <input id="email" type="email" name="email" require autofocus placeholder="이메일 주소">
+			</div>
+			<div>
+			  <input id="password" type="password" name="password" require  placeholder="비밀번호">
+			</div>
+			<button type="submit" class="login">로그인</button>
+		  </form>
+
+		  <p class="nosignup">아직 회원이 아니신가요?</p>
+		  <a href="/signup" class="signup">회원가입</a>
+		  <a href="#" class="findid">아이디 찾기</a>
+		  <a href="#" class="findpassword">비밀번호 찾기</a>
+	  </div>
+		  
+	  </div>
+	</body>
+	<script>
+	document.querySelector('.email').addEventListener('click', () => {
+	  document.querySelector('.block-1').style.display = 'none';
+	  document.querySelector('.block-2').style.display = 'block';
+	});
+		
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	  if (message) {
+	    document.querySelector('.block-2').style.display = 'block';
+		switch (message) {
+  		  case 'noUserError':
+			alert('존재하지 않는 이메일 주소입니다!')
+    		break;
+  		  case 'passwordError':
+			alert('잘못된 비밀번호입니다!')
+    		break;
+		}
+	  } else {
+	    document.querySelector('.block-1').style.display = 'block';
+	  }
+	}
+	</script>
+</html>
