@@ -1,4 +1,23 @@
-.header{
+.menu-back {
+	position: absolute;
+	top: 0px;
+	z-index: 9;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.menu-container {
+	position: absolute;
+	top: 0px;
+	z-index: 10;
+	width: 80%;
+	margin-left: 20%;
+	background: white;
+	display: none;
+}
+
+.menu-container .header{
     position: relative;
     background-color: white;
     height: 70px;
@@ -8,20 +27,25 @@
     border-bottom: 2px solid #BFBFBF;
 }
 
-a{
+.menu-container a{
     text-decoration: none;
     color: inherit;
 }
 
+.menu-container button{
+	padding: 0;
+	cursor: pointer;
+}
+
 /*header*/
-.home{
+.menu-container .home{
     position: absolute;
     width: 25px;
     height: 25px;
     right: 75px;
     top: 22.5px;
 }
-.exit{
+.menu-container .exit{
     position: absolute;
     width: 25px;
     height: 25px;
@@ -30,12 +54,12 @@ a{
 }
 
 /*nav*/
-nav ul{
+.menu-container nav ul{
     list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
-nav ul li{
+.menu-container nav ul li{
     padding: 20px 20px;
     font-family: 'Noto Sans KR';
 	font-weight: 400;
@@ -43,10 +67,10 @@ nav ul li{
     line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
 }
-nav ul li:last-child{
+.menu-container nav ul li:last-child{
     border-bottom: none;
 }
-.right1{
+.menu-container .right1{
     position: absolute;
     width: 12px;
     height: 12px;
@@ -54,16 +78,16 @@ nav ul li:last-child{
     top: 154px;
     transform: rotate(90deg)  /*안눌러진 경우는 없애면 됨*/
 }
-.right2{
+.menu-container .right2{
     position: absolute;
     width: 12px;
     height: 12px;
     right: 25px;
-    top: 279px;  /*나 알아보기 펼쳤을 때 위치*/
-    /* 나 알아보기 안펼쳤을 때는 top: 210px*/
+    top: 210px;
+    /* 나 알아보기 안펼쳤을 때는 top: 210px 펼쳤을 때는 top: 279px */
     transform: rotate(90deg) /*안눌러진 경우는 없애면 됨*/
 }
-nav ul li ul li{
+.menu-container nav ul li ul li{
     padding: 10px 25px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -71,19 +95,23 @@ nav ul li ul li{
     line-height: 100%;
     border-bottom: none;
 }
-nav ul li ul li:first-child{
+.menu-container nav ul li ul li:first-child{
     padding: 20px 25px 10px 25px;
 }
-nav ul li ul li:last-child{
+.menu-container nav ul li ul li:last-child{
     padding: 10px 25px 0px 25px;
 }
 
+.submenu {
+	display: none;
+}
+
 /*button*/
-.login{
+.menu-container .login{
     position: absolute;
     width: 320px;
     height: 50px;
-    left: calc(50% - 320px/2 + 4px);
+    left: calc(50% - 320px/2);
     top: 540px;
 
     border: 1px solid #FF731D;
@@ -98,11 +126,11 @@ nav ul li ul li:last-child{
     text-align: center;
     color: #FF731D;
 }
-.signup{
+.menu-container .signup{
     position: absolute;
     width: 320px;
     height: 50px;
-    left: calc(50% - 320px/2 + 4px);
+    left: calc(50% - 320px/2);
     top: 600px;
     margin: 0 0 40px 0;
 
