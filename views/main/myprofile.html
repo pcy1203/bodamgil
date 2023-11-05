@@ -50,15 +50,16 @@
     <img src="../../photo/polaroid/beach.jpg" class="photo">
     <div>
       <span class="name">이름/Name</span>  
-      <p class="namecontent">홍길동123</p>
+      <p class="namecontent">{{ user.name }}</p>
     </div>
     <div>
       <span class="introduction">한 줄 소개/Introduction</span>  
-      <p class="introductioncontent">나에 대해 한줄로 소개합니다. 나는 이런 사람입니다.</p>
+      <p class="introductioncontent">
+		  {% if user.introduction %}{{ user.introduction }}{% else %}한 줄 소개를 작성해주세요.{% endif %}</p>
     </div>
     <div>
       <span class="issue">발급일/Date of Issue</span>  
-      <p class="issuecontent">09 OCT 2023</p>
+      <p class="issuecontent">{{ user.signupDate }}</p>
     </div>
     <div>
       <span class="expire">기간 만료일/Date of expire</span>  
@@ -82,14 +83,14 @@
     </div>
   </div>
 
-  <a href="#" class="profile">프로필 수정</a>
-  <a href="#" class="logout">로그아웃</a>
+  <a href="/setprofile" class="profile">프로필 수정</a>
+  <a href="/auth/logout" class="logout">로그아웃</a>
 
 	
 	</body>
-
-  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script>
+	/*
     $('nav li').hover(
         function() {
             $('ul', this).stop().slideDown(200);
@@ -98,25 +99,9 @@
             $('ul', this).stop().slideUp(200);
         }
     );
-</script>
-</html>
-	  
-
-
-
-<!--{% extends '../layout.html' %}
-
-{% block content %}
-  <body>
-	<img src="{% if user.image %}{{ user.image }}{% else %}profilebasic.jpeg{% endif %}" alt="프로필 사진">
-	<h1>{{ user.name }}</h1>
-	<p>{{ user.introduction }}</p>
-	<p id="date-of-issue">{{ user.signupDate }}</p>
-	<p>나를 찾을 때까지</p>
-  </body>
-  <script>
-	const dateNode = document.getElementById('date-of-issue');
+	*/
+	const dateNode = document.querySelector('.issuecontent');
 	const dateArray = dateNode.innerHTML.split(" ");
 	dateNode.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[3]}`;
-  </script>
-{% endblock %} -->
+</script>
+</html>

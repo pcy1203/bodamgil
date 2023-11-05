@@ -34,3 +34,11 @@ exports.renderChangePassword = (req, res, next) => {
 exports.renderAbout = (req, res, next) => {
   res.render('main/about');
 };
+
+exports.renderNotice = (req, res, next) => {
+  res.render('main/notice');
+};
+
+exports.renderFaq = (req, res, next) => {
+  res.render('main/faq');
+};

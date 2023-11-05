@@ -1,7 +1,7 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 const { renderMain, renderLogin, renderSignup, renderSignupSuccess, renderMyProfile, renderSetProfile,
-	   renderChangePassword, renderAbout } = require('../controllers/main');
+	   renderChangePassword, renderAbout, renderNotice, renderFaq } = require('../controllers/main');
 
 const router = express.Router();
 
@@ -25,6 +25,12 @@ router.get('/changepassword', isLoggedIn, renderChangePassword);
 
 // GET /about
 router.get('/about', renderAbout);
+
+// GET /notice
+router.get('/notice', renderNotice);
+
+// GET /faq
+router.get('/faq', renderFaq);
 
 // GET /
 router.get('/', renderMain);
