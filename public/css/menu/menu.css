@@ -64,6 +64,7 @@
     height: 40px;
     left: 250px;
     top: 74px;
+	display: block;
     background: #FFFFFF;
     border-radius: 30px;
     font-family: 'Noto Sans KR';
@@ -186,6 +187,7 @@
     align-items: center;
     text-align: center;
     color: #FF731D;
+	background: #ffffff;
 }
 
 .menu-container .signup{
@@ -207,6 +209,7 @@
     align-items: center;
     text-align: center;
     color: #000000;
+	background: #ffffff;
 }
 
 .menu-container .logout{
@@ -225,4 +228,5 @@
     align-items: center;
     text-align: center;
     color: #FF731D;
+	background: #ffffff;
 }

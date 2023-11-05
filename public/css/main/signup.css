@@ -1,46 +1,23 @@
-*{
+.block-1 *, .block-2 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #f7f7f7;
 }
-ul>li{
+
+ul > li{
     list-style: none;
 }
-a{
-    text-decoration: none;
-}
+
 .clearfix::after{
     content: "";
     display: block;
     clear: both;
 }
 
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-    right: 20px;
-    top: 10px;
-}
 a {
     text-decoration: none;
     color: black;

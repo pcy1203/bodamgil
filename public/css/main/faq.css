@@ -1,43 +1,22 @@
-.header{
-    position: relative;
-    background-color: white;
-    height: 70px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-}
-
-a{
+a {
     text-decoration: none;
-    color: inherit;
+    color: black;
 }
 
-/*header*/
 .header {
     position: relative;
     background-color: white;
-    height: 45px;
+    height: 45px; /* 70px */
     font-size: 14px;
     margin: 0;
     padding: 0px;
   }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
 .menuimage{
 	position: absolute;
 	width: 25px;
 	height: 25px;
   right: 20px;
   top: 10px;
-}
-a {
-    text-decoration: none;
-    color: black;
 }
 .previous{
     position: absolute;
@@ -63,12 +42,12 @@ a {
 }
 
 /*nav*/
-nav ul{
+.content nav ul{
     list-style-type: none;
     padding: 0px;
     margin: 87px 0 0 0;
 }
-nav ul li{
+.content nav ul li{
     padding: 20px 30px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -76,20 +55,20 @@ nav ul li{
     line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
 }
-nav ul li span{
+.content nav ul li span{
     font-family: 'Noto Sans KR';
 	font-weight: 400;
 	font-size: 14px;
     color:#FF731D;
 }
-nav ul li:last-child{
+.content nav ul li:last-child{
     border-bottom: none;
 }
-nav ul li:first-child{
+.content nav ul li:first-child{
     border-top: 0.3px solid #BFBFBF;
 }
 
-nav ul li p{
+.content nav ul li p{
     padding: 10px 25px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -104,17 +83,17 @@ nav ul li p{
         top: 90px;
         font-size: 24px;
     }
-    nav ul{
+    .content nav ul{
         margin: 100px 0 0 0;
     }
-    nav ul li{
+    .content nav ul li{
         font-size: 14px;
         padding: 20px 40px;
     }
-    nav ul li span{
+    .content nav ul li span{
         font-size: 16px;
     }
-    nav ul li p{
+    .content nav ul li p{
         padding: 15px 25px;
         font-size: 14px;
     }

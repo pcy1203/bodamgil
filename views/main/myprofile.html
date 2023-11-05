@@ -8,100 +8,58 @@
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
     <link rel="stylesheet" href="../../css/main/myprofile.css">
+    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
   </head>
 
   <body>
-
-    <div class="header">
-      <div class="title"><a href="/main.html">LOGO</a></div>
-      <nav>
-        <ul class="nav">
-          <li><a href="#">소개</a></li>
-          <li><a href="#" class="down">나 알아보기</a>
-            <ul>
-              <li><a href="#">진로게임</a></li>
-              <li><a href="#">마이페이지</a></li>
-            </ul>
-          </li>
-          <li><a href="#" class="down">세상 알아보기</a>
-            <ul>
-              <li><a href="#">직무 알아보기</a></li>
-              <li><a href="#">직업 탐구하기</a></li>
-              <li><a href="#">진로 검사 실시하기</a></li>
-              <li><a href="#">도움이 되는 사이트</a></li>
-            </ul>
-          </li>
-          <li><a href="#">이용안내</a>
-          </li>
-          <li><a href="#" class="down"><img src="../../photo/main/person.png" class="person"></a>
-            <ul>
-              <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <li><a href="#" class="down"><img src="../../photo/main/menu.png" class="menuimage"></a></li>
-  </div>
-	
-  <span class="mypage">마이페이지 MYPAGE</span>
-
-  <div class="content">
-    <img src="../../photo/polaroid/beach.jpg" class="photo">
-    <div>
-      <span class="name">이름/Name</span>  
-      <p class="namecontent">{{ user.name }}</p>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}
+      <div class="content">
+		<span class="mypage">마이페이지 MYPAGE</span>
+        <img src="../../photo/polaroid/beach.jpg" class="photo">
+        <div>
+          <span class="name">이름/Name</span>  
+          <p class="namecontent">{{ user.name }}</p>
+        </div>
+        <div>
+          <span class="introduction">한 줄 소개/Introduction</span>  
+          <p class="introductioncontent">
+		    {% if user.introduction %}{{ user.introduction }}{% else %}한 줄 소개를 작성해주세요.{% endif %}
+		  </p>
+        </div>
+        <div>
+          <span class="issue">발급일/Date of Issue</span>  
+          <p class="issuecontent">{{ user.signupDate }}</p>
+        </div>
+        <div>
+          <span class="expire">기간 만료일/Date of expire</span>  
+          <p class="expirecontent">나를 찾을 때까지</p>
+        </div>
+	  </div>  
+      <div class="contentme">
+        <div class="line"></div>
+        <div>
+          <img src="../../photo/main/write.png" class="write">
+          <a href="#" class="writecontent">내 기록보기</a>  
+        </div>
+        <div>
+          <img src="../../photo/main/heart.png" class="heart">
+          <a href="#" class="heartcontent">관심목록</a>  
+        </div>
+        <div>
+          <img src="../../photo/main/success.png" class="success">
+          <a href="#" class="successcontent">완료한 진로 게임</a>  
+        </div>
+      </div>
+      <a href="/setprofile" class="profile">프로필 수정</a>
+      <a href="/auth/logout" class="logout">로그아웃</a>
     </div>
-    <div>
-      <span class="introduction">한 줄 소개/Introduction</span>  
-      <p class="introductioncontent">
-		  {% if user.introduction %}{{ user.introduction }}{% else %}한 줄 소개를 작성해주세요.{% endif %}</p>
-    </div>
-    <div>
-      <span class="issue">발급일/Date of Issue</span>  
-      <p class="issuecontent">{{ user.signupDate }}</p>
-    </div>
-    <div>
-      <span class="expire">기간 만료일/Date of expire</span>  
-      <p class="expirecontent">나를 찾을 때까지</p>
-    </div>
-	</div>  
-
-  <div class="contentme">
-    <div class="line"></div>
-    <div>
-      <img src="../../photo/main/write.png" class="write">
-      <a href="#" class="writecontent">내 기록보기</a>  
-    </div>
-    <div>
-      <img src="../../photo/main/heart.png" class="heart">
-      <a href="#" class="heartcontent">관심목록</a>  
-    </div>
-    <div>
-      <img src="../../photo/main/success.png" class="success">
-      <a href="#" class="successcontent">완료한 진로 게임</a>  
-    </div>
-  </div>
-
-  <a href="/setprofile" class="profile">프로필 수정</a>
-  <a href="/auth/logout" class="logout">로그아웃</a>
-
-	
-	</body>
-<!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-<script>
-	/*
-    $('nav li').hover(
-        function() {
-            $('ul', this).stop().slideDown(200);
-        },
-        function() {
-            $('ul', this).stop().slideUp(200);
-        }
-    );
-	*/
+	{% include "menu/menu.html" %}
+  </body>
+  <script>
 	const dateNode = document.querySelector('.issuecontent');
 	const dateArray = dateNode.innerHTML.split(" ");
 	dateNode.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[3]}`;
-</script>
+  </script>
 </html>

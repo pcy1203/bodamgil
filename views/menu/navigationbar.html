@@ -1,0 +1,58 @@
+<div class="navigationbar">
+  <div class="title"><a href="/">LOGO</a></div>
+  <nav>
+	<ul class="nav">
+	  <li><a href="/about">소개</a></li>
+	  <li><a href="/myself">나 알아보기</a>
+		<ul>
+		  <li><a href="/myself">진로게임</a></li>
+		  <li><a href="/myprofile">마이페이지</a></li>
+		</ul>
+	  </li>
+	  <li><a href="#">세상 알아보기</a>
+		<ul>
+		  <li><a href="#">직무 알아보기</a></li>
+		  <li><a href="#">직업 탐구하기</a></li>
+		  <li><a href="#">진로 검사 실시하기</a></li>
+		  <li><a href="#">도움이 되는 사이트</a></li>
+		</ul>
+	  </li>
+	  <li><a href="#">이용안내</a>
+	  </li>
+	  <li><a href="#"><img src="../../photo/main/person.png" class="person"></a>
+		<ul>
+		  {% if user %}
+	      <li><a href="/auth/logout">로그아웃</a></li>
+		  <li><a href="/myprofile">마이페이지</a></li>
+	      {% else %}
+		  <li><a href="/login">로그인</a></li>
+		  <li><a href="/signup">회원가입</a></li>
+		  {% endif %}
+		</ul>
+	  </li>
+	</ul>
+  </nav>
+  <li><img src="../../photo/main/menu.png" class="menuimage menu-btn"></li>
+</div>
+<script>
+  document.querySelector('.navigationbar nav ul li:nth-child(2)').addEventListener('mouseover', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(2) ul').style.height = '72px';
+  });
+  document.querySelector('.navigationbar nav ul li:nth-child(2)').addEventListener('mouseout', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(2) ul').style.height = '0px';
+  });
+
+  document.querySelector('.navigationbar nav ul li:nth-child(3)').addEventListener('mouseover', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(3) ul').style.height = '144px';
+  });
+  document.querySelector('.navigationbar nav ul li:nth-child(3)').addEventListener('mouseout', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(3) ul').style.height = '0px';
+  });
+	
+  document.querySelector('.navigationbar nav ul li:nth-child(5)').addEventListener('mouseover', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(5) ul').style.height = '72px';
+  });
+  document.querySelector('.navigationbar nav ul li:nth-child(5)').addEventListener('mouseout', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(5) ul').style.height = '0px';
+  });
+</script>

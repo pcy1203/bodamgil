@@ -1,4 +1,4 @@
-*{
+.content *{
     margin: 0;
     padding: 0;
     box-sizing: border-box
@@ -6,41 +6,14 @@
 body{
     background-color: #f7f7f7;
 }
-a{
+a {
     text-decoration: none;
+    color: black;
 }
 .clearfix::after{
     content: "";
     display: block;
     clear: both;
-}
-
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-}
-a {
-    text-decoration: none;
-    color: black;
 }
 
 .previous{
@@ -75,8 +48,6 @@ a {
     text-align: center;
     color: #000000;
 }
-
-
 
 /*가입완료 버튼*/
 ul.join_box{

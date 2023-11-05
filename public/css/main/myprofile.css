@@ -1,50 +1,8 @@
-#container {
-    margin: 0;
-    padding: 0px;
- }
-
- /*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-}
-.nav{
-    display: none;
-    position: absolute;
-    right: 0px;
-}
 a {
     text-decoration: none;
     color: black;
 }
-
-.header li {
-    list-style-type: none;
-}
-     
-.person{
-  width: 22px;
-  height: 22px;
-} 
-.mypage{
+.content .mypage{
     position: absolute;
     left: calc(50% - 175px/2 - 63.5px);
     top: 83px;
@@ -260,83 +218,9 @@ a {
     font-weight: 400;
 }
 
-
-
-
 @media ( min-width: 1025px ) {
-    #container {
-      width: 1024px;
-      margin: auto;
-    }
-  
-
-    /*header*/
-    .header{
-        height: 45px;
-    }
-    .nav{
-        display: flex;
-
-    }
-    .header ul li{
-      padding: 0px 20px;
-      font-family: 'Noto Sans KR';
-	    font-weight: 400;
-	    font-size: 16px;
-      line-height: 100%;
-    }
-
-    .menuimage{
-        display: none;
-    }
-
-    /*노트북: 메뉴바 드롭다운*/
-    .black{
-        display: none;
-      }
-      .white{
-        display: none;
-      }
-      .header nav ul {
-        font-size: 0;
-        margin: 0;
-        padding: 0;
-      }
-      .header nav ul li {
-        display: inline-block;
-        position: relative;
-      }
-      .header nav ul li a {
-        color: black;
-        display: block;
-        font-size: 14px;
-        padding: 15px 14px;
-        transition: 0.3s linear;
-      }
-      .header nav ul li:hover { 
-        font-weight: 700;
-      }
-      .header nav ul li ul {
-        display: none;
-        position: absolute;
-        width: 200px;
-        right: -10px;
-      }
-      .header nav ul li ul li {
-        display: block;
-      }
-      .header nav ul li ul li a {
-        background: #FF731D ;
-        color: white;
-        display: block;
-        padding: 10px 14px;
-      }
-      .menu_mobile{
-        display: none;
-      }
-
       /*content*/
-      .mypage{
+      .content .mypage{
         left: calc(50% - 175px/2 - 354.5px);        
         font-size: 22px;
       }
