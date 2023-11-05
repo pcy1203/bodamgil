@@ -1,0 +1,264 @@
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.titlelogo {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+    right: 20px;
+    top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body{
+    height: 2500px;
+}
+
+/*content*/
+.white{
+    position: absolute;
+    width: 100%;
+    height: 640px;
+    background-color: white;
+}
+.background{
+    position: absolute;
+    width: 100%;
+    height: 460px;
+    background-color: #FFCCAD;
+}
+
+.about{
+    position: absolute;
+    left: calc(50% - 85px/2 - 0.5px);
+    top: 96px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.aboutexplain1{
+    position: absolute;
+    width: 320px;
+    height: 60px;
+    left: calc(50% - 320px/2 + 0.5px);
+    top: 157px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    align-items: center;
+    text-align: center;
+    color: #000000;    
+}
+.aboutexplain2{
+    position: absolute;
+    width: 320px;
+    left: calc(50% - 320px/2 - 0.5px);
+    top: 261px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 140%;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.aboutphoto{
+    position: absolute;
+    width: 320px;
+    height: 212px;
+    left: calc(50% - 320px/2 + 4px);
+    top: 389px;
+}
+
+.title{
+    position: absolute;
+    left: calc(50% - 157px/2 + 0.5px);
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.line{
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    left: calc(50% - 100px/2);
+    top: 1271px;
+    background: #BFBFBF;
+}
+.photo{
+    position: absolute;
+    width: 320px;
+    height: 227px;
+    left: calc(50% - 320px/2);
+    top: 1308px;
+}
+.explain{
+    position: absolute;
+    width: 320px;
+    left: calc(50% - 320px/2 + 0.5px);
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.content1 .title{
+    top: 713px;
+}
+.content1 .line{
+    top: 767px;
+}
+.content1 .photo{
+    top: 804px;    
+}
+.content1 .explain{
+    top: 1066px;
+}
+.content2 .title{
+    top: 1217px;
+}
+.content2 .line{
+    top: 1271px;
+}
+.content2 .photo{
+    top: 1308px;  
+}
+.content2 .explain{
+    top: 1570px;
+}
+.content3 .title{
+    top: 1721px;
+}
+.content3 .line{
+    top: 1775px;
+}
+.content3 .photo{
+    top: 1812px;  
+}
+.content3 .explain{
+    top: 2074px;
+}
+
+
+@media ( min-width: 1025px ) {
+    .content{
+        display: flex;
+        justify-content: center;    
+    }
+    .background{
+        width: 1024px;
+        height: 600px;
+        top: 60px;
+    }
+    .about{
+        left: calc(50% - 110px/2 + 123px);
+        top: 150px;
+        font-size: 28px;
+        text-align: left;
+    }
+    .aboutexplain1{
+        width: 377px;
+        left: calc(50% - 110px/2 + 123px);
+        top: 210px;
+        font-size: 16px;
+        text-align: left;
+    }
+    .aboutexplain2{
+        width: 377px;
+        left: calc(50% - 110px/2 + 123px);
+        top: 300px;
+        font-size: 22px;
+        text-align: left;
+    }
+    .aboutphoto{
+        width: 512px;
+        height: 600px;
+        left: calc(50% - 512px/2 - 256px);
+        top: 60px;
+    }
+
+    .title{
+        font-size: 22px;
+    }
+    .line{
+        display: none;
+    }
+    .photo{
+        width: 512px;
+        height: 600px;
+    }
+    .explain{
+        width: 407px;
+        font-size: 18px;
+    }
+    .content1 .title{
+        left: calc(50% - 226px/2 - 350px);
+        top: 760px;
+        text-align: left;
+    }
+    .content1 .photo{
+        left: calc(50% - 512px/2 + 256px);
+        top: 660px;
+    }
+    .content1 .explain{
+        left: calc(50% - 226px/2 - 350px);
+        top: 800px;
+        text-align: left;
+    }
+    .content2 .title{
+        left: calc(50% - 100px/2 + 329px);
+        top: 1380px;
+        text-align: right;
+    }
+    .content2 .photo{
+        left: calc(50% - 512px/2 - 256px);
+        top: 1260px;
+    }
+    .content2 .explain{
+        left: calc(50% - 300px/2 + 225px);
+        top: 1420px;
+        text-align: right;
+    }
+    .content3 .title{
+        left: calc(50% - 226px/2 - 350px);
+        top: 1960px;
+        text-align: left;
+    }
+    .content3 .photo{
+        left: calc(50% - 512px/2 + 256px);
+        top: 1860px;
+    }
+    .content3 .explain{
+        left: calc(50% - 226px/2 - 350px);
+        top: 2000px;
+        text-align: left;
+    }
+
+}

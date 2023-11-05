@@ -1,0 +1,303 @@
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.previous{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 15px;
+    cursor: pointer;
+}
+.mypagecontent{
+    position: absolute;
+    left: 45px;
+    top: 13px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;   
+}
+
+/*select*/
+.select span{
+    position: absolute;
+    left: calc(50% - 115px/2 - 0.5px);
+    top: 71px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.likejob{
+    position: absolute;
+    border: 0.5px solid #BFBFBF;
+    width: 105px;
+    height: 30px;
+    left: calc(50% - 105px/2 - 111.5px);
+    top: 118px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.likejob:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.likework{
+    position: absolute;
+    border: 0.5px solid #BFBFBF;
+    width: 105px;
+    height: 30px;
+    left: calc(50% - 105px/2 + 0.5px);
+    top: 118px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.likework:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.likesite{
+    position: absolute;
+    border: 0.5px solid #BFBFBF;
+    width: 105px;
+    height: 30px;
+    left: calc(50% - 105px/2 + 111.5px);
+    top: 118px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.likesite:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.line{
+    position: absolute;
+    width: 330px;
+    height: 0px;
+    left: calc(50% - 330px/2);
+    top: 164px;
+    opacity: 0.3;
+    border: 1px solid #BFBFBF;
+}
+
+/*contentnone*/
+/*
+.note{
+    position: absolute;
+    width: 103px;
+    height: 104px;
+    left: calc(50% - 103px/2 + 0.5px);
+    top: 268px;
+}
+.contentnone_content{
+    position: absolute;
+    left: calc(50% - 219px/2 - 0.5px);
+    top: 408px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+*/
+
+/*content*/
+.photo{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: calc(50% - 330px/2);
+}
+.content span{
+    position: absolute;
+    left: calc(50% - 68px/2 - 32px);
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+.content p{
+    position: absolute;
+    width: 240px;
+    left: calc(50% - 158px/2 + 13px);
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    color: #000000;
+}
+.content1 img {
+    top: 190px;
+}
+.content1 span {
+    top: 190px;
+}
+.content1 p {
+    top: 210px;
+}
+.content2 img {
+    top: 290px;
+}
+.content2 span {
+    top: 290px;
+}
+.content2 p {
+    top: 310px;
+}
+.content3 img {
+    top: 390px;
+}
+.content3 span {
+    top: 390px;
+}
+.content3 p {
+    top: 410px;
+}
+
+@media ( min-width: 1025px ) {
+    .select span{
+        font-size: 22px;
+    }
+    .likejob{
+        width: 140px;
+        height: 40px;
+        left: calc(50% - 140px/2 - 200px);
+        top: 130px;
+        font-size: 14px;
+    }
+    .likework{
+        width: 140px;
+        height: 40px;
+        left: calc(50% - 110px/2);
+        top: 130px;
+        font-size: 14px;
+    }
+    .likesite{
+        width: 140px;
+        height: 40px;
+        left: calc(50% + 140px/2 + 80px);
+        top: 130px;
+        font-size: 14px;
+    }
+    .line{
+        width: 800px;
+        left: calc(50% - 800px/2);
+        top: 195px;
+    }
+    .photo{
+        width: 120px;
+        height: 120px;
+        left: calc(50% - 700px/2);
+    }
+    .content span{
+        left: calc(50% - 400px/2);
+        font-size: 18px;
+    }
+    .content p{
+        width: 900px;
+        left: calc(50% - 400px/2);
+        font-size: 14px;
+    }
+    .content1 img {
+        top: 220px;
+    }
+    .content1 span {
+        top: 220px;
+    }
+    .content1 p {
+        top: 235px;
+    }
+    .content2 img {
+        top: 355px;
+    }
+    .content2 span {
+        top: 355px;
+    }
+    .content2 p {
+        top: 370px;
+    }
+    .content3 img {
+        top: 490px;
+    }
+    .content3 span {
+        top: 490px;
+    }
+    .content3 p {
+        top: 505px;
+    }
+
+    /*
+    .note{
+        top: 280px;
+    }
+    .contentnone_content{
+        left: calc(50% - 110px/2);
+        top: 400px;
+        font-size: 16px;
+    }
+    */
+}

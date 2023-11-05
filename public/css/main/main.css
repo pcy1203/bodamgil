@@ -7,7 +7,7 @@
 .header {
     position: relative;
     background-color: white;
-    height: 45px;
+    height: 50px;
     font-size: 14px;
     margin: 0;
     padding: 0px;
@@ -41,8 +41,8 @@ a {
 }
      
 .person{
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 18px;
 } 
 
 
@@ -556,6 +556,9 @@ a {
     .header nav ul li:hover { 
       font-weight: 700;
     }
+	.person{
+		margin: -2px 0 -2px 0;
+	}
     .header nav ul li ul {
       position: absolute;
       width: 200px;

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/change.css">
+  </head>
+
+  <body>
+
+    <div class="header">
+        <a href="#"><img src="../../photo/main/previous.png" class= "previous"></a>
+        <span class="changecontent">회원정보 수정</span>
+        <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+    </div>
+
+
+    <img src="../../photo/polaroid/beach.jpg" class="photo">
+    <form>
+        <div>
+            <span class="namecontext">이름</span>
+            <input id="name" type="text" name="name" require placeholder="변경할 이름을 작성해주세요.">
+        </div>
+        <div>
+            <span class="introductioncontext">한 줄 소개</span>
+            <input id="introduction" type="text" name="introduction" require placeholder="변경할 소개 문구를 작성해주세요.">
+        </div>
+    </form>
+
+    <form action="" id="joinForm">
+        <button class="fpmgBt">변경사항 저장하기</button>
+    </form>
+	</body>
+</html>

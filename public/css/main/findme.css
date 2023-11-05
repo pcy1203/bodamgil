@@ -1,0 +1,145 @@
+/*header*/
+.header {
+    position: relative;
+    background-color: white;
+    height: 45px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+  }
+.title {
+    position: absolute;
+    font-size: 1.3em;
+    left: 20px;
+    top: 10px;
+    color: black;
+}
+.menuimage{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+  right: 20px;
+  top: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*content*/
+.photo{
+    display: none;
+}
+.findme{
+    position: absolute;
+    left: calc(50% - 97px/2 - 0.5px);
+    top: 94px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.content p{
+    position: absolute;
+    width: 310px;
+    height: 80px;
+    left: calc(50% - 310px/2 + 0.5px);
+    top: 125px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.line{
+    position: absolute;
+    width: 320px;
+    height: 0px;
+    left: calc(50% - 320px/2 + 1px);
+    top: 250px;
+    opacity: 0.3;
+    border: 1px solid #BFBFBF;
+}
+.game{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 280px;
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+.mypage{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 345px;
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+
+
+
+
+@media ( min-width: 1025px ) {
+    .findme{
+        left: calc(50% - 126px/2 + 241px);
+        font-size: 24px;
+    }
+    .content p{
+        width: 400px;
+        left: calc(50% - 394px/2 + 241px);
+        font-size: 16px;
+        line-height: 160%;
+        top: 140px;
+    }
+    .line{
+        width: 450px;
+        left: calc(50% - 450px/2 + 241px);
+        top: 270px;
+    }
+    .game{
+        width: 350px;
+        left: calc(50% - 360px/2 + 241px);
+        top: 300px;
+        font-size: 18px;
+    }
+    .mypage{
+        width: 350px;
+        left: calc(50% - 360px/2 + 241px);
+        top: 370px;
+        font-size: 18px;
+    }
+    .photo{
+        display: block;
+        position: absolute;
+        width: 45%;
+        height: 100%;
+        left: 0px;
+        top: 60px;
+    }
+}
