@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
 const User = require('../models/user');
+const { emailRegex, passwordRegex, telRegex, dateValidation } = require('../public/js/uservalidation');
 
 exports.login = (req, res, next) => {
   passport.authenticate('local', (authError, user, info) => {
@@ -30,27 +31,31 @@ exports.logout = (req, res) => {
 };
 	
 exports.signup = async (req, res, next) => {
-  // TODO - 유효성 검사 추가하기
-  // introduction 없음
-  // 전화번호 저장 필요
-  const { email, password, confirm, name, introduction, gender,
+  const { email, password, confirm, name, tel, gender,
 		 birthyear, birthmonth, birthday } = req.body;
   try {
+	if (email.length > 40 || !(emailRegex.test(email))) return res.redirect('/signup?message=emailError');
+	if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/signup?message=passwordError');
+	if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/signup?message=telError');
+	if (name.length > 20) return res.redirect('/signup?message=nameError');
+	if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/signup?message=birthError');
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
 	  return res.redirect('/signup?message=existUserError');
 	}
 	if (password !== confirm) {
-	  return res.redirect('/signup?message=passwordError');
+	  return res.redirect('/signup?message=passwordConfirmError');
 	}
 	const hashedPassword = await bcrypt.hash(password, 12);
-	// TODO - 기본 이미지 지정하기
+	const sameTelUser = await User.findOne({ where: { tel } });
+	if (sameTelUser) {
+	  return res.redirect('/signup?message=existSameTelError');
+	}
 	const newUser = await User.create({
 	  email,
 	  password: hashedPassword,
 	  name,
-	  introduction,
-	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
+	  tel,
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	});

@@ -67,23 +67,23 @@
           <form action="/auth/signup" method="post" id="joinForm">
 		    <div>
               <span class="emailcontext">아이디</span>
-		      <input id="email" type="email" name="email" require autofocus placeholder="아이디를 입력해주세요">
+		      <input id="email" type="email" name="email" require autofocus maxlength="40" placeholder="아이디를 입력해주세요">
 		    </div>
 			<div>
 			  <span class="passwordcontext">비밀번호</span>
-			  <input id="password" type="password" name="password" require minlength="8" maxlength="20" placeholder="비밀번호를 입력해주세요(문자, 숫자, 특수문자 포함 8~20자)">
+			  <input id="password" type="password" name="password" require minlength="8" maxlength="20" placeholder="비밀번호를 입력해주세요(영문, 숫자, 특수문자 포함 8~20자)">
 			</div>
 			<div>
 			  <span class="confirmcontext">비밀번호확인</span>
-			  <input id="confirm" type="password" name="confirm" require placeholder="비밀번호를 한 번 더 입력해주세요">
+			  <input id="confirm" type="password" name="confirm" require minlength="8" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요">
 			</div>
 			<div>
 			  <span class="namecontext">이름</span>
-			  <input id="name" type="text" name="name" require placeholder="이름을 입력해주세요">
+			  <input id="name" type="text" name="name" require maxlength="20" placeholder="이름을 입력해주세요 (최대 20자)">
 			</div>
 			<div>
 			  <span class="telcontext">전화번호</span>
-			  <input id="tel" type="tel" name="tel" require placeholder="00*-000*-0000" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}" maxlength="13">
+			  <input id="tel" type="tel" name="tel" require maxlength="13" placeholder="000-0000-0000 (-까지 입력)" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}">
 			</div>
 			<div class="gender">
 			  <span class="gendercontext">성별</span>
@@ -119,6 +119,11 @@
 	  </div>
 	{% include "menu/menu.html" %}
   </body>
+<script defer>
+  exports = {};
+</script>
+<script defer src="../../js/uservalidation.js"></script>
+<script defer src="../../js/userinputvalidation.js"></script>
 <script>
   document.querySelector('#checkForm').addEventListener("submit", (e) => {
     e.preventDefault();
@@ -162,7 +167,6 @@
 	  checkAllButton.checked = allChecked;
 	})
   });
-	
 </script>
 	
 </html>

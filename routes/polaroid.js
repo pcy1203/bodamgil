@@ -29,7 +29,7 @@ const upload = multer({
 	},
 	filename(req, file, cb) {
 	  const ext = path.extname(file.originalname);
-	  cb(null, `${req.user.dataValues.id}_${Date.now()}${ext}`);
+	  cb(null, `user-${req.user.dataValues.id}-polaroid_${Date.now()}${ext}`);
 	},
   }),
   limits: { fileSize: 5 * 1024 * 1024 },

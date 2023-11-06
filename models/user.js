@@ -33,6 +33,10 @@ class User extends Sequelize.Model {
 		type: Sequelize.STRING(100),
 		allowNull: true,
 	  },
+	  tel: {
+		type: Sequelize.STRING(100),
+		allowNull: true,
+	  },
 	  gender: {
 		type: Sequelize.ENUM('man', 'woman'),
 		allowNull: true,

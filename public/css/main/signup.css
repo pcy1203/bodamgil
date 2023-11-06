@@ -446,3 +446,7 @@ ul.join_box{
 		width: 400px;
 	}
 }
+
+.invalid {
+	background-color: #ffe1e1;
+}
