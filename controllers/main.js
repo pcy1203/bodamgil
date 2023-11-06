@@ -23,6 +23,14 @@ exports.renderMyProfile = (req, res, next) => {
   res.render('main/myprofile');
 };
 
+exports.renderMyProfileLike = (req, res, next) => {
+  res.render('main/myprofilelike');
+};
+
+exports.renderMyProfileGame = (req, res, next) => {
+  res.render('main/myprofilegame');
+};
+
 exports.renderSetProfile = (req, res, next) => {
   res.render('main/setprofile');
 };

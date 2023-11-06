@@ -33,12 +33,12 @@ exports.logout = (req, res) => {
 exports.signup = async (req, res, next) => {
   const { email, password, confirm, name, tel, gender,
 		 birthyear, birthmonth, birthday } = req.body;
+  if (email.length > 40 || !(emailRegex.test(email))) return res.redirect('/signup?message=emailError');
+  if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/signup?message=passwordError');
+  if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/signup?message=telError');
+  if (!name || name.length > 20) return res.redirect('/signup?message=nameError');
+  if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/signup?message=birthError');
   try {
-	if (email.length > 40 || !(emailRegex.test(email))) return res.redirect('/signup?message=emailError');
-	if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/signup?message=passwordError');
-	if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/signup?message=telError');
-	if (name.length > 20) return res.redirect('/signup?message=nameError');
-	if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/signup?message=birthError');
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
 	  return res.redirect('/signup?message=existUserError');
@@ -67,8 +67,10 @@ exports.signup = async (req, res, next) => {
 };
 
 exports.setprofile = async (req, res, next) => {
-  // TODO - 유효성 검사 추가하기
   const { name, introduction, gender, birthyear, birthmonth, birthday } = req.body;
+  if (!name || name.length > 20) return res.redirect('/setprofile?message=nameError');
+  if (!gender) return res.redirect('/setprofile?message=genderError');
+  if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/setprofile?message=birthError');
   const hasImage = req.file?.filename !== undefined;
   try {
 	await User.update({

@@ -1,26 +1,3 @@
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-}
 a {
     text-decoration: none;
     color: black;
@@ -61,81 +38,12 @@ a {
     text-align: center;
     color: #000000;
 }
-.likejob{
-    position: absolute;
-    border: 0.5px solid #BFBFBF;
-    width: 105px;
-    height: 30px;
-    left: calc(50% - 105px/2 - 111.5px);
-    top: 118px;
-    background: white;
-    border-radius: 20px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    align-items: center;
-    text-align: center;
-    color: #BFBFBF;
-    cursor: pointer;
-}
-.likejob:hover{
-    background-color: #FF731D;
-    color: white;
-    border: none;
-}
-.likework{
-    position: absolute;
-    border: 0.5px solid #BFBFBF;
-    width: 105px;
-    height: 30px;
-    left: calc(50% - 105px/2 + 0.5px);
-    top: 118px;
-    background: white;
-    border-radius: 20px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    align-items: center;
-    text-align: center;
-    color: #BFBFBF;
-    cursor: pointer;
-}
-.likework:hover{
-    background-color: #FF731D;
-    color: white;
-    border: none;
-}
-.likesite{
-    position: absolute;
-    border: 0.5px solid #BFBFBF;
-    width: 105px;
-    height: 30px;
-    left: calc(50% - 105px/2 + 111.5px);
-    top: 118px;
-    background: white;
-    border-radius: 20px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    align-items: center;
-    text-align: center;
-    color: #BFBFBF;
-    cursor: pointer;
-}
-.likesite:hover{
-    background-color: #FF731D;
-    color: white;
-    border: none;
-}
 .line{
     position: absolute;
     width: 330px;
     height: 0px;
     left: calc(50% - 330px/2);
-    top: 164px;
+    top: 130px;
     opacity: 0.3;
     border: 1px solid #BFBFBF;
 }
@@ -179,7 +87,7 @@ a {
     font-size: 14px;
     color: #000000;
 }
-.content p{
+.explain{
     position: absolute;
     width: 240px;
     left: calc(50% - 158px/2 + 13px);
@@ -190,33 +98,54 @@ a {
     line-height: 140%;
     color: #000000;
 }
+.date{
+    position: absolute;
+    width: 240px;
+    left: calc(50% - 158px/2 + 13px);
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    color: #BFBFBF;
+}
+
 .content1 img {
-    top: 190px;
+    top: 160px;
 }
 .content1 span {
-    top: 190px;
+    top: 160px;
 }
-.content1 p {
-    top: 210px;
+.content1 .explain {
+    top: 172px;
+}
+.content1 .date {
+    top: 215px;
 }
 .content2 img {
-    top: 290px;
+    top: 260px;
 }
 .content2 span {
-    top: 290px;
+    top: 260px;
 }
-.content2 p {
-    top: 310px;
+.content2 .explain {
+    top: 272px;
+}
+.content2 .date {
+    top: 315px;
 }
 .content3 img {
-    top: 390px;
+    top: 360px;
 }
 .content3 span {
-    top: 390px;
+    top: 360px;
 }
-.content3 p {
-    top: 410px;
+.content3 .explain {
+    top: 372px;
 }
+.content3 .date {
+    top: 415px;
+}
+
 
 @media ( min-width: 1025px ) {
     .select span{
@@ -246,7 +175,7 @@ a {
     .line{
         width: 800px;
         left: calc(50% - 800px/2);
-        top: 195px;
+        top: 140px;
     }
     .photo{
         width: 120px;
@@ -257,37 +186,50 @@ a {
         left: calc(50% - 400px/2);
         font-size: 18px;
     }
-    .content p{
+    .explain{
         width: 900px;
         left: calc(50% - 400px/2);
         font-size: 14px;
     }
+    .date{
+        left: calc(50% - 400px/2);
+        font-size: 12px;
+    }
     .content1 img {
-        top: 220px;
+        top: 170px;
     }
     .content1 span {
-        top: 220px;
+        top: 170px;
     }
-    .content1 p {
-        top: 235px;
+    .content1 .explain {
+        top: 190px;
+    }
+    .content1 .date {
+        top: 252px;
     }
     .content2 img {
-        top: 355px;
+        top: 310px;
     }
     .content2 span {
-        top: 355px;
+        top: 310px;
     }
-    .content2 p {
-        top: 370px;
+    .content2 .explain {
+        top: 330px;
+    }
+    .content2 .date {
+        top: 392px;
     }
     .content3 img {
-        top: 490px;
+        top: 450px;
     }
     .content3 span {
-        top: 490px;
+        top: 450px;
     }
-    .content3 p {
-        top: 505px;
+    .content3 .explain {
+        top: 480px;
+    }
+    .content3 .date {
+        top: 542px;
     }
 
     /*

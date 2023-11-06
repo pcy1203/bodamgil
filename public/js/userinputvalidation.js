@@ -31,6 +31,14 @@ document.querySelector('input#name')?.addEventListener('input', (e) => {
   }
 });
 
+document.querySelector('input#introduction')?.addEventListener('input', (e) => {
+  if (e.target.value && e.target.value.length > 100) {
+    e.target.classList.add("invalid");
+  } else {
+    e.target.classList.remove("invalid");
+  }
+});
+
 document.querySelector('input#tel')?.addEventListener('input', (e) => {
   if (e.target.value && (e.target.value.length > 13 || !telRegex.test(e.target.value))) {
     e.target.classList.add("invalid");

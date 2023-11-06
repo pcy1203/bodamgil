@@ -16,6 +16,11 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  <!-- 기본 이미지 설정하기 -->
+	  {% if not user.gender or not user.birthDate %}
+	    <div>
+		  프로필 작성을 완료해주세요!
+		</div>
+	  {% endif %}
       <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/beach.jpg{% endif %}" class="photo">
       <form action="/auth/setprofile" method="post" enctype="multipart/form-data">
         <div>
@@ -24,11 +29,11 @@
         </div>
         <div>
           <span class="namecontext">이름</span>
-          <input id="name" type="text" name="name" require value="{{ user.name }}" placeholder="변경할 이름을 작성해주세요.">
+          <input id="name" type="text" name="name" require value="{{ user.name }}" maxlength="20" placeholder="변경할 이름을 작성해주세요. (20자 이내)">
         </div>
         <div>
           <span class="introductioncontext">한 줄 소개</span>
-          <input id="introduction" type="text" name="introduction" require value="{{ user.introduction }}" placeholder="변경할 소개 문구를 작성해주세요.">
+          <input id="introduction" type="text" name="introduction" require value="{{ user.introduction }}" maxlength="100" placeholder="변경할 소개 문구를 작성해주세요. (100자 이내)">
         </div>
 		<div class="gender">
 		  <span class="gendercontext">성별</span>
@@ -65,6 +70,11 @@
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+<script defer>
+  exports = {};
+</script>
+<script defer src="../../js/uservalidation.js"></script>
+<script defer src="../../js/userinputvalidation.js"></script>
   <script>
 	const dateNode = document.querySelector('.user-birth');
 	if (dateNode.innerHTML === '') {

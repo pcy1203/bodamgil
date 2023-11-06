@@ -1,7 +1,8 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
-const { renderMain, renderLogin, renderSignup, renderSignupSuccess, renderMyProfile, renderSetProfile,
-	   renderChangePassword, renderFindId, renderFindIdSuccess, renderFindPassword, renderSetPassword,
+const { renderMain, renderLogin, renderSignup, renderSignupSuccess, renderMyProfile,
+	   renderMyProfileLike, renderMyProfileGame, renderSetProfile, renderChangePassword,
+	   renderFindId, renderFindIdSuccess, renderFindPassword, renderSetPassword,
 	   renderAbout, renderNotice, renderFaq } = require('../controllers/main');
 
 const router = express.Router();
@@ -14,6 +15,12 @@ router.get('/signup', isNotLoggedIn, renderSignup);
 
 // GET /signup/success
 router.get('/signup/success', isNotLoggedIn, renderSignupSuccess);
+
+// GET /myprofile/like
+router.get('/myprofile/like', isLoggedIn, renderMyProfileLike);
+
+// GET /myprofile/game
+router.get('/myprofile/game', isLoggedIn, renderMyProfileGame);
 
 // GET /myprofile
 router.get('/myprofile', isLoggedIn, renderMyProfile);
