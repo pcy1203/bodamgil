@@ -2,11 +2,11 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>CSS</title>
+    <title>마이페이지</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
-	  </style> 
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	</style> 
     <link rel="stylesheet" href="../../css/main/myprofile.css">
     <link rel="stylesheet" href="../../css/menu/navigationbar.css">
     <link rel="stylesheet" href="../../css/menu/menu.css">
@@ -17,7 +17,8 @@
 	  {% include "menu/navigationbar.html" %}
       <div class="content">
 		<span class="mypage">마이페이지 MYPAGE</span>
-        <img src="../../photo/polaroid/beach.jpg" class="photo">
+		<!-- 기본 이미지 설정하기 -->
+        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/beach.jpg{% endif %}" class="photo">
         <div>
           <span class="name">이름/Name</span>  
           <p class="namecontent">{{ user.name }}</p>

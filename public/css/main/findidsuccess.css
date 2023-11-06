@@ -1,0 +1,98 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+.previous{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 68px;
+    cursor: pointer;
+}
+.findid{
+    position: absolute;
+    left: calc(50% - 92px/2 - 1px);
+    top: 100px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.findid_context{
+    position: absolute;
+    left: calc(50% - 251px/2 - 0.5px);
+    top: 130px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+/*폼*/
+.inform{
+    position: absolute;
+    width: 300px;
+    height: 120px;
+    left: calc(50% - 300px/2 + 2px);
+    top: 165px;
+    
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 180%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+
+}
+
+.login{
+    border-style: none;
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    left: calc(50% - 280px/2);
+    top: 330px;
+    background: #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer
+}
+
+
+@media ( min-width: 1025px ) {
+    .findid{
+        font-size: 18px;
+    }
+    .findid_context{
+        font-size: 14px;
+    }
+    .inform{
+        width: 450px;
+        height: 150px;
+        left: calc(50% - 450px/2 + 2px);
+        top: 165px;
+        line-height: 200%;
+        font-size: 20px;
+    }
+    .login{
+        left: calc(50% - 300px/2);
+        width: 300px;
+        height: 50px;
+        top: 360px;
+    }
+}

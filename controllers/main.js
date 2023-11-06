@@ -31,6 +31,22 @@ exports.renderChangePassword = (req, res, next) => {
   res.render('main/changepassword');
 };
 
+exports.renderFindId = (req, res, next) => {
+  res.render('main/findid');
+};
+
+exports.renderFindIdSuccess = (req, res, next) => {
+  res.render('main/findidsuccess');
+};
+
+exports.renderFindPassword = (req, res, next) => {
+  res.render('main/findpassword');
+};
+
+exports.renderSetPassword = (req, res, next) => {
+  res.render('main/setpassword');
+};
+
 exports.renderAbout = (req, res, next) => {
   res.render('main/about');
 };

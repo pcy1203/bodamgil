@@ -1,3 +1,7 @@
+img {
+	object-fit: cover;
+}
+
 .menu-back {
 	position: absolute;
 	top: 0px;

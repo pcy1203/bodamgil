@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const fs = require('fs');
 const User = require('../models/user');
 
 exports.login = (req, res, next) => {
@@ -53,7 +54,7 @@ exports.signup = async (req, res, next) => {
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	});
-	return res.redirect('/signupsuccess');
+	return res.redirect('/signup/success');
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -62,22 +63,42 @@ exports.signup = async (req, res, next) => {
 
 exports.setprofile = async (req, res, next) => {
   // TODO - 유효성 검사 추가하기
-  const { name, introduction, gender, birth } = req.body;
+  const { name, introduction, gender, birthyear, birthmonth, birthday } = req.body;
+  const hasImage = req.file?.filename !== undefined;
   try {
 	await User.update({
 	  name,
 	  introduction,
-	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
+	  image: req.file?.filename ? `profile/${req.file.filename}` : req.user.dataValues.image,
 	  gender,
-	  birthDate: new Date(birth[0], Number(birth[1]) - 1, birth[2]),
+	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	}, {
       where: {
         id: req.user.dataValues.id,
   	  }
 	});
-	return res.redirect('/?message=signupSuccess');
+	if (hasImage && req.user.dataValues.image) {
+      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
+	}
+	return res.redirect('/setprofile?message=saveSuccess');
   } catch (error) {
 	console.error(error);
 	return next(error);
   }
+};
+
+exports.changepassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.findid = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.findpassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.setpassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
 };
