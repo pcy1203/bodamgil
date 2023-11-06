@@ -1,7 +1,33 @@
-{% extends '../layout.html' %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>나 알아보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/myself/main.css">
+    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
+  </head>
 
-{% block content %}
-  <h1>진로 게임 목록</h1>
-  <a href="/myself/polaroid">어릴 때의 내가 좋아했던 것은?</a>
-  <a href="/myself/paperplane">내가 잘하는 것은? 네가 잘하는 것은!</a>
-{% endblock %}
+  <body>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}		  
+	  <div class="content">
+        <img src="../../photo/main/main-image.jpg" class="photo">
+        <span class="findme">나 알아보기</span>
+	    <p>우리는 모두 행복한 삶을 꿈꾸지만
+        그 기준은 사람마다 모두 다르죠.
+        내가 진정으로 행복하고 원하는 삶을 위해서는 
+        나를 아는 것이 가장 우선이에요.</p>
+        <div class="line"></div>
+        <a href="/myself/game" class="game">진로게임</a>
+        <a href="/myprofile" class="mypage">마이페이지</a>
+	  </div>
+	</div>
+	{% include "menu/menu.html" %}
+  </body>
+</html>
+	  

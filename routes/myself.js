@@ -1,7 +1,7 @@
 const express = require('express');
 const polaroidRouter = require('./polaroid');
 const paperplaneRouter = require('./paperplane');
-const { renderMain } = require('../controllers/myself');
+const { renderMain, renderGame } = require('../controllers/myself');
 
 const router = express.Router();
 
@@ -10,6 +10,9 @@ router.use('/polaroid', polaroidRouter);
 
 // /myself/paperplane
 router.use('/paperplane', paperplaneRouter);
+
+// /myself/game
+router.get('/game', renderGame);
 
 // /myself
 router.get('/', renderMain);

@@ -1,37 +1,6 @@
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-}
 a {
     text-decoration: none;
     color: black;
-}
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 15px;
-    cursor: pointer;
 }
 .findmecontent{
     position: absolute;
@@ -176,7 +145,11 @@ a {
     color: white;
     border: none;
 }
-
+.checked {
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
 
 /*contentme*/
   .flexbox{
