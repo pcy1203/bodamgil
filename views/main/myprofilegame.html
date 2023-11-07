@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>완료한 진로 게임</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/myprofilegame.css">
+	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
+  </head>
+
+  <body>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}
+	<!--
+    <div class="header">
+        <a href="#"><img src="../../photo/main/previous.png" class= "previous"></a>
+        <span class="mypagecontent">마이페이지</span>
+        <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+    </div>
+	-->
+      <div class="select">
+        <span>나의 관심목록</span>
+        <div class="line"></div>
+      </div>
+
+      <div class="content">
+        <div class="content1">
+          <img src="../../photo/polaroid/beach.jpg" class="photo">
+          <span>콘텐츠 이름</span>
+          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
+          <p class="date">게임 실시일: 2023.10.24</p>
+        </div>
+        <div class="content2">
+          <img src="../../photo/polaroid/beach.jpg" class="photo">
+          <span>콘텐츠 이름</span>
+          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
+          <p class="date">게임 실시일: 2023.10.24</p>
+        </div>
+        <div class="content3">
+          <img src="../../photo/polaroid/beach.jpg" class="photo">
+          <span>콘텐츠 이름</span>
+          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
+          <p class="date">게임 실시일: 2023.10.24</p>
+        </div>
+<!--
+        <div class="contentnone">
+            <img src="../../photo/main/note.png" class="note">
+            <p class="contentnone_content">완료한 게임이 없습니다.</p>
+        </div>
+-->
+	  </div>
+	</div>
+	{% include "menu/menu.html" %}
+  </body>
+</html>

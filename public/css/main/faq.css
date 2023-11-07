@@ -1,4 +1,4 @@
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -28,7 +28,7 @@ a{
     cursor: pointer;
 }
 
-.notice{
+.FAQ{
     position: absolute;
     left: calc(50% - 38px/2 - 1px);
     top: 80px;
@@ -56,12 +56,19 @@ a{
     line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
 }
+.content nav ul li span{
+    font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+    color:#FF731D;
+}
 .content nav ul li:last-child{
     border-bottom: none;
 }
 .content nav ul li:first-child{
     border-top: 0.3px solid #BFBFBF;
 }
+
 .content nav ul li p{
     padding: 10px 25px;
     font-family: 'Noto Sans KR';
@@ -73,7 +80,7 @@ a{
 
 
 @media ( min-width: 1025px ) {
-    .notice{
+    .FAQ{
         top: 90px;
         font-size: 24px;
     }
@@ -83,6 +90,9 @@ a{
     .content nav ul li{
         font-size: 14px;
         padding: 20px 40px;
+    }
+    .content nav ul li span{
+        font-size: 16px;
     }
     .content nav ul li p{
         padding: 15px 25px;

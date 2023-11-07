@@ -47,7 +47,7 @@ a {
     opacity: 0.3;
     border: 1px solid #BFBFBF;
 }
-.game{
+.work{
     position: absolute;
     width: 280px;
     height: 50px;
@@ -63,7 +63,7 @@ a {
     text-align: center;
     color: #FF731D;
 }
-.mypage{
+.job{
     position: absolute;
     width: 280px;
     height: 50px;
@@ -79,6 +79,41 @@ a {
     text-align: center;
     color: #FF731D;
 }
+.test{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 410px;
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+.site{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 475px;
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+}
+
+
+
 
 @media ( min-width: 1025px ) {
     .findme{
@@ -90,23 +125,35 @@ a {
         left: calc(50% - 394px/2 + 241px);
         font-size: 16px;
         line-height: 160%;
-        top: 140px;
+        top: 130px;
     }
     .line{
         width: 450px;
         left: calc(50% - 450px/2 + 241px);
-        top: 270px;
+        top: 260px;
     }
-    .game{
+    .work{
         width: 350px;
         left: calc(50% - 360px/2 + 241px);
-        top: 300px;
+        top: 290px;
         font-size: 18px;
     }
-    .mypage{
+    .job{
         width: 350px;
         left: calc(50% - 360px/2 + 241px);
-        top: 370px;
+        top: 360px;
+        font-size: 18px;
+    }
+    .test{
+        width: 350px;
+        left: calc(50% - 360px/2 + 241px);
+        top: 430px;
+        font-size: 18px;
+    }
+    .site{
+        width: 350px;
+        left: calc(50% - 360px/2 + 241px);
+        top: 500px;
         font-size: 18px;
     }
     .photo{

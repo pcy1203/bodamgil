@@ -1,27 +1,4 @@
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-	cursor:pointer;
-}
+
 a {
     text-decoration: none;
     color: black;
@@ -55,44 +32,76 @@ h1{
     color: #000000;
 }
 
-#email{
+
+.email{
     position: absolute;
     width: 280px;
     height: 50px;
     left: calc(50% - 280px/2);
     top: 190px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
+    background: #F2F2F2;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
 }
-#password{
+.email_image{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 35px;
+    top: 17.5px;
+}
+.kakaotalk{
     position: absolute;
     width: 280px;
     height: 50px;
     left: calc(50% - 280px/2);
-    top: 255px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-input::placeholder{
-    font-family: 'Noto Sans KR';
+    top: 250px;
+    background: #FFE900;
+    border-radius: 30px;
+    font-style: normal;
     font-weight: 300;
-    font-size: 10px;
-    padding: 0 0 0 15px;
+    font-size: 14px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
 }
-.login{
-    border-style: none;
+.kakaotalk_image{
+    position: absolute;
+    width: 27px;
+    height: 15px;
+    left: 30px;
+    top: 17.5px;
+}
+.google{
     position: absolute;
     width: 280px;
-    height: 40px;
+    height: 50px;
     left: calc(50% - 280px/2);
-    top: 330px;
-    background: #FF731D;
+    top: 310px;
+    background: white;
+    border: 0.5px solid #BFBFBF;
     border-radius: 30px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
+    font-style: normal;
+    font-weight: 300;
     font-size: 14px;
-    color: #FFFFFF;
-    cursor: pointer
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.google_image{
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 30px;
+    top: 17.5px;
 }
 
 .nosignup{
@@ -140,6 +149,84 @@ input::placeholder{
 }
 
 @media ( min-width: 1025px ) {
+    .email{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .kakaotalk{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .google{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .nosignup{
+        font-size: 14px;
+        left: calc(50% - 166px/2 - 30px);
+        top: 373px;
+    }
+    .signup{
+        font-size: 14px;
+        left: calc(50% - 45px/2 + 68.5px);
+    }
+    .findid{
+        font-size: 14px;
+    }
+    .findpassword{
+        font-size: 14px;
+    }
+}
+
+.block-1 {
+	display: none;
+}
+
+.block-2 {
+	display: none;
+}
+
+#email{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 190px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+#password{
+    position: absolute;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 255px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+}
+input::placeholder{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 10px;
+    padding: 0 0 0 15px;
+}
+.login{
+    border-style: none;
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    left: calc(50% - 280px/2);
+    top: 330px;
+    background: #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer
+}
+
+@media ( min-width: 1025px ) {
     #email{
         width: 400px;
         left: calc(50% - 400px/2);
@@ -157,20 +244,5 @@ input::placeholder{
     input::placeholder{
         font-size: 12px;
         padding: 0 0 0 20px;
-    }
-    .nosignup{
-        font-size: 14px;
-        left: calc(50% - 166px/2 - 30px);
-        top: 373px;
-    }
-    .signup{
-        font-size: 14px;
-        left: calc(50% - 45px/2 + 68.5px);
-    }
-    .findid{
-        font-size: 14px;
-    }
-    .findpassword{
-        font-size: 14px;
     }
 }

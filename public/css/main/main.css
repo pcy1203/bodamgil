@@ -1,51 +1,8 @@
-#container {
-    margin: 0;
-    padding: 0px;
- }
 
- /*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 50px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.title {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  	right: 20px;
-  	top: 10px;
-	cursor: pointer;
-}
-.nav{
-    display: none;
-    position: absolute;
-    right: 0px;
-}
 a {
     text-decoration: none;
     color: black;
 }
-
-.header li {
-    list-style-type: none;
-}
-     
-.person{
-  width: 20px;
-  height: 18px;
-} 
-
 
 /*content*/
 .main-image{
@@ -402,14 +359,14 @@ a {
   
 
     /*header*/
-    .header{
+    #container .navigationbar{
         height: 45px;
     }
-    .nav{
+    #container .nav{
         display: flex;
 
     }
-    .header ul li{
+    #container .navigationbar ul li{
       padding: 0px 20px;
       font-family: 'Noto Sans KR';
 	    font-weight: 400;
@@ -417,7 +374,7 @@ a {
       line-height: 100%;
     }
 
-    .menuimage{
+    #container .menuimage{
         display: none;
     }
 
@@ -538,37 +495,37 @@ a {
     }
 
     /*노트북: 메뉴바 드롭다운*/
-    .header nav ul {
+    #container .navigationbar nav ul {
       font-size: 0;
       margin: 0;
       padding: 0;
     }
-    .header nav ul li {
+    #container .navigationbar nav ul li {
       display: inline-block;
       position: relative;
     }
-    .header nav ul li a {
+    #container .navigationbar nav ul li a {
       color: black;
       display: block;
       font-size: 14px;
       padding: 15px 14px;
       transition: 0.3s linear;
     }
-    .header nav ul li:hover { 
+    #container .navigationbar nav ul li:hover { 
       font-weight: 700;
     }
 	.person{
 		margin: -2px 0 -2px 0;
 	}
-    .header nav ul li ul {
+    #container .navigationbar nav ul li ul {
       position: absolute;
       width: 200px;
       right: -10px;
     }
-    .header nav ul li ul li {
+    #container .navigationbar nav ul li ul li {
       display: block;
     }
-    .header nav ul li ul li a {
+    #container .navigationbar nav ul li ul li a {
       background: #FF731D ;
       color: white;
       display: block;

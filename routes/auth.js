@@ -4,7 +4,8 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
-const { login, logout, signup, setprofile } = require('../controllers/auth');
+const { login, logout, signup, setprofile, changepassword,
+	    findid, findpassword, setpassword } = require('../controllers/auth');
 
 const router = express.Router();
 
@@ -29,11 +30,7 @@ const upload = multer({
 	},
 	filename(req, file, cb) {
 	  const ext = path.extname(file.originalname);
-	  if (req.user && req.user.dataValues.provider !== 'local') {
-		cb(null, `${req.user.dataValues.provider}-user-${req.user.dataValues.id}_${Date.now()}${ext}`);
-	  } else {
-		cb(null, `${req.body.email}_${Date.now()}${ext}`);
-	  }
+	  cb(null, `user-${req.user.dataValues.id}_${Date.now()}${ext}`);
 	},
   }),
   limits: { fileSize: 5 * 1024 * 1024 },
@@ -49,7 +46,7 @@ router.get('/logout', isLoggedIn, logout);
 router.post('/signup', isNotLoggedIn, upload.single('image'), signup);
 
 // GET /auth/kakao
-router.get('/kakao', passport.authenticate('kakao'));
+router.get('/kakao', isNotLoggedIn, passport.authenticate('kakao'));
 
 router.get('/kakao/result', passport.authenticate('kakao', {
   failureRedirect: '/login?message=kakaoError',
@@ -62,7 +59,7 @@ router.get('/kakao/result', passport.authenticate('kakao', {
 });
 
 // GET /auth/google
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/google', isNotLoggedIn, passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/google/result', passport.authenticate('google', {
   failureRedirect: '/login?message=googleError',
@@ -76,5 +73,17 @@ router.get('/google/result', passport.authenticate('google', {
 
 // POST /auth/setprofile
 router.post('/setprofile', isLoggedIn, upload.single('image'), setprofile);
+
+// POST /auth/changepassword
+router.post('/changepassword', isLoggedIn, changepassword);
+
+// POST /auth/findid
+router.post('/findid', isNotLoggedIn, findid);
+
+// POST /auth/findpassword
+router.post('/findpassword', isNotLoggedIn, findpassword);
+
+// POST /auth/setpassword
+router.post('/setpassword', isNotLoggedIn, setpassword);
 
 module.exports = router;

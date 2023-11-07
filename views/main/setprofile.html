@@ -1,6 +1,105 @@
-{% extends '../layout.html' %}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>프로필 수정</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/main/setprofile.css">
+    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
+  </head>
 
-{% block content %}
+  <body>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}
+	  <!-- 기본 이미지 설정하기 -->
+	  {% if not user.gender or not user.birthDate %}
+	    <div>
+		  프로필 작성을 완료해주세요!
+		</div>
+	  {% endif %}
+      <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/beach.jpg{% endif %}" class="photo">
+      <form action="/auth/setprofile" method="post" enctype="multipart/form-data">
+        <div>
+		  <span class="imagecontext">프로필 사진</span>	  
+	      <input id="image" type="file" name="image" accept="image/*">
+        </div>
+        <div>
+          <span class="namecontext">이름</span>
+          <input id="name" type="text" name="name" require value="{{ user.name }}" maxlength="20" placeholder="변경할 이름을 작성해주세요. (20자 이내)">
+        </div>
+        <div>
+          <span class="introductioncontext">한 줄 소개</span>
+          <input id="introduction" type="text" name="introduction" require value="{{ user.introduction }}" maxlength="100" placeholder="변경할 소개 문구를 작성해주세요. (100자 이내)">
+        </div>
+		<div class="gender">
+		  <span class="gendercontext">성별</span>
+		  <select name="gender" id="gender">   
+			<option disabled {% if not user.gender %}selected{% endif %}>성별</option> 
+			<option value="man" {% if user.gender === 'man' %}selected{% endif %}>남자</option>
+			<option value="woman" {% if user.gender === 'woman' %}selected{% endif %}>여자</option>
+		  </select>
+		</div>
+		<div class="birth">
+		  <div class="user-birth" style="display: none">{{ user.birthDate }}</div>
+		  <span class="birthcontext">생년월일</span>
+		  <select name="birthyear" class="box" id="birthyear">
+			<option class="option-year" disabled>년도</option>
+			  {% for i in range(1900, 2024) %}
+				<option class="option-year-{{ i }}" value="{{ i }}">{{ i }}년</option>
+			  {% endfor %}
+		  </select>
+		  <select name="birthmonth" class="box" id="birthmonth">
+			<option class="option-month" disabled>월</option>
+			  {% for i in range(1, 13) %}
+				<option class="option-month-{{ i }}" value="{{ i }}">{{ i }}월</option>
+			  {% endfor %}
+		  </select>
+		  <select name="birthday" class="box" id="birthday">
+			<option class="option-day" disabled>일</option>
+			  {% for i in range(1, 32) %}
+				<option class="option-day-{{ i }}" value="{{ i }}">{{ i }}일</option>
+			  {% endfor %}
+		  </select>
+		</div>
+        <button class="fpmgBt">변경사항 저장하기</button>
+      </form>
+	</div>
+	{% include "menu/menu.html" %}
+  </body>
+<script defer>
+  exports = {};
+</script>
+<script defer src="../../js/uservalidation.js"></script>
+<script defer src="../../js/userinputvalidation.js"></script>
+  <script>
+	const dateNode = document.querySelector('.user-birth');
+	if (dateNode.innerHTML === '') {
+	  document.querySelector('.option-year').selected = true;
+	  document.querySelector('.option-month').selected = true;
+	  document.querySelector('.option-day').selected = true;
+	} else {
+	  const dateArray = dateNode.innerHTML.split("-");
+	  document.querySelector(`.option-year-${Number(dateArray[0])}`).selected = true;
+	  document.querySelector(`.option-month-${Number(dateArray[1])}`).selected = true;
+	  document.querySelector(`.option-day-${Number(dateArray[2])}`).selected = true;
+	}
+	  
+	// 사진 미리보기
+	document.querySelector('input#image').addEventListener('change', (e) => {
+	  let reader = new FileReader();
+	  reader.onload = function(event) {
+		document.querySelector('.photo').setAttribute("src", event.target.result);
+	  };
+	  reader.readAsDataURL(event.target.files[0]);
+	});		
+  </script>
+</html>
+
+<!--
   <h1>프로필 입력</h1>
   <form action="/auth/setprofile" method="post" enctype="multipart/form-data">
     <div>
@@ -28,4 +127,4 @@
     </div>
     <button type="submit">프로필 정보 저장</button>
   </form>
-{% endblock %}
+-->

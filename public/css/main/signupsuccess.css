@@ -1,0 +1,86 @@
+.content *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    background-color: #f7f7f7;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.previous{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 16px;
+    top: 68px;
+    cursor: pointer;
+}
+.contract{
+    position: absolute;
+    left: calc(50% - 59px/2 - 0.5px);
+    top: 100px;
+    font-family: 'Noto Sans KR';
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.welcome{
+    position: absolute;
+    left: calc(50% - 177px/2 + 0.5px);
+    top: 350px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+/*가입완료 버튼*/
+ul.join_box{
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+.fpmgBt{
+    display: block; 
+    width: 300px;
+    margin: 360px auto 0;
+    height: 100%; 
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    line-height: 50px;
+    border: none;
+    background-color: #FF731D;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media ( min-width: 1025px ) {
+    .contract{
+        font-size: 18px;
+    }
+    .welcome{
+        font-size: 16px;
+    }
+    .fpmgBt{
+        font-size: 16px;
+        margin: 370px auto 0;
+    }
+
+}

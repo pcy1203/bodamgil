@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const fs = require('fs');
 const User = require('../models/user');
+const { emailRegex, passwordRegex, telRegex, dateValidation } = require('../public/js/uservalidation');
 
 exports.login = (req, res, next) => {
   passport.authenticate('local', (authError, user, info) => {
@@ -29,28 +31,35 @@ exports.logout = (req, res) => {
 };
 	
 exports.signup = async (req, res, next) => {
-  // TODO - 유효성 검사 추가하기
-  const { email, password, confirm, name, introduction, gender, birth } = req.body;
+  const { email, password, confirm, name, tel, gender,
+		 birthyear, birthmonth, birthday } = req.body;
+  if (email.length > 40 || !(emailRegex.test(email))) return res.redirect('/signup?message=emailError');
+  if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/signup?message=passwordError');
+  if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/signup?message=telError');
+  if (!name || name.length > 20) return res.redirect('/signup?message=nameError');
+  if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/signup?message=birthError');
   try {
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
 	  return res.redirect('/signup?message=existUserError');
 	}
 	if (password !== confirm) {
-	  return res.redirect('/signup?message=passwordError');
+	  return res.redirect('/signup?message=passwordConfirmError');
 	}
 	const hashedPassword = await bcrypt.hash(password, 12);
-	// TODO - 기본 이미지 지정하기
+	const sameTelUser = await User.findOne({ where: { tel } });
+	if (sameTelUser) {
+	  return res.redirect('/signup?message=existSameTelError');
+	}
 	const newUser = await User.create({
 	  email,
 	  password: hashedPassword,
 	  name,
-	  introduction,
-	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
+	  tel,
 	  gender,
-	  birthDate: new Date(birth[0], Number(birth[1]) - 1, birth[2]),
+	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	});
-	return res.redirect('/?message=signupSuccess');
+	return res.redirect('/signup/success');
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -58,23 +67,45 @@ exports.signup = async (req, res, next) => {
 };
 
 exports.setprofile = async (req, res, next) => {
-  // TODO - 유효성 검사 추가하기
-  const { name, introduction, gender, birth } = req.body;
+  const { name, introduction, gender, birthyear, birthmonth, birthday } = req.body;
+  if (!name || name.length > 20) return res.redirect('/setprofile?message=nameError');
+  if (!gender) return res.redirect('/setprofile?message=genderError');
+  if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/setprofile?message=birthError');
+  const hasImage = req.file?.filename !== undefined;
   try {
 	await User.update({
 	  name,
 	  introduction,
-	  image: req.file?.filename ? `profile/${req.file.filename}` : null,
+	  image: req.file?.filename ? `profile/${req.file.filename}` : req.user.dataValues.image,
 	  gender,
-	  birthDate: new Date(birth[0], Number(birth[1]) - 1, birth[2]),
+	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	}, {
       where: {
         id: req.user.dataValues.id,
   	  }
 	});
-	return res.redirect('/?message=signupSuccess');
+	if (hasImage && req.user.dataValues.image) {
+      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
+	}
+	return res.redirect('/setprofile?message=saveSuccess');
   } catch (error) {
 	console.error(error);
 	return next(error);
   }
+};
+
+exports.changepassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.findid = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.findpassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
+};
+
+exports.setpassword = (req, res, next) => {
+  return res.redirect('/');  // TO-DO
 };

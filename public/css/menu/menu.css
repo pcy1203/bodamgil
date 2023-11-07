@@ -1,0 +1,236 @@
+img {
+	object-fit: cover;
+}
+
+.menu-back {
+	position: absolute;
+	top: 0px;
+	z-index: 9;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.menu-container {
+	position: absolute;
+	top: 0px;
+	z-index: 10;
+	width: 80%;
+	margin-left: 20%;
+	background: white;
+	display: none;
+}
+
+.menu-container .header{
+    position: relative;
+    background-color: white;
+    height: 70px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+    border-bottom: 2px solid #BFBFBF;
+}
+
+.menu-container .header-login{
+    position: relative;
+    background-color: #FF731D;
+    height: 200px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0px;
+}
+
+.menu-container .header-login .profile {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 25px;
+    top: 69px;
+}
+
+.menu-container .header-login .name{
+    position: absolute;
+    width: 115px;
+    left: 120px;
+    top: 82px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.menu-container .header-login .mypage{
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 250px;
+    top: 74px;
+	display: block;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: #FF731D;
+}
+
+.menu-container .header-login .intro{
+    position: absolute;
+    width: 65%;
+    left: 120px;
+    top: 118px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+.menu-container a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-container button{
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+}
+
+/*header*/
+.menu-container .home{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 75px;
+    top: 22.5px;
+}
+.menu-container .exit{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 25px;
+    top: 22.5px;
+}
+
+/*nav*/
+.menu-container nav ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.menu-container nav ul li{
+    padding: 20px 20px;
+    font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 16px;
+    line-height: 100%;
+    border-bottom: 0.3px solid #BFBFBF;
+}
+.menu-container nav ul li:last-child{
+    border-bottom: none;
+}
+.menu-container .right1{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 25px;
+    /* top: 154px; */ /* 로그인 시 282px */
+    transform: rotate(90deg)  /*안눌러진 경우는 없애면 됨*/
+}
+.menu-container .right2{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 25px;
+    /* top: 210px; */ /* 로그인 시 338px */
+    /* 나 알아보기 안펼쳤을 때는 top: 210px 펼쳤을 때는 top: 279px */
+    transform: rotate(90deg) /*안눌러진 경우는 없애면 됨*/
+}
+.menu-container nav ul li ul li{
+    padding: 10px 25px;
+    font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+    line-height: 100%;
+    border-bottom: none;
+}
+.menu-container nav ul li ul li:first-child{
+    padding: 20px 25px 10px 25px;
+}
+.menu-container nav ul li ul li:last-child{
+    padding: 10px 25px 0px 25px;
+}
+
+.submenu {
+	display: none;
+}
+
+/*button*/
+.menu-container .login{
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: calc(50% - 320px/2);
+    /* top: 540px; */
+
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+	background: #ffffff;
+}
+
+.menu-container .signup{
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: calc(50% - 320px/2);
+    /* top: 600px; */
+    margin: 0 0 40px 0;
+
+    border: 1px solid #BFBFBF;
+    border-radius: 30px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+	background: #ffffff;
+}
+
+.menu-container .logout{
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    left: calc(50% - 320px/2);
+    /* top: 715px; */
+    border: 1px solid #FF731D;
+    border-radius: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    align-items: center;
+    text-align: center;
+    color: #FF731D;
+	background: #ffffff;
+}

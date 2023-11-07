@@ -1,27 +1,4 @@
-/*header*/
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.titlelogo {
-    position: absolute;
-    font-size: 1.3em;
-    left: 20px;
-    top: 10px;
-    color: black;
-}
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-    right: 20px;
-    top: 10px;
-	cursor:pointer;
-}
+
 a {
     text-decoration: none;
     color: black;

@@ -3,8 +3,7 @@ a {
     text-decoration: none;
     color: black;
 }
-/*
-.exit{
+.previous{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -12,10 +11,9 @@ a {
     top: 68px;
     cursor: pointer;
 }
-*/
-.passwordchange{
+.findid{
     position: absolute;
-    left: calc(50% - 92px/2 - 4px);
+    left: calc(50% - 92px/2 - 1px);
     top: 100px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
@@ -25,14 +23,13 @@ a {
     text-align: center;
     color: #000000;
 }
-.passwordchange_context{
+.findid_context{
     position: absolute;
-    left: calc(50% - 306px/2 - 5px);
+    left: calc(50% - 251px/2 - 0.5px);
     top: 130px;
     font-family: 'Noto Sans KR';
-    font-weight: 300;
+    font-weight: 400;
     font-size: 12px;
-    line-height: 150%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -40,30 +37,21 @@ a {
 }
 
 /*폼*/
-#currentpassword{
+#name{
     position: absolute;
-    width: 300px;
-    height: 40px;
-    left: calc(50% - 300px/2 - 1px);
-    top: 240px;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 190px;
     border: 1px solid #BFBFBF;
     border-radius: 10px;
 }
-#newpassword{
+#tel{
     position: absolute;
-    width: 300px;
-    height: 40px;
-    left: calc(50% - 300px/2 - 1px);
-    top: 290px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-#newpasswordcheck{
-    position: absolute;
-    width: 300px;
-    height: 40px;
-    left: calc(50% - 300px/2 - 1px);
-    top: 340px;
+    width: 280px;
+    height: 50px;
+    left: calc(50% - 280px/2);
+    top: 255px;
     border: 1px solid #BFBFBF;
     border-radius: 10px;
 }
@@ -73,15 +61,15 @@ input::placeholder{
     font-size: 12px;
     padding: 0 0 0 15px;
 }
-.change{
+.login{
     border-style: none;
     position: absolute;
-    width: 149px;
-    height: 50px;
-    left: calc(50% - 300px/2 - 1px);
-    top: 410px;
+    width: 280px;
+    height: 40px;
+    left: calc(50% - 280px/2);
+    top: 330px;
     background: #FF731D;
-    border-radius: 10px;
+    border-radius: 30px;
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
@@ -89,19 +77,30 @@ input::placeholder{
     cursor: pointer
 }
 
-.nochange{
-    border-style: none;
-    position: absolute;
-    width: 149px;
-    height: 50px;
-    left: calc(50% + 2px);
-    top: 410px;
-    border: 1px solid #BFBFBF;
-    background-color: white;
-    border-radius: 10px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 14px;
-    color: black;
-    cursor: pointer
+
+@media ( min-width: 1025px ) {
+    .findid{
+        font-size: 18px;
+    }
+    .findid_context{
+        font-size: 14px;
+    }
+    #name{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    #tel{
+        width: 400px;
+        left: calc(50% - 400px/2);
+    }
+    .login{
+        left: calc(50% - 300px/2);
+        width: 300px;
+        height: 50px;
+        top: 340px;
+    }
+    input::placeholder{
+        font-size: 14px;
+        padding: 0 0 0 20px;
+    }
 }
