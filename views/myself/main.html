@@ -1,7 +1,75 @@
-{% extends '../layout.html' %}
+<!--{% extends '../layout.html' %}
 
 {% block content %}
   <h1>진로 게임 목록</h1>
   <a href="/myself/polaroid">어릴 때의 내가 좋아했던 것은?</a>
   <a href="/myself/paperplane">내가 잘하는 것은? 네가 잘하는 것은!</a>
-{% endblock %}
+{% endblock %}-->
+
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utsf-8">
+    <title>CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/myself/main.css">
+  </head>
+
+  <body>
+
+    <div class="header">
+        <a href="#"><img src="../../photo/main/previous.png" class= "previous"></a>
+        <span class="findmecontent">나 알아보기</span>
+        <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
+    </div>
+
+    <div class="select">
+        <span>진로게임</span>
+        <button class="all">전체</button>
+        <button class="like">흥미</button>
+        <button class="good">능력</button>
+        <button class="goal">목표</button>
+        <button class="value">가치관</button>
+    </div>
+
+    <div class="contentme">
+        <div class="flexbox">
+		  <a href="/myself/polaroid">	
+			  <div class="item">
+				<img src="../../photo/main/world-image.jpg">
+				<p class="contentme_type">흥미</p>
+				<p class="contentme_name">어릴 때의 내가 좋아했던 것은?</p>
+				<p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+			  </div>
+		  </a>
+		  <a href="/myself/paperplane">
+			  <div class="item">
+				<img src="../../photo/main/world-image.jpg">
+				<p class="contentme_type">능력</p>
+				<p class="contentme_name">내가 잘하는 것은? 네가 잘하는 것은!</p>
+				<p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+			  </div>
+		  </a>
+          <div class="item">
+            <img src="../../photo/main/world-image.jpg">
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+          <div class="item">
+            <img src="../../photo/main/world-image.jpg">
+            <p class="contentme_type">흥미</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+        </div>
+      </div>
+   
+
+
+  </body>
+</html>

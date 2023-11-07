@@ -18,8 +18,9 @@
 	position: absolute;
 	width: 25px;
 	height: 25px;
-  right: 20px;
-  top: 10px;
+	  right: 20px;
+	  top: 10px;
+	cursor:pointer;
 }
 a {
     text-decoration: none;

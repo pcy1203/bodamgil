@@ -25,6 +25,7 @@
 	height: 25px;
   right: 20px;
   top: 10px;
+	cursor:pointer;
 }
 .nav{
     display: none;
