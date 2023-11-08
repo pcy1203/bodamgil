@@ -28,7 +28,7 @@ a {
 .contract{
     position: absolute;
     left: calc(50% - 59px/2 - 0.5px);
-    top: 100px;
+    top: 150px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
     font-size: 16px;
@@ -39,11 +39,11 @@ a {
 }
 .welcome{
     position: absolute;
-    left: calc(50% - 177px/2 + 0.5px);
-    top: 350px;
+    left: calc(50% - 220px/2);
+    top: 230px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
-    font-size: 14px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -58,7 +58,7 @@ ul.join_box{
 .fpmgBt{
     display: block; 
     width: 300px;
-    margin: 360px auto 0;
+    margin: 260px auto 0;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;
@@ -76,11 +76,12 @@ ul.join_box{
         font-size: 18px;
     }
     .welcome{
-        font-size: 16px;
+        font-size: 20px;
+	    left: calc(50% - 260px/2);
     }
     .fpmgBt{
         font-size: 16px;
-        margin: 370px auto 0;
+        margin: 280px auto 0;
     }
 
 }

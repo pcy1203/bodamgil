@@ -63,6 +63,10 @@ a {
     text-align: center;
     color: #FF731D;
 }
+.work:hover{
+	background-color: #FF731D;
+	color: white;
+}
 .job{
     position: absolute;
     width: 280px;
@@ -78,6 +82,10 @@ a {
     align-items: center;
     text-align: center;
     color: #FF731D;
+}
+.job:hover{
+	background-color: #FF731D;
+	color: white;
 }
 .test{
     position: absolute;
@@ -95,6 +103,10 @@ a {
     text-align: center;
     color: #FF731D;
 }
+.test:hover{
+	background-color: #FF731D;
+	color: white;
+}
 .site{
     position: absolute;
     width: 280px;
@@ -110,6 +122,10 @@ a {
     align-items: center;
     text-align: center;
     color: #FF731D;
+}
+.site:hover{
+	background-color: #FF731D;
+	color: white;
 }
 
 

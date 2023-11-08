@@ -173,6 +173,17 @@ ul.join_box{
     align-items: center;
     color: #000000;
 }
+#joinForm p{
+	position: absolute;	
+	font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 10px;
+	color: red;
+	display: flex;
+    align-items: center;
+	left: calc(50% - 280px/2 + 50px);
+	
+}
 #email{
     position: absolute;
     width: 280px;

@@ -175,9 +175,9 @@ img {
 /*button*/
 .menu-container .login{
     position: absolute;
-    width: 320px;
+    width: 200px;
     height: 50px;
-    left: calc(50% - 320px/2);
+    left: calc(50% - 200px/2);
     /* top: 540px; */
 
     border: 1px solid #FF731D;
@@ -196,9 +196,9 @@ img {
 
 .menu-container .signup{
     position: absolute;
-    width: 320px;
+    width: 200px;
     height: 50px;
-    left: calc(50% - 320px/2);
+    left: calc(50% - 200px/2);
     /* top: 600px; */
     margin: 0 0 40px 0;
 

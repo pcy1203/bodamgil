@@ -48,6 +48,7 @@ h1{
     align-items: center;
     text-align: center;
     color: #000000;
+	cursor: pointer;
 }
 .email_image{
     position: absolute;

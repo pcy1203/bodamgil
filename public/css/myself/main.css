@@ -63,6 +63,10 @@ a {
     text-align: center;
     color: #FF731D;
 }
+.game:hover{
+	background-color: #FF731D;
+	color: white;
+}
 .mypage{
     position: absolute;
     width: 280px;
@@ -78,6 +82,10 @@ a {
     align-items: center;
     text-align: center;
     color: #FF731D;
+}
+.mypage:hover{
+	background-color: #FF731D;
+	color: white;
 }
 
 @media ( min-width: 1025px ) {
