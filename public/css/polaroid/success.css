@@ -362,7 +362,7 @@
 .link-select { 
 	position: absolute;
 	background: #FFFFFF; 
-	width: 155px; 
+	width: 100px; 
 	height: 50px;
 	border-radius: 10px;
 	border: 1px solid #BFBFBF;
@@ -381,32 +381,11 @@
 	position: absolute;
 	pointer-events: none;
 	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
-	border-width: 12px; /*말풍선 꼭지 사이즈*/
-	margin-left: 100px; /*말풍선 상세위치 조정*/
+	border-width: 10px; /*말풍선 꼭지 사이즈*/
+	margin-left: 70px; /*말풍선 상세위치 조정*/
 }
 
 .kakaotalk{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 174px;
-    top: 375px;
-	cursor: pointer;
-}
-
-.kakaotalkcontent{
-    position: absolute;
-    left: 174px;
-    top: 413px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 9px;
-    text-align: center;
-    color: #000000;
-}
-
-.instagram{
     position: absolute;
     width: 32px;
     height: 32px;
@@ -415,7 +394,7 @@
     cursor: pointer;
 }
 
-.instagramcontent{
+.kakaotalkcontent{
     position: absolute;
     left: 226px;
     top: 412px;
@@ -426,6 +405,7 @@
     text-align: center;
     color: #000000;
 }
+
 
 .link{
     position: absolute;

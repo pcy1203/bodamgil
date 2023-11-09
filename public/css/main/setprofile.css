@@ -33,56 +33,100 @@ a {
     top: 115px;
 }
 
+/*이미지 선택*/
+#image{
+	display:none;
+}
+.imagecontext {
+	border: 1px solid #5F2987;
+	border-radius: 30px;
+	position: absolute;
+	left: calc(50% - 80px/2);
+	top: 280px;
+	width: 80px;
+	height: 30px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 12px;
+	background-color: white;
+	text-align: center;
+	line-height: 30px;
+	color: #5F2987;
+	cursor: pointer;
+    transition: background-color .4s, color .4s;
+}
+
+.imagecontext:hover {
+    background-color: #5F2987;
+	color: white;
+}
+
 /*폼*/
-.namecontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 310px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
+#joinForm{
+	width: 300px;
+	margin: auto;
+	padding: 0 20px;
+	margin-top: 280px;
+}
+#joinForm .field{
+	margin: 5px 0;
+}
+#joinForm .fieldgender{
+	margin: 0 0 5px 0;
+}
+#joinForm .fieldbirth{
+	margin: 5px 0 15px 0;
+}
+
+#joinForm span{
+	display: block;
+	margin-bottom: 5px;
+	font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
 }
-#name{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 335px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
+#joinForm input{
+	border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+	border-radius: 10px;
 }
-.introductioncontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 430px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
+#joinForm select{
+	border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+	border-radius: 10px;
 }
-#introduction{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 455px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
+#joinForm #gender{
+	width: 330px;
 }
+#joinForm .birth {
+	width: 330px;
+	display: flex;
+	gap: 3px;
+	border-radius: 5px;
+}
+
 input::placeholder{
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 10px;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 3px;
+}
+.fieldgender select{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    padding: 0 0 0 10px;
+}
+.fieldbirth select{
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    padding: 0 0 0 10px;
 }
 
 
@@ -93,8 +137,7 @@ ul.join_box{
 }
 .fpmgBt{
     display: block; 
-    width: 300px;
-    margin: 520px auto 20px;
+	width: 260px;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;
@@ -105,7 +148,8 @@ ul.join_box{
     background-color: #FF731D;
     color: #fff;
     cursor: pointer;
-    border-radius: 30px;
+	margin: 0 auto;
+	border-radius: 10px;
 }
 
 @media ( min-width: 1025px ) {
@@ -115,34 +159,47 @@ ul.join_box{
         left: calc(50% - 1000px/2 + 177px);
         top: 115px;
     }
-    .namecontext {
-        left: calc(50% - 240px/2);
-        top: 130px;
-        font-size: 16px;
-    }
-    #name{
-        left: calc(50% - 240px/2);
-        width: 400px;   
-        top: 160px; 
-    }
-    .introductioncontext {
-        left: calc(50% - 240px/2);
-        top: 240px;
-        font-size: 16px;
-    }
-    #introduction{
-        left: calc(50% - 240px/2);
-        width: 400px;   
-        top: 270px;   
-    }
-    input::placeholder{
-        font-size: 12px;
-        padding: 0 0 0 20px;
-    }
     #joinForm{
-        width: 250px;
-        margin: 320px auto 20px;
-    }
+		width: 500px;
+		margin-top: 105px;
+	}
+	#joinForm .field{
+		margin: 8px 0;
+	}
+	#joinForm .fieldgender{
+		margin: 0 0 8px 0;
+	}
+	#joinForm .fieldbirth{
+		margin: 8px 0 25px 0;
+	}
+
+	#joinForm span{
+		margin-bottom: 8px;
+			font-size: 16px;
+	}
+	#joinForm p{
+		font-size: 12px;
+		padding: 50px 0 0 0;
+	}
+	#joinForm input{
+			padding: 15px;
+			margin-bottom: 5px;
+	}
+	input::placeholder{
+		font-size: 12px;
+		padding: 0 0 0 5px;
+	}
+	.gender select{
+		font-size: 14px;
+		padding: 0 0 0 10px;
+	}
+	.birth select{
+		font-size: 14px;
+		padding: 0 0 0 10px;
+	}
+	.fpmgBt{
+		width: 460px;
+	}
 
 
 }

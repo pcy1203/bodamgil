@@ -77,6 +77,13 @@ a {
     line-height: 100%;
     border-bottom: none;
 }
+.content img{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	right: 25px;
+}
+
 
 
 @media ( min-width: 1025px ) {
@@ -98,4 +105,7 @@ a {
         padding: 15px 25px;
         font-size: 14px;
     }
+	.content img{
+		right: calc(50% - 495px);
+	}
 }

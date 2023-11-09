@@ -41,7 +41,6 @@
         <div class="link-select-box">
             <div class="link-select"></div>
             <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
-            <img src="../../photo/polaroid/instagram.png" class="instagram"><span class="instagramcontent">인스타그램</span>
 			{% for polaroid in polaroids %}
 			<button class="url-copy contents-{{ loop.index }}" data-clipboard-text="{{ polaroid.id }}"><img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
 			{% endfor %}

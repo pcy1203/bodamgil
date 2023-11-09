@@ -65,58 +65,60 @@
 	  <div class="block-2">
         <span class="contract">정보입력</span>
           <form action="/auth/signup" method="post" id="joinForm">
-		    <div>
+		    <div class="field">
               <span class="emailcontext">아이디</span>
 	          <p>※아이디 입력에 맞추어서 적어주세요</p>
 		      <input id="email" type="email" name="email" require autofocus maxlength="40" placeholder="아이디를 입력해주세요">
 		    </div>
-			<div>
+			<div class="field">
 			  <span class="passwordcontext">비밀번호</span>
 			  <p>※8자 이상을 입력해주세요</p>
 			  <input id="password" type="password" name="password" require minlength="8" maxlength="20" placeholder="비밀번호를 입력해주세요(영문, 숫자, 특수문자 포함 8~20자)">
 			</div>
-			<div>
+			<div class="field">
 			  <span class="confirmcontext">비밀번호확인</span>
 		      <p>※비밀번호를 다시 확인해주세요</p>
 			  <input id="confirm" type="password" name="confirm" require minlength="8" maxlength="20" placeholder="비밀번호를 한 번 더 입력해주세요">
 			</div>
-			<div>
+			<div class="field">
 			  <span class="namecontext">이름</span>
 			  <p>※20자 미만으로 작성해주세요</p>
 			  <input id="name" type="text" name="name" require maxlength="20" placeholder="이름을 입력해주세요 (최대 20자)">
 			</div>
-			<div>
+			<div class="field">
 			  <span class="telcontext">전화번호</span>
 			  <p>※전화번호 양식에 맞추어서 작성해주세요</p>
 			  <input id="tel" type="tel" name="tel" require maxlength="13" placeholder="000-0000-0000 (-까지 입력)" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}">
 			</div>
-			<div class="gender">
+			<div class="fieldgender">
 			  <span class="gendercontext">성별</span>
 			  <select name="gender" id="gender">    
 				<option value="man">남자</option>
 				<option value="woman">여자</option>
 			  </select>
 			</div>
-			<div class="birth">
+			<div class="fieldbirth">
 			  <span class="birthcontext">생년월일</span>
-			  <select name="birthyear" class="box" id="birthyear">
-			    <option disabled selected>년도</option>
-				  {% for i in range(1900, 2024) %}
-				    <option value="{{ i }}">{{ i }}년</option>
-				  {% endfor %}
-			  </select>
-			  <select name="birthmonth" class="box" id="birthmonth">
-				<option disabled selected>월</option>
-				  {% for i in range(1, 13) %}
-					<option value="{{ i }}">{{ i }}월</option>
-				  {% endfor %}
-			  </select>
-			  <select name="birthday" class="box" id="birthday">
-				<option disabled selected>일</option>
-				  {% for i in range(1, 32) %}
-					<option value="{{ i }}">{{ i }}일</option>
-				  {% endfor %}
-			  </select>
+			  <div class="birth">
+				  <select name="birthyear" class="box" id="birthyear">
+					<option disabled selected>년도</option>
+					  {% for i in range(1900, 2024) %}
+						<option value="{{ i }}">{{ i }}년</option>
+					  {% endfor %}
+				  </select>
+				  <select name="birthmonth" class="box" id="birthmonth">
+					<option disabled selected>월</option>
+					  {% for i in range(1, 13) %}
+						<option value="{{ i }}">{{ i }}월</option>
+					  {% endfor %}
+				  </select>
+				  <select name="birthday" class="box" id="birthday">
+					<option disabled selected>일</option>
+					  {% for i in range(1, 32) %}
+						<option value="{{ i }}">{{ i }}일</option>
+					  {% endfor %}
+				  </select>
+				</div>
 			</div>
 			<button class="fpmgBt">가입완료</button>
 	      </form>

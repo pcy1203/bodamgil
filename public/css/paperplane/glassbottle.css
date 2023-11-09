@@ -317,7 +317,7 @@ li.active:hover{
 .link-select { 
 	position: absolute;
 	background: #FFFFFF; 
-	width: 152px; 
+	width: 95px; 
 	height: 50px;
 	border-radius: 10px;
 	border: 1px solid #BFBFBF;
@@ -336,7 +336,7 @@ li.active:hover{
 	position: absolute;
 	pointer-events: none;
 	border-color: transparent transparent #BFBFBF transparent; /*말풍선 꼭지방향*/
-	border-width: 12px; /*말풍선 꼭지 사이즈*/
+	border-width: 10px; /*말풍선 꼭지 사이즈*/
 	margin-left: 20px; /*말풍선 상세위치 조정*/
 }
 
@@ -361,7 +361,7 @@ li.active:hover{
     color: #000000;
 }
 
-.instagram{
+.link{
     position: absolute;
     width: 32px;
     height: 32px;
@@ -370,30 +370,9 @@ li.active:hover{
     cursor: pointer;
 }
 
-.instagramcontent{
-    position: absolute;
-    left: 102px;
-    top: 163px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 9px;
-    text-align: center;
-    color: #000000;
-}
-
-.link{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 165px;
-    top: 128px;
-    cursor: pointer;
-}
-
 .linkcontent{
     position: absolute;
-    left: 162px;
+    left: 102px;
     top: 163px;
     font-family: 'Noto Sans KR';
     font-style: normal;

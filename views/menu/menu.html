@@ -15,16 +15,14 @@
 	<ul class="nav">
 	  <li class="menu-1"><a href="/about">소개</a></li>
 	  <li class="menu-2"><a href="/myself">나 알아보기</a>
-	  <img src="../../photo/main/right.png" class="right1 menu-2-close"
-		   style="top: {% if user %}282px{% else %}154px{% endif %}">
+	  <img src="../../photo/main/right.png" class="right1 menu-2-close">
 		<ul>
 			<li class="submenu"><a href="#">진로게임</a></li>
 			<li class="submenu"><a href="/myprofile">마이페이지</a></li>
 		</ul>
 	  </li>
 	  <li class="menu-3"><a href="/world">세상 알아보기</a>
-	  <img src="../../photo/main/right.png" class="right2 menu-3-close"
-		   style="top: {% if user %}338px{% else %}210px{% endif %}">
+	  <img src="../../photo/main/right.png" class="right2 menu-3-close">
 		<ul>
 		  <li class="submenu"><a href="#">직무 알아보기</a></li>
 		  <li class="submenu"><a href="#">직업 탐구하기</a></li>
@@ -32,7 +30,13 @@
 		  <li class="submenu"><a href="#">도움이 되는 사이트</a></li>
 		</ul>
 	  </li>
-	  <li class="menu-4"><a href="#">이용안내</a></li>
+	  <li class="menu-4"><a href="#">이용안내</a>
+	  <img src="../../photo/main/right.png" class="right3 menu-4-close">
+		<ul>
+			<li class="submenu"><a href="/faq">FAQ</a></li>
+			<li class="submenu"><a href="/notice">공지사항</a></li>
+		</ul>
+	  </li>
 	  {% if user %}
 		<li class="menu-5"><a href="/setprofile">회원정보수정</a></li>
 	  {% endif %}
@@ -40,7 +44,7 @@
   </nav>
   <div class="button">
 	{% if user %}
-	  <a href="/auth/logout" class="logout menu-button" style="top: 509px">로그아웃</a>
+	  <div> <a href="/auth/logout" class="logout menu-button" style="top: 510px">로그아웃</a></div>
 	{% else %}
 	  <a href="/login" class="login menu-button" style="top: 334px">로그인</a>
 	  <a href="/signup" class="signup menu-button" style="top: 394px">회원가입</a>
@@ -65,6 +69,7 @@ menuBlock.style.display = 'none';
 
 const menu2Arrow = document.querySelector('.menu-2-close');
 const menu3Arrow = document.querySelector('.menu-3-close');
+const menu4Arrow = document.querySelector('.menu-4-close');
 const menuButtons = document.querySelectorAll('.menu-button');
 
 document.querySelector('.menu-2').addEventListener('click', () => {
@@ -114,6 +119,31 @@ if (menu3Arrow.classList[1] === 'menu-3-close') {
   });
   menu3Arrow.classList.remove('menu-3-open');
   menu3Arrow.classList.add('menu-3-close');
+}
+});
+	
+	
+document.querySelector('.menu-4').addEventListener('click', () => {
+if (menu4Arrow.classList[1] === 'menu-4-close') {
+  document.querySelectorAll('.menu-4 li.submenu').forEach((submenu) => {
+	submenu.style.display = 'block';
+  })
+  menu4Arrow.style.transform = 'rotate(270deg)';
+  menuButtons.forEach((button) => {
+	button.style.top = `${Number(button.style.top.slice(0, -2)) + 300}px`;
+  });
+  menu4Arrow.classList.remove('menu-4-close');
+  menu4Arrow.classList.add('menu4-open');
+} else {
+  document.querySelectorAll('.menu-4 li.submenu').forEach((submenu) => {
+	submenu.style.display = 'none';
+  })
+  menu4Arrow.style.transform = 'rotate(90deg)';
+  menuButtons.forEach((button) => {
+	button.style.top = `${Number(button.style.top.slice(0, -2)) - 300}px`;
+  });
+  menu4Arrow.classList.remove('menu-4-open');
+  menu4Arrow.classList.add('menu-4-close');
 }
 });
 

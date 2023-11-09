@@ -174,10 +174,9 @@ a {
     }
     .photo{
         display: block;
-        position: absolute;
-        width: 45%;
-        height: 100%;
+        width: 48%;
+        height: 640px;
         left: 0px;
-        top: 60px;
+        margin: 20px 0 0 0;
     }
 }

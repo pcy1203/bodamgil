@@ -64,9 +64,9 @@ img {
 
 .menu-container .header-login .mypage{
     position: absolute;
-    width: 150px;
+    width: 40%;
     height: 40px;
-    left: 250px;
+    left: 200px;
     top: 74px;
 	display: block;
     background: #FFFFFF;
@@ -153,6 +153,13 @@ img {
     /* 나 알아보기 안펼쳤을 때는 top: 210px 펼쳤을 때는 top: 279px */
     transform: rotate(90deg) /*안눌러진 경우는 없애면 됨*/
 }
+.menu-container .right3{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 25px;
+    transform: rotate(90deg) 
+}
 .menu-container nav ul li ul li{
     padding: 10px 25px;
     font-family: 'Noto Sans KR';
@@ -196,7 +203,7 @@ img {
 
 .menu-container .signup{
     position: absolute;
-    width: 200px;
+   width: 200px;
     height: 50px;
     left: calc(50% - 200px/2);
     /* top: 600px; */
@@ -218,9 +225,9 @@ img {
 
 .menu-container .logout{
     position: absolute;
-    width: 320px;
+    width: 200px;
     height: 50px;
-    left: calc(50% - 320px/2);
+	right: calc(50% - 200px/2);
     /* top: 715px; */
     border: 1px solid #FF731D;
     border-radius: 30px;
@@ -230,7 +237,21 @@ img {
     font-size: 16px;
     line-height: 50px;
     align-items: center;
-    text-align: center;
+	text-align: center;
     color: #FF731D;
 	background: #ffffff;
+}
+
+
+.menu-container .logout:hover{
+	background: #FF731D;
+	color: white;
+}
+.menu-container .login:hover{
+	background: #FF731D;
+	color: white;
+}
+.menu-container .signup:hover{
+	background: #FF731D;
+	color: white;
 }

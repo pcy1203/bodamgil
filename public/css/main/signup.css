@@ -160,18 +160,28 @@ ul.join_box{
 }
 
 /*가운데 콘텐츠*/
-.emailcontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 150px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
+#joinForm{
+	width: 300px;
+	margin: auto;
+	padding: 0 20px;
+	margin-top: 95px;
+}
+#joinForm .field{
+	margin: 5px 0;
+}
+#joinForm .fieldgender{
+	margin: 0 0 5px 0;
+}
+#joinForm .fieldbirth{
+	margin: 5px 0 15px 0;
+}
+
+#joinForm span{
+	display: block;
+	margin-bottom: 5px;
+	font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
 }
 #joinForm p{
 	position: absolute;	
@@ -181,171 +191,33 @@ ul.join_box{
 	color: red;
 	display: flex;
     align-items: center;
-	left: calc(50% - 280px/2 + 50px);
-	
+	padding: 55px 0 0 0;
 }
-#email{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 175px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
+#joinForm input{
+	border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+	border-radius: 10px;
 }
-.passwordcontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 240px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
+#joinForm select{
+	border: 1px solid #dadada;
+    padding: 15px;
+    width: 100%;
+    margin-bottom: 5px;
+	border-radius: 10px;
 }
-#password{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 265px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
+.fieldbirth .birth {
+	display: flex;
+	gap: 3px;
+	border-radius: 5px;
 }
-.confirmcontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 330px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-#confirm{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 355px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-.namecontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 420px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-#name{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 445px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-.telcontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 510px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-#tel{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 535px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-.gendercontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 600px;
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-#gender{
-    position: absolute;
-    width: 280px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 625px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-.birthcontext {
-    position: absolute;
-    height: 14px;
-    left: calc(50% - 280px/2);
-    top: 690px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-#birthyear{
-    position: absolute;
-    width: 135px;
-    height: 50px;
-    left: calc(50% - 280px/2);
-    top: 715px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-#birthmonth{
-    position: absolute;
-    width: 67px;
-    height: 50px;
-    left: calc(50% - 1px);
-    top: 715px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
-#birthday{
-    position: absolute;
-    width: 67px;
-    height: 50px;
-    left: calc(50% + 70px);
-    top: 715px;
-    border: 1px solid #BFBFBF;
-    border-radius: 10px;
-}
+
 input::placeholder{
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 10px;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 3px;
 }
 .gender select{
     font-family: 'Noto Sans KR';
@@ -367,7 +239,7 @@ ul.join_box{
 }
 .fpmgBt{
     display: block; 
-    width: 300px;
+	width: 260px;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;
@@ -378,84 +250,54 @@ ul.join_box{
     background-color: #FF731D;
     color: #fff;
     cursor: pointer;
-    margin: 740px auto 20px;
+	margin: 0 auto;
+	border-radius: 10px;
 }
 
 @media ( min-width: 1025px ) {
     .contract{
         font-size: 18px;
     }
-    .emailcontext {
-        left: calc(50% - 380px/2);
-    }
-    #email{
-        left: calc(50% - 380px/2);
-        width: 380px;
-    }
-    .passwordcontext {
-        left: calc(50% - 380px/2);
-    }
-    #password{
-        left: calc(50% - 380px/2);
-        width: 380px;
-    }
-    .confirmcontext {
-        left: calc(50% - 380px/2);
-    }
-    #confirm{
-        left: calc(50% - 380px/2);
-        width: 380px;    
-    }
-    .namecontext {
-        left: calc(50% - 380px/2);
-    }
-    #name{
-        left: calc(50% - 380px/2);
-        width: 380px;    
-    }
-    .telcontext {
-        left: calc(50% - 380px/2);
-    }
-    #tel{
-        left: calc(50% - 380px/2);
-        width: 380px;    
-    }
-    .gendercontext {
-        left: calc(50% - 380px/2);
-    }
-    #gender{
-        left: calc(50% - 380px/2);
-        width: 380px;    
-    }
-    .birthcontext {
-        left: calc(50% - 380px/2);
-    }
-    #birthyear{
-        left: calc(50% - 380px/2);
-        width: 185px;
-    }
-    #birthmonth{
-        left: calc(50% -1px);
-        width: 92.5px;
-    }
-    #birthday{
-        left: calc(50% + 95px);
-        width: 92.5px;
-    }
-    input::placeholder{
-        font-size: 12px;
-        padding: 0 0 0 20px;
-    }
-    .gender select{
-        font-size: 14px;
-        padding: 0 0 0 15px;
-    }
-    .birth select{
-        font-size: 14px;
-        padding: 0 0 0 15px;
-    }
+    #joinForm{
+		width: 500px;
+		margin-top: 105px;
+	}
+	#joinForm .field{
+		margin: 8px 0;
+	}
+	#joinForm .fieldgender{
+		margin: 0 0 8px 0;
+	}
+	#joinForm .fieldbirth{
+		margin: 8px 0 25px 0;
+	}
+
+	#joinForm span{
+		margin-bottom: 8px;
+			font-size: 16px;
+	}
+	#joinForm p{
+		font-size: 12px;
+		padding: 50px 0 0 0;
+	}
+	#joinForm input{
+			padding: 15px;
+			margin-bottom: 5px;
+	}
+	input::placeholder{
+		font-size: 12px;
+		padding: 0 0 0 5px;
+	}
+	.gender select{
+		font-size: 14px;
+		padding: 0 0 0 10px;
+	}
+	.birth select{
+		font-size: 14px;
+		padding: 0 0 0 10px;
+	}
 	.fpmgBt{
-		width: 400px;
+		width: 460px;
 	}
 }
 

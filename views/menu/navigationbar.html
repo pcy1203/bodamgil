@@ -17,7 +17,11 @@
 		  <li><a href="#">도움이 되는 사이트</a></li>
 		</ul>
 	  </li>
-	  <li><a href="#">이용안내</a>
+	  <li><a href="/faq">이용안내</a>
+		  <ul>
+			  <li><a href="/faq">FAQ</a></li>
+			  <li><a href="/notice">공지사항</a></li>
+		  </ul>
 	  </li>
 	  <li><a href="/myprofile"><img src="../../photo/main/person.png" class="person"></a>
 		<ul>
@@ -48,7 +52,12 @@
   document.querySelector('.navigationbar nav ul li:nth-child(3)').addEventListener('mouseout', () => {
 	 document.querySelector('.navigationbar nav ul li:nth-child(3) ul').style.height = '0px';
   });
-	
+ document.querySelector('.navigationbar nav ul li:nth-child(4)').addEventListener('mouseover', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(4)) ul').style.height = '72px';
+  });
+  document.querySelector('.navigationbar nav ul li:nth-child(4)').addEventListener('mouseout', () => {
+	 document.querySelector('.navigationbar nav ul li:nth-child(4) ul').style.height = '0px';
+  });	
   document.querySelector('.navigationbar nav ul li:nth-child(5)').addEventListener('mouseover', () => {
 	 document.querySelector('.navigationbar nav ul li:nth-child(5) ul').style.height = '72px';
   });
