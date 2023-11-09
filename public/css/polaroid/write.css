@@ -5,16 +5,13 @@
     font-style: normal;}
 
 /* 전체화면 */
+/*
 .container.size-horizontal{
 	height: 640px;
 }
 
 .container.size-vertical{
 	height: 747px;
-}
-
-.header{
-	position: relative;
 }
 
 .previous{
@@ -38,15 +35,16 @@
 
 	color: #000000;
 }
+*/
 
+html {
+	height: 100%;
+}
 
-.menu{
+.main{
 	position: absolute;
-	width: 25px;
-	height: 25px;
-	left: 319px;
-	top: 9.5px;	
-	cursor: pointer;
+	width: 100%;
+	background: #EFEDF7;
 }
 
 .main-block.size-horizontal{
@@ -61,7 +59,7 @@
 .main-block h1{
 position: absolute;
 left: calc(50% - 286px/2);
-top: 45px;
+top: 40px;
 margin: 0;
 
 font-family: 'Noto Sans KR';
@@ -78,7 +76,7 @@ position: absolute;
 width: 305px;
 height: 69px;
 left: calc(50% - 305px/2 + 0.5px);
-top: 80px;
+top: 75px;
 margin: 0;
 
 font-family: 'Noto Sans KR', sans-serif;
@@ -89,22 +87,22 @@ color: #000000;
 }
 
 /*세 개 버튼*/
-li {
+.main li {
 	position: relative;
 	border: 1px solid #BFBFBF;
 	border-radius: 30px;
-    margin: 140px 4px 0 0;
+    margin: 135px 4px 0 0;
     height: 40px;
     line-height: 40px;
     width: 90px;
 	list-style: none;
 	float: left;
-	left: auto;
+	left: calc(50% - 320px / 2);
 	cursor: pointer;
     transition: background-color .4s, color .4s;
 }
 
-li:hover{
+.main li:hover{
     background-color: #5F2987;
 	color: white;
 }
@@ -137,7 +135,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 164px;
+	left: calc((100% - 360px) / 2 + 164px);
 	top: 262px;
 	border-radius: 50%;
 	background: rgba(197, 187, 227, 0.8);
@@ -337,7 +335,7 @@ li:hover{
 	border: 1px solid #BFBFBF;
 	padding:15px;
 	top: 128px;
-	left: 21px;
+	left: calc((100% - 360px) / 2 + 21px);
 	
 }
 .color-select:after { /*말풍선 꼭지*/
@@ -359,7 +357,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 43px;
+	left: calc((100% - 360px) / 2 + 43px);
 	top: 138px;
 	border-radius: 50px;
 	background: #FFBDBD;
@@ -370,7 +368,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 86px;
+	left: calc((100% - 360px) / 2 + 86px);
 	top: 138px;
 	border-radius: 50px;
 	background: #F6E392;
@@ -381,7 +379,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 129px;
+	left: calc((100% - 360px) / 2 + 129px);
 	top: 138px;
 	border-radius: 50px;
 	background: #ABDC7A;
@@ -392,7 +390,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 172px;
+	left: calc((100% - 360px) / 2 + 172px);
 	top: 138px;
 	border-radius: 50px;
 	background: #97E4FF;
@@ -403,7 +401,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 215px;
+	left: calc((100% - 360px) / 2 + 215px);
 	top: 138px;
 	border-radius: 50px;
 	background: #C5BBE3;
@@ -419,7 +417,7 @@ li:hover{
 	border: 1px solid #BFBFBF;
 	padding:15px;
 	top: 128px;
-	left: 90px;
+	left: calc((100% - 360px) / 2 + 90px);
 	
 }
 .size-select:after { /*말풍선 꼭지*/
@@ -439,7 +437,7 @@ li:hover{
 
 .select-horizontal{
 	position: absolute;
-	left: 125px;
+	left: calc((100% - 360px) / 2 + 125px);
 	top: 145px;
 
 	font-family: 'Noto Sans KR';
@@ -453,7 +451,7 @@ li:hover{
 
 .select-vertical{
 	position: absolute;
-	left: 200px;
+	left: calc((100% - 360px) / 2 + 200px);
 	top: 145px;
 
 	font-family: 'Noto Sans KR';
@@ -463,15 +461,6 @@ li:hover{
 	display: block;
 	color: #000000;
 	cursor: pointer;
-}
-
-.main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 45px;	
-	background: #EFEDF7;
-
 }
 
 /*예시 팝업*/
@@ -491,7 +480,7 @@ li:hover{
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 164px;
+	left: calc((100% - 360px) / 2 + 164px);
 	top: 163px;
 	border-radius: 50%;
 	background: rgba(197, 187, 227, 0.8);
@@ -603,7 +592,7 @@ li:hover{
     position: absolute;
     width: 36px;
     height: 75px;
-    left: 215px;
+    left: calc((100% - 360px) / 2 + 215px);
     top: 148px;
     transform: rotate(10deg);
 }
@@ -612,7 +601,7 @@ li:hover{
     position: absolute;
     width: 18px;
     height: 38px;
-    left: 140px;
+    left: calc((100% - 360px) / 2 + 140px);
     top: 400px;
     transform: rotate(5deg);
 }
@@ -626,7 +615,7 @@ li:hover{
     transform: rotate(5deg);
 }
 
-.exit{
+.main .exit{
     position: absolute;
     width: 20px;
     height: 20px;
