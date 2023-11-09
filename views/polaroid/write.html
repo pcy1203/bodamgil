@@ -9,48 +9,45 @@
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
 	<link rel="stylesheet" href="../../css/polaroid/write.css">
+    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; border: 1px solid black;" class="container size-horizontal">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/menu.png" class="menu">
-		  
-	<div class="main main-block size-horizontal">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}    
+	  <div class="main main-block size-horizontal">
 		<h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
   		<p>어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고<br> 이에 대해 설명해주세요. 어렸을 때의 사진이나 <br>기억 나는 장소 등에 대해 적어도 좋아요.</p>
 		<ul>
-			<li><img src="../../photo/polaroid/select-color.png" class="select-color"><span>색깔</span></li>
-			<li><img src="../../photo/polaroid/select-size.png" class="select-size"><span>크기</span></li>
-			<li><img src="../../photo/polaroid/select-example.png" class="select-example"><span>예시</span></li>
+		  <li><img src="../../photo/polaroid/select-color.png" class="select-color"><span>색깔</span></li>
+		  <li><img src="../../photo/polaroid/select-size.png" class="select-size"><span>크기</span></li>
+		  <li><img src="../../photo/polaroid/select-example.png" class="select-example"><span>예시</span></li>
     	</ul>
-	</div>
-	<div class="color-select-box">
+	  </div>
+	  <div class="color-select-box">
 		<div class="color-select"></div>	  
 		<div class="select-red"></div>
 		<div class="select-yellow"></div>
 		<div class="select-green"></div>
 		<div class="select-blue"></div>
 		<div class="select-purple"></div>
-	</div>
-	<div class="size-select-box">
+	  </div>
+	  <div class="size-select-box">
 		<div class="size-select"></div>
 		<div class="select-horizontal">가로</div>
 		<div class="select-vertical">세로</div>
-	</div> 
-	<form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
+	  </div> 
+	  <form action="/myself/polaroid/write" method="post" enctype="multipart/form-data">
 		<div class="button-color">	
-			<input id="color-red" type="radio" name="color" value="red">
-			<input id="color-yellow" type="radio" name="color" value="yellow">
-			<input id="color-green" type="radio" name="color" value="green">
-			<input id="color-blue" type="radio" name="color" value="blue">
-			<input id="color-purple" type="radio" name="color" value="purple" checked>
+		  <input id="color-red" type="radio" name="color" value="red">
+		  <input id="color-yellow" type="radio" name="color" value="yellow">
+		  <input id="color-green" type="radio" name="color" value="green">
+		  <input id="color-blue" type="radio" name="color" value="blue">
+		  <input id="color-purple" type="radio" name="color" value="purple" checked>
 		</div>
 		<div class="button-size">	
-			<input id="size-horizontal" type="radio" name="size" value="horizontal" checked>
-			<input id="size-vertical" type="radio" name="size" value="vertical">
+		  <input id="size-horizontal" type="radio" name="size" value="horizontal" checked>
+		  <input id="size-vertical" type="radio" name="size" value="vertical">
 		</div>
 		<div class="polaroid"></div>
 		<div class="sticker"></div>
@@ -60,129 +57,126 @@
 		  <input id="image" type="file" name="image" accept="image/*">
 		</div>
 		<div class="write-block">
-			<p id="inner-content" class="size-horizontal"></p>
-			<div> 
-			  <input id="content" class="size-horizontal" name="content" maxlength="30" require>
-			  <button type="submit" class="next size-horizontal">NEXT</button>
-			</div>
+		  <p id="inner-content" class="size-horizontal"></p>
+		  <div> 
+			<input id="content" class="size-horizontal" name="content" maxlength="30" require>
+			<button type="submit" class="next size-horizontal">NEXT</button>
+		  </div>
 		</div>
-   	</form>
+   	  </form>
 		  
-	<div class="main example-block size-horizontal">
+	  <div class="main example-block size-horizontal">
         <img src="../../photo/polaroid/exit.png" class="exit">
-
         <div class="polaroid"></div>
         <div class="sticker"></div>
 		<img src="../../photo/polaroid/beach.jpg" class="photo">
         <p class="polaroid-content size-horizontal">바다 보는 것을 좋아했던 어린 시절의 나</p>
-
         <p class="example-content1">어릴 때의 꿈이나 즐겼던 활동 사진, <br>장소의 사진을 넣어주세요 <br>ex.어렸을 때 가장 좋아했던 바다사진</p>
         <p class="example-content2 size-horizontal">좋았던 내용에 대해 <br>최대한 구체적으로 적어주세요. <br> ex. 바다가 좋다(X) <br> 푸른 바다를 보는 것이 좋다(O)</p>
         <img src="../../photo/polaroid/arrow1.png" class="arrow1">
         <img src="../../photo/polaroid/arrow2.png" class="arrow2 size-horizontal">
-	</div>	  
-	<script src="../../js/polaroidcolor.js"></script>
-	<script src="../../js/polaroidsize.js"></script>
-   	<script>
-		window.onload = () => {
-		  let message = (new URLSearchParams(location.search)).get('message');
-
-		  if (message) {
-			switch (message) {
-			  case 'noPhotoError':
-				alert('사진을 선택해주세요!');
-				break;
-			  case 'noDataError':
-				alert('텍스트를 입력해주세요!');
-				break;
-			  case 'longDataError':
-				alert('텍스트는 30자 이내로 입력해주세요!');
-				break;
-			}
-		  }
-		};  
-		
-		// 폴라로이드 안쪽 글씨
-		const innerContent = document.getElementById('inner-content');
-		document.getElementById('content').addEventListener('input', (e) => {
-		  innerContent.innerHTML = e.target.value;
-		});
-		
-		const colorSelectBox = document.querySelector('.color-select-box');
-		const colorSelectButton = document.querySelector('.main > ul > li:nth-child(1)');
-		
-		const sizeSelectBox = document.querySelector('.size-select-box');
-		const sizeSelectButton = document.querySelector('.main > ul > li:nth-child(2)');
-		
-		// 색깔 선택 버튼
-		colorSelectButton.addEventListener('click', (e) => {
-		  let colorSelectBoxState = colorSelectBox.style.display;
-		  if (colorSelectBoxState === 'none') {
-			colorSelectBox.style.display = 'block';
-			sizeSelectBox.style.display = 'none';
-		  } else {
-			colorSelectBox.style.display = 'none';
-		  }
-		});
-		
-		const checkColor = (color) => {
-	      document.querySelectorAll('.button-color > input').forEach((button) => {
-		    button.checked = false;
-	      });
-	      document.querySelector(`#color-${color}`).checked = true;
-		  changePolaroidColor(color);
-	    };
-		
-		document.querySelectorAll('.color-select-box > div:nth-child(n+2)').forEach((color) => {
-	      color.addEventListener('click', () => {
-		    checkColor(color.classList[0].split("-")[1]);
-	      });
-	    });
-		
-		// 크기 선택 버튼
-		sizeSelectButton.addEventListener('click', (e) => {
-		  let sizeSelectBoxState = sizeSelectBox.style.display;
-		  if (sizeSelectBoxState === 'none') {
-			sizeSelectBox.style.display = 'block';
-			colorSelectBox.style.display = 'none';
-		  } else {
-			sizeSelectBox.style.display = 'none';
-		  }
-		});
-		
-		const checkSize = (size) => {
-	      document.querySelectorAll('.button-size > input').forEach((button) => {
-		    button.checked = false;
-	      });
-	      document.querySelector(`#size-${size}`).checked = true;
-		  changePolaroidSize(size);
-	    };
-		
-		document.querySelectorAll('.size-select-box > div:nth-child(n+2)').forEach((size) => {
-	      size.addEventListener('click', () => {
-		    checkSize(size.classList[0].split("-")[1]);
-	      });
-	    });
-		
-		// 사진 미리보기
-		document.querySelector('input#image').addEventListener('change', (e) => {
-          let reader = new FileReader();
-	      reader.onload = function(event) {
-		    document.querySelector('.upload-view').setAttribute("src", event.target.result);
-          };
-          reader.readAsDataURL(event.target.files[0]);
-		});		
-		
-		document.querySelector('.main > ul > li:nth-child(3)').addEventListener('click', (e) => {
-          document.querySelector('.example-block').style.display = 'block';
-		});
-		
-		document.querySelector('.exit').addEventListener('click', (e) => {
-          document.querySelector('.example-block').style.display = 'none';
-		});
-   </script>
-    </div>	  
+	  </div>	  
 	</div>
-	</div>
+	{% include "menu/menu.html" %}
   </body>
+  <script src="../../js/polaroidcolor.js"></script>
+  <script src="../../js/polaroidsize.js"></script>
+  <script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+
+	  if (message) {
+		switch (message) {
+		  case 'noPhotoError':
+			alert('사진을 선택해주세요!');
+			break;
+		  case 'noDataError':
+			alert('텍스트를 입력해주세요!');
+			break;
+		  case 'longDataError':
+			alert('텍스트는 30자 이내로 입력해주세요!');
+			break;
+		}
+	  }
+	};  
+
+	// 폴라로이드 안쪽 글씨
+	const innerContent = document.getElementById('inner-content');
+	document.getElementById('content').addEventListener('input', (e) => {
+	  innerContent.innerHTML = e.target.value;
+	});
+
+	const colorSelectBox = document.querySelector('.color-select-box');
+	const colorSelectButton = document.querySelector('.main > ul > li:nth-child(1)');
+
+	const sizeSelectBox = document.querySelector('.size-select-box');
+	const sizeSelectButton = document.querySelector('.main > ul > li:nth-child(2)');
+
+	// 색깔 선택 버튼
+	colorSelectButton.addEventListener('click', (e) => {
+	  let colorSelectBoxState = colorSelectBox.style.display;
+	  if (colorSelectBoxState === 'none') {
+		colorSelectBox.style.display = 'block';
+		sizeSelectBox.style.display = 'none';
+	  } else {
+		colorSelectBox.style.display = 'none';
+	  }
+	});
+
+	const checkColor = (color) => {
+	  document.querySelectorAll('.button-color > input').forEach((button) => {
+		button.checked = false;
+	  });
+	  document.querySelector(`#color-${color}`).checked = true;
+	  changePolaroidColor(color);
+	};
+
+	document.querySelectorAll('.color-select-box > div:nth-child(n+2)').forEach((color) => {
+	  color.addEventListener('click', () => {
+		checkColor(color.classList[0].split("-")[1]);
+	  });
+	});
+
+	// 크기 선택 버튼
+	sizeSelectButton.addEventListener('click', (e) => {
+	  let sizeSelectBoxState = sizeSelectBox.style.display;
+	  if (sizeSelectBoxState === 'none') {
+		sizeSelectBox.style.display = 'block';
+		colorSelectBox.style.display = 'none';
+	  } else {
+		sizeSelectBox.style.display = 'none';
+	  }
+	});
+
+	const checkSize = (size) => {
+	  document.querySelectorAll('.button-size > input').forEach((button) => {
+		button.checked = false;
+	  });
+	  document.querySelector(`#size-${size}`).checked = true;
+	  changePolaroidSize(size);
+	};
+
+	document.querySelectorAll('.size-select-box > div:nth-child(n+2)').forEach((size) => {
+	  size.addEventListener('click', () => {
+		checkSize(size.classList[0].split("-")[1]);
+	  });
+	});
+
+	// 사진 미리보기
+	document.querySelector('input#image').addEventListener('change', (e) => {
+	  let reader = new FileReader();
+	  reader.onload = function(event) {
+		document.querySelector('.upload-view').setAttribute("src", event.target.result);
+	  };
+	  reader.readAsDataURL(event.target.files[0]);
+	});		
+
+	document.querySelector('.main > ul > li:nth-child(3)').addEventListener('click', (e) => {
+	  document.querySelector('.example-block').style.display = 'block';
+	});
+
+	document.querySelector('.exit').addEventListener('click', (e) => {
+	  document.querySelector('.example-block').style.display = 'none';
+	});
+  </script>
 </html>
