@@ -142,7 +142,6 @@ img {
     height: 12px;
     right: 25px;
     /* top: 154px; */ /* 로그인 시 282px */
-    transform: rotate(90deg)  /*안눌러진 경우는 없애면 됨*/
 }
 .menu-container .right2{
     position: absolute;
@@ -151,14 +150,18 @@ img {
     right: 25px;
     /* top: 210px; */ /* 로그인 시 338px */
     /* 나 알아보기 안펼쳤을 때는 top: 210px 펼쳤을 때는 top: 279px */
-    transform: rotate(90deg) /*안눌러진 경우는 없애면 됨*/
 }
 .menu-container .right3{
     position: absolute;
     width: 12px;
     height: 12px;
     right: 25px;
-    transform: rotate(90deg) 
+}
+.menu-container .menu-open{
+    transform: rotate(270deg);
+}
+.menu-container .menu-close{ 
+    transform: rotate(0deg); 
 }
 .menu-container nav ul li ul li{
     padding: 10px 25px;
