@@ -9,48 +9,45 @@
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
 	<link rel="stylesheet" href="../../css/polaroid/view.css">
+    <link rel="stylesheet" href="../../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"><img src="../../photo/polaroid/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/trash.png" class="trash">
-		<img src="../../photo/polaroid/menu.png" class="menu">
-    <div class="main polaroid-{{ polaroids[0].color }}">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}    
+	  <div class="trash-circle">
+		<img src="../../../photo/polaroid/trash.png" class="trash">
+	  </div>
+      <div class="main polaroid-{{ polaroids[0].color }}">
         <span class="name1"></span>
         <span class="name2">/</span>
         <span class="name3">{{ polaroids.length }}</span>
 	    {% for polaroid in polaroids %}
-		{% if polaroid.size == "horizontal" %}<div class="contents-{{ loop.index }}" style="height: 53px; background: inherit;"></div>{% endif %}
-		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }} id-{{ polaroid.id }}">
-        <div class="polaroid polaroid-{{ polaroid.size }}"></div>
-        <div class="sticker polaroid-{{ polaroid.color }}"></div>
-        <img src="../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
-        <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
-			
-		</div>
+		  {% if polaroid.size == "horizontal" %}<div class="contents-{{ loop.index }}" style="height: 53px; background: inherit;"></div>{% endif %}
+		  <div class="download-container">
+		    <div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }} id-{{ polaroid.id }}">
+              <div class="polaroid polaroid-{{ polaroid.size }}"></div>
+              <div class="sticker polaroid-{{ polaroid.color }}"></div>
+              <img src="../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+              <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
+		    </div>
+		  </div>
 		{% endfor %}
-
 		<div>
-			<button class="link-copy"><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button>
-			<button class="image-download"><img src="../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button>
+		  <button class="link-copy"><img src="../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button>
+		  <button class="image-download"><img src="../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button>
         </div>
-
-        <div class="link-select-box">
-            <div class="link-select"></div>
-            <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
-			{% for polaroid in polaroids %}
+        <div class="link-select-box" style="display: none;">
+          <div class="link-select"></div>
+          <img src="../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+		  {% for polaroid in polaroids %}
 			<button class="url-copy contents-{{ loop.index }}" data-clipboard-text="{{ polaroid.id }}"><img src="../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
-			{% endfor %}
+		  {% endfor %}
         </div>
-
 		<img src="../../../photo/paperplane/back.png" class="back">
 		<img src="../../../photo/paperplane/next.png" class="next">
-	</div>	
-		  
-	<div class="delete">
+	  </div>	
+	  <div class="delete" style="display: none;">
 		<div class="black"></div>
 		<div class="alert"></div>
 		<div class="line1"></div>
@@ -58,16 +55,19 @@
 		<p>해당 결과를 삭제하면<br>더이상 확인할 수 없어요.<br>결과를 정말 삭제하시겠어요?</p>
 		<span class="no">취소</span>
 		<span class="yes">삭제</span>
-	</div>
-		  
-</div>
-</div>
-</div>
+	  </div>  
+    </div>
+  {% include "menu/menu.html" %}
 </body>
   <script src="../../../js/changepage.js"></script>
   <script src="../../../js/polaroidcolor.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
+	document.querySelector('.black').style.height = `${document.documentElement.scrollHeight}px`;	  
+	  
 	document.querySelector('.back').addEventListener('click', () => {
 	  let color = document.querySelector(`.polaroid-download.contents-${page}`).classList[1].split("-")[1];
 	  changePolaroidColor(color);
