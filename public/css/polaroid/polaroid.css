@@ -4,45 +4,19 @@
     font-weight: normal;
     font-style: normal;}
 
-.header{
-	position: relative;
-}
-
-.previous{
-	width: 13px;
-	height: 10px;
-	position: absolute;
-	left: 16px;
-	top: 17.5px;
-}
-
-.home{
-	position: absolute;
-	left: 38px;
-	top: 17.5px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 10px;
-	text-align: center;
-
-	color: #000000;
-}
-
-.menu{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	left: 319px;
-	top: 9.5px;	
+html {
+	height: 100%;
 }
 
 .main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 45px;
+	position: relative;
+	width: 100%;;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
 }
 
 .main.polaroid-red {
@@ -70,7 +44,7 @@
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 164px;
+	left: calc((100% - 360px) / 2 + 164px);
 	border-radius: 50%;
 }
 
