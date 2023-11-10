@@ -72,11 +72,12 @@ exports.setprofile = async (req, res, next) => {
   if (!gender) return res.redirect('/setprofile?message=genderError');
   if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/setprofile?message=birthError');
   const hasImage = req.file?.filename !== undefined;
+	console.log(req.file?.filename);
   try {
 	await User.update({
 	  name,
 	  introduction,
-	  image: req.file?.filename ? `profile/${req.file.filename}` : req.user.dataValues.image,
+	  image: hasImage ? `profile/${req.file.filename}` : req.user.dataValues.image,
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	}, {
@@ -87,7 +88,7 @@ exports.setprofile = async (req, res, next) => {
 	if (hasImage && req.user.dataValues.image) {
       fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
 	}
-	return res.redirect('/setprofile?message=saveSuccess');
+	return res.redirect('/myprofile?message=saveSuccess');
   } catch (error) {
 	console.error(error);
 	return next(error);

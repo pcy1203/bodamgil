@@ -83,7 +83,7 @@
 			<div class="field">
 			  <span class="namecontext">이름</span>
 			  <input id="name" type="text" name="name" require maxlength="20" placeholder="이름을 입력해주세요 (최대 20자)">
-			  <p>※ 20자 미만으로 작성해주세요.</p>
+			  <p>※ 20자 이내로 작성해주세요.</p>
 			</div>
 			<div class="field">
 			  <span class="telcontext">전화번호</span>
@@ -140,29 +140,14 @@
 
 	if (message) {
 	  switch (message) {
-		case 'emailError':
-		  alert('잘못된 이메일 주소 형식입니다!');
-		  break;
-		case 'passwordError':
-		  alert('잘못된 비밀번호 형식입니다!');
-		  break;
-		case 'telError':
-		  alert('잘못된 전화번호 형식입니다!');
-		  break;
 		case 'nameError':
 		  alert('잘못된 이름 형식입니다!');
 		  break;
+		case 'genderError':
+		  alert('성별을 선택해주세요!');
+		  break;
 		case 'birthError':
 		  alert('잘못된 생년월일 형식입니다!');
-		  break;
-		case 'existUserError':
-		  alert('동일한 이메일 주소로 가입한 유저가 존재합니다!');
-		  break;
-		case 'passwordConfirmError':
-		  alert('비밀번호를 다시 확인해주세요!');
-		  break;
-		case 'existSameTelError':
-		  alert('동일한 전화번호로 가입한 유저가 존재합니다!');
 		  break;
 	  }
 	}

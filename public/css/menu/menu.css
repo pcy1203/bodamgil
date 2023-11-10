@@ -46,11 +46,12 @@ img {
     height: 66px;
     left: 25px;
     top: 69px;
+	border-radius: 50%;
 }
 
 .menu-container .header-login .name{
     position: absolute;
-    width: 115px;
+    width: 150px;
     left: 120px;
     top: 82px;
     font-family: 'Noto Sans KR';
@@ -64,9 +65,9 @@ img {
 
 .menu-container .header-login .mypage{
     position: absolute;
-    width: 40%;
+    width: 25%;
     height: 40px;
-    left: 200px;
+    right: 20px;
     top: 74px;
 	display: block;
     background: #FFFFFF;

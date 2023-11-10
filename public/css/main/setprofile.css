@@ -34,16 +34,21 @@ a {
 }
 
 /*이미지 선택*/
-#image{
-	display:none;
+#joinForm input#image{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
 }
 .imagecontext {
 	border: 1px solid #5F2987;
 	border-radius: 30px;
 	position: absolute;
-	left: calc(50% - 80px/2);
+	left: calc(50% - 102px/2);
 	top: 280px;
-	width: 80px;
+	width: 100px;
 	height: 30px;
 
 	font-family: 'Noto Sans KR';
@@ -71,6 +76,7 @@ a {
 }
 #joinForm .field{
 	margin: 5px 0;
+	height: 100px;
 }
 #joinForm .fieldgender{
 	margin: 0 0 5px 0;
@@ -93,12 +99,24 @@ a {
     margin-bottom: 5px;
 	border-radius: 10px;
 }
+#joinForm p{
+	position: absolute;	
+	font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 10px;
+	color: red;
+	display: flex;
+    align-items: center;
+	padding: 0px 0 0 8px;
+	display: none;
+}
 #joinForm select{
 	border: 1px solid #dadada;
     padding: 15px;
     width: 100%;
     margin-bottom: 5px;
 	border-radius: 10px;
+	background: #ffffff;
 }
 #joinForm #gender{
 	width: 330px;
@@ -128,7 +146,15 @@ input::placeholder{
     font-size: 12px;
     padding: 0 0 0 10px;
 }
-
+.namecontext ~ p {
+	margin-top: 0px;
+}
+.introductioncontext ~ p {
+	margin-top: 0px;
+}
+.birth p {
+	margin-top: 55px;
+}
 
 /*가입완료 버튼*/
 ul.join_box{
@@ -137,7 +163,7 @@ ul.join_box{
 }
 .fpmgBt{
     display: block; 
-	width: 260px;
+	width: 332px;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;
@@ -156,12 +182,18 @@ ul.join_box{
     .photo{
         width: 180px;
         height: 210px;
-        left: calc(50% - 1000px/2 + 177px);
-        top: 115px;
+        left: calc(50% - 1000px/2 + 127px);
+        top: 185px;
     }
+	.imagecontext {
+		top: 445px;
+		left: calc(50% - 1000px/2 + 141px);
+		width: 150px;
+	}
     #joinForm{
-		width: 500px;
-		margin-top: 105px;
+		width: 450px;
+		margin-left: 400px;
+		margin-top: 55px;
 	}
 	#joinForm .field{
 		margin: 8px 0;
@@ -172,18 +204,28 @@ ul.join_box{
 	#joinForm .fieldbirth{
 		margin: 8px 0 25px 0;
 	}
-
+	#joinForm #name {
+		width: 425px;
+	}
+	#joinForm #introduction {
+		width: 425px;
+	}
+	#joinForm #gender {
+		width: 457px;
+	}
+	#joinForm .birth {
+		width: 457px;
+	}
 	#joinForm span{
 		margin-bottom: 8px;
-			font-size: 16px;
+		font-size: 16px;
 	}
 	#joinForm p{
 		font-size: 12px;
-		padding: 50px 0 0 0;
 	}
 	#joinForm input{
-			padding: 15px;
-			margin-bottom: 5px;
+		padding: 15px;
+		margin-bottom: 5px;
 	}
 	input::placeholder{
 		font-size: 12px;
@@ -197,13 +239,18 @@ ul.join_box{
 		font-size: 14px;
 		padding: 0 0 0 10px;
 	}
+    .birth p {
+	    margin-top: 58px;
+    }
 	.fpmgBt{
 		width: 460px;
 	}
-
-
 }
 
 .invalid {
-	background-color: #ffe1e1;
+	background-color: #ffe1e1!important;
+}
+
+.invalid + p {
+	display: block!important;
 }

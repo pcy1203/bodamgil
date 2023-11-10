@@ -5,7 +5,7 @@
 	<a href="/"><img src="../../photo/main/home.png" class="home"></a>
 	<button class="exit-btn"><img src="../../photo/main/exit.png" class="exit"></button>
 	{% if user %}
-		<img src="../../photo/main/profile.png" class="profile">
+		<img src="{% if user.image %}{{ user.image }}{% else %}../../photo/main/profile.png{% endif %}" class="profile">
 		<span class="name">{{ user.name }}</span>
 		<a href="/myprofile" class="mypage">마이페이지</a>
 		<p class="intro">{{ user.introduction }}</p>

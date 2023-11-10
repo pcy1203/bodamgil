@@ -18,7 +18,7 @@
       <div class="content">
 		<span class="mypage">마이페이지 MYPAGE</span>
 		<!-- 기본 이미지 설정하기 -->
-        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/beach.jpg{% endif %}" class="photo">
+        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/profile_square.png{% endif %}" class="photo">
         <div>
           <span class="name">이름/Name</span>  
           <p class="namecontent">{{ user.name }}</p>
@@ -53,12 +53,25 @@
           <a href="/myprofile/game" class="successcontent">완료한 진로 게임</a>  
         </div>
       </div>
-      <a href="/setprofile" class="profile">프로필 수정</a>
+      <a href="/changepassword" class="changepassword">비밀번호 변경</a>
+      <a href="/setprofile" class="setprofile">프로필 수정</a>
       <a href="/auth/logout" class="logout">로그아웃</a>
     </div>
 	{% include "menu/menu.html" %}
   </body>
   <script>
+  window.onload = () => {
+	let message = (new URLSearchParams(location.search)).get('message');
+
+	if (message) {
+	  switch (message) {
+		case 'saveSuccess':
+		  alert('변경된 프로필이 저장되었습니다!');
+		  break;
+	  }
+	}
+  };  
+	  
 	const dateNode = document.querySelector('.issuecontent');
 	const dateArray = dateNode.innerHTML.split(" ");
 	dateNode.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[3]}`;

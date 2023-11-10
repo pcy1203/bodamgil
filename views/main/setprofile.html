@@ -15,35 +15,37 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-	  <!-- 기본 이미지 설정하기 -->
 	  {% if not user.gender or not user.birthDate %}
 	    <div>
 		  프로필 작성을 완료해주세요!
 		</div>
 	  {% endif %}
-      <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/beach.jpg{% endif %}" class="photo">
-      <div>
-		  <label class="imagecontext" for="imput-file">파일선택</label>	  
-	      <input id="image" type="file" name="image" accept="image/*">
-      </div>
+      <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/main/profile_square.png{% endif %}" class="photo">
 	  <form action="/auth/setprofile" method="post" enctype="multipart/form-data" id="joinForm">
+	    <div>
+		  <label class="imagecontext" for="image">파일 선택</label>	  
+	      <input id="image" type="file" name="image" accept="image/*">
+        </div>
         <div class="field">
           <span class="namecontext">이름</span>
-          <input id="name" type="text" name="name" require value="{{ user.name }}" maxlength="20" placeholder="변경할 이름을 작성해주세요. (20자 이내)">
+          <input id="name" type="text" name="name" require value="{{ user.name }}" maxlength="20" placeholder="변경할 이름을 작성해주세요 (20자 이내)">
+		  <p>※ 20자 이내로 작성해주세요.</p>
         </div>
         <div class="field">
           <span class="introductioncontext">한 줄 소개</span>
-          <input id="introduction" type="text" name="introduction" require value="{{ user.introduction }}" maxlength="100" placeholder="변경할 소개 문구를 작성해주세요. (100자 이내)">
+          <input id="introduction" type="text" name="introduction" require value="{{ user.introduction }}" maxlength="100" placeholder="변경할 소개 문구를 작성해주세요 (100자 이내)">
+		  <p>※ 100자 이내로 작성해주세요.</p>
         </div>
-		<div class="fieldgender">
+		<div class="fieldgender field">
 		  <span class="gendercontext">성별</span>
 		  <select name="gender" id="gender">   
 			<option disabled {% if not user.gender %}selected{% endif %}>성별</option> 
 			<option value="man" {% if user.gender === 'man' %}selected{% endif %}>남자</option>
 			<option value="woman" {% if user.gender === 'woman' %}selected{% endif %}>여자</option>
 		  </select>
+		  <p></p>
 		</div>
-		<div class="fieldbirth">
+		<div class="fieldbirth field">
 		  <span class="birthcontext">생년월일</span>
 		  <div class="user-birth" style="display: none">{{ user.birthDate }}</div>
 		  <div class="birth">
@@ -65,6 +67,7 @@
 					<option class="option-day-{{ i }}" value="{{ i }}">{{ i }}일</option>
 				  {% endfor %}
 			  </select>
+		      <p>※ 유효한 날짜를 선택해주세요.</p>
 			 </div>
 		</div>
         <button class="fpmgBt">변경사항 저장하기</button>
@@ -77,7 +80,40 @@
 </script>
 <script defer src="../../js/uservalidation.js"></script>
 <script defer src="../../js/userinputvalidation.js"></script>
-  <script>
+<script>
+  window.onload = () => {
+	let message = (new URLSearchParams(location.search)).get('message');
+
+	if (message) {
+	  switch (message) {
+		case 'emailError':
+		  alert('잘못된 이메일 주소 형식입니다!');
+		  break;
+		case 'passwordError':
+		  alert('잘못된 비밀번호 형식입니다!');
+		  break;
+		case 'telError':
+		  alert('잘못된 전화번호 형식입니다!');
+		  break;
+		case 'nameError':
+		  alert('잘못된 이름 형식입니다!');
+		  break;
+		case 'birthError':
+		  alert('잘못된 생년월일 형식입니다!');
+		  break;
+		case 'existUserError':
+		  alert('동일한 이메일 주소로 가입한 유저가 존재합니다!');
+		  break;
+		case 'passwordConfirmError':
+		  alert('비밀번호를 다시 확인해주세요!');
+		  break;
+		case 'existSameTelError':
+		  alert('동일한 전화번호로 가입한 유저가 존재합니다!');
+		  break;
+	  }
+	}
+  };  
+	  
 	const dateNode = document.querySelector('.user-birth');
 	if (dateNode.innerHTML === '') {
 	  document.querySelector('.option-year').selected = true;
@@ -100,33 +136,3 @@
 	});		
   </script>
 </html>
-
-<!--
-  <h1>프로필 입력</h1>
-  <form action="/auth/setprofile" method="post" enctype="multipart/form-data">
-    <div>
-	  <label for="name">이름</label>	  
-	  <input id="name" name="name" require>
-    </div>
-    <div>
-	  <label for="introduction">한 줄 소개</label>	  
-	  <input id="introduction" name="introduction" require>
-    </div>
-    <div>
-	  <label for="image">프로필 사진</label>	  
-	  <input id="image" type="file" name="image" accept="image/*">
-    </div>
-    <div>
-	  <label for="gender">성별</label>	  
-	  <input id="gender-man" type="radio" name="gender" value="man" require checked>남
-	  <input id="gender-woman" type="radio" name="gender" value="woman" require>여
-    </div>
-    <div>
-	  <label for="birth">생년월일</label>	  
-	  <input id="birth-year" name="birth" require>년
-	  <input id="birth-month" name="birth" require>월
-	  <input id="birth-day" name="birth" require>일
-    </div>
-    <button type="submit">프로필 정보 저장</button>
-  </form>
--->
