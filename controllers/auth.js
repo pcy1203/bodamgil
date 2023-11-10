@@ -35,6 +35,7 @@ exports.signup = async (req, res, next) => {
 		 birthyear, birthmonth, birthday } = req.body;
   if (email.length > 40 || !(emailRegex.test(email))) return res.redirect('/signup?message=emailError');
   if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/signup?message=passwordError');
+  if (password !== confirm) return res.redirect('/signup?message=passwordConfirmError');
   if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/signup?message=telError');
   if (!name || name.length > 20) return res.redirect('/signup?message=nameError');
   if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/signup?message=birthError');
@@ -42,9 +43,6 @@ exports.signup = async (req, res, next) => {
 	const exUser = await User.findOne({ where: { email } });
 	if (exUser) {
 	  return res.redirect('/signup?message=existUserError');
-	}
-	if (password !== confirm) {
-	  return res.redirect('/signup?message=passwordConfirmError');
 	}
 	const hashedPassword = await bcrypt.hash(password, 12);
 	const sameTelUser = await User.findOne({ where: { tel } });
@@ -94,8 +92,28 @@ exports.setprofile = async (req, res, next) => {
   }
 };
 
-exports.changepassword = (req, res, next) => {
-  return res.redirect('/');  // TO-DO
+exports.changepassword = async (req, res, next) => {
+  const { currentpassword, password, confirm } = req.body;
+  if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect('/changepassword?message=passwordError');
+  if (password !== confirm) return res.redirect('/changepassword?message=passwordConfirmError');
+  try {
+	const user = await User.findOne({ where: { id: req.user.dataValues.id } });
+	if (user && !(await bcrypt.compare(currentpassword, user.password))) {
+	  return res.redirect('/changepassword?message=currentPasswordError');
+	}
+	const hashedPassword = await bcrypt.hash(password, 12);
+	await User.update({
+	  password: hashedPassword,
+	}, {
+      where: {
+        id: req.user.dataValues.id,
+  	  }
+	});
+	return res.redirect('/myprofile?message=changeSuccess');
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  } 
 };
 
 exports.findid = async (req, res, next) => {

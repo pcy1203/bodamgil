@@ -13,6 +13,11 @@ document.querySelector('input#password')?.addEventListener('input', (e) => {
   } else {
     e.target.classList.remove("invalid");
   }
+  if (e.target.value && e.target.value !== document.querySelector('input#confirm').value) {
+    document.querySelector('input#confirm').classList.add("invalid");
+  } else {
+    document.querySelector('input#confirm').classList.remove("invalid");
+  }
 });
 
 document.querySelector('input#confirm')?.addEventListener('input', (e) => {
