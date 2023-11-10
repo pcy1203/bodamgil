@@ -2,31 +2,32 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title></title>	  
+	<title>어릴 때의 내가 좋아했던 것은? - 작성하기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
 	<link rel="stylesheet" href="../../../css/polaroid/success.css">
+    <link rel="stylesheet" href="../../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"><img src="../../../photo/polaroid/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}    
+	  <div class="trash-circle">
 		<img src="../../../photo/polaroid/trash.png" class="trash">
-		<img src="../../../photo/polaroid/menu.png" class="menu">
-
-    <div class="main polaroid-{{ polaroid.color }}">
+	  </div>
+      <div class="main polaroid-{{ polaroid.color }}">
 		{% if polaroid.size == "horizontal" %}<div style="height: 53px; background: inherit;"></div>{% endif %}
+		<div class="download-container">
 		<div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} id-{{ polaroid.id }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }}"></div>
         <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
         <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
     	</div>	  
+		</div>
         <div class="button">
 			<a href="/myself/polaroid/write">
 				<button class="button1">
@@ -45,18 +46,13 @@
 				<img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span>
 			</button>
 		</div>
-		
-
-    <div class="link-select-box">
-        <div class="link-select"></div>
-        <img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
-		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+        <div class="link-select-box" style="display: none;">
+          <div class="link-select"></div>
+          <img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+		  <button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+      </div>	  
     </div>
-		  
-</div>
-		  
-		  
-	<div class="delete">
+	<div class="delete" style="display: none;">
 		<div class="black"></div>
 		<div class="alert"></div>
 		<div class="line1"></div>
@@ -65,15 +61,19 @@
 		<span class="no">취소</span>
 		<span class="yes">삭제</span>
 	</div>
-</div>
-</div>
-</div>
+  </div>
+  {% include "menu/menu.html" %}
 </body>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
   <script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 16}px`;
+	document.querySelector('.black').style.height = `${document.documentElement.scrollHeight}px`;
+	  
 	const linkSelectBox = document.querySelector('.link-select-box');  
 	document.querySelector('.button2').addEventListener('click', (e) => {
 		linkSelectBox.style.display = (linkSelectBox.style.display === 'none') ? 'block' : 'none';

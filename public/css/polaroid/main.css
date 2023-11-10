@@ -47,9 +47,8 @@ border-radius: 30px;
 position: absolute;
 width: 255px;
 height: 50px;
-left: calc(50% - 255px/2 + 0.5px);
-bottom: 120px;
-
+left: calc(50% - 257px/2);
+top: 450px;
 font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 700;
@@ -70,9 +69,8 @@ border-radius: 30px;
 position: absolute;
 width: 255px;
 height: 50px;
-left: calc(50% - 255px/2 + 0.5px);
-bottom: 60px;
-
+left: calc(50% - 257px/2);
+top: 515px;
 font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 700;
@@ -114,4 +112,10 @@ height: 143.55px;
 left: calc((100% - 360px) / 2 + 80px);
 top: 280px;
 transform: rotate(-121.07deg);
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
 }

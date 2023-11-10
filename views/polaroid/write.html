@@ -2,7 +2,7 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title></title>	  
+	<title>어릴 때의 내가 좋아했던 것은? - 작성하기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
@@ -24,7 +24,7 @@
 		  <li><img src="../../photo/polaroid/select-example.png" class="select-example"><span>예시</span></li>
     	</ul>
 	  </div>
-	  <div class="color-select-box">
+	  <div class="color-select-box" style="display: none;">
 		<div class="color-select"></div>	  
 		<div class="select-red"></div>
 		<div class="select-yellow"></div>
@@ -32,7 +32,7 @@
 		<div class="select-blue"></div>
 		<div class="select-purple"></div>
 	  </div>
-	  <div class="size-select-box">
+	  <div class="size-select-box" style="display: none;">
 		<div class="size-select"></div>
 		<div class="select-horizontal">가로</div>
 		<div class="select-vertical">세로</div>
@@ -99,6 +99,10 @@
 		}
 	  }
 	};  
+	  
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 16}px`;
 
 	// 폴라로이드 안쪽 글씨
 	const innerContent = document.getElementById('inner-content');

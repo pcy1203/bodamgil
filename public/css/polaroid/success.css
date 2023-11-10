@@ -30,13 +30,27 @@
 	color: #000000;
 }
 
-.trash{
+.trash-circle {
 	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: #ffffff;
+	border: 1px solid #5F2987;
+	border-radius: 50%;
+	right: 30px;
+	top: 90px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.trash{
+	position: relative;
 	width: 22px;
 	height: 22px;
-	left: 274px;
-	top: 11.5px;
+	top: 4px;
+	left: 4px;
 	cursor: pointer;
+	z-index: 1;
 }
 
 .menu{
@@ -49,10 +63,17 @@
 }
 
 .main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 45px;	
+	position: relative;
+	width: 100%;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	.trash-circle {
+		right: calc(50% - 1025px/2 + 30px);
+	}
 }
 
 .main.polaroid-red {
@@ -74,6 +95,7 @@
 .main.polaroid-purple {
 	background: #EFEDF7;
 }
+
 /*스티커*/
 .sticker{
 	position: absolute;
@@ -104,16 +126,28 @@
 	background: rgba(197, 187, 227, 0.8);
 }
 
+.download-container {
+	position: relative;
+	width: 360px;
+	left: calc(50% - 360px / 2);
+	margin: 0;
+	background: inherit;
+}
+
 .polaroid-download.polaroid-horizontal {
 	position: relative;
 	height: 408px;
+	width: 360px;
 	background: inherit;
 }
 
 .polaroid-download.polaroid-vertical {
 	position: relative;
 	height: 515px;
+	width: 360px;
 	background: inherit;
+	left: calc(50% - 360px / 2);
+	margin: 0;
 }
 
 /*폴라로이드 뒤에 하얀색*/
@@ -205,8 +239,8 @@
     height: 50px;
     width: 150px;
 	list-style: none;
-	left: 25px;
-	bottom: 90px;
+	left: calc(50% - 310px/2);
+	top: 515px;
 	cursor: pointer;
     transition: background-color .4s, color .4s;
 }
@@ -225,7 +259,7 @@
     height: 18px;
     text-indent: -1000px;
     overflow: hidden;
-    }
+}
 
 .last-again-content {
     font-family: 'Noto Sans KR';
@@ -245,8 +279,8 @@
     height: 50px;
     width: 150px;
 	list-style: none;
-	right: 25px;
-	bottom: 90px;
+	left: calc(50% - 310px/2 + 160px);
+	top: 515px;
 	cursor: pointer;
     transition: background-color .4s, color .4s;
 }
@@ -284,8 +318,8 @@
     height: 50px;
     width: 150px;
 	list-style: none;
-	left: 25px;
-	bottom: 30px;
+	left: calc(50% - 310px/2);
+	top: 575px;
 	cursor: pointer;
     transition: background-color .4s, color .4s;
 }
@@ -304,7 +338,7 @@
     height: 18px;
     text-indent: -1000px;
     overflow: hidden;
-    }
+}
 
 .last-home-content {
     font-family: 'Noto Sans KR';
@@ -324,8 +358,8 @@
     height: 50px;
     width: 150px;
 	list-style: none;
-	right: 25px;
-	bottom: 30px;
+	left: calc(50% - 310px/2 + 160px);
+	top: 575px;
 	cursor: pointer;
     transition: background-color .4s, color .4s;
 }
@@ -367,9 +401,8 @@
 	border-radius: 10px;
 	border: 1px solid #BFBFBF;
 	padding:15px;
-	top: 358px;
-	right: 22px;
-	
+	top: 410px;
+	right: calc(50% - 360px/2 + 30px);
 }
 .link-select:after { /*말풍선 꼭지*/
 	top: 80px; /*말풍선꼭지위치 위아래*/
@@ -389,15 +422,15 @@
     position: absolute;
     width: 32px;
     height: 32px;
-    left: 231px;
-    top: 374px;
+	right: calc(50% - 360px/2 + 110px);
+    top: 425px;
     cursor: pointer;
 }
 
 .kakaotalkcontent{
     position: absolute;
-    left: 226px;
-    top: 412px;
+	right: calc(50% - 360px/2 + 108px);
+    top: 465px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -406,20 +439,19 @@
     color: #000000;
 }
 
-
 .link{
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 287px;
-    top: 375px;
+	right: calc(50% - 360px/2 + 50px);
+    top: 425px;
     cursor: pointer;
 }
 
 .linkcontent{
     position: absolute;
-    left: 284px;
-    top: 412px;
+	right: calc(50% - 360px/2 + 45px);
+    top: 465px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -430,12 +462,12 @@
 
 /*이미지 삭제 => 휴지통 버튼 누르면 뜨도록*/
 .black{
-	position: relative;
-	width: 360px;
-	height: 640px;
+	position: absolute;
+	width: 100%;
 	left: 0px;
 	top: 0px;
 	background: rgba(0, 0, 0, 0.3);
+	z-index: 2;
 }
 
 .alert{
@@ -446,6 +478,7 @@
 	top: 200px;
 	background: #FFFFFF;
 	border-radius: 10px;	
+	z-index: 3;
 }
 
 .line1{
@@ -454,25 +487,23 @@
 	left: calc(50% - 290px/2);
 	top: 337px;
 	border: 0.1px solid #BFBFBF;
+	z-index: 3;
 }
 
 .line2{
 	position: absolute;
 	width: 50px;
-	left: 160px;
+	left: calc(50% - 290px/2 + 122px);
 	top: 363px;
 	border: 0.1px solid #BFBFBF;
 	transform: rotate(90deg);
-}
-
-.delete {
-    display: none;
+	z-index: 3;
 }
 
 .delete p{
 	position: absolute;
 	width: auto;
-	left: 90px;
+	left: calc(50% - 290px/2 + (290px - 192.83px)/2);
 	top: 220px;
 
 	font-family: 'Noto Sans KR';
@@ -480,13 +511,14 @@
 	font-size: 16px;
 	text-align: center;
 	color: #000000;
+	z-index: 3;
 }
 
 .no{
 	position: absolute;
 	width: 34px;
 	height: 26px;
-	left: 95px;
+	left: calc(50% - 290px/2 + 60px);
 	top: 350px;
 
 	font-family: 'Noto Sans KR';
@@ -495,13 +527,14 @@
 	text-align: center;
 	color: #000000;
 	cursor: pointer;
+	z-index: 3;
 }
 
 .yes{
 	position: absolute;
 	width: 34px;
 	height: 26px;
-	left: 240px;
+	left: calc(50% - 290px/2 + 205px);
 	top: 350px;
 
 	font-family: 'Noto Sans KR';
@@ -510,4 +543,5 @@
 	text-align: center;
 	color: #FF0000;
 	cursor: pointer;
+	z-index: 3;
 }

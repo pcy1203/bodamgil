@@ -277,7 +277,7 @@ color: #000000;
 	position: absolute;
 	width: 100px;
 	height: 32px;
-	right: 16px;
+	right: calc(50% - 160px + 5px);
 	top: 590px;
 	
 
@@ -300,7 +300,7 @@ color: #000000;
 	position: absolute;
 	width: 100px;
 	height: 32px;
-	right: 16px;
+	right: calc(50% - 160px + 5px);
 	top: 697px;
 	
 
@@ -610,7 +610,7 @@ color: #000000;
     position: absolute;
     width: 18px;
     height: 38px;
-    left: 140px;
+    left: calc((100% - 360px) / 2 + 140px);
     top: 507px;
     transform: rotate(5deg);
 }
@@ -622,4 +622,10 @@ color: #000000;
     left: 20px;
     top:20px;
 	cursor: pointer;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
 }
