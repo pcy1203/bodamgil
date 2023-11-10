@@ -15,12 +15,16 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
       <div class="content">
-        <img src="../../photo/main/previous.png" class="previous">
         <span class="contract">가입완료</span>
         <p class="welcome">보담길에 오신 것을 환영합니다</p>
+	    <a href="/login"><button class="fpmgBt">로그인 하러가기</button></a>
       </div>
-	  <a href="/login"><button class="fpmgBt">로그인 하러가기</button></a>
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+  <script>
+    const mainBlock = document.querySelector('.content');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 16}px`;
+  </script>
 </html>

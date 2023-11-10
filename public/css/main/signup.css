@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
+.contents {
     background-color: #f7f7f7;
+	position: absolute;
+	width: 100%;
 }
 
 ul > li{
@@ -18,24 +20,14 @@ ul > li{
     clear: both;
 }
 
-
 a {
     text-decoration: none;
     color: black;
 }
 
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 68px;
-    cursor: pointer;
-}
-
 .contract {
     position: absolute;
-    top: 100px;
+    top: 50px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
     font-size: 16px;
@@ -56,7 +48,7 @@ a {
 .contract_context{
     position: absolute;
     left: calc(50% - 251px/2 - 0.5px);
-    top: 140px;
+    top: 90px;
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 12px;
@@ -103,6 +95,7 @@ ul.join_box{
     background-color: #f7f7f7;
     color: #888; 
     border: none;
+	resize: none;
 }
 .footBtwrap{
     margin-top: 20px;
@@ -138,6 +131,9 @@ ul.join_box{
 
 
 @media ( min-width: 1025px ) {
+	.contents {
+		width: 1025px;
+	}
     #checkForm {
         width: 500px;
     }
@@ -168,6 +164,7 @@ ul.join_box{
 }
 #joinForm .field{
 	margin: 5px 0;
+	height: 100px;
 }
 #joinForm .fieldgender{
 	margin: 0 0 5px 0;
@@ -191,7 +188,8 @@ ul.join_box{
 	color: red;
 	display: flex;
     align-items: center;
-	padding: 55px 0 0 0;
+	padding: 0px 0 0 8px;
+	display: none;
 }
 #joinForm input{
 	border: 1px solid #dadada;
@@ -206,6 +204,10 @@ ul.join_box{
     width: 100%;
     margin-bottom: 5px;
 	border-radius: 10px;
+	background: #ffffff;
+}
+#joinForm .fieldbirth select {
+	padding-left: 10px;
 }
 .fieldbirth .birth {
 	display: flex;
@@ -231,7 +233,9 @@ input::placeholder{
     font-size: 12px;
     padding: 0 0 0 10px;
 }
-
+.birth p {
+	margin-top: 55px;
+}
 /*가입완료 버튼*/
 ul.join_box{
     border: 1px solid #ddd;
@@ -252,6 +256,7 @@ ul.join_box{
     cursor: pointer;
 	margin: 0 auto;
 	border-radius: 10px;
+	margin-bottom: 50px;
 }
 
 @media ( min-width: 1025px ) {
@@ -278,7 +283,6 @@ ul.join_box{
 	}
 	#joinForm p{
 		font-size: 12px;
-		padding: 50px 0 0 0;
 	}
 	#joinForm input{
 			padding: 15px;
@@ -302,5 +306,9 @@ ul.join_box{
 }
 
 .invalid {
-	background-color: #ffe1e1;
+	background-color: #ffe1e1!important;
+}
+
+.invalid + p {
+	display: block!important;
 }
