@@ -6,34 +6,28 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
 	<link rel="stylesheet" href="../css/paperplane/main.css">
 	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
     <link rel="stylesheet" href="../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:red" class="header">
-	    <a href="/">Com:pass 로고</a>
-		<img src="../../photo/polaroid/menu.png" class="menu">
-		  
-	<div class="main">	  
-	  <h1>내가 잘하는 것은? <br>네가 잘하는 것은!</h1>
-	  <img src="../../photo/paperplane/jar.png" class="jar">
-	  <a href="/myself/paperplane/start">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}  
+	  <div class="main">	  
+	    <h1>내가 잘하는 것은? <br>네가 잘하는 것은!</h1>
+	    <img src="../../photo/paperplane/jar.png" class="jar">
+	    <a href="/myself/paperplane/start">
 		  <div class="start"></div>
 		  <div class="start-content">시작하기</div>
-	  </a>
-	  <div class="sticker1"></div>
-	  <div class="sticker2"></div>
-	</div>	  
-	  
-	  </div>
+	    </a>
+	    <div class="sticker1"></div>
+	    <div class="sticker2"></div>
+	  </div>	  
 	</div>
-	</div>
-	<script>
+	{% include "menu/menu.html" %}
+  <script>
 	window.onload = () => {
 	  let message = (new URLSearchParams(location.search)).get('message');
 	
@@ -45,6 +39,10 @@
 		}
 	  }
 	};  
+	  
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
 	</script>
   </body>
 </html>
