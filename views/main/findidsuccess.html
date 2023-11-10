@@ -15,12 +15,10 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}	  
-      <img src="../../photo/main/previous.png" class="previous">
-      <span class="findid">아이디찾기</span>
-      <p class="findid_context">가입 시 입력하셨던 휴대폰 번호를 입력해주세요</p>
+      <span class="findid">아이디 찾기</span>
 
 	  <div>
-        <p class="inform"> ___________님의 아이디는 <br> _______________ 입니다</p>
+        <p class="inform">{{ name }}님의 아이디는 <br>{{ email }} 입니다.</p>
 		  <a href="/login"><button class="login">로그인하러 가기</button></a>
 	  </div>
     </div>

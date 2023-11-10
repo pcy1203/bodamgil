@@ -13,7 +13,7 @@ a {
 }
 .findid{
     position: absolute;
-    left: calc(50% - 92px/2 - 1px);
+    left: calc(50% - 78.09px/2);
     top: 100px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
@@ -41,8 +41,8 @@ a {
     position: absolute;
     width: 300px;
     height: 120px;
-    left: calc(50% - 300px/2 + 2px);
-    top: 165px;
+    left: calc(50% - 302px/2);
+    top: 150px;
     
     border: 1px solid #BFBFBF;
     border-radius: 10px;
@@ -78,6 +78,7 @@ a {
 @media ( min-width: 1025px ) {
     .findid{
         font-size: 18px;
+        left: calc(50% - 87.84px/2);
     }
     .findid_context{
         font-size: 14px;
@@ -86,7 +87,6 @@ a {
         width: 450px;
         height: 150px;
         left: calc(50% - 450px/2 + 2px);
-        top: 165px;
         line-height: 200%;
         font-size: 20px;
     }

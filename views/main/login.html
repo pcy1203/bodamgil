@@ -55,7 +55,6 @@
 	window.onload = () => {
 	  let message = (new URLSearchParams(location.search)).get('message');
 	  if (message) {
-	    document.querySelector('.block-2').style.display = 'block';
 		switch (message) {
   		  case 'noUserError':
 			alert('존재하지 않는 이메일 주소입니다!')

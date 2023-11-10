@@ -44,7 +44,12 @@ exports.renderFindId = (req, res, next) => {
 };
 
 exports.renderFindIdSuccess = (req, res, next) => {
-  res.render('main/findidsuccess');
+  let name, email = '';
+  if (req.session.findId) {
+	name = req.session.findId.name;
+	email = req.session.findId.email;
+  }
+  res.render('main/findidsuccess', { name, email });
 };
 
 exports.renderFindPassword = (req, res, next) => {

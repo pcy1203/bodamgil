@@ -72,7 +72,6 @@ exports.setprofile = async (req, res, next) => {
   if (!gender) return res.redirect('/setprofile?message=genderError');
   if (!birthyear || !birthmonth || !birthday || !dateValidation(birthyear, birthmonth, birthday)) return res.redirect('/setprofile?message=birthError');
   const hasImage = req.file?.filename !== undefined;
-	console.log(req.file?.filename);
   try {
 	await User.update({
 	  name,
@@ -99,8 +98,21 @@ exports.changepassword = (req, res, next) => {
   return res.redirect('/');  // TO-DO
 };
 
-exports.findid = (req, res, next) => {
-  return res.redirect('/');  // TO-DO
+exports.findid = async (req, res, next) => {
+  const { tel } = req.body;
+  if (tel.length > 13 || !(telRegex.test(tel))) return res.redirect('/findid?message=telError');
+  try {
+	const user = await User.findOne({ where: { tel } });
+	if (!user) return res.redirect('/findid?message=notExistError');
+    req.session.findId = {
+	  name: user.name,
+	  email: user.email,
+	};
+    return res.redirect('/findid/success');
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  }
 };
 
 exports.findpassword = (req, res, next) => {
