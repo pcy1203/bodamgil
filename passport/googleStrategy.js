@@ -7,12 +7,15 @@ module.exports = () => {
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: '/auth/google/result',
-  }, async (accessToken, refreshToken, profile, done) => {
+	passReqToCallback: true,
+  }, async (req, accessToken, refreshToken, profile, done) => {
     try {
       const exUser = await User.findOne({
         where: { snsId: profile.id, provider: 'google' },
       });
 	  if (exUser) {
+		exUser.redirectURL = req.session.redirectURL;
+		req.session.redirectURL = null;
         done(null, exUser);
       } else {
         const newUser = await User.create({
@@ -21,6 +24,8 @@ module.exports = () => {
           snsId: profile.id,
           provider: 'google',
         });
+		newUser.redirectURL = req.session.redirectURL;
+		req.session.redirectURL = null;
         done(null, newUser);
       }
     } catch (error) {

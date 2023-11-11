@@ -51,10 +51,16 @@ router.get('/kakao', isNotLoggedIn, passport.authenticate('kakao'));
 router.get('/kakao/result', passport.authenticate('kakao', {
   failureRedirect: '/login?message=kakaoError',
 }), (req, res) => {
-  if (!req.user.introduction) {
+  if (!req.user.name || !req.user.gender || !req.user.birthDate) {
+	req.session.redirectURL = req.user.redirectURL;
+	req.user.redirectURL = null;
     res.redirect('/setprofile');
+  } else if (req.user.redirectURL) {
+	const redirectUrl = req.user.redirectURL;
+	req.user.redirectURL = null;
+	return res.redirect(redirectUrl);
   } else {
-	res.redirect('/');
+	return res.redirect("/");
   }
 });
 
@@ -64,10 +70,16 @@ router.get('/google', isNotLoggedIn, passport.authenticate('google', { scope: ['
 router.get('/google/result', passport.authenticate('google', {
   failureRedirect: '/login?message=googleError',
 }), (req, res) => {
-  if (!req.user.introduction) {
-    res.redirect('/setprofile');
+  if (!req.user.name || !req.user.gender || !req.user.birthDate) {
+	req.session.redirectURL = req.user.redirectURL;
+	req.user.redirectURL = null;
+    return res.redirect('/setprofile');
+  } else if (req.user.redirectURL) {
+	const redirectUrl = req.user.redirectURL;
+	req.user.redirectURL = null;
+	return res.redirect(redirectUrl);
   } else {
-	res.redirect('/');
+	return res.redirect("/");
   }
 });
 

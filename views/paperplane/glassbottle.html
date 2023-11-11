@@ -2,45 +2,42 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title></title>	  
+	<title>내가 잘하는 것은? 네가 잘하는 것은! - 물어보기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
 	<link rel="stylesheet" href="../../css/paperplane/glassbottle.css">
+	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane"> <img src="../../photo/polaroid/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/menu.png" class="menu">
-		  
-	<div class="main">	  
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}  
+	  <div class="main">	  
 		<h1>당신은 어떤 능력을 가지고 있나요?</h1>
 		{% if isOwner %}
-  		<p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
+  		  <p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
 		{% else %}
-		<p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}님의 장점을 자유롭게 적어주세요.</p>
+		  <p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}님의 장점을 자유롭게 적어주세요.</p>
 		{% endif %}
 		<ul>
-			<li class="button1 {% if isOwner %}active{% else %}inactive{% endif %}"><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
-			<li class="{% if isOwner %}active{% else %}inactive{% endif %}"><a href="/myself/paperplane/{{ id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
-			<li class="{% if isOwner %}inactive{% else %}active{% endif %}"><a href="/myself/paperplane/{{ id }}/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
+		  <li class="button1 {% if isOwner %}active{% else %}inactive{% endif %}"><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
+		  <li class="{% if isOwner %}active{% else %}inactive{% endif %}"><a href="/myself/paperplane/{{ id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
+		  <li class="{% if isOwner %}inactive{% else %}active{% endif %}"><a href="/myself/paperplane/{{ id }}/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
     	</ul>
-	</div>
+	  </div>
 		  
-	<div class="link-select-box">
+	  <div class="link-select-box" style="display: none;">
         <div class="link-select"></div>
-        <img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span>
+        <button class="kakao-send"><img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
 		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
-    </div>
+      </div>
 		  
-	<img src="../../photo/paperplane/jar.png" class="jar">
+	  <img src="../../photo/paperplane/jar.png" class="jar">
 		  
-	<div>
+	  <div>
 		{% if numPaperPlane >= 1 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane1">{% endif %}
 		{% if numPaperPlane >= 2 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane2">{% endif %}
 		{% if numPaperPlane >= 3 %}<img src="../../photo/paperplane/airplane-green.png" class="airplane3">{% endif %}
@@ -51,17 +48,20 @@
 		{% if numPaperPlane >= 8 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane8">{% endif %}
 		{% if numPaperPlane >= 9 %}<img src="../../photo/paperplane/airplane-yellow.png" class="airplane9">{% endif %}
 		{% if numPaperPlane >= 10 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane10">{% endif %}
-	</div>
+	  </div>
 	  
-	<div class="alert-modal">	
+	  <div class="alert-modal">	
 		<div class="alert"></div>
 		<div class="alert-content"></div>
-	</div>	  
-		  
+	  </div>	   
 	</div>
-	</div>
-	</div>
+	{% include "menu/menu.html" %}
   </body>
+  <script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
   <script>
 	const linkSelectBox = document.querySelector('.link-select-box');  
@@ -105,4 +105,36 @@
 	  }
 	};
   </script>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH" crossorigin="anonymous"></script>
+  <script>
+	// 카카오톡 공유
+    Kakao.init('312ea14508757274fe50f9dbfc79956b');
+	function shareKakao() {
+      Kakao.Share.sendDefault({
+        objectType: 'feed',
+          content: {
+            title: '내가 잘하는 것은? 네가 잘하는 것은!',
+            description: '{{ user.name }} 님에게 어떤 능력이 있는지, 장점을 적은 편지를 전달해주세요.',
+            imageUrl: `${location.origin}/photo/paperplane/paperplane_main.png`,
+            link: {
+              mobileWebUrl: `${location.origin + location.pathname}`,
+              webUrl: `${location.origin + location.pathname}`,
+            },
+          },
+        buttons: [
+          {
+            title: '확인하기',
+            link: {
+              mobileWebUrl: `${location.origin + location.pathname}`,
+              webUrl: `${location.origin + location.pathname}`,
+            },
+          },
+        ],
+      });
+    }
+	 
+	document.querySelector('.kakao-send').addEventListener('click', () => {
+	  shareKakao();
+	});
+  </script> 
 </html>

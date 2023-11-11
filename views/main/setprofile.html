@@ -16,7 +16,7 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  {% if not user.gender or not user.birthDate %}
-	    <div>
+	    <div class="incomplete">
 		  프로필 작성을 완료해주세요!
 		</div>
 	  {% endif %}

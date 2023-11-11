@@ -203,7 +203,7 @@ html {
     color: #000000;
 }
 
-.url-copy {
+.url-copy, .kakao-send {
 	border: none;
 	padding: 0;
 }
@@ -407,7 +407,7 @@ html {
 
 .kakaotalkcontent{
     position: absolute;
-	right: calc(50% - 360px/2 + 108px);
+	right: calc(50% - 360px/2 + 107.5px);
     top: 465px;
     font-family: 'Noto Sans KR';
     font-style: normal;

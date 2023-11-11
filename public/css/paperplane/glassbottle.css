@@ -1,52 +1,23 @@
-/* 전체화면 */
-.header{
-	position: relative;
+html {
+	height: 100%;
 }
 
-.previous{
+.main {
 	position: absolute;
-	width: 13px;
-	height: 10px;
-	left: 16px;
-	top: 17.5px;
-	cursor: pointer;
-}
-
-.home{
-	position: absolute;
-	left: 38px;
-	top: 17.5px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 10px;
-	text-align: center;
-
-	color: #000000;
-}
-
-.menu{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	left: 319px;
-	top: 9.5px;	
-	cursor: pointer;
-}
-
-.main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 45px;	
+	width: 100%;
 	background: #F5F8FF;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
 }
 
 h1{
 	position: absolute;
 	width: auto;
-	left: calc(50% - 286px/2);
+	left: calc(50% - 290.31px/2);
 	top: 35px;
 
 	font-family: 'Noto Sans KR';
@@ -56,12 +27,12 @@ h1{
 	color: #000000;
 }
 
-p{
+.main p{
 	position: absolute;
 	width: auto;
 	margin: 0 auto;
 	top: 92px;
-	margin: 0px 0px 0px 28px;
+	left: calc(50% - 312.16px/2);
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -72,41 +43,42 @@ p{
 }
 
 /*세 개 버튼*/
-li {
+.main li {
 	position: relative;
 	border: 1px solid #BFBFBF;
 	border-radius: 30px;
-    margin: 150px 5px 0 0;
+	top: 140px;
+    left: calc(50% - 350px/2);
+    margin-right: 5px;
     height: 40px;
     line-height: 40px;
     width: 98px;
 	list-style: none;
 	float: left;
-	left: -10px;
 }
 
-li.active {
+.main li.active {
     transition: background-color .4s;
 	cursor: pointer;
 }
 
-li.inactive {
+.main li.inactive {
 	background: #BFBFBF;
 }
 
-li button{
+.main li button{
 	cursor: pointer;
 }
 
-li:last-child{
-	 margin: 150px 0px 0 0;
+.main li:last-child{
+	 margin-right: 0px;
 }
 
-li.active:hover{
+.main li.active:hover{
     background-color: #0066FF;
 }
 
-.url-copy {
+.url-copy, .kakao-send {
 	border: none;
 	background-color: transparent;
 	padding: 0;
@@ -256,8 +228,8 @@ li.active:hover{
 	border-radius: 30px;
 	border: 1px solid #BFBFBF;
 	padding: 15px;
-	top: 152px;
-	left: 14px;
+	top: 155px;
+	left: calc(50% - 334px/2);
 	
 }
 .alert:after { /*말풍선 꼭지*/
@@ -282,8 +254,6 @@ li.active:hover{
 .alert-content {
 	position: absolute;
 	width: auto;
-	top: 163px;
-
 	font-family: 'Noto Sans KR';
 	font-weight: 400;
 	font-size: 12px;
@@ -295,16 +265,18 @@ li.active:hover{
 }
 
 .alert-content.not-owner-alert {
-	left: 52px;
+	top: 167px;
+	left: calc(50% - 334px/2 + 38px);
 }
 
 .alert-content.owner-alert {
-	left: 59px;
+	top: 167px;
+	left: calc(50% - 334px/2 + 43px);
 }
 
 .alert-content.no-paperplane-alert {
-	top: 157px;
-	left: 61px;
+	top: 160px;
+	left: calc(50% - 334px/2 + 45px);
 	line-height: 15px;
 }
 
@@ -322,9 +294,9 @@ li.active:hover{
 	border-radius: 10px;
 	border: 1px solid #BFBFBF;
 	padding:15px;
-	top: 109px;
-	left: 30px;
-	
+	top: 115px;
+	left: calc(50% - 360px/2 + 30px);
+	z-index: 1;
 }
 .link-select:after { /*말풍선 꼭지*/
 	top: 80px; /*말풍선꼭지위치 위아래*/
@@ -344,40 +316,44 @@ li.active:hover{
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 50px;
-    top: 128px;
+    left: calc(50% - 360px/2 + 50px);
+    top: 134px;
 	cursor: pointer;
+	z-index: 2;
 }
 
 .kakaotalkcontent{
     position: absolute;
-    left: 48px;
-    top: 163px;
+    left: calc(50% - 360px/2 + 48px);
+    top: 169px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
     font-size: 9px;
     text-align: center;
     color: #000000;
+	z-index: 2;
 }
 
 .link{
     position: absolute;
     width: 32px;
     height: 32px;
-    left: 107px;
-    top: 128px;
+    left: calc(50% - 360px/2 + 107px);
+    top: 134px;
     cursor: pointer;
+	z-index: 2;
 }
 
 .linkcontent{
     position: absolute;
-    left: 102px;
-    top: 163px;
+    left: calc(50% - 360px/2 + 103.5px);
+    top: 169px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
     font-size: 9px;
     text-align: center;
     color: #000000;
+	z-index: 2;
 }

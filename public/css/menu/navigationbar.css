@@ -27,6 +27,9 @@ body {
     top: 5px;
 }
 
+.nav > li > a {
+	height: 20px;
+}
 
 .navigationbar .title {
     position: absolute;
@@ -74,9 +77,10 @@ body {
   .navigationbar{
 	height: 45px;
   }
-	.logo{
-		top: 2px;
-	}
+	
+  .logo{
+	top: 2px;
+  }
 	
   .navigationbar .nav{
 	display: flex;

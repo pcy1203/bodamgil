@@ -3,12 +3,15 @@ exports.renderMain = (req, res, next) => {
 };
 
 exports.renderLogin = (req, res, next) => {
-  let redirectURL = "/";
-  if (req.session.redirectURL) {
-	redirectURL = req.session.redirectURL;
-	req.session.redirectURL = null;
+  const originalUrl = req.headers.referer;
+  const maintainUrl = ["login", "signup", "setprofile", "findid", "findpassword"]
+    .filter((word) => originalUrl?.includes(word)).length !== 0;
+  if (req.session.redirectToLogin || maintainUrl) {
+	req.session.redirectToLogin = false;
+  } else {
+	req.session.redirectURL = null;  // redirect to "/"
   }
-  res.render('main/login', { redirectURL });
+  res.render('main/login');
 };
 
 exports.renderSignup = (req, res, next) => {

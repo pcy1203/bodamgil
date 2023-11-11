@@ -2,32 +2,31 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title></title>	  
+	<title>어릴 때의 내가 좋아했던 것은?</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
 	<link rel="stylesheet" href="../../css/polaroid/polaroid.css">
+	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/polaroid"><img src="../../photo/polaroid/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
-		<img src="../../photo/polaroid/menu.png" class="menu">
-
-    <div class="main polaroid-{{ polaroid.color }}">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}  
+      <div class="main polaroid-{{ polaroid.color }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}"></div>
         <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
         <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
-	</div>	
-		  
-		  
-</div>
-</div>
-</div>
-</body>
+	  </div>	  
+    </div>
+	{% include "menu/menu.html" %}
+  </body>
+	<script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
+	</script>
 </html>

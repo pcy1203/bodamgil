@@ -18,7 +18,7 @@
       <div class="content">
 		<span class="mypage">마이페이지 MYPAGE</span>
 		<!-- 기본 이미지 설정하기 -->
-        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/polaroid/profile_square.png{% endif %}" class="photo">
+        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/main/profile_square.png{% endif %}" class="photo">
         <div>
           <span class="name">이름/Name</span>  
           <p class="namecontent">{{ user.name }}</p>

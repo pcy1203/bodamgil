@@ -102,8 +102,8 @@ color: #000000;
     transition: background-color .4s, color .4s;
 }
 
-.main li:hover{
-    background-color: #5F2987;
+.main li:hover {
+	background-color: #5F2987;
 	color: white;
 }
  
@@ -195,9 +195,11 @@ color: #000000;
 	
 }
 
-.select-image:hover {
-    background-color: #5F2987;
-	color: white;
+@media (hover: hover) {
+	.select-image:hover {
+    	background-color: #5F2987;
+		color: white;
+	}
 }
 
 #image {
@@ -316,9 +318,11 @@ color: #000000;
     transition: background-color .4s, color .4s;
 }
 
-.next:hover{
-    background-color: #5F2987;
-	color: white;
+@media (hover: hover) {
+	.next:hover{
+    	background-color: #5F2987;
+		color: white;
+	}
 }
 
 .button-color, .button-size {

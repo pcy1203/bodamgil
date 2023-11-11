@@ -33,6 +33,16 @@ a {
     top: 115px;
 }
 
+.incomplete {
+	position: relative;
+	width: 194px;
+	top: 15px;
+	left: calc(50% - 194px/2);
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'Noto Sans KR';
+}
+
 /*이미지 선택*/
 #joinForm input#image{
     position: absolute;
@@ -179,6 +189,10 @@ ul.join_box{
 }
 
 @media ( min-width: 1025px ) {
+	.incomplete {
+		left: calc(50% - 1000px/2 + 119px);
+		top: 65px;
+	}
     .photo{
         width: 180px;
         height: 210px;
