@@ -325,7 +325,7 @@ html {
 	text-align: center;
 }
 
-.url-copy {
+.url-copy, .kakao-send {
 	border: none;
 	padding: 0;
 }
@@ -372,7 +372,7 @@ html {
 
 .kakaotalkcontent{
     position: absolute;
-    left: calc(50% - 360px/2 + 46px);
+    left: calc(50% - 360px/2 + 46.5px);
     top: 465px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -386,14 +386,14 @@ html {
     position: absolute;
     width: 32px;
     height: 32px;
-    left: calc(50% - 360px/2 + 110px);
+    left: calc(50% - 360px/2 + 105px);
     top: 425px;
     cursor: pointer;
 }
 
 .linkcontent{
 	position: absolute;
-    left: calc(50% - 360px/2 + 106px);
+    left: calc(50% - 360px/2 + 101.5px);
     top: 465px;
     font-family: 'Noto Sans KR';
     font-style: normal;
