@@ -6,12 +6,15 @@ module.exports = () => {
   passport.use(new KakaoStrategy({
 	clientID: process.env.KAKAO_ID,
     callbackURL: '/auth/kakao/result',
-  }, async (accessToken, refreshToken, profile, done) => {
+	passReqToCallback: true,
+  }, async (req, accessToken, refreshToken, profile, done) => {
 	try {
 	  const exUser = await User.findOne({
         where: { snsId: profile.id, provider: 'kakao' },
       });
 	  if (exUser) {
+		exUser.redirectURL = req.session.redirectURL;
+		req.session.redirectURL = null;
         done(null, exUser);
 	  } else {
         const newUser = await User.create({
@@ -20,6 +23,8 @@ module.exports = () => {
           snsId: profile.id,
           provider: 'kakao',
         });
+		newUser.redirectURL = req.session.redirectURL;
+		req.session.redirectURL = null;
 		done(null, newUser);
 	  }
 	} catch (error) {

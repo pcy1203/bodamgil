@@ -17,9 +17,13 @@ exports.login = (req, res, next) => {
 	  if (loginError) {
 		console.error(loginError);
 		return next(loginError);
-	  }
-	  const redirectURL = req.body.redirect ? req.body.redirect : "/";
-	  return res.redirect(redirectURL);
+	  } else if (req.user.redirectURL) {
+		const redirectUrl = req.user.redirectURL;
+		req.user.redirectURL = null;
+	    return res.redirect(redirectUrl);
+	  } else {
+	    return res.redirect("/");
+      }
 	})
   })(req, res, next);
 };
@@ -84,6 +88,11 @@ exports.setprofile = async (req, res, next) => {
 	});
 	if (hasImage && req.user.dataValues.image) {
       fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
+	}
+	if (req.session.redirectURL) {
+	  const redirectUrl = req.session.redirectURL;
+	  req.session.redirectURL = null;
+	  return res.redirect(redirectUrl);
 	}
 	return res.redirect('/myprofile?message=saveSuccess');
   } catch (error) {

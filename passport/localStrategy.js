@@ -7,13 +7,15 @@ module.exports = () => {
   passport.use(new LocalStrategy({
 	usernameField: 'email',
 	passwordField: 'password',
-	passReqToCallback: false,
-  }, async (email, password, done) => {
+	passReqToCallback: true,
+  }, async (req, email, password, done) => {
 	try {
 	  const exUser = await User.findOne({ where: { email } });
 	  if (exUser) {
 		const result = await bcrypt.compare(password, exUser.password);
 		if (result) {
+		  exUser.redirectURL = req.session.redirectURL;
+		  req.session.redirectURL = null;
 		  done(null, exUser);
 		} else {
 		  done(null, false, { message: 'passwordError' });

@@ -2,7 +2,8 @@ exports.isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
 	next();
   } else {
-	res.locals.redirectURL = req.originalUrl;
+	req.session.redirectToLogin = true;
+	req.session.redirectURL = req.originalUrl;
 	res.redirect('/login');
   }
 };
