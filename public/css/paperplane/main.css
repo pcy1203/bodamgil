@@ -9,16 +9,16 @@ html {
 	height: 100%;
 }
 
-@media ( min-width: 1025px ) {
-	.main {
-		width: 1025px;
-	}
-}
-
 .main {
 	position: relative;
 	width: 100%;
 	background: #F5F8FF;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
 }
 
 h1{

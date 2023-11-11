@@ -51,10 +51,11 @@ router.get('/kakao', isNotLoggedIn, passport.authenticate('kakao'));
 router.get('/kakao/result', passport.authenticate('kakao', {
   failureRedirect: '/login?message=kakaoError',
 }), (req, res) => {
-  if (!req.user.introduction) {
+  if (!req.user.name || !req.user.gender || !req.user.birthDate) {
     res.redirect('/setprofile');
   } else {
-	res.redirect('/');
+	const redirectURL = req.session.redirectURL ? req.session.redirectURL : "/";
+	return res.redirect(redirectURL);
   }
 });
 
@@ -64,10 +65,11 @@ router.get('/google', isNotLoggedIn, passport.authenticate('google', { scope: ['
 router.get('/google/result', passport.authenticate('google', {
   failureRedirect: '/login?message=googleError',
 }), (req, res) => {
-  if (!req.user.introduction) {
+  if (!req.user.name || !req.user.gender || !req.user.birthDate) {
     res.redirect('/setprofile');
   } else {
-	res.redirect('/');
+	const redirectURL = req.session.redirectURL ? req.session.redirectURL : "/";
+	return res.redirect(redirectURL);
   }
 });
 
