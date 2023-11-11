@@ -71,7 +71,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: 300px;
-  top: 470px;
+  top: 475px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
@@ -127,7 +127,7 @@ a {
 	margin-right: 10px;
 }
   .item{
-    min-height: 420px;
+    min-height: 450px;
     flex-basis: 23%;
     flex-shrink: 1;
     flex-grow: 1;
@@ -157,7 +157,7 @@ a {
     text-align: center;
     line-height: 200%;
     color: #FFFFFF;
-    margin: 5px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
   }
 
   .contentme .item .contentme_name{
@@ -165,10 +165,11 @@ a {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
+    font-size: 14px;
+    line-height: 120%;
+	width: 50%;
     color: #000000;
-    margin: 40px 0px 0px 0px;
+    margin: 50px 0px 20px 0px;
   }
 
   .contentme .item .contentme_explain{
@@ -180,7 +181,7 @@ a {
     font-size: 12px;
     line-height: 130%;
     color: #000000;
-    margin: 68px 0px 0px 0px;
+    margin: 82px 0px 0px 0px;
   }
 
   .contentme .more{
@@ -190,7 +191,7 @@ a {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 1550px;
+    top: 1600px;
     background: #FFFFFF;
     border: 0.5px solid #000000;
     font-family: 'Noto Sans KR';
@@ -207,7 +208,7 @@ a {
     position: absolute;
     width: 97%;
     height: 330px;
-    top: 1630px;
+    top: 1660px;
     left: 50%;
     transform: translate(-50%);
   }
@@ -215,7 +216,7 @@ a {
   .contentworld_title{
     position: absolute;
     margin: 0 0 0 10px;
-    top: 1985px;
+    top:2010px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
@@ -228,7 +229,7 @@ a {
   .contentworld_explain{
     position: absolute;
     margin: 0 0 0 10px;
-    top: 2010px;
+    top: 2040px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -239,13 +240,13 @@ a {
   }
 
   .contentworld .more{
-    position: absolute;
+    position: absolute;                             
     width: 330px;
     height: 42px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 2070px;
+    top: 2080px;
     background: #FFFFFF;
     border: 0.5px solid #000000;
     font-family: 'Noto Sans KR';
@@ -445,25 +446,25 @@ a {
 		top: 475px;
 	 }
     .contentme .more{
-      top: 1170px;
+      top: 1200px;
     } 
 
     /*contentworld*/
     .world-image{
       width: 1024px;
       height: 500px;
-      top: 1250px;
+      top: 1270px;
     }
     .contentworld_title{
-      top: 1780px;
+      top: 1800px;
       font-size: 24px;
     }
     .contentworld_explain{
-      top: 1825px;
+      top: 1840px;
       font-size: 20px;
     }
     .contentworld .more{
-      top: 1900px;
+      top: 1920px;
     }
 
     /*footer*/

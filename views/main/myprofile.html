@@ -29,36 +29,38 @@
 		    {% if user.introduction %}{{ user.introduction }}{% else %}한 줄 소개를 작성해주세요.{% endif %}
 		  </p>
         </div>
-        <div>
-          <span class="issue">발급일/Date of Issue</span>  
-          <p class="issuecontent">{{ user.signupDate }}</p>
-        </div>
-        <div>
-          <span class="expire">기간 만료일/Date of expire</span>  
-          <p class="expirecontent">나를 찾을 때까지</p>
-        </div>
-	  </div>  
-      <div class="contentme">
-        <div class="line"></div>
-        <div>
-          <img src="../../photo/main/write.png" class="write">
-          <a href="#" class="writecontent">내 기록보기</a>  
-        </div>
-        <div>
-          <img src="../../photo/main/heart.png" class="heart">
-          <a href="/myprofile/like" class="heartcontent">관심목록</a>  
-        </div>
-        <div>
-          <img src="../../photo/main/success.png" class="success">
-          <a href="/myprofile/game" class="successcontent">완료한 진로 게임</a>  
-        </div>
-      </div>
-      <a href="/changepassword" class="changepassword">비밀번호 변경</a>
-      <a href="/setprofile" class="setprofile">프로필 수정</a>
-      <a href="/auth/logout" class="logout">로그아웃</a>
-    </div>
-	{% include "menu/menu.html" %}
-  </body>
+		<div class="contentdate">
+			<div>
+			  <span class="issue">발급일/Date of Issue</span>  
+			  <p class="issuecontent">{{ user.signupDate }}</p>
+			</div>
+			<div>
+			  <span class="expire">기간 만료일/Date of expire</span>  
+			  <p class="expirecontent">나를 찾을 때까지</p>
+			</div>
+			<a href="/changepassword" class="changepassword">비밀번호 변경</a>
+      		<a href="/setprofile" class="setprofile">프로필 수정</a>
+		  <div class="contentme">
+			<div class="line"></div>
+			<div>
+			  <img src="../../photo/main/write.png" class="write">
+			  <a href="#" class="writecontent">내 기록보기</a>  
+			</div>
+			<div>
+			  <img src="../../photo/main/heart.png" class="heart">
+			  <a href="/myprofile/like" class="heartcontent">관심목록</a>  
+			</div>
+			<div>
+			  <img src="../../photo/main/success.png" class="success">
+			  <a href="/myprofile/game" class="successcontent">완료한 진로 게임</a>  
+			</div>
+		  </div>
+		  <a href="/auth/logout" class="logout">로그아웃</a>
+		</div>
+		 </div>  
+		</div>
+		{% include "menu/menu.html" %}
+	  </body>
   <script>
   window.onload = () => {
 	let message = (new URLSearchParams(location.search)).get('message');

@@ -34,7 +34,7 @@ img {
 .menu-container .header-login{
     position: relative;
     background-color: #FF731D;
-    height: 200px;
+    height: 240px;
     font-size: 14px;
     margin: 0;
     padding: 0px;
@@ -52,8 +52,8 @@ img {
 .menu-container .header-login .name{
     position: absolute;
     width: 150px;
-    left: 120px;
-    top: 82px;
+    left: 110px;
+    top: 75px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
@@ -68,13 +68,13 @@ img {
     width: 25%;
     height: 40px;
     right: 20px;
-    top: 74px;
+    top: 70px;
 	display: block;
     background: #FFFFFF;
     border-radius: 30px;
     font-family: 'Noto Sans KR';
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 40px;
     text-align: center;
     color: #FF731D;
@@ -82,9 +82,9 @@ img {
 
 .menu-container .header-login .intro{
     position: absolute;
-    width: 65%;
-    left: 120px;
-    top: 118px;
+    width: 50%;
+    left: 110px;
+    top: 105px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -244,6 +244,7 @@ img {
 	text-align: center;
     color: #FF731D;
 	background: #ffffff;
+	margin: 50px 0 0 0;
 }
 
 

@@ -6,7 +6,7 @@ a {
 .previous{
     position: absolute;
     width: 16px;
-    height: 16px;
+    height: 16px;                     
     left: 16px;
     top: 15px;
     cursor: pointer;

@@ -69,9 +69,9 @@ a {
 
 /*폼*/
 #joinForm{
-	width: 300px;
-	margin: auto;
-	padding: 0 20px;
+	width: 280px;
+	margin: 0 auto;
+	padding: 0 10px;
 	margin-top: 280px;
 }
 #joinForm .field{
@@ -94,7 +94,7 @@ a {
 }
 #joinForm input{
 	border: 1px solid #dadada;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
     width: 100%;
     margin-bottom: 5px;
 	border-radius: 10px;
@@ -119,10 +119,10 @@ a {
 	background: #ffffff;
 }
 #joinForm #gender{
-	width: 330px;
+	width: 300px;
 }
 #joinForm .birth {
-	width: 330px;
+	width: 300px;
 	display: flex;
 	gap: 3px;
 	border-radius: 5px;
@@ -163,7 +163,7 @@ ul.join_box{
 }
 .fpmgBt{
     display: block; 
-	width: 332px;
+	width: 300px;
     height: 100%; 
     font-family: 'Noto Sans KR';
     font-weight: 400;

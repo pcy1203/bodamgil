@@ -15,7 +15,6 @@ a {
     align-items: center;
     color: #000000;
 }
-
 /*content*/
 .photo{
     position: absolute;
@@ -41,7 +40,6 @@ a {
     position: absolute;
     height: 16px;
     left: calc(50% - 70px/2 - 3px);
-    top: 140px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -49,23 +47,23 @@ a {
     display: flex;
     align-items: center;
     color: #000000;
+    top: 140px;
 }
 .introduction{
     position: absolute;
     left: calc(50% - 102px/2 + 13px);
-    top: 190px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 10px;
     display: flex;
     align-items: center;
     color: #FF731D;
+	top: 190px;
 }
 .introductioncontent{
     position: absolute;
-    width: 300px;
+    width: 200px;
     left: calc(50% - 189px/2 + 56.5px);
-    top: 195px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
@@ -73,11 +71,18 @@ a {
     display: flex;
     align-items: center;
     color: #000000;
+	top: 140px;
+	position: relative;
+}
+.contentdate{
+	position: absolute;
+	position: relative;
+	top: 160px;
 }
 .issue{
     position: absolute;
     left: calc(50% - 89px/2 - 85.5px);
-    top: 270px;
+   
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -90,7 +95,7 @@ a {
 .issuecontent{
     position: absolute;
     left: calc(50% - 90px/2 - 85px);
-    top: 275px;
+    
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -103,7 +108,7 @@ a {
 .expire{
     position: absolute;
     left: calc(50% - 114px/2 + 73px);
-    top: 270px;
+   
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -116,7 +121,7 @@ a {
 .expirecontent{
     position: absolute;
     left: calc(50% - 111px/2 + 72.5px);
-    top: 275px;
+   
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -130,7 +135,7 @@ a {
     position: absolute;
     width: 120px;
     height: 30px;
-	top: 332px;
+	top: 60px;
     left: calc(50% - 80px/2 + 72.5px);
     border: 1px solid #BFBFBF;
     border-radius: 30px;
@@ -162,7 +167,7 @@ a {
     width: 320px;
     height: 0px;
     left: calc(50% - 320px/2);
-    top: 385px;
+    top: 110px;
     opacity: 0.3;
     border: 1px solid #BFBFBF;
 }
@@ -183,29 +188,29 @@ a {
     color: #000000;
 }
 .write{
-    top: 405px;
+    top: 140px;
 }
 .writecontent{
-    top: 408px;
+    top: 143px;
 }
 .heart{
-    top: 455px;
+    top: 190px;
 }
 .heartcontent{
-    top: 458px;
+    top: 193px;
 }
 .success{
-    top: 505px;
+    top: 240px;
 }
 .successcontent{
-   top: 508px;
+   top: 243px;
 }
 .logout{
     position: absolute;
     width: 255px;
     height: 40px;
     left: calc(50% - 130px);
-    top: 578px;
+    top: 300px;
     border: 1px solid #BFBFBF;
     border-radius: 30px;
     font-family: 'Noto Sans KR';
@@ -254,35 +259,34 @@ a {
         width: 600px;
         left: calc(50% - 60px/2 - 186px);
         font-size: 18px;
-        top: 210px;
+        top: 160px;
       }
+	  .contentdate{
+		top: 170px;
+	  }
       .issue{
         left: calc(50% - 60px/2 - 186px);
         font-size: 12px;
-        top: 270px;
       }
       .issuecontent{
         width: 400px;
         left: calc(50% - 60px/2 - 186px);  
         font-size: 18px;
-        top: 275px;
       }
       .expire{
         left: calc(50% - 137px/2 + 28.5px);
         font-size: 12px;
-        top: 270px;
       }
       .expirecontent{
         width: 400px;
         left: calc(50% - 137px/2 + 28.5px);
         font-size: 18px;
-        top: 275px;
       }
       .setprofile, .changepassword{
         width: 140px;
         height: 40px;
         line-height: 40px;
-        top: 340px;
+        top: 100px;
       }
 	  .changepassword {
         left: calc((100% - 1025px) / 2 + 1025px - 380px);
@@ -300,7 +304,7 @@ a {
       /*contentme*/
       .line{
         left: calc(50% - 175px/2 - 354.5px);
-        top: 415px;
+        top: 170px;
         width: 870px;
       }
       .contentme img{
@@ -310,28 +314,29 @@ a {
         left: calc(50% - 80px/2 - 354.5px);
       }
       .write{
-        top: 435px;
+        top: 200px;
       }
       .writecontent{
-        top: 438px;
+        top: 203px;
       }
       .heart{
-        top: 485px;
+        top: 250px;
       }
       .heartcontent{
-        top: 488px;
+        top: 253px;
       }
       .success{
-        top: 535px;
+        top: 300px;
       }
       .successcontent{
-       top: 538px;
+       top: 303px;
       }
       .logout{
         width: 400px;
         height: 40px;
         left: calc(50% - 201px);
-        top: 600px;
+        top: 350px;
         font-size: 12px;
+		margin: 0 0 30px 0;
       }
 }
