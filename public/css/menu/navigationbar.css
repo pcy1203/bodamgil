@@ -19,7 +19,7 @@ body {
     padding: 0px;
   }
 
-.logo{
+.title .logo{
 	position: absolute;
 	width: 80px;
 	height: 21px;
@@ -68,7 +68,7 @@ body {
   height: 18px;
 } 
 
-.previous-circle {
+/*.previous-circle {
 	position: absolute;
 	width: 110px;
 	height: 30px;
@@ -114,7 +114,38 @@ body {
 .previous-circle:hover span {
 	color: white;
 }
+*/
 
+.previous{
+	position: relative;
+	width: 18px;
+	height: 18px;
+	top: 3px;
+	left: 4px;
+	cursor: pointer;
+	z-index: 1;
+	padding: 0px 5px;
+}
+.previous-circle span {
+	font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+	color: #000000;
+	transition: color .4s;
+}
+.previous-circle a {
+	text-decoration: none;
+}
+.previous-circle {
+	position: absolute;
+	width: 110px;
+	height: 30px;
+	left: 30px;
+	top: 90px;
+	cursor: pointer;
+
+}
 
 @media ( min-width: 1025px ) {
   #container {

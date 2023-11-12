@@ -38,12 +38,12 @@ a {
 }
 .namecontent{
     position: absolute;
-    height: 16px;
+	width: 200px;
     left: calc(50% - 70px/2 - 3px);
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     color: #000000;
@@ -58,7 +58,7 @@ a {
     display: flex;
     align-items: center;
     color: #FF731D;
-	top: 190px;
+	top: 198px;
 }
 .introductioncontent{
     position: absolute;
@@ -71,7 +71,7 @@ a {
     display: flex;
     align-items: center;
     color: #000000;
-	top: 140px;
+	top: 145px;
 	position: relative;
 }
 .contentdate{
@@ -248,18 +248,19 @@ a {
       .namecontent{
         left: calc(50% - 60px/2 - 186px);
         font-size: 18px;
-        top: 145px;
+        top: 140px;
+		width: 100%;
       }
       .introduction{
         left: calc(50% - 60px/2 - 186px);
         font-size: 12px;
-        top: 205px;
+        top: 218px;
       }
       .introductioncontent{
         width: 600px;
         left: calc(50% - 60px/2 - 186px);
         font-size: 18px;
-        top: 160px;
+        top: 165px;
       }
 	  .contentdate{
 		top: 170px;

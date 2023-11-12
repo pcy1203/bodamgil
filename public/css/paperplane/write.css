@@ -59,7 +59,7 @@ html {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 16px;
 	color: #000000;
 }
 
@@ -176,7 +176,7 @@ html {
 	border: 1px solid #BFBFBF;
     background-color: white;
 	border-radius: 30px;
-    margin: 125px 7px 0 0;
+    margin: 140px 7px 0 0;
     height: 40px;
     width: 96px;
 	list-style: none;
@@ -200,7 +200,7 @@ html {
     background-color: white;
 	border-radius: 30px;
     top: 15px;
-    margin: 165px 7px 0 0;
+    margin: 180px 7px 0 0;
     height: 40px;
     width: 96px;
 	list-style: none;
@@ -228,7 +228,7 @@ html {
     width: 280px;
     height: 50px;
     left: calc(50% - 322px/2);
-    top: 127px;
+    top: 150px;
     background: #FFFFFF;
     border: 0.5px solid #BFBFBF;
     border-radius: 10px;
@@ -246,7 +246,7 @@ html {
     width: 280px;
     height: 333px;
     left: calc(50% - 322px/2);
-    top: 188px;
+    top: 210px;
     background: #FFFFFF;
     border: 0.5px solid #BFBFBF;
     border-radius: 10px;
@@ -266,6 +266,18 @@ html {
     	left: calc(50% - 552px/2);
         font-size: 14px;
 	}
+	.main .name{
+		top: 130px;
+	}
+	.main .message{
+		top: 190px;
+	}
+	.main .button1 li {
+		margin: 120px 7px 0 0;
+	}
+	.main .button2 li {
+		margin: 160px 7px 0 0;
+	}
 }
 
 .name::placeholder, .message::placeholder {
@@ -279,9 +291,9 @@ html {
 
 	position: absolute;
 	width: 100px;
-	height: 32px;
+	height: 40px;
 	left: 10%;
-	top: 600px;
+	top: 580px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -307,9 +319,9 @@ html {
 
 	position: absolute;
 	width: 100px;
-	height: 32px;
+	height: 40px;
 	right: 10%;
-	top: 600px;
+	top: 580px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -392,7 +404,7 @@ html {
 	font-size: 16px;
 	text-align: center;
 	color: #000000;
-    line-height: 40px;
+    line-height: 35px;
 	cursor: pointer;
     transition: all .4s;
 	z-index: 3;
@@ -414,8 +426,22 @@ html {
 	text-align: center;
     background-color: #0066FF;
 	color: white;
-    line-height: 40px;
+    line-height: 35px;
 	cursor: pointer;
     transition: all .4s;
 	z-index: 3;
+}
+@media ( min-width: 1025px ) {
+	.alert{
+			left: calc(50% - 750px/2);
+	}
+	.delete p{
+		left: calc(50% - 750px/2  + 49px);
+	}
+	.delete .no{
+		left: calc(50% - 750px/2 + 18px);
+	}
+	.delete .yes{
+		left: calc(50% - 750px/2 + 151px);
+	}
 }

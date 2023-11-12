@@ -167,9 +167,9 @@ a {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
-	width: 24%;
+	width: 50%;
     color: #000000;
-    margin: 50px 0px 20px 0px;
+    margin: 45px 0px 20px 0px;
   }
 
   .contentme .item .contentme_explain{
@@ -265,17 +265,12 @@ a {
     height: 225px;
     top: 890px;
   }
-  .logo{
-    position: absolute;
-    left: 20px;
-    top: 3px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    color: #000000;
-  }
+  .footer .logo{
+	position: absolute;
+	width: 80px;
+	height: 21px;
+    padding: 17px 0 0 10px;
+}
   .instagram{
     position: absolute;
     width: 25px;
@@ -473,10 +468,9 @@ a {
       top: 1165px;
       height: 190px;
     }
-    .logo{
-      left: 30px;
-      top: 10px;
-    }
+    .footer .logo{
+    padding: 25px 0 0 25px;
+}
     .instagram{
       left: 845px;
       top: 25px;

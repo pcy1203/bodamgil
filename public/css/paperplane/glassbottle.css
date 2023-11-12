@@ -29,7 +29,7 @@ h1{
 	position: absolute;
 	width: auto;
 	left: calc(50% - 290.31px/2);
-	top: 65px;
+	top: 60px;
 
 	font-family: 'Noto Sans KR';
 	font-weight: 700;
@@ -41,7 +41,7 @@ h1{
 .main p{
 	position: absolute;
 	width: 100%;
-	top: 107px;
+	top: 97px;
 	text-align: center;
 	
 	font-family: 'Noto Sans KR';
@@ -57,7 +57,7 @@ h1{
 	position: relative;
 	border: 1px solid #BFBFBF;
 	border-radius: 30px;
-	top: 170px;
+	top: 180px;
     left: calc(50% - 350px/2);
     margin-right: 5px;
     height: 40px;
@@ -131,7 +131,7 @@ h1{
 	width: calc(83*2.5px);
 	height: calc(128*2.5px);
 	left: calc(50% - 83*2.5px/2 + 0.5px);
-	top: 310px;
+	top: 330px;
 }
 
 
