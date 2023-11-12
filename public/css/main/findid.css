@@ -3,18 +3,15 @@ a {
     text-decoration: none;
     color: black;
 }
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 68px;
-    cursor: pointer;
+
+.previous-circle {
+	width: 90px!important;
 }
+
 .findid{
     position: absolute;
     left: calc(50% - 78.09px/2);
-    top: 100px;
+    top: 130px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
     font-size: 16px;
@@ -26,7 +23,7 @@ a {
 .findid_context{
     position: absolute;
     left: calc(50% - 204.47px/2);
-    top: 130px;
+    top: 160px;
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 12px;
@@ -42,7 +39,7 @@ a {
     width: 280px;
     height: 50px;
     left: calc(50% - 286px/2);
-    top: 200px;
+    top: 230px;
     border: 1px solid #BFBFBF;
     border-radius: 10px;
 }
@@ -55,7 +52,7 @@ a {
 	display: flex;
     align-items: center;
     left: calc(50% - 286px/2 + 5px);
-	top: 250px;
+	top: 280px;
 	display: none;
 }
 input::placeholder{
@@ -70,7 +67,7 @@ input::placeholder{
     width: 280px;
     height: 40px;
     left: calc(50% - 280px/2);
-    top: 300px;
+    top: 330px;
     background: #FF731D;
     border-radius: 30px;
     font-family: 'Noto Sans KR';

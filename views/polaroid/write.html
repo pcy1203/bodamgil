@@ -15,6 +15,12 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}    
+	  <div class="previous-circle">
+		<a href="/myself/polaroid">
+		  <img src="../../../photo/main/previous.png" class="previous">
+		  <span>메인 화면</span>
+		</a>
+	  </div>      
 	  <div class="main main-block size-horizontal">
 		<h1>당신은 어릴 때 무엇을 좋아했나요?</h1>
   		<p>어렸을 때의 꿈이나 즐겼던 활동 사진을 넣고<br> 이에 대해 설명해주세요. 어렸을 때의 사진이나 <br>기억 나는 장소 등에 대해 적어도 좋아요.</p>
@@ -158,6 +164,7 @@
 	  });
 	  document.querySelector(`#size-${size}`).checked = true;
 	  changePolaroidSize(size);
+	  mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
 	};
 
 	document.querySelectorAll('.size-select-box > div:nth-child(n+2)').forEach((size) => {

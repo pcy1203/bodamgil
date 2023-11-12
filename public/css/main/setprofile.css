@@ -3,10 +3,13 @@ a {
     text-decoration: none;
     color: black;
 }
+.previous-circle {
+	width: 120px!important;
+}
 .changecontent{
     position: absolute;
     left: 45px;
-    top: 13px;
+    top: 73px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
@@ -16,27 +19,18 @@ a {
     text-align: center;
     color: #000000;   
 }
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 15px;
-    cursor: pointer;
-}
-
 .photo{
     position: absolute;
     width: 120px;
     height: 150px;
     left: calc(50% - 120px/2);
-    top: 115px;
+    top: 175px;
 }
 
 .incomplete {
 	position: relative;
 	width: 194px;
-	top: 15px;
+	top: 75px;
 	left: calc(50% - 194px/2);
 	font-size: 16px;
 	font-weight: 400;
@@ -57,7 +51,7 @@ a {
 	border-radius: 30px;
 	position: absolute;
 	left: calc(50% - 102px/2);
-	top: 280px;
+	top: 340px;
 	width: 100px;
 	height: 30px;
 
@@ -82,7 +76,7 @@ a {
 	width: 280px;
 	margin: 0 auto;
 	padding: 0 10px;
-	margin-top: 280px;
+	margin-top: 310px;
 }
 #joinForm .field{
 	margin: 5px 0;
@@ -190,8 +184,8 @@ ul.join_box{
 
 @media ( min-width: 1025px ) {
 	.incomplete {
-		left: calc(50% - 1000px/2 + 119px);
-		top: 65px;
+		left: calc(50% - 1000px/2 + 121px);
+		top: 80px;
 	}
     .photo{
         width: 180px;

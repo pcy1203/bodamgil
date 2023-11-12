@@ -15,6 +15,12 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
+	  <div class="previous-circle">
+		<a href="/login">
+		  <img src="/photo/main/previous.png" class="previous">
+		  <span>로그인</span>
+		</a>
+	  </div>    
       <span class="findid">아이디 찾기</span>
       <p class="findid_context">가입 시 작성한 전화번호를 입력해주세요.</p>
 	  <form action="/auth/findid" method="post">

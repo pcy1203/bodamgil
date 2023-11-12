@@ -14,7 +14,13 @@
   </head>
   <body>
     <div id="container">
-	  {% include "menu/navigationbar.html" %}  
+	  {% include "menu/navigationbar.html" %}   
+	  <div class="previous-circle">
+		<a href="/myself/polaroid">
+		  <img src="../../../photo/main/previous.png" class="previous">
+		  <span>메인 화면</span>
+		</a>
+	  </div>    
       <div class="main polaroid-{{ polaroid.color }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}"></div>

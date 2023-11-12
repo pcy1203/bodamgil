@@ -15,6 +15,12 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
+	  <div class="previous-circle">
+		<a href="/myprofile">
+		  <img src="/photo/main/previous.png" class="previous">
+		  <span>마이페이지</span>
+		</a>
+	  </div>    
 	  {% if not user.gender or not user.birthDate %}
 	    <div class="incomplete">
 		  프로필 작성을 완료해주세요!

@@ -8,6 +8,14 @@ html {
 	height: 100%;
 }
 
+.previous-circle {
+	border: 1px solid #5F2987!important;
+}
+
+.previous-circle:hover {
+    background-color: #5F2987!important;
+}
+
 .main{
 	position: relative;
 	width: 100%;;
