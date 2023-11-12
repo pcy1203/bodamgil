@@ -1,4 +1,12 @@
-/* 전체화면 */
+html {
+	height: 100%;
+}
+
+.main {
+	position: absolute;
+	width: 100%;
+	background: #F5F8FF;
+}
 
 .previous-circle {
 	border: 1px solid #0066FF!important;
@@ -7,59 +15,39 @@
 .previous-circle:hover {
     background-color: #0066FF!important;
 }
-.header{
-	position: relative;
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	.main h1 {
+		width: 1025px;
+	}
 }
 
-.previous{
-	width: 13px;
-	height: 10px;
+.main h1{
 	position: absolute;
-	left: 16px;
-	top: 17.5px;
-	cursor: pointer;
+	width: 100%;
+	top: 70px;
+	text-align: center;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 142%;
+	text-align: center;
+	color: #000000;	
 }
 
-.menu{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	left: 319px;
-	top: 9.5px;	
-	cursor: pointer;
-}
-
-.main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 45px;	
-	background: #F5F8FF;
-}
-
-h1{
-position: absolute;
-width: auto;
-margin: 0 59px;
-top: 30px;
-
-font-family: 'Noto Sans KR';
-font-weight: 700;
-font-size: 20px;
-line-height: 142%;
-text-align: center;
-color: #000000;	
-}
-
-.relationship{
+.main .relationship{
 	border-radius: 30px;
 	background-color: #F2F2F2;
 
 	position: absolute;
 	width: 81px;
 	height: 26px;
-	left: 50px;
-	top: 125px;
+	left: calc(50% - 360px/2 + 50px);
+	top: 165px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 400;
@@ -68,15 +56,15 @@ color: #000000;
 	line-height: 26px;
 }
 
-.name{
+.main .name{
 	border-radius: 30px;
 	background-color: #F2F2F2;
 
 	position: absolute;
 	width: 166px;
 	height: 26px;
-	left: 143px;
-	top: 125px;
+	left: calc(50% - 360px/2 + 143px);
+	top: 165px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 400;
@@ -85,20 +73,20 @@ color: #000000;
 	line-height: 26px;
 }
 
-.line{
+.main .line{
 	position: absolute;
 	width: 256px;
 	height: 0px;
-	left: 52px;
-	top: 165px;
+	left: calc(50% - 360px/2 + 52px);
+	top: 205px;
 	border: 0.01px solid #BFBFBF;
 }
 
-.content{
+.main .content{
     position: absolute;
     width: 256px;
-	left: 52px;
-	top: 175px;
+	left: calc(50% - 360px/2 + 52px);
+	top: 215px;
 
     font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -107,13 +95,13 @@ color: #000000;
 	word-break: break-all;
 }
 
-.note{
+.main .note{
 	box-sizing: border-box;
 	position: absolute;
 	width: 304px;
 	height: 401px;
 	left: calc(50% - 304px/2);
-	top: 108px;
+	top: 148px;
 
 	background: #FFFFFF;
 	border: 1px solid #BFBFBF;
@@ -126,7 +114,8 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 0 0 157px;
+    top: 585px;
+	left: calc(50% - 360px/2 + 157px);
 	text-align: center;
 }
 
@@ -135,7 +124,8 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 0 0 180px;
+    top: 585px;
+	left: calc(50% - 360px/2 + 180px);
 	text-align: center;
 }
 
@@ -144,7 +134,8 @@ color: #000000;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    padding: 545px 0 0 198px;
+    top: 585px;
+	left: calc(50% - 360px/2 + 198px);
 	text-align: center;
 }
 
@@ -153,8 +144,8 @@ color: #000000;
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	right: 20px;
-	top: 538px;
+	right: 10%;
+	top: 578px;
 	cursor: pointer;
 }
 
@@ -163,7 +154,7 @@ color: #000000;
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	left: 20px;
-	top: 538px;
+	left: 10%;
+	top: 578px;
 	cursor: pointer;
 }

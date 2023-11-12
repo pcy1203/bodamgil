@@ -6,41 +6,38 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-	<link rel="stylesheet" href="../../../css/paperplane/paperplane.css">
+	<link rel="stylesheet" href="/css/paperplane/paperplane.css">
+	<link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane/1"> <img src="../../../photo/polaroid/previous.png" class="previous"></a>
-		<img src="../../../photo/polaroid/menu.png" class="menu">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}
 	  <div class="previous-circle">
 		<a href="/myself/paperplane">
-		  <img src="../../../photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous">
 		  <span>메인 화면</span>
 		</a>
 	  </div>    
-		  
-	<div class="main">	  
+	  <div class="main">	  
  		<h1>{{ user.name }} 님에게 <br>총 {{ paperPlanes.length }}개의 편지가 도착했어요!</h1>
 		<div class="note"></div>
-
         {% for paperPlane in paperPlanes %}
 		<div class="paperplane contents-{{ loop.index }}">
-			<span class="relationship">
-				{% if paperPlane.relationship === "friend" %}친구
-				{% elif paperPlane.relationship === "couple" %}연인
-				{% elif paperPlane.relationship === "family" %}가족
-				{% elif paperPlane.relationship === "school" %}선후배
-				{% elif paperPlane.relationship === "colleague" %}직장동료
-				{% elif paperPlane.relationship === "etc" %}기타
-				{% endif %}
-			</span>
-			<span class="name">{{ paperPlane.name }}</span>
-			<div class="line"></div>
-			<div class="content">{{ paperPlane.content }}</div>
+		  <span class="relationship">
+			{% if paperPlane.relationship === "friend" %}친구
+			{% elif paperPlane.relationship === "couple" %}연인
+			{% elif paperPlane.relationship === "family" %}가족
+			{% elif paperPlane.relationship === "school" %}선후배
+			{% elif paperPlane.relationship === "colleague" %}직장동료
+			{% elif paperPlane.relationship === "etc" %}기타
+			{% endif %}
+		  </span>
+		  <span class="name">{{ paperPlane.name }}</span>
+		  <div class="line"></div>
+		  <div class="content">{{ paperPlane.content }}</div>
 		</div>
 		{% endfor %}
         
@@ -50,12 +47,14 @@
 
 		<img src="../../../photo/paperplane/back.png" class="back">
 		<img src="../../../photo/paperplane/next.png" class="next">
-	</div>	 
-		  
+	  </div>	   
 	</div>
-	</div>
-	</div>
+	{% include "menu/menu.html" %}
   </body>
+  <script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;	
+  </script>
   <script src="../../../js/changepage.js"></script>
-  <script src="../../../js/polaroidcolor.js"></script>
 </html>

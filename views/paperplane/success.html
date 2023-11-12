@@ -6,33 +6,33 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>
-	<link rel="stylesheet" href="../../../../css/paperplane/success.css">
+	<link rel="stylesheet" href="/css/paperplane/success.css">
+	<link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane"><img src="../../../../photo/paperplane/previous.png" class="previous"></a>
-		<span class="home">홈 화면</span>
-		<img src="../../../../photo/polaroid/menu.png" class="menu">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}
 	  <div class="previous-circle">
 		<a href="/myself/paperplane">
-		  <img src="../../../photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous">
 		  <span>메인 화면</span>
 		</a>
 	  </div>    
-		  
-	<div class="main">	 
+	  <div class="main">	 
 		<img src="../../../../photo/paperplane/airplane-last.png">
 		<p>편지를 성공적으로 보냈어요.</p>
         <a href="/myself/paperplane/{{ id }}/write" class="more">더 보내기</a>
         <a href="/myself/paperplane/start" class="check">내꺼 확인하기</a>
-	</div>	
-    
+	  </div>
 	</div>
-	</div>
-	</div>
+	{% include "menu/menu.html" %}
   </body>
+  <script>
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;	
+  </script>
 </html>
