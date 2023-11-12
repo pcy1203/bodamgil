@@ -10,7 +10,8 @@ const config = {
   "password": process.env.DB_PASSWORD,
   "database": process.env.DB_DATABASE,
   "host": "127.0.0.1",
-  "dialect": "mysql"
+  "timezone": "+09:00",
+  "dialect": "mysql",
 };
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,
@@ -26,7 +27,8 @@ fs
       file.indexOf('.') !== 0 &&
       file !== basename &&
       file.slice(-3) === '.js' &&
-      file.indexOf('.test.js') === -1
+      file.indexOf('.test.js') === -1 &&
+	  file !== 'initialdata.js'
     );
   })
   .forEach(file => {
