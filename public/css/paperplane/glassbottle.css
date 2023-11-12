@@ -20,6 +20,9 @@ html {
 	.main {
 		width: 1025px;
 	}
+	.main p {
+		width: 1025px;
+	}
 }
 
 h1{
@@ -37,10 +40,9 @@ h1{
 
 .main p{
 	position: absolute;
-	width: auto;
-	margin: 0 auto;
-	top: 122px;
-	left: calc(50% - 312.16px/2);
+	width: 100%;
+	top: 107px;
+	text-align: center;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;

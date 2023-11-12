@@ -65,12 +65,6 @@
     </div>
   {% include "menu/menu.html" %}
 </body>
-  <script>
-    const mainBlock = document.querySelector('.main');
-	const navBar = document.querySelector('.navigationbar');
-    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
-	document.querySelector('.black').style.height = `${document.documentElement.scrollHeight}px`;	  
-  </script>
   <script src="../../../js/changepage.js"></script>
   <script src="../../../js/polaroidcolor.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

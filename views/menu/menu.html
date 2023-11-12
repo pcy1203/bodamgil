@@ -51,12 +51,8 @@
 	{% endif %}
   </div>
 </div>
-<script>
-  const menuBlock = document.querySelector('.menu-container');
-  menuBlock.style.height = `${document.documentElement.scrollHeight}px`;
-  const menuBack = document.querySelector('.menu-back');
-  menuBack.style.height = `${document.documentElement.scrollHeight}px`;
-
+<script defer src="/js/resizepageheight.js"></script>
+<script defer>
   document.querySelector('.menu-btn').addEventListener('click', () => {
     menuBack.style.display = 'block';
     menuBlock.style.display = 'block';
@@ -92,6 +88,7 @@
       menu2Arrow.classList.remove('menu-open');
       menu2Arrow.classList.add('menu-close');
     }
+    resizePageHeight();
   });
 
   document.querySelector('.menu-3').addEventListener('click', () => {
@@ -114,6 +111,7 @@
       menu3Arrow.classList.remove('menu-open');
       menu3Arrow.classList.add('menu-close');
     }
+    resizePageHeight();
   });
 	
   document.querySelector('.menu-4').addEventListener('click', () => {
@@ -136,15 +134,6 @@
       menu4Arrow.classList.remove('menu-open');
       menu4Arrow.classList.add('menu-close');
     }
+    resizePageHeight();
   });
-
-window.addEventListener('resize', (e) => {
-menuBack.style.height = `${document.documentElement.scrollHeight}px`;
-menuBlock.style.height = `${document.documentElement.scrollHeight}px`;
-if (window.innerWidth >= 1025) {
-  menuBack.style.display = 'none';
-  menuBlock.style.display = 'none';
-}
-});
-
 </script>
