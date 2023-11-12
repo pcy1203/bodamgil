@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Polaroid = require('../models/polaroid');
+const GameRecord = require('../models/gamerecord');
 
 const isPolaroidOwner = async (userId, polaroidId) => {
   try {
@@ -8,6 +9,26 @@ const isPolaroidOwner = async (userId, polaroidId) => {
 	  isOwner: polaroid?.writer === userId,
 	  polaroid,
 	};
+  } catch (error) {
+	throw error;
+  }
+};
+
+const makeRecord = async (userId) => {
+  try {
+	const exRecord = await GameRecord.findOne({ where: {
+	  user: userId,
+	  game: 'polaroid',
+	}});
+	if (exRecord) {
+	  await exRecord.update({ completedAt: new Date() });
+	} else {
+	  await GameRecord.create({
+	    user: userId,
+		game: 'polaroid',
+		completedAt: new Date(),
+	  });
+	}
   } catch (error) {
 	throw error;
   }
@@ -57,7 +78,7 @@ exports.writePolaroid = async (req, res, next) => {
   if (!req.file) return res.redirect('/myself/polaroid/write?message=noPhotoError');
   if (content.length === 0) return res.redirect('/myself/polaroid/write?message=noDataError');
   if (content.length > 30) return res.redirect('/myself/polaroid/write?message=longDataError');
-  try {
+  try {  
 	const polaroid = await Polaroid.create({
 	  image: `polaroid/${req.file.filename}`,
 	  content,
@@ -65,6 +86,7 @@ exports.writePolaroid = async (req, res, next) => {
 	  size,
 	  writer: req.user.dataValues.id,
 	});
+	await makeRecord(req.user.dataValues.id);
     return res.redirect(`/myself/polaroid/${polaroid.id}/success`);
   } catch (error) {
 	console.error(error);
@@ -81,6 +103,22 @@ exports.deletePolaroid = async (req, res, next) => {
 	  await Polaroid.destroy({
 	    where: { id },
 	  });
+	  const exPolaroid = await Polaroid.findOne({ where: { writer: req.user.dataValues.id } });
+	  if (!exPolaroid) {
+		await GameRecord.destroy({ where: {
+		  user: req.user.dataValues.id,
+		  game: 'polaroid',
+		}});
+	  } else {
+		await GameRecord.update({
+			completedAt: new Date()
+		}, {
+		  where: {
+		    user: req.user.dataValues.id,
+		    game: 'polaroid',
+		  }
+		});
+	  }
 	}
     return res.redirect(`/myself/polaroid/`);
   } catch (error) {

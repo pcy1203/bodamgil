@@ -10,6 +10,7 @@ const passport = require('passport');
 
 dotenv.config();
 const { sequelize } = require('./models');
+const { initializeGameDB } = require('./models/initialdata');
 const passportConfig = require('./passport');
 const mainRouter = require('./routes/main');
 const authRouter = require('./routes/auth');
@@ -28,7 +29,8 @@ nunjucks.configure('views', {
 
 sequelize.sync({ force: false })
   .then(() => {
-	console.log('데이터베이스 연결 성공!')
+	console.log('데이터베이스 연결 성공!');
+    initializeGameDB();
   })
   .catch((err) => {
 	console.error(err);

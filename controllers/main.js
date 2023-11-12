@@ -1,3 +1,5 @@
+const GameRecord = require('../models/gamerecord');
+
 exports.renderMain = (req, res, next) => {
   res.render('main/main');
 };
@@ -30,8 +32,28 @@ exports.renderMyProfileLike = (req, res, next) => {
   res.render('main/myprofilelike');
 };
 
-exports.renderMyProfileGame = (req, res, next) => {
-  res.render('main/myprofilegame');
+exports.renderMyProfileGame = async (req, res, next) => {
+  try {
+    const gameRecords = await GameRecord.findAll({
+	  where: { user: req.user.dataValues.id },
+	  order: [[ 'completedAt', 'DESC' ]],
+    });
+	const records = [];
+	for await (let gameRecord of gameRecords) {
+	  let game = await gameRecord.getGame();
+	  await records.push({
+		url: `/myself/${game.dataValues.name}`,
+		title: game.dataValues.title,
+		introduction: game.dataValues.introduction,
+		image: game.dataValues.image,
+		completedAt: `${gameRecord.completedAt.toLocaleDateString('ko-KR')} ${gameRecord.completedAt.toLocaleTimeString('ko-KR')}`,
+	  });
+	}
+    res.render('main/myprofilegame', { records });
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  }
 };
 
 exports.renderSetProfile = (req, res, next) => {
