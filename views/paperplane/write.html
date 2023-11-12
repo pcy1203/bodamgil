@@ -2,89 +2,92 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title></title>	  
+	<title>내가 잘하는 것은? 네가 잘하는 것은! - 작성하기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-	<link rel="stylesheet" href="../../../css/paperplane/write.css">
+	<link rel="stylesheet" href="/css/paperplane/write.css">
+	<link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
-	<div style="display: flex; justify-content: center;">
-	  <div style="width: 360px; height: 640px; border: 1px solid black;" class="container">
-	  <div style="width: 360px; height: 45px; background-color:white" class="header">
-	    <a href="/myself/paperplane/{{ id }}"> <img src="../../../photo/paperplane/previous.png" class="previous"></a>
-		<img src="../../../photo/polaroid/menu.png" class="menu">
-	  </div>
-	
-	<form action="/myself/paperplane/{{ id }}/write" method="post">
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}     
+	  <div class="previous-circle">
+		<a href="/myself/paperplane">
+		  <img src="../../../photo/main/previous.png" class="previous">
+		  <span>메인 화면</span>
+		</a>
+	  </div>    
+	  <form action="/myself/paperplane/{{ id }}/write" method="post">
 		<div class="main">	 
-			<div class="progress"></div>
-			<div class="progress-color"></div>
+		  <div class="progress"></div>
+		  <div class="progress-color"></div>
 
-			<div class="block-1">
-				<h1>이런 내용에 대해 적어주세요</h1>
-				<p class="content1">남들보다 조금이라도 더 잘한다고 생각한 것들에 대해 자유롭게 작성해주세요.</p>
-				<p class="content2">‘영어 말하기, 포토샵, 농구하기’ 등 기술적인 것에 대한 이야기도 좋아요!</p>
-				<p class="content3">‘사람 얼굴을 잘 기억해요, 옷을 감각적이게 잘 입어요’와 같이 성향적인 것도 좋아요!</p>
-				<p class="content4">상위 1%가 아니어도 좋아요. 평균보다 조금이라도 잘하는 일들을 적어주세요.</p>
-				<button class="next" type="button">NEXT</button>
-			</div>
+		  <div class="block-1">
+			<h1>이런 내용에 대해 적어주세요</h1>
+			<p class="content1">남들보다 조금이라도 더 잘한다고 생각한 것들에 대해 자유롭게 작성해주세요.</p>
+			<p class="content2">‘영어 말하기, 포토샵, 농구하기’ 등 기술적인 것에 대한 이야기도 좋아요!</p>
+			<p class="content3">‘사람 얼굴을 잘 기억해요, 옷을 감각적이게 잘 입어요’와 같이 성향적인 것도 좋아요!</p>
+			<p class="content4">상위 1%가 아니어도 좋아요. 평균보다 조금이라도 잘하는 일들을 적어주세요.</p>
+			<button class="next" type="button">NEXT</button>
+		  </div>
 
-			<div class="block-2">
-				<h1>적을 때 이런 점은 유의해주세요</h1>
-				<p class="content1">타인을 비방하거나 욕설이 담긴 편지는 삼가해주세요.</p>
-				<p class="content2">한 번 보낸 편지는 수정이나 삭제가 불가해요.</p>
-				<p class="content3">자신을 탐구하는 진중한 기회 중 하나예요. 장난성 편지는 삼가해주세요.</p>
-				<p class="content4">‘운동’보다는 ‘탁구를 잘 쳐요’와 같이 최대한 자세하게 작성해주세요.</p>
-				<button class="back" type="button">BACK</button>
-				<button class="next" type="button">NEXT</button>
-			</div>
+		  <div class="block-2">
+			<h1>적을 때 이런 점은 유의해주세요</h1>
+			<p class="content1">타인을 비방하거나 욕설이 담긴 편지는 삼가해주세요.</p>
+			<p class="content2">한 번 보낸 편지는 수정이나 삭제가 불가해요.</p>
+			<p class="content3">자신을 탐구하는 진중한 기회 중 하나예요. 장난성 편지는 삼가해주세요.</p>
+			<p class="content4">‘운동’보다는 ‘탁구를 잘 쳐요’와 같이 최대한 자세하게 작성해주세요.</p>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">NEXT</button>
+		  </div>
 
-			<div class="block-3">
-				<h1>{{ owner }}와의 관계를 선택해주세요!</h1>
-				<div class="button-relationship">
-				    <input id="relationship-friend" type="radio" name="relationship" value="friend" checked>친구
-				    <input id="relationship-couple" type="radio" name="relationship" value="couple">연인
-				    <input id="relationship-family" type="radio" name="relationship" value="family">가족
-				    <input id="relationship-school" type="radio" name="relationship" value="school">선후배
-				    <input id="relationship-colleague" type="radio" name="relationship" value="colleague">직장동료
-				    <input id="relationship-etc" type="radio" name="relationship" value="etc">기타
-				</div>
-				<ul class="button1">
-					<li class="friend check">친구</li>
-					<li class="couple">연인</li>
-					<li class="family">가족</li>
-				</ul>
-				<ul class="button2">
-					<li class="school">선후배</li>
-					<li class="colleague">직장동료</li>
-					<li class="etc">기타</li>
-				</ul>
-				<button class="back" type="button">BACK</button>
-				<button class="next" type="button">NEXT</button>
+		  <div class="block-3">
+			<h1>{{ owner }} 님과의 관계를 선택해주세요!</h1>
+			<div class="button-relationship">
+			  <input id="relationship-friend" type="radio" name="relationship" value="friend" checked>친구
+			  <input id="relationship-couple" type="radio" name="relationship" value="couple">연인
+			  <input id="relationship-family" type="radio" name="relationship" value="family">가족
+			  <input id="relationship-school" type="radio" name="relationship" value="school">선후배
+			  <input id="relationship-colleague" type="radio" name="relationship" value="colleague">직장동료
+			  <input id="relationship-etc" type="radio" name="relationship" value="etc">기타
 			</div>
+			<ul class="button1">
+			  <li class="friend check">친구</li>
+		  	  <li class="couple">연인</li>
+			  <li class="family">가족</li>
+			</ul>
+			<ul class="button2">
+			  <li class="school">선후배</li>
+			  <li class="colleague">직장동료</li>
+			  <li class="etc">기타</li>
+			</ul>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">NEXT</button>
+		  </div>
 
-			<div class="block-4">
-				<h1>{{ owner }}님이 잘하는 일을 적어주세요!</h1>
-				<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요. (14글자 이내)" maxlength="14" require>
-				<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요. (437글자 이내)" maxlength="437" require></textarea>
-				<button class="back" type="button">BACK</button>
-				<button class="next" type="button">SEND</button>
-			</div>
+		  <div class="block-4">
+			<h1>{{ owner }} 님이 잘하는 일을 적어주세요!</h1>
+			<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요. (14글자 이내)" maxlength="14" require>
+			<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요. (437글자 이내)" maxlength="437" require></textarea>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">SEND</button>
+		  </div>
 		</div>
 		
 		<div class="delete">
-			<div class="black"></div>
-			<div class="alert"></div>
-				<p>편지 작성이 완료되었습니다.<br>편지를 보내겠습니까?</p>
-				<button class="no" type="button">취소</button>
-				<button class="yes" type="submit">보내기</button>
+		  <div class="black"></div>
+		  <div class="alert"></div>
+		  <p>편지 작성이 완료되었습니다.<br>편지를 보내겠습니까?</p>
+		  <button class="no" type="button">취소</button>
+		  <button class="yes" type="submit">보내기</button>
 		</div>
-	</form>
+	  </form>
 	</div>
-	</div>
+	{% include "menu/menu.html" %}
   </body>
   <script>
 	window.onload = () => {
@@ -102,6 +105,11 @@
 	  }
 	};  
 	  
+    const mainBlock = document.querySelector('.main');
+	const navBar = document.querySelector('.navigationbar');
+    mainBlock.style.height = `${document.documentElement.scrollHeight - navBar.scrollHeight - 8}px`;
+	document.querySelector('.black').style.height = `${document.documentElement.scrollHeight}px`;
+	  
 	let page = 1;
 	const changePage = (currentPage) => {
 	  for (let i = 1; i <= 4; i++) {
@@ -111,7 +119,7 @@
 	      document.querySelector(`.block-${i}`).style.display = 'block';
 		}
 	  }  
-	    document.querySelector('.progress-color').style.width = `${90 * currentPage}px`;
+	    document.querySelector('.progress-color').style.width = `${25 * currentPage}%`;
 	};
 	changePage(page);
 	

@@ -14,7 +14,13 @@
   </head>
   <body>
     <div id="container">
-	  {% include "menu/navigationbar.html" %}  
+	  {% include "menu/navigationbar.html" %}     
+	  <div class="previous-circle">
+		<a href="/myself/paperplane">
+		  <img src="../../../photo/main/previous.png" class="previous">
+		  <span>메인 화면</span>
+		</a>
+	  </div>    
 	  <div class="main">	  
 		<h1>당신은 어떤 능력을 가지고 있나요?</h1>
 		{% if isOwner %}

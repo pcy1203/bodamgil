@@ -1,54 +1,43 @@
-/* 전체화면 */
-.header{
-	position: relative;
+html {
+	height: 100%;
 }
 
-.previous{
-	width: 13px;
-	height: 10px;
+.main {
 	position: absolute;
-	left: 16px;
-	top: 17.5px;
-}
-
-.home{
-	position: absolute;
-	left: 38px;
-	top: 17.5px;
-
-	font-family: 'Noto Sans KR';
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 10px;
-	text-align: center;
-
-	color: #000000;
-}
-
-.menu{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-	left: 319px;
-	top: 9.5px;	
-	cursor: pointer;
-}
-
-.main{
-	position: absolute;
-	width: 360px;
-	height: 595px;
-	top: 53px;	
+	width: 100%;
 	background: #F5F8FF;
+}
+
+.previous-circle {
+	border: 1px solid #0066FF!important;
+}
+
+.previous-circle:hover {
+    background-color: #0066FF!important;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	h1 {
+		width: 1025px;
+	}
 }
 
 .progress{
 	box-sizing: border-box;
 	position: absolute;
-	width: 360px;
+	width: 100%;
 	height: 16px;
 	background: #FFFFFF;
 	border: 0.1px solid #BFBFBF;
+}
+
+@media ( min-width: 1025px ) {
+	.progress {
+		width: 1025px;
+	}
 }
 
 .progress-color{
@@ -63,9 +52,9 @@
 
 h1{
 	position: absolute;
-	width: auto;
-	left: calc(50% - 211px/2 - 53.5px);
-	top: 25px;
+	width: 100%;
+	top: 70px;
+	text-align: center;
 
 	font-family: 'Noto Sans KR';
 	font-style: normal;
@@ -74,12 +63,13 @@ h1{
 	color: #000000;
 }
 
+
 .content1{
 	position: absolute;
 	width: 260px;
 	height: 40px;
-	left: 30px;
-	top: 76px;
+	left: calc(50% - 302px/2);
+	top: 111px;
 	background: #FFFFFF;
 	border: 0.5px solid #BFBFBF;
 	border-radius: 10px;
@@ -98,8 +88,8 @@ h1{
 	position: absolute;
 	width: 260px;
 	height: 40px;
-	left: 30px;
-	top: 168px;
+	left: calc(50% - 302px/2);
+	top: 203px;
 	background: #FFFFFF;
 	border: 0.5px solid #BFBFBF;
 	border-radius: 10px;
@@ -118,8 +108,8 @@ h1{
 	position: absolute;
 	width: 260px;
 	height: 40px;
-	left: 30px;
-	top: 260px;
+	left: calc(50% - 302px/2);
+	top: 295px;
 	background: #FFFFFF;
 	border: 0.5px solid #BFBFBF;
 	border-radius: 10px;
@@ -138,8 +128,8 @@ h1{
 	position: absolute;
 	width: 260px;
 	height: 40px;
-	left: 30px;
-	top: 352px;
+	left: calc(50% - 302px/2);
+	top: 387px;
 	background: #FFFFFF;
 	border: 0.5px solid #BFBFBF;
 	border-radius: 10px;
@@ -154,9 +144,31 @@ h1{
 	padding: 20px 20px 20px 20px;
 }
 
+@media ( min-width: 1025px ) {
+	.content1, .content2, .content3, .content4 {
+		width: 490px;
+		height: 20px;
+		left: calc(50% - 532px/2);
+	}
+	.content2 {
+		top: 183px;
+	}
+	.content3 {
+		top: 255px;
+	}
+	.content4 {
+		top: 327px;
+	}
+}
+
 /*버튼 6개*/
 .button-relationship {
     display: none;
+}
+
+.button1, .button2 {
+	position: absolute;
+	left: calc(50% - 294px/2 - 50px);
 }
 
 .button1 li {
@@ -164,12 +176,11 @@ h1{
 	border: 1px solid #BFBFBF;
     background-color: white;
 	border-radius: 30px;
-    margin: 75px 7px 0 0;
+    margin: 125px 7px 0 0;
     height: 40px;
     width: 96px;
 	list-style: none;
 	float: left;
-	left: -14px;
 	cursor: pointer;
     transition: all .4s;
 
@@ -189,12 +200,11 @@ h1{
     background-color: white;
 	border-radius: 30px;
     top: 15px;
-    margin: 0 7px 0 0;
+    margin: 165px 7px 0 0;
     height: 40px;
     width: 96px;
 	list-style: none;
 	float: left;
-	left: -14px;
 	cursor: pointer;
     transition: all .4s;
 
@@ -213,12 +223,12 @@ li:hover, li.check {
 	color: white;
 }
 
-.name{
+.main .name{
     position: absolute;
-    width: 300px;
+    width: 280px;
     height: 50px;
-    left: 19px;
-    top: 92px;
+    left: calc(50% - 322px/2);
+    top: 127px;
     background: #FFFFFF;
     border: 0.5px solid #BFBFBF;
     border-radius: 10px;
@@ -228,15 +238,15 @@ li:hover, li.check {
     font-weight: 300;
     font-size: 12px;
     line-height: 50px;
-    padding: 0 0 0 20px;
+    padding: 0 20px 0 20px;
 }
 
-.message{
+.main .message{
     position: absolute;
     width: 280px;
     height: 333px;
-    left: 19px;
-    top: 153px;
+    left: calc(50% - 322px/2);
+    top: 188px;
     background: #FFFFFF;
     border: 0.5px solid #BFBFBF;
     border-radius: 10px;
@@ -248,6 +258,14 @@ li:hover, li.check {
     line-height: 30px;
     padding: 10px 20px 10px 20px;
     resize: none;
+}
+
+@media ( min-width: 1025px ) {
+	.main .name, .main .message {
+		width: 530px;
+    	left: calc(50% - 552px/2);
+        font-size: 14px;
+	}
 }
 
 .name::placeholder, .message::placeholder {
@@ -262,8 +280,8 @@ li:hover, li.check {
 	position: absolute;
 	width: 100px;
 	height: 32px;
-	left: 16px;
-	bottom: 20px;
+	left: 10%;
+	top: 600px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -290,8 +308,8 @@ li:hover, li.check {
 	position: absolute;
 	width: 100px;
 	height: 32px;
-	right: 16px;
-	bottom: 20px;
+	right: 10%;
+	top: 600px;
 	
 	font-family: 'Noto Sans KR';
 	font-weight: 300;
@@ -313,11 +331,17 @@ li:hover, li.check {
 /*이미지 삭제*/
 .black{
 	position: relative;
-	width: 360px;
-	height: 640px;
+	width: 100%;
 	left: 0px;
 	top: 0px;
 	background: rgba(0, 0, 0, 0.3);
+	z-index: 2;
+}
+
+@media ( min-width: 1025px ) {
+	.black {
+		width: 1025px;
+	}
 }
 
 .alert{
@@ -328,18 +352,21 @@ li:hover, li.check {
 	top: 243px;
 	background: #FFFFFF;
 	border-radius: 10px;	
+	z-index: 3;
 }
 
 .delete {
 	display: none;
+	width: 100%;
 	position: absolute;
-	top: 8.5px;
+	top: 0px;
+	z-index: 3;
 }
 
 .delete p{
 	position: absolute;
 	width: auto;
-	left: 86px;
+	left: calc(50% - 290px/2 + 49px);
 	top: 250px;
 
 	font-family: 'Noto Sans KR';
@@ -347,6 +374,7 @@ li:hover, li.check {
 	font-size: 16px;
 	text-align: center;
 	color: #000000;
+	z-index: 3;
 }
 
 .no{
@@ -356,7 +384,7 @@ li:hover, li.check {
 	position: absolute;
 	width: 120px;
 	height: 40px;
-	left: 55px;
+	left: calc(50% - 290px/2 + 18px);
 	top: 337px;
 
 	font-family: 'Noto Sans KR';
@@ -367,6 +395,7 @@ li:hover, li.check {
     line-height: 40px;
 	cursor: pointer;
     transition: all .4s;
+	z-index: 3;
 }
 
 .yes{
@@ -376,7 +405,7 @@ li:hover, li.check {
 	position: absolute;
 	width: 120px;
 	height: 40px;
-	left: 188px;
+	left: calc(50% - 290px/2 + 151px);
 	top: 337px;
 
 	font-family: 'Noto Sans KR';
@@ -388,4 +417,5 @@ li:hover, li.check {
     line-height: 40px;
 	cursor: pointer;
     transition: all .4s;
+	z-index: 3;
 }

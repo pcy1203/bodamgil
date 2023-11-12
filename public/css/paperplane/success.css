@@ -1,4 +1,12 @@
 /* 전체화면 */
+
+.previous-circle {
+	border: 1px solid #0066FF!important;
+}
+
+.previous-circle:hover {
+    background-color: #0066FF!important;
+}
 .header{
 	position: relative;
 }
