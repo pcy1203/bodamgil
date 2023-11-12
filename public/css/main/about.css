@@ -3,22 +3,24 @@ a {
     text-decoration: none;
     color: black;
 }
-body{
-    height: 2500px;
-}
 
-/*content*/
-.white{
+
+/*content1*/
+.content1{
+	width: 100%;
+    height: 640px;
+}
+.content1 .white{
     position: absolute;
     width: 100%;
     height: 640px;
     background-color: white;
 }
-.background{
+.content1 .background{
     position: absolute;
     width: 100%;
     height: 460px;
-    background-color: #FFCCAD;
+    background-color: #F1D6CB;
 }
 
 .about{
@@ -33,12 +35,11 @@ body{
     text-align: center;
     color: #000000;
 }
-.aboutexplain1{
+.content1 .aboutexplain1{
     position: absolute;
-    width: 320px;
-    height: 60px;
-    left: calc(50% - 320px/2 + 0.5px);
-    top: 157px;
+    width: 300px;
+    left: calc(50% - 300px/2 + 0.5px);
+    top: 140px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
@@ -47,113 +48,171 @@ body{
     text-align: center;
     color: #000000;    
 }
-.aboutexplain2{
+.content1 .aboutexplain2{
     position: absolute;
     width: 320px;
     left: calc(50% - 320px/2 - 0.5px);
-    top: 261px;
+    top: 260px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 140%;
     align-items: center;
     text-align: center;
     color: #000000;
 }
-.aboutphoto{
-    position: absolute;
-    width: 320px;
-    height: 212px;
-    left: calc(50% - 320px/2 + 4px);
-    top: 389px;
+.content1 .aboutphoto{
+	position: absolute;
+	width: 320px;
+	height: 212px;
+	left: calc(50% - 320px/2 + 4px);
+	top: 370px;
+	background: #D9D9D9;
 }
 
-.title{
-    position: absolute;
-    left: calc(50% - 157px/2 + 0.5px);
-    font-family: 'Noto Sans KR';
-    font-weight: 400;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;
+/*content2*/
+.content2{
+	width: 100%;
+    height: 640px;
 }
-.line{
+.content2 .white{
     position: absolute;
-    width: 100px;
-    height: 2px;
-    left: calc(50% - 100px/2);
-    top: 1271px;
-    background: #BFBFBF;
+    width: 100%;
+    height: 640px;
+    background-color: white;
 }
-.photo{
+.content2 .background{
     position: absolute;
-    width: 320px;
-    height: 227px;
-    left: calc(50% - 320px/2);
-    top: 1308px;
+    width: 100%;
+    height: 460px;
+    background-color: #FDF5DE;
 }
-.explain{
+.content2 .aboutexplain1{
     position: absolute;
-    width: 320px;
-    left: calc(50% - 320px/2 + 0.5px);
+    width: 300px;
+    height: 60px;
+    left: calc(50% - 300px/2 + 0.5px);
+    top: 740px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 140%;
-    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;    
+}
+.content2 .aboutexplain2{
+    position: absolute;
+    width: 320px;
+    left: calc(50% - 320px/2 - 0.5px);
+    top: 800px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
     align-items: center;
     text-align: center;
     color: #000000;
 }
-.content1 .title{
-    top: 713px;
+.content2 .aboutexplain3{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    left: calc(50% - 300px/2 + 0.5px);
+    top: 880px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    align-items: center;
+    text-align: center;
+    color: #000000;    
 }
-.content1 .line{
-    top: 767px;
+.content2 .aboutphoto{
+	position: absolute;
+	width: 320px;
+	height: 212px;
+	left: calc(50% - 320px/2 + 4px);
+	top: 1010px;
+	background: #D9D9D9;
 }
-.content1 .photo{
-    top: 804px;    
+
+/*content3*/
+.content3{
+	width: 100%;
+    height: 640px;
 }
-.content1 .explain{
-    top: 1066px;
+.content3 .white{
+    position: absolute;
+    width: 100%;
+    height: 640px;
+    background-color: white;
 }
-.content2 .title{
-    top: 1217px;
+.content3 .background{
+    position: absolute;
+    width: 100%;
+    height: 460px;
+    background-color: #E7EEF9;
 }
-.content2 .line{
-    top: 1271px;
+
+.content3 .aboutexplain1{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    left: calc(50% - 300px/2 + 0.5px);
+	top: 1400px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    align-items: center;
+    text-align: center;
+    color: #000000;    
 }
-.content2 .photo{
-    top: 1308px;  
+.content3 .aboutexplain2{
+    position: absolute;
+    width: 320px;
+    left: calc(50% - 320px/2 - 0.5px);
+    top: 1565px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 140%;
+    align-items: center;
+    text-align: center;
+    color: #000000;
 }
-.content2 .explain{
-    top: 1570px;
+.content3 .aboutphoto{
+	position: absolute;
+	width: 320px;
+	height: 212px;
+	left: calc(50% - 320px/2 + 4px);
+	top: 1650px;
+	background: #D9D9D9;
 }
-.content3 .title{
-    top: 1721px;
-}
-.content3 .line{
-    top: 1775px;
-}
-.content3 .photo{
-    top: 1812px;  
-}
-.content3 .explain{
-    top: 2074px;
-}
+
 
 
 @media ( min-width: 1025px ) {
-    .content{
+    .content1, .content2, .content3{
         display: flex;
         justify-content: center;    
+		height: 500px;
     }
-    .background{
+    .content1 .background{
         width: 1024px;
-        height: 600px;
+        height: 640px;
         top: 60px;
+		margin: 0;
+    }
+	 .content2 .background{
+		position: relative;
+        width: 1024px;
+        height: 640px;
+    }
+	.content3 .background{
+        width: 1024px;
+        height: 640px;
     }
     .about{
         left: calc(50% - 110px/2 + 123px);
@@ -161,82 +220,187 @@ body{
         font-size: 28px;
         text-align: left;
     }
-    .aboutexplain1{
+    .content1 .aboutexplain1{
         width: 377px;
         left: calc(50% - 110px/2 + 123px);
         top: 210px;
-        font-size: 16px;
+        font-size: 14px;
         text-align: left;
+		line-height: 150%;
     }
-    .aboutexplain2{
+    .content1 .aboutexplain2{
         width: 377px;
         left: calc(50% - 110px/2 + 123px);
-        top: 300px;
-        font-size: 22px;
+        top: 320px;
+        font-size: 20px;
         text-align: left;
+		line-height: 150%;
     }
-    .aboutphoto{
+    .content1 .aboutphoto{
         width: 512px;
-        height: 600px;
+        height: 640px;
         left: calc(50% - 512px/2 - 256px);
         top: 60px;
     }
 
-    .title{
-        font-size: 22px;
+    .content2 .aboutexplain1{
+        left: calc(50% - 226px/2 - 350px);
+        top: 620px;
+        font-size: 14px;
+        text-align: left;
+		line-height: 150%;
+		width: 377px;
     }
-    .line{
-        display: none;
+    .content2 .aboutexplain2{
+        left: calc(50% - 226px/2 - 350px);
+        top: 670px;
+        font-size: 20px;
+        text-align: left;
+		line-height: 150%;
+		width: 377px;
     }
-    .photo{
-        width: 512px;
-        height: 600px;
-    }
-    .explain{
-        width: 407px;
-        font-size: 18px;
-    }
-    .content1 .title{
+	.content2 .aboutexplain3{
         left: calc(50% - 226px/2 - 350px);
         top: 760px;
+        font-size: 14px;
         text-align: left;
+		line-height: 150%;
+		width: 377px;
     }
-    .content1 .photo{
+	.content2 .aboutphoto{
+		width: 512px;
+        height: 640px;
         left: calc(50% - 512px/2 + 256px);
-        top: 660px;
+		top: 559px;
     }
-    .content1 .explain{
-        left: calc(50% - 226px/2 - 350px);
-        top: 800px;
+	
+    .content3 .aboutexplain1{
+        width: 377px;
+        left: calc(50% - 110px/2 + 123px);
+        top: 1150px;
+        font-size: 14px;
         text-align: left;
+		line-height: 150%;
     }
-    .content2 .title{
-        left: calc(50% - 100px/2 + 329px);
-        top: 1380px;
-        text-align: right;
+    .content3 .aboutexplain2{
+       width: 400px;
+        left: calc(50% - 110px/2 + 123px);
+        top: 1300px;
+        font-size: 20px;
+        text-align: center;
+		line-height: 150%;
     }
-    .content2 .photo{
+	 .content3 .aboutphoto{
+       width: 512px;
+        height: 640px;
         left: calc(50% - 512px/2 - 256px);
-        top: 1260px;
+        top: 1059px;
     }
-    .content2 .explain{
-        left: calc(50% - 300px/2 + 225px);
-        top: 1420px;
-        text-align: right;
-    }
-    .content3 .title{
-        left: calc(50% - 226px/2 - 350px);
-        top: 1960px;
-        text-align: left;
-    }
-    .content3 .photo{
-        left: calc(50% - 512px/2 + 256px);
-        top: 1860px;
-    }
-    .content3 .explain{
-        left: calc(50% - 226px/2 - 350px);
-        top: 2000px;
-        text-align: left;
-    }
+    
 
 }
+/*footer*/
+  .footer {
+    position: relative;
+    background-color: #D9D9D9;
+    height: 225px;
+    top: 20px;
+  }
+  .footer .logo{
+	position: absolute;
+	width: 80px;
+	height: 21px;
+    padding: 17px 0 0 10px;
+}
+  .instagram{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 15px;
+    top: 65px;
+  }
+  .blog{
+    position: absolute;
+    width: 28px;
+    height: 25px;
+    left: 65px;
+    top: 65px;
+  }
+  .youtube{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 122px;
+    top: 63px;
+  }
+  .aboutus{
+    position: absolute;
+    left: 15px;
+    top: 112px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+  }
+  .line1{
+    position: absolute;
+    width: 11px;
+    left: 97px;
+    top: 122px;
+    border: 0.05px solid #7D7D7D;
+    transform: rotate(90deg);
+  }
+  .notice{
+    position: absolute;
+    left: 125px;
+    top: 112px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+  }
+  .line2{
+    position: absolute;
+    width: 11px;
+    left: 192px;
+    top: 122px;
+    border: 0.05px solid #7D7D7D;
+    transform: rotate(90deg);
+  }
+  .FAQ{
+    position: absolute;
+    left: 225px;
+    top: 112px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+  }
+  .write{
+    position: absolute;
+    left: 15px;
+    top: 137px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+  }
+  .contact{
+    position: absolute;
+    left: 15px;
+    top: 170px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+  }
