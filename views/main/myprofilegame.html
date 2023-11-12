@@ -15,37 +15,28 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-	<!--
-    <div class="header">
-        <a href="#"><img src="../../photo/main/previous.png" class= "previous"></a>
-        <span class="mypagecontent">마이페이지</span>
-        <a href="#"><img src="../../photo/main/menu.png" class="menuimage"></a>
-    </div>
-	-->
+	  <div class="previous-circle">
+		<a href="/myprofile">
+		  <img src="/photo/main/previous.png" class="previous">
+		  <span>마이페이지</span>
+		</a>
+	  </div>    
       <div class="select">
         <span>완료한 진로 게임</span>
         <div class="line"></div>
       </div>
 
-      <div class="content">
-        <div class="content1">
-          <img src="../../photo/polaroid/beach.jpg" class="photo">
-          <span>콘텐츠 이름</span>
-          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
-          <p class="date">게임 실시일: 2023.10.24</p>
+      <div class="contents">
+		{% for record in records %}
+        <div class="content">
+          <a href="{{ record.url }}">
+			<img src="{{ record.image }}" class="photo">
+		  </a>
+          <span>{{ record.title }}</span>
+          <p class="explain">{{ record.introduction }}</p>
+          <p class="date">최근 업데이트 : {{ record.completedAt }}</p>
         </div>
-        <div class="content2">
-          <img src="../../photo/polaroid/beach.jpg" class="photo">
-          <span>콘텐츠 이름</span>
-          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
-          <p class="date">게임 실시일: 2023.10.24</p>
-        </div>
-        <div class="content3">
-          <img src="../../photo/polaroid/beach.jpg" class="photo">
-          <span>콘텐츠 이름</span>
-          <p class="explain"> 콘텐츠 설명에 대해 적어주세요. 콘텐츠 설명에 대해 적어주세요. </p>
-          <p class="date">게임 실시일: 2023.10.24</p>
-        </div>
+		{% endfor %}
 <!--
         <div class="contentnone">
             <img src="../../photo/main/note.png" class="note">

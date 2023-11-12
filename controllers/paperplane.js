@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const PaperPlane = require('../models/paperplane');
 const GlassBottle = require('../models/glassbottle');
+const GameRecord = require('../models/gamerecord');
 
 const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
@@ -24,6 +25,11 @@ exports.makeGlassBottleIfNotExist = async (req, res, next) => {
     if (!glassBottle) {
 	  glassBottle = await GlassBottle.create({
 	    owner: req.user.dataValues.id
+	  });
+	  await GameRecord.create({
+	    user: req.user.dataValues.id,
+		game: 'paperplane',
+		completedAt: new Date(),
 	  });
     }
     return res.redirect(`/myself/paperplane/${glassBottle.id}`);
@@ -119,6 +125,14 @@ exports.writePaperPlane = async (req, res, next) => {
 	  recipient: id,
 	});
 	await glassBottle.increment({ numPaperPlane: 1 });
+	await GameRecord.update({
+	  completedAt: new Date()
+	}, {
+	  where: {
+	    user: glassBottle.owner,
+		game: 'paperplane',
+	  }
+	});
     return res.redirect(`/myself/paperplane/${id}/write/success`);
   } catch (error) {
 	console.error(error);
