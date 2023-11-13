@@ -26,7 +26,7 @@ class GlassBottle extends Sequelize.Model {
   }
 	
   static associate(db) {
-    db.GlassBottle.belongsTo(db.User, { foreignKey: 'owner', targetKey: 'id' });
+    db.GlassBottle.belongsTo(db.User, { foreignKey: 'owner', targetKey: 'id', onDelete: "CASCADE" });
     db.GlassBottle.hasMany(db.PaperPlane, { foreignKey: 'recipient', sourceKey: 'id' });
   }
 };

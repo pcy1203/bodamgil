@@ -81,5 +81,17 @@
       </div>
 	</div>
 	{% include "menu/menu.html" %}
-</body>
+  </body>
+  <script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	  if (message) {
+		switch (message) {
+  		  case 'unregisterSuccess':
+			alert('회원 탈퇴가 처리되었습니다. 그동안 보담길을 이용해주셔서 감사합니다.')
+    		break;
+		}
+	  }
+	}
+  </script>
 </html>
