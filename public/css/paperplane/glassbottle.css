@@ -8,14 +8,6 @@ html {
 	background: #F5F8FF;
 }
 
-.previous-circle {
-	border: 1px solid #0066FF!important;
-}
-
-.previous-circle:hover {
-    background-color: #0066FF!important;
-}
-
 @media ( min-width: 1025px ) {
 	.main {
 		width: 1025px;

@@ -8,14 +8,6 @@ html {
 	background: #F5F8FF;
 }
 
-.previous-circle {
-	border: 1px solid #0066FF!important;
-}
-
-.previous-circle:hover {
-    background-color: #0066FF!important;
-}
-
 @media ( min-width: 1025px ) {
 	.main {
 		width: 1025px;
@@ -167,7 +159,7 @@ html {
 }
 
 .button1, .button2 {
-	position: absolute;
+	position: relative;
 	left: calc(50% - 294px/2 - 50px);
 }
 
@@ -200,7 +192,7 @@ html {
     background-color: white;
 	border-radius: 30px;
     top: 15px;
-    margin: 180px 7px 0 0;
+    margin: 0px 7px 0 0;
     height: 40px;
     width: 96px;
 	list-style: none;
@@ -302,6 +294,7 @@ html {
 	text-align: center;
 	line-height: 20px;
 	color: #0066FF;
+	margin-bottom: 20px;
 	
 	cursor: pointer;
     transition: all .4s;
@@ -330,6 +323,7 @@ html {
 	text-align: center;
 	line-height: 20px;
 	color: #0066FF;
+	margin-bottom: 20px;
 	
 	cursor: pointer;
     transition: all .4s;

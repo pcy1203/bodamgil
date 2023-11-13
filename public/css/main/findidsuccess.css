@@ -3,14 +3,6 @@ a {
     text-decoration: none;
     color: black;
 }
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 68px;
-    cursor: pointer;
-}
 .findid{
     position: absolute;
     left: calc(50% - 78.09px/2);
@@ -39,11 +31,11 @@ a {
 /*폼*/
 .inform{
     position: absolute;
-    width: 300px;
+    width: 280px;
     height: 120px;
     left: calc(50% - 302px/2);
     top: 150px;
-    
+    padding: 0 10px;
     border: 1px solid #BFBFBF;
     border-radius: 10px;
     font-family: 'Noto Sans KR';

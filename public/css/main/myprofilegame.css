@@ -2,10 +2,6 @@ a {
     text-decoration: none;
     color: black;
 }
-
-.previous-circle {
-	width: 120px!important;
-}
 /*select*/
 .select span{
     position: absolute;

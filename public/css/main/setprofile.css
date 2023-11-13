@@ -3,9 +3,6 @@ a {
     text-decoration: none;
     color: black;
 }
-.previous-circle {
-	width: 120px!important;
-}
 .changecontent{
     position: absolute;
     left: 45px;
