@@ -18,20 +18,10 @@ a {
     display: block;
     clear: both;
 }
-
-
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 68px;
-    cursor: pointer;
-}
 .contract{
     position: absolute;
     left: calc(50% - 59px/2 - 0.5px);
-    top: 150px;
+    top: 100px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
     font-size: 16px;
@@ -43,7 +33,7 @@ a {
 .welcome{
     position: absolute;
     left: calc(50% - 220px/2);
-    top: 230px;
+    top: 160px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 18px;
@@ -71,7 +61,7 @@ ul.join_box{
     color: #fff;
     cursor: pointer;
 	position: absolute;
-	top: 300px;
+	top: 240px;
 	left: calc((100% - 300px) / 2);
 }
 

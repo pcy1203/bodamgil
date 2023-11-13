@@ -80,7 +80,7 @@ exports.writePolaroid = async (req, res, next) => {
   if (content.length > 30) return res.redirect('/myself/polaroid/write?message=longDataError');
   try {  
 	const polaroid = await Polaroid.create({
-	  image: `polaroid/${req.file.filename}`,
+	  image: `/polaroid/${req.file.filename}`,
 	  content,
 	  color,
 	  size,

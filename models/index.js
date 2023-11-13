@@ -12,6 +12,9 @@ const config = {
   "host": "127.0.0.1",
   "timezone": "+09:00",
   "dialect": "mysql",
+  "dialectOptions": {
+    "timezone": "+09:00",
+  }
 };
 const sequelize = new Sequelize(
   process.env.DB_DATABASE,

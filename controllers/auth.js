@@ -82,7 +82,7 @@ exports.setprofile = async (req, res, next) => {
 	await User.update({
 	  name,
 	  introduction,
-	  image: hasImage ? `profile/${req.file.filename}` : req.user.dataValues.image,
+	  image: hasImage ? `/profile/${req.file.filename}` : req.user.dataValues.image,
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
 	}, {

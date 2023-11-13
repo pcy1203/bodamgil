@@ -21,7 +21,7 @@ class GameRecord extends Sequelize.Model {
   }
 	
   static associate(db) {
-    db.GameRecord.belongsTo(db.User, { foreignKey: 'user', targetKey: 'id', onDelete: "CASCADE" });
+    db.GameRecord.belongsTo(db.User, { foreignKey: 'user', targetKey: 'id' });
     db.GameRecord.belongsTo(db.Game, { foreignKey: 'game', targetKey: 'name' });
   }
 };

@@ -51,7 +51,7 @@ img {
 
 .menu-container .header-login .name{
     position: absolute;
-    width: 35%;
+    width: 120px;
     left: 102px;
     top: 73px;
     font-family: 'Noto Sans KR';
@@ -63,9 +63,21 @@ img {
     color: #FFFFFF;
 }
 
+@media (max-width: 400px) {
+	.menu-container .header-login .name{
+		width: 35%;	
+	}
+}
+
+@media (min-width: 500px) {
+	.menu-container .header-login .name{
+		width: 45%;	
+	}
+}
+
 .menu-container .header-login .mypage{
     position: absolute;
-    width: 20%;
+    width: 22%;
     height: 40px;
     right: 20px;
     top: 68px;

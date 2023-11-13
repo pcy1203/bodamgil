@@ -41,12 +41,14 @@ exports.renderMyProfileGame = async (req, res, next) => {
 	const records = [];
 	for await (let gameRecord of gameRecords) {
 	  let game = await gameRecord.getGame();
-	  await records.push({
+	  let time = new Date(gameRecord.completedAt);
+	  time.setHours(time.getHours() + 9);
+	  records.push({
 		url: `/myself/${game.dataValues.name}`,
 		title: game.dataValues.title,
 		introduction: game.dataValues.introduction,
 		image: game.dataValues.image,
-		completedAt: `${gameRecord.completedAt.toLocaleDateString('ko-KR')} ${gameRecord.completedAt.toLocaleTimeString('ko-KR')}`,
+		completedAt: `${time.toLocaleDateString()} ${time.toLocaleTimeString()}`,
 	  });
 	}
     res.render('main/myprofilegame', { records });
