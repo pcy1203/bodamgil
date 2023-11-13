@@ -1,3 +1,4 @@
+// const User = require('../models/user');
 const Game = require('../models/game');
 
 const gameList = [
@@ -14,7 +15,22 @@ const gameList = [
 	"image": "/photo/paperplane/paperplane_main.png",
   },
 ];
-
+/*
+// Unknown User for Replacing Deleted Users
+exports.makeUnknownUser = async () => {
+  try {
+    const exUser = await User.findOne({ where: { email: "unknown" }});
+	  if (!exUser) {
+	    await User.create({
+		  email: "unknown",
+		  name: "unknown",
+	    });
+	  } 
+  } catch (error) {
+    console.error(error);
+  }
+};
+*/
 exports.initializeGameDB = async () => {
   try {
     gameList.forEach(async (game) => {
@@ -40,4 +56,4 @@ exports.initializeGameDB = async () => {
   } catch (error) {
     console.error(error);
   }
-}
+};

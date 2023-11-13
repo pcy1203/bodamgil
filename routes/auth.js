@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 const { login, logout, signup, setprofile, changepassword,
-	    findid, findpassword, setpassword } = require('../controllers/auth');
+	    findid, findpassword, setpassword, unregister } = require('../controllers/auth');
 
 const router = express.Router();
 
@@ -97,5 +97,8 @@ router.post('/findpassword', isNotLoggedIn, findpassword);
 
 // POST /auth/setpassword
 router.post('/setpassword', isNotLoggedIn, setpassword);
+
+// GET /auth/unregister
+router.get('/unregister', isLoggedIn, unregister);
 
 module.exports = router;

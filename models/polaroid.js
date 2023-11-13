@@ -39,7 +39,7 @@ class Polaroid extends Sequelize.Model {
   }
 	
   static associate(db) {
-    db.Polaroid.belongsTo(db.User, { foreignKey: 'writer', targetKey: 'id' });
+    db.Polaroid.belongsTo(db.User, { foreignKey: 'writer', targetKey: 'id', onDelete: "CASCADE" });
   }
 };
 

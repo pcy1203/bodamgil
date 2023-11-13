@@ -2,6 +2,10 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
 const User = require('../models/user');
+const Polaroid = require('../models/polaroid');
+const GlassBottle = require('../models/glassbottle');
+const GameRecord = require('../models/gamerecord');
+const PaperPlane = require('../models/paperplane');
 const { emailRegex, passwordRegex, telRegex, dateValidation } = require('../public/js/uservalidation');
 
 exports.login = (req, res, next) => {
@@ -148,4 +152,35 @@ exports.findpassword = (req, res, next) => {
 
 exports.setpassword = (req, res, next) => {
   return res.redirect('/');  // TO-DO
+};
+
+exports.unregister = async (req, res, next) => {
+  try {
+	/*
+	const unknownUser = await User.findOne({ where: { email: "unknown" }});
+    await PaperPlane.update({
+	  writer: unknownUser.id,
+	}, {
+      where: {
+        writer: req.user.dataValues.id,
+  	  }
+	});
+	*/
+	await Polaroid.destroy({
+      where: { writer: req.user.dataValues.id },
+	});
+	await GlassBottle.destroy({
+      where: { owner: req.user.dataValues.id },
+	});
+	await GameRecord.destroy({
+      where: { user: req.user.dataValues.id },
+	});
+	await User.destroy({
+      where: { id: req.user.dataValues.id },
+	});
+	return res.redirect('/?message=unregisterSuccess');
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  }
 };
