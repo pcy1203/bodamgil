@@ -84,9 +84,9 @@ a {
         font-size: 14px;
     }
     .inform{
-        width: 450px;
+        width: 550px;
         height: 150px;
-        left: calc(50% - 450px/2 + 2px);
+        left: calc(50% - 550px/2 + 2px);
         line-height: 200%;
         font-size: 20px;
     }

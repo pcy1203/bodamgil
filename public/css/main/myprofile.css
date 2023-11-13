@@ -131,9 +131,9 @@ a {
     text-align: center;
     color: #000000;
 }
-.setprofile, .changepassword{
+.setprofile, .changepassword, .unregister{
     position: absolute;
-    width: 120px;
+    width: 100px;
     height: 30px;
 	top: 60px;
     left: calc(50% - 80px/2 + 72.5px);
@@ -149,12 +149,15 @@ a {
     color: #6E6E6E;   
 }
 .changepassword {
-    left: calc(50% - 80px/2 + 72.5px - 130px);
+    left: calc(50% - 40px/2 + 78px - 220px);
 }
 .setprofile {
-    left: calc(50% - 80px/2 + 72.5px);
+    left: calc(50% - 40px/2 + 78px - 110px);
 }
-.setprofile:hover, .changepassword:hover{
+.unregister {
+    left: calc(50% - 40px/2 + 78px);
+}
+.setprofile:hover, .changepassword:hover, .unregister:hover{
     background-color: #FF731D;
     color: white;
     border: none;
@@ -283,16 +286,19 @@ a {
         left: calc(50% - 137px/2 + 28.5px);
         font-size: 18px;
       }
-      .setprofile, .changepassword{
+      .setprofile, .changepassword, .unregister{
         width: 140px;
         height: 40px;
         line-height: 40px;
         top: 100px;
       }
-	  .changepassword {
-        left: calc((100% - 1025px) / 2 + 1025px - 380px);
+	 .changepassword {
+        left: calc((100% - 1025px) / 2 + 1025px - 530px);
 	  }
 	  .setprofile {
+        left: calc((100% - 1025px) / 2 + 1025px - 380px);
+	  }
+	  .unregister {
         left: calc((100% - 1025px) / 2 + 1025px - 230px);
 	  }
 	/*

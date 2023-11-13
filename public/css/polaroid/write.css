@@ -249,7 +249,7 @@ color: #000000;
 
 #content.size-horizontal{
 	position: absolute;
-	width: 250px;
+	width: 240px;
 	height: 40px;
 	left: calc(50% - 250px/2);
 	top: 575px;
@@ -260,12 +260,13 @@ color: #000000;
     font-style: normal;
     font-weight: 400;
 	font-size: 16px;
+	padding: 0 0 0 10px;
 
 }
 
 #content.size-vertical{
 	position: absolute;
-	width: 250px;
+	width: 240px;
 	height: 40px;
 	left: calc(50% - 250px/2);
 	top: 682px;
@@ -276,6 +277,7 @@ color: #000000;
     font-style: normal;
     font-weight: 400;
 	font-size: 16px;
+	padding: 0 0 0 10px;
 
 }
 

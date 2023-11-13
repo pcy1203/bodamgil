@@ -79,6 +79,10 @@ img {
     text-align: center;
     color: #FF731D;
 }
+.menu-container .header-login .mypage:hover{
+ 	color: white;
+	background-color:rgba(0, 0, 0, 0.2);
+}
 
 .menu-container .header-login .intro{
     position: absolute;
