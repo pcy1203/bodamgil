@@ -8,16 +8,16 @@
 	<style>
   	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-	<link rel="stylesheet" href="../../css/paperplane/glassbottle.css">
-	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../css/menu/menu.css">
+	<link rel="stylesheet" href="/css/paperplane/glassbottle.css">
+	<link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}     
 	  <div class="previous-circle">
 		<a href="/myself/paperplane">
-		  <img src="../../../photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous">
 		  <span>메인 화면</span>
 		</a>
 	  </div>    
@@ -29,31 +29,31 @@
 		  <p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}님의 장점을 자유롭게 적어주세요.</p>
 		{% endif %}
 		<ul>
-		  <li class="button1 {% if isOwner %}active{% else %}inactive{% endif %}"><img src="../../photo/paperplane/link.png" class="link"><span>물어보기</span></li>
-		  <li class="{% if isOwner %}active{% else %}inactive{% endif %}"><a href="/myself/paperplane/{{ id }}/view"><img src="../../photo/paperplane/check.png" class="check">확인하기</a></li>
-		  <li class="{% if isOwner %}inactive{% else %}active{% endif %}"><a href="/myself/paperplane/{{ id }}/write"><img src="../../photo/paperplane/write.png" class="write">작성하기</a></li>
+		  <li class="button1 {% if isOwner %}active{% else %}inactive{% endif %}"><img src="/photo/paperplane/link.png" class="link"><span>물어보기</span></li>
+		  <li class="{% if isOwner %}active{% else %}inactive{% endif %}"><a href="/myself/paperplane/{{ id }}/view"><img src="/photo/paperplane/check.png" class="check">확인하기</a></li>
+		  <li class="{% if isOwner %}inactive{% else %}active{% endif %}"><a href="/myself/paperplane/{{ id }}/write"><img src="/photo/paperplane/write.png" class="write">작성하기</a></li>
     	</ul>
 	  </div>
 		  
 	  <div class="link-select-box" style="display: none;">
         <div class="link-select"></div>
-        <button class="kakao-send"><img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
-		<button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+        <button class="kakao-send"><img src="/photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
+		<button class="url-copy" data-clipboard-text=""><img src="/photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
       </div>
 		  
-	  <img src="../../photo/paperplane/jar.png" class="jar">
+	  <img src="/photo/paperplane/jar.png" class="jar">
 		  
 	  <div>
-		{% if numPaperPlane >= 1 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane1">{% endif %}
-		{% if numPaperPlane >= 2 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane2">{% endif %}
-		{% if numPaperPlane >= 3 %}<img src="../../photo/paperplane/airplane-green.png" class="airplane3">{% endif %}
-		{% if numPaperPlane >= 4 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane4">{% endif %}
-		{% if numPaperPlane >= 5 %}<img src="../../photo/paperplane/airplane-yellow.png" class="airplane5">{% endif %}
-		{% if numPaperPlane >= 6 %}<img src="../../photo/paperplane/airplane-red.png" class="airplane6">{% endif %}
-		{% if numPaperPlane >= 7 %}<img src="../../photo/paperplane/airplane-green.png" class="airplane7">{% endif %}
-		{% if numPaperPlane >= 8 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane8">{% endif %}
-		{% if numPaperPlane >= 9 %}<img src="../../photo/paperplane/airplane-yellow.png" class="airplane9">{% endif %}
-		{% if numPaperPlane >= 10 %}<img src="../../photo/paperplane/airplane-blue.png" class="airplane10">{% endif %}
+		{% if numPaperPlane >= 1 %}<img src="/photo/paperplane/airplane-red.png" class="airplane1">{% endif %}
+		{% if numPaperPlane >= 2 %}<img src="/photo/paperplane/airplane-blue.png" class="airplane2">{% endif %}
+		{% if numPaperPlane >= 3 %}<img src="/photo/paperplane/airplane-green.png" class="airplane3">{% endif %}
+		{% if numPaperPlane >= 4 %}<img src="/photo/paperplane/airplane-red.png" class="airplane4">{% endif %}
+		{% if numPaperPlane >= 5 %}<img src="/photo/paperplane/airplane-yellow.png" class="airplane5">{% endif %}
+		{% if numPaperPlane >= 6 %}<img src="/photo/paperplane/airplane-red.png" class="airplane6">{% endif %}
+		{% if numPaperPlane >= 7 %}<img src="/photo/paperplane/airplane-green.png" class="airplane7">{% endif %}
+		{% if numPaperPlane >= 8 %}<img src="/photo/paperplane/airplane-blue.png" class="airplane8">{% endif %}
+		{% if numPaperPlane >= 9 %}<img src="/photo/paperplane/airplane-yellow.png" class="airplane9">{% endif %}
+		{% if numPaperPlane >= 10 %}<img src="/photo/paperplane/airplane-blue.png" class="airplane10">{% endif %}
 	  </div>
 	  
 	  <div class="alert-modal">	

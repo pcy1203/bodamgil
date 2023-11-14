@@ -1,10 +1,11 @@
 const fs = require('fs');
+const { v4 } = require('uuid');
 const Polaroid = require('../models/polaroid');
 const GameRecord = require('../models/gamerecord');
 
 const isPolaroidOwner = async (userId, polaroidId) => {
   try {
-	const polaroid = await Polaroid.findOne({ where: { id: polaroidId } });
+	const polaroid = await Polaroid.findOne({ where: { uuid: polaroidId } });
     return {
 	  isOwner: polaroid?.writer === userId,
 	  polaroid,
@@ -52,7 +53,7 @@ exports.renderPolaroids = async (req, res, next) => {
 exports.renderPolaroid = async (req, res, next) => {
   const id = req.params.id;
   const polaroid = await Polaroid.findOne({
-	where: { id },
+	where: { uuid: id },
   });
   if (!polaroid) {
 	return res.redirect('/myself/polaroid?message=wrongAddressError');
@@ -80,6 +81,7 @@ exports.writePolaroid = async (req, res, next) => {
   if (content.length > 30) return res.redirect('/myself/polaroid/write?message=longDataError');
   try {  
 	const polaroid = await Polaroid.create({
+	  uuid: v4(),
 	  image: `/polaroid/${req.file.filename}`,
 	  content,
 	  color,
@@ -87,7 +89,7 @@ exports.writePolaroid = async (req, res, next) => {
 	  writer: req.user.dataValues.id,
 	});
 	await makeRecord(req.user.dataValues.id);
-    return res.redirect(`/myself/polaroid/${polaroid.id}/success`);
+    return res.redirect(`/myself/polaroid/${polaroid.uuid}/success`);
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -101,7 +103,7 @@ exports.deletePolaroid = async (req, res, next) => {
     if (isOwner && polaroid) {
       fs.unlinkSync(`uploads/${polaroid.image}`);
 	  await Polaroid.destroy({
-	    where: { id },
+	    where: { uuid: id },
 	  });
 	  const exPolaroid = await Polaroid.findOne({ where: { writer: req.user.dataValues.id } });
 	  if (!exPolaroid) {

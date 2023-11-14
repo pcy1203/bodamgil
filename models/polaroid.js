@@ -3,6 +3,10 @@ const Sequelize = require('sequelize');
 class Polaroid extends Sequelize.Model {
   static initiate(sequelize) {
 	Polaroid.init({
+	  uuid: {
+		type: Sequelize.STRING(50),
+		allowNull: true,
+	  },
 	  image: {
 		type: Sequelize.STRING(100),
 		allowNull: false,

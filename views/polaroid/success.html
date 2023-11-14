@@ -8,54 +8,54 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../../css/polaroid/success.css">
-    <link rel="stylesheet" href="../../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../../css/menu/menu.css">
+	<link rel="stylesheet" href="/css/polaroid/success.css">
+    <link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}    
 	  <div class="previous-circle">
 		<a href="/myself/polaroid">
-		  <img src="../../../photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous">
 		  <span>메인 화면</span>
 		</a>
 	  </div>    
 	  <div class="trash-circle">
-		<img src="../../../photo/polaroid/trash.png" class="trash">
+		<img src="/photo/polaroid/trash.png" class="trash">
 	  </div>
       <div class="main polaroid-{{ polaroid.color }}">
 		{% if polaroid.size == "horizontal" %}<div style="height: 53px; background: inherit;"></div>{% endif %}
 		<div class="download-container">
-		  <div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} id-{{ polaroid.id }}">
+		  <div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} id-{{ polaroid.uuid }}">
             <div class="polaroid polaroid-{{ polaroid.size }}"></div>
             <div class="sticker polaroid-{{ polaroid.color }}"></div>
-            <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+            <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
             <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
     	  </div>	  
 		</div>
         <div class="button">
 		  <a href="/myself/polaroid/write">
 			<button class="button1">
-			  <img src="../../../photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span>
+			  <img src="/photo/polaroid/last-again.png" class="last-again"><span class="last-again-content">다시하기</span>
 			</button>
 		  </a>
 		  <button class="button2">
-			<img src="../../../photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span>
+			<img src="/photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span>
 		  </button>
 		  <a href="/myself/polaroid/">
 			<button class="button3">
-			  <img src="../../../photo/polaroid/home.png" class="last-home"><span class="last-home-content">홈으로 가기</span>
+			  <img src="/photo/polaroid/home.png" class="last-home"><span class="last-home-content">홈으로 가기</span>
 			</button>
 		  </a>
 		  <button class="image-download">
-			<img src="../../../photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span>
+			<img src="/photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span>
 		  </button>
 		</div>
         <div class="link-select-box" style="display: none;">
           <div class="link-select"></div>
-          <button class="kakao-send"><img src="../../../photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
-		  <button class="url-copy" data-clipboard-text=""><img src="../../../photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+          <button class="kakao-send"><img src="/photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
+		  <button class="url-copy" data-clipboard-text=""><img src="/photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
         </div>	  
       </div>
 	  <div class="delete" style="display: none;">
@@ -98,7 +98,7 @@
 	});
 	  
 	document.querySelector('.yes').addEventListener('click', (e) => {
-		let id = document.querySelector('.polaroid-download').classList[3].split("-")[1];
+		let id = document.querySelector('.polaroid-download').classList[3].slice(3);
 		axios.delete(`/myself/polaroid/${id}`)
 		  .catch((err) => {
 			console.error(err);

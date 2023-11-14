@@ -8,23 +8,23 @@
 	<style>
   	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="../../css/polaroid/polaroid.css">
-	<link rel="stylesheet" href="../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../css/menu/menu.css">
+	<link rel="stylesheet" href="/css/polaroid/polaroid.css">
+	<link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}   
 	  <div class="previous-circle">
 		<a href="/myself/polaroid">
-		  <img src="../../../photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous">
 		  <span>메인 화면</span>
 		</a>
 	  </div>    
       <div class="main polaroid-{{ polaroid.color }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}"></div>
-        <img src="../../../{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+        <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
         <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
 	  </div>	  
     </div>
