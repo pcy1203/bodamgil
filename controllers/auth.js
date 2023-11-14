@@ -156,6 +156,9 @@ exports.setpassword = (req, res, next) => {
 
 exports.unregister = async (req, res, next) => {
   try {
+	if (!req.headers.referer?.includes("myprofile")) {
+	  return res.redirect('/?message=invalidRequestError');
+	}
 	/*
 	const unknownUser = await User.findOne({ where: { email: "unknown" }});
     await PaperPlane.update({
