@@ -47,7 +47,6 @@ router.get('/view', isLoggedIn, renderPolaroids);
 // GET /myself/polaroid/:id/success
 router.get('/:id/success', isLoggedIn, renderSuccess);
 
-// TODO - URL을 공유한다면 id를 숫자 말고 암호로 만들기
 // GET /myself/polaroid/:id
 router.get('/:id', isLoggedIn, renderPolaroid);
 

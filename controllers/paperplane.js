@@ -1,3 +1,4 @@
+const { v4 } = require('uuid');
 const User = require('../models/user');
 const PaperPlane = require('../models/paperplane');
 const GlassBottle = require('../models/glassbottle');
@@ -5,7 +6,7 @@ const GameRecord = require('../models/gamerecord');
 
 const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
-	const glassBottle = await GlassBottle.findOne({ where: { id: glassBottleId } });
+	const glassBottle = await GlassBottle.findOne({ where: { uuid: glassBottleId } });
     return {
 	  isOwner: glassBottle?.owner === userId,
 	  glassBottle,
@@ -24,7 +25,8 @@ exports.makeGlassBottleIfNotExist = async (req, res, next) => {
     let glassBottle = await GlassBottle.findOne({ where: { owner: req.user.dataValues.id } });
     if (!glassBottle) {
 	  glassBottle = await GlassBottle.create({
-	    owner: req.user.dataValues.id
+		uuid: v4(),
+	    owner: req.user.dataValues.id,
 	  });
 	  await GameRecord.create({
 	    user: req.user.dataValues.id,
@@ -32,7 +34,7 @@ exports.makeGlassBottleIfNotExist = async (req, res, next) => {
 		completedAt: new Date(),
 	  });
     }
-    return res.redirect(`/myself/paperplane/${glassBottle.id}`);
+    return res.redirect(`/myself/paperplane/${glassBottle.uuid}`);
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -69,16 +71,13 @@ exports.renderPaperPlane = async (req, res, next) => {
 	  return res.redirect(`/myself/paperplane/${id}?message=notOwnerError`);
     }
     const paperPlanes = await PaperPlane.findAll({
-	  where: { recipient: id },
+	  where: { recipient: glassBottle.id },
 	  order: [[ 'createdAt', 'DESC' ]],
     });
 	if (paperPlanes.length === 0) {
 	  return res.redirect(`/myself/paperplane/${id}?message=noPaperPlane`);
 	}
-    res.render('paperplane/paperplane', {
-	  id,
-	  paperPlanes,
-	});
+    res.render('paperplane/paperplane', { paperPlanes });
   } catch (error) {
 	console.error(error);
 	return next(error);
@@ -122,7 +121,7 @@ exports.writePaperPlane = async (req, res, next) => {
 	  name,
 	  content,
 	  writer: req.user.dataValues.id,
-	  recipient: id,
+	  recipient: glassBottle.id,
 	});
 	await glassBottle.increment({ numPaperPlane: 1 });
 	await GameRecord.update({

@@ -3,6 +3,10 @@ const Sequelize = require('sequelize');
 class GlassBottle extends Sequelize.Model {
   static initiate(sequelize) {
 	GlassBottle.init({
+	  uuid: {
+		type: Sequelize.STRING(50),
+		allowNull: true,
+	  },
 	  numPaperPlane: {
 		type: Sequelize.INTEGER.UNSIGNED,
 		allowNull: false,

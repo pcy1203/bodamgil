@@ -45,13 +45,13 @@
         <span class="name2">/</span>
         <span class="name3">{{ paperPlanes.length }}</span> 
 
-		<img src="../../../photo/paperplane/back.png" class="back">
-		<img src="../../../photo/paperplane/next.png" class="next">
+		<img src="/photo/paperplane/back.png" class="back">
+		<img src="/photo/paperplane/next.png" class="next">
 	  </div>	   
 	</div>
 	{% include "menu/menu.html" %}
   </body>
-  <script src="../../../js/changepage.js"></script>
+  <script src="/js/changepage.js"></script>
   <script>
   window.onload = () => {
 	let message = (new URLSearchParams(location.search)).get('message');
