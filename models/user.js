@@ -49,6 +49,14 @@ class User extends Sequelize.Model {
 		type: Sequelize.DATE,
 		allowNull: false,
 		defaultValue: Sequelize.NOW,
+	  },
+	  setPasswordUuid: {
+		type: Sequelize.STRING(50),
+		allowNull: true,
+	  },
+	  setPasswordDate: {
+		type: Sequelize.DATE,
+		allowNull: true,
 	  }
 	}, {
 	  sequelize,
