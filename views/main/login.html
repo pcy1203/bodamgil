@@ -57,16 +57,22 @@
 	  if (message) {
 		switch (message) {
   		  case 'noUserError':
-			alert('존재하지 않는 이메일 주소입니다!')
+			alert('존재하지 않는 이메일 주소입니다!');
     		break;
   		  case 'passwordError':
-			alert('잘못된 비밀번호입니다!')
+			alert('잘못된 비밀번호입니다!');
     		break;
   		  case 'kakaoError':
-			alert('카카오 로그인에 실패하였습니다!')
+			alert('카카오 로그인에 실패하였습니다!');
     		break;
   		  case 'googleError':
-			alert('구글 로그인에 실패하였습니다!')
+			alert('구글 로그인에 실패하였습니다!');
+    		break;
+  		  case 'mailSendSuccess':
+			alert('입력하신 이메일로 메일이 전송되었습니다. 24시간 이내에 이메일의 링크를 통해 비밀번호를 재설정해주세요!');
+    		break;
+  		  case 'setPasswordSuccess':
+			alert('비밀번호가 변경되었습니다. 변경한 비밀번호로 로그인해주세요!');
     		break;
 		}
 	  }

@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
+const { v4 } = require('uuid');
+const nodemailer = require('nodemailer');
 const User = require('../models/user');
 const Polaroid = require('../models/polaroid');
 const GlassBottle = require('../models/glassbottle');
@@ -146,12 +148,69 @@ exports.findid = async (req, res, next) => {
   }
 };
 
-exports.findpassword = (req, res, next) => {
-  return res.redirect('/');  // TO-DO
+exports.findpassword = async (req, res, next) => {
+  const { email } = req.body;
+  try {
+	const exUser = await User.findOne({ where: { email }});
+	if (!exUser) return res.redirect('/findpassword?message=noUserError');
+	const setPasswordUuid = v4();
+	await User.update({
+	  setPasswordUuid,
+	  setPasswordDate: new Date(),
+	}, {
+      where: { email }
+	});
+	const setPasswordUrl = req.headers.referer.split("?")[0].slice(0, -13);
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.NODEMAILER_ID,
+        pass: process.env.NODEMAILER_PASSWORD,
+      },
+    });
+    const info = await transporter.sendMail({
+      from: process.env.NODEMAILER_ID,
+      to: email,
+      subject: '[보담길] 비밀번호 재설정 안내',
+      html: `
+        <div>
+          아래 링크를 눌러 비밀번호를 재설정해주세요.<br>링크는 24시간 동안만 유효합니다.<br>
+          <a href=${setPasswordUrl}/setpassword/${setPasswordUuid}>비밀번호 재설정하기</a>
+        </div>`,
+      text: "인증 메일입니다.",
+    });
+    return res.redirect('/login?message=mailSendSuccess');  
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  }
 };
 
-exports.setpassword = (req, res, next) => {
-  return res.redirect('/');  // TO-DO
+exports.setpassword = async (req, res, next) => {
+  const { password, confirm, id } = req.body;
+  if (password.length < 8 || password.length > 20 || !(passwordRegex.test(password))) return res.redirect(`/setpassword/${id}?message=passwordError`);
+  if (password !== confirm) return res.redirect(`/setpassword/${id}?message=passwordConfirmError`);
+  try {
+	const user = await User.findOne({ where: { setPasswordUuid: id } });
+	const isValid = user?.setPasswordDate.getTime() - (new Date()).getTime() <= 86400000;
+	if (!user || !isValid) {
+		console.log(id, user, isValid);
+	  return res.redirect('/?message=invalidRequestError');
+	}
+	const hashedPassword = await bcrypt.hash(password, 12);
+	await User.update({
+	  password: hashedPassword,
+	  setPasswordUuid: null,
+	}, {
+      where: {
+        setPasswordUuid: id,
+  	  }
+	});
+	return res.redirect('/login?message=setPasswordSuccess');
+  } catch (error) {
+	console.error(error);
+	return next(error);
+  } 
 };
 
 exports.unregister = async (req, res, next) => {
