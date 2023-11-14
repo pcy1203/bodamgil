@@ -22,9 +22,9 @@ exports.login = (req, res, next) => {
 		console.error(loginError);
 		return next(loginError);
 	  } else if (req.user.redirectURL) {
-		const redirectUrl = req.user.redirectURL;
+		const redirectURL = req.user.redirectURL;
 		req.user.redirectURL = null;
-	    return res.redirect(redirectUrl);
+	    return res.redirect(redirectURL);
 	  } else {
 	    return res.redirect("/");
       }
@@ -94,9 +94,9 @@ exports.setprofile = async (req, res, next) => {
       fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
 	}
 	if (req.session.redirectURL) {
-	  const redirectUrl = req.session.redirectURL;
+	  const redirectURL = req.session.redirectURL;
 	  req.session.redirectURL = null;
-	  return res.redirect(redirectUrl);
+	  return res.redirect(`${redirectURL}?message=signupSuccess`);
 	}
 	return res.redirect('/myprofile?message=saveSuccess');
   } catch (error) {

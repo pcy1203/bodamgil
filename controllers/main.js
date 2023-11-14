@@ -1,26 +1,34 @@
 const GameRecord = require('../models/gamerecord');
 
+const setRedirectURL = (req) => {
+  const originalUrl = req.headers.referer;
+  const maintainUrl = ["login", "signup", "setprofile", "findid", "findpassword", "kakao", "google"]
+    .filter((word) => originalUrl?.includes(word)).length !== 0;
+  const invalidUrl = ["logout", "unregister"]
+    .filter((word) => originalUrl?.includes(word)).length !== 0;
+  if (req.session.redirectToLogin) {
+	req.session.redirectToLogin = false;  // redirected to login page
+  } else if (!maintainUrl || invalidUrl) {
+	req.session.redirectURL = null;  // redirect to "/" (initialize)
+  }
+};
+
 exports.renderMain = (req, res, next) => {
   res.render('main/main');
 };
 
 exports.renderLogin = (req, res, next) => {
-  const originalUrl = req.headers.referer;
-  const maintainUrl = ["login", "signup", "setprofile", "findid", "findpassword"]
-    .filter((word) => originalUrl?.includes(word)).length !== 0;
-  if (req.session.redirectToLogin || maintainUrl) {
-	req.session.redirectToLogin = false;
-  } else {
-	req.session.redirectURL = null;  // redirect to "/"
-  }
+  setRedirectURL(req);
   res.render('main/login');
 };
 
 exports.renderSignup = (req, res, next) => {
+  setRedirectURL(req);
   res.render('main/signup');
 };
 
 exports.renderSignupSuccess = (req, res, next) => {
+  setRedirectURL(req);
   res.render('main/signupsuccess');
 };
 
@@ -67,10 +75,12 @@ exports.renderChangePassword = (req, res, next) => {
 };
 
 exports.renderFindId = (req, res, next) => {
+  setRedirectURL(req);
   res.render('main/findid');
 };
 
 exports.renderFindIdSuccess = (req, res, next) => {
+  setRedirectURL(req);
   let name, email = '';
   if (req.session.findId) {
 	name = req.session.findId.name;
@@ -80,6 +90,7 @@ exports.renderFindIdSuccess = (req, res, next) => {
 };
 
 exports.renderFindPassword = (req, res, next) => {
+  setRedirectURL(req);
   res.render('main/findpassword');
 };
 

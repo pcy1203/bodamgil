@@ -56,9 +56,9 @@ router.get('/kakao/result', passport.authenticate('kakao', {
 	req.user.redirectURL = null;
     res.redirect('/setprofile');
   } else if (req.user.redirectURL) {
-	const redirectUrl = req.user.redirectURL;
+	const redirectURL = req.user.redirectURL;
 	req.user.redirectURL = null;
-	return res.redirect(redirectUrl);
+	return res.redirect(redirectURL);
   } else {
 	return res.redirect("/");
   }
@@ -75,9 +75,9 @@ router.get('/google/result', passport.authenticate('google', {
 	req.user.redirectURL = null;
     return res.redirect('/setprofile');
   } else if (req.user.redirectURL) {
-	const redirectUrl = req.user.redirectURL;
+	const redirectURL = req.user.redirectURL;
 	req.user.redirectURL = null;
-	return res.redirect(redirectUrl);
+	return res.redirect(redirectURL);
   } else {
 	return res.redirect("/");
   }

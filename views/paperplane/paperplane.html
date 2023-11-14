@@ -52,4 +52,17 @@
 	{% include "menu/menu.html" %}
   </body>
   <script src="../../../js/changepage.js"></script>
+  <script>
+  window.onload = () => {
+	let message = (new URLSearchParams(location.search)).get('message');
+    
+	if (message) {
+	  switch (message) {
+		case 'signupSuccess':
+		  alert('회원 가입이 완료되었습니다. 보담길에 오신 것을 환영합니다.');
+		  break;
+	  }
+	}
+  };  
+  </script>
 </html>

@@ -84,21 +84,26 @@
 	  let message = (new URLSearchParams(location.search)).get('message');
 	
 	  if (message) {
-		document.querySelector('.alert-modal').style.display = 'block';
 		switch (message) {
   		  case 'notOwnerError':
+			document.querySelector('.alert-modal').style.display = 'block';
 			document.querySelector('.alert-content').classList.add('not-owner-alert');
 			document.querySelector('.alert-content').innerHTML = '※ 메시지 확인은 해당 콘텐츠의 주인만 가능합니다.';
     		break;
   		  case 'ownerError':
+			document.querySelector('.alert-modal').style.display = 'block';
 			document.querySelector('.alert').classList.add('right-alert');
 			document.querySelector('.alert-content').classList.add('owner-alert');
 			document.querySelector('.alert-content').innerHTML = '※ 자기 자신에게는 메시지 작성이 불가능합니다.';
     		break;
   		  case 'noPaperPlane':
+			document.querySelector('.alert-modal').style.display = 'block';
 			document.querySelector('.alert-content').classList.add('no-paperplane-alert');
     		document.querySelector('.alert-content').innerHTML = '※ 아직 도착한 편지가 없어요.<br/>링크를 공유해서 친구들에게 편지를 받아보아요!';
     		break;
+		  case 'signupSuccess':
+		    alert('회원 가입이 완료되었습니다. 보담길에 오신 것을 환영합니다.');
+		    break;
 		}
 		setTimeout(() => {
 		  document.querySelector('.alert-modal').style.display = 'none';

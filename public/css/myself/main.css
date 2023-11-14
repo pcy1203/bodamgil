@@ -67,7 +67,7 @@ a {
 	background-color: #FF731D;
 	color: white;
 }
-.mypage{
+.content .mypage{
     position: absolute;
     width: 280px;
     height: 50px;
@@ -83,7 +83,7 @@ a {
     text-align: center;
     color: #FF731D;
 }
-.mypage:hover{
+.content .mypage:hover{
 	background-color: #FF731D;
 	color: white;
 }
@@ -111,7 +111,7 @@ a {
         top: 300px;
         font-size: 18px;
     }
-    .mypage{
+    .content .mypage{
         width: 350px;
         left: calc(50% - 360px/2 + 241px);
         top: 370px;

@@ -4,9 +4,9 @@
     box-sizing: border-box
 }
 .content {
-	position: relative;
+	position: absolute;
 	width: 100%;
-	height: 400px;
+	height: calc(100% - 58px);
     background-color: #f7f7f7;
 }
 a {

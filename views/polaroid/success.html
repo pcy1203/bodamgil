@@ -75,6 +75,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>  
   <script>
+  window.onload = () => {
+	let message = (new URLSearchParams(location.search)).get('message');
+    
+	if (message) {
+	  switch (message) {
+		case 'signupSuccess':
+		  alert('회원 가입이 완료되었습니다. 보담길에 오신 것을 환영합니다.');
+		  break;
+	  }
+	}
+  };  
+	  
 	const linkSelectBox = document.querySelector('.link-select-box');  
 	document.querySelector('.button2').addEventListener('click', (e) => {
 		linkSelectBox.style.display = (linkSelectBox.style.display === 'none') ? 'block' : 'none';
