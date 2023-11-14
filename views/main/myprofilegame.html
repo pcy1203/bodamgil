@@ -37,7 +37,7 @@
           <p class="date">최근 업데이트 : {{ record.completedAt }}</p>
         </div>
 		{% endfor %}
-		{% if not records %}
+		{% if records.length === 0 %}
         <div class="contentnone">
             <img src="/photo/main/note.png" class="note">
             <p class="contentnone_content">완료한 게임이 없습니다.</p>
