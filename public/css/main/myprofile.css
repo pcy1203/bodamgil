@@ -347,3 +347,110 @@ a {
 		margin: 0 0 30px 0;
       }
 }
+
+
+/*이미지 삭제*/
+.black{
+	position: relative;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 2;
+}
+
+@media ( min-width: 1025px ) {
+	.black {
+		width: 1025px;
+	}
+}
+
+.alert{
+	position: absolute;
+	width: 290px;
+	height: 153px;
+	left: calc(50% - 290px/2);
+	top: 243px;
+	background: #FFFFFF;
+	border-radius: 10px;	
+	z-index: 3;
+}
+
+.delete {
+	/*display: none;*/
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	z-index: 3;
+}
+
+.delete p{
+	position: absolute;
+	width: auto;
+	left: calc(50% - 290px/2 + 49px);
+	top: 265px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+	color: #000000;
+	z-index: 3;
+}
+
+.no{
+    border: 1px solid #BFBFBF;
+	border-radius: 10px;
+
+	position: absolute;
+	width: 120px;
+	height: 40px;
+	left: calc(50% - 290px/2 + 18px);
+	top: 337px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	color: #000000;
+    line-height: 35px;
+	cursor: pointer;
+    transition: all .4s;
+	z-index: 3;
+}
+
+.yes{
+	border: 1px solid #BFBFBF;
+	border-radius: 10px;
+
+	position: absolute;
+	width: 120px;
+	height: 40px;
+	left: calc(50% - 290px/2 + 151px);
+	top: 337px;
+
+	font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+    background-color: #FF731D;
+	color: white;
+    line-height: 35px;
+	cursor: pointer;
+    transition: all .4s;
+	z-index: 3;
+}
+@media ( min-width: 1025px ) {
+	.alert{
+			left: calc(50% - 750px/2);
+	}
+	.delete p{
+		left: calc(50% - 750px/2  + 49px);
+	}
+	.delete .no{
+		left: calc(50% - 750px/2 + 18px);
+	}
+	.delete .yes{
+		left: calc(50% - 750px/2 + 151px);
+	}
+}

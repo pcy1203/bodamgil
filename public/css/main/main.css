@@ -75,7 +75,7 @@ a {
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   color: #FF731D;
 }
@@ -90,7 +90,7 @@ a {
     transform: translateX(-50%);
     width: 255px;
     height: 50px;
-    top: 540px;
+    top: 520px;
     
     font-family: 'Noto Sans KR';
     font-style: normal;
