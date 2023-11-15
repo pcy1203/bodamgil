@@ -7,9 +7,9 @@
     <style>
   	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
-    <link rel="stylesheet" href="../../css/main/myprofile.css">
-    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../css/menu/menu.css">
+    <link rel="stylesheet" href="/css/main/myprofile.css">
+    <link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
 
   <body>
@@ -17,8 +17,7 @@
 	  {% include "menu/navigationbar.html" %}
       <div class="content">
 		<span class="mypage">마이페이지 MYPAGE</span>
-		<!-- 기본 이미지 설정하기 -->
-        <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/main/profile_square.png{% endif %}" class="photo">
+        <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo">
         <div>
           <span class="name">이름/Name</span>  
           <p class="namecontent">{{ user.name }}</p>
@@ -40,31 +39,31 @@
 			</div>
 			<a href="/changepassword" class="changepassword">비밀번호 변경</a>
       		<a href="/setprofile" class="setprofile">프로필 수정</a>
-			<a href="/auth/unregister" class="unregister">회원 탈퇴</a>
+			<div class="unregister">회원 탈퇴</div>
 		  <div class="contentme">
 			<div class="line"></div>
 			<div>
-			  <img src="../../photo/main/write.png" class="write">
+			  <img src="/photo/main/write.png" class="write">
 			  <a href="#" class="writecontent">내 기록보기</a>  
 			</div>
 			<div>
-			  <img src="../../photo/main/heart.png" class="heart">
+			  <img src="/photo/main/heart.png" class="heart">
 			  <a href="/myprofile/like" class="heartcontent">관심목록</a>  
 			</div>
 			<div>
-			  <img src="../../photo/main/success.png" class="success">
+			  <img src="/photo/main/success.png" class="success">
 			  <a href="/myprofile/game" class="successcontent">완료한 진로 게임</a>  
 			</div>
 		  </div>
 		  <a href="/auth/logout" class="profile-logout">로그아웃</a>
 		</div>	
 		   
-		<div class="delete">
+		<div class="delete" style="display: none;">
 			  <div class="black"></div>
 			  <div class="alert"></div>
 			  <p>회원 삭제를 진행하시겠습니까?</p>
 			  <button class="no" type="button">취소</button>
-			  <button class="yes" type="submit">확인</button>
+			  <button class="yes" type="submit"><a href="/auth/unregister">확인</a></button>
 		 </div>
 		 </div>
 		 
@@ -90,5 +89,13 @@
 	const dateNode = document.querySelector('.issuecontent');
 	const dateArray = dateNode.innerHTML.split(" ");
 	dateNode.innerHTML = `${dateArray[2]} ${dateArray[1]} ${dateArray[3]}`;
+	  
+	document.querySelector('.unregister').addEventListener('click', () => {
+	  document.querySelector('.delete').style.display = document.querySelector('.delete').style.display === 'none' ? 'block' : 'none';
+	});
+	  
+	document.querySelector('.no').addEventListener('click', () => {
+	  document.querySelector('.delete').style.display = 'none';
+	});
   </script>
 </html>

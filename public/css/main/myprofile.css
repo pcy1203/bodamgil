@@ -156,6 +156,7 @@ a {
 }
 .unregister {
     left: calc(50% - 40px/2 + 78px);
+	cursor: pointer;
 }
 .setprofile:hover, .changepassword:hover, .unregister:hover{
     background-color: #FF731D;
@@ -252,7 +253,7 @@ a {
         left: calc(50% - 60px/2 - 186px);
         font-size: 18px;
         top: 140px;
-		width: 100%;
+		width: 600px;
       }
       .introduction{
         left: calc(50% - 60px/2 - 186px);
@@ -387,7 +388,7 @@ a {
 .delete p{
 	position: absolute;
 	width: auto;
-	left: calc(50% - 290px/2 + 49px);
+	left: calc(50% - 207.54px/2);
 	top: 265px;
 
 	font-family: 'Noto Sans KR';
@@ -415,7 +416,7 @@ a {
 	color: #000000;
     line-height: 35px;
 	cursor: pointer;
-    transition: all .4s;
+    transition: background .4s, color .4s;
 	z-index: 3;
 }
 
@@ -437,20 +438,27 @@ a {
 	color: white;
     line-height: 35px;
 	cursor: pointer;
-    transition: all .4s;
+    transition: background .4s, color .4s;
 	z-index: 3;
+}
+.yes a {
+	color: white;
+	display: block;
 }
 @media ( min-width: 1025px ) {
 	.alert{
-			left: calc(50% - 750px/2);
+		left: calc(50% - 290px/2);
+	}
+	.delete {
+		width: 1025px;
 	}
 	.delete p{
-		left: calc(50% - 750px/2  + 49px);
+		left: calc(100% - 1025px/2 - 207.54px/2);
 	}
 	.delete .no{
-		left: calc(50% - 750px/2 + 18px);
+		left: calc(100% - 1025px/2 - 290px/2 + 18px);
 	}
 	.delete .yes{
-		left: calc(50% - 750px/2 + 151px);
+		left: calc(100% - 1025px/2 - 290px/2 + 151px);
 	}
 }

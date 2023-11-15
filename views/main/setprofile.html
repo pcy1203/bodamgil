@@ -7,9 +7,9 @@
     <style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
-    <link rel="stylesheet" href="../../css/main/setprofile.css">
-    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../css/menu/menu.css">
+    <link rel="stylesheet" href="/css/main/setprofile.css">
+    <link rel="stylesheet" href="/css/menu/navigationbar.css">
+    <link rel="stylesheet" href="/css/menu/menu.css">
   </head>
 
   <body>
@@ -28,7 +28,7 @@
 		  프로필 작성을 완료해주세요!
 		</div>
 	  {% endif %}
-      <img src="{% if user.image %}{{ user.image }}{% else %}../../photo/main/profile_square.png{% endif %}" class="photo">
+      <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo">
 	  <form action="/auth/setprofile" method="post" enctype="multipart/form-data" id="joinForm">
 	    <div>
 		  <label class="imagecontext" for="image">파일 선택</label>	  
@@ -86,8 +86,8 @@
 <script defer>
   exports = {};
 </script>
-<script defer src="../../js/uservalidation.js"></script>
-<script defer src="../../js/userinputvalidation.js"></script>
+<script defer src="/js/uservalidation.js"></script>
+<script defer src="/js/userinputvalidation.js"></script>
 <script>
   window.onload = () => {
 	let message = (new URLSearchParams(location.search)).get('message');

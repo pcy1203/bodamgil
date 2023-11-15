@@ -379,7 +379,7 @@ a {
 
     /*header*/
     #container .navigationbar{
-        height: 45px;
+        height: 50px;
     }
     #container .nav{
         display: flex;
@@ -490,16 +490,16 @@ a {
     }
     .line1{
       left: 120px;
-      top: 83px;
+      top: 81px;
     }
     .notice{
-      left: 155px;
+      left: 153px;
       top: 70px;
       font-size: 16px;
     }
     .line2{
       left: 233px;
-      top: 83px;
+      top: 81px;
     }
     .FAQ{
       left: 270px;
