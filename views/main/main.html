@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
     <style>
-  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
-	  </style> 
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	</style> 
     <link rel="stylesheet" href="/css/main/main.css">
-    <link rel="stylesheet" href="/css/menu/navigationbar.css">
-    <link rel="stylesheet" href="/css/menu/menu.css">
+	{% include "common.html" %}
   </head>
 
   <body>
@@ -24,25 +23,24 @@
           <li>Q. 당신이 어떤 사람으로 기억되고 싶나요?</li>
           <li>Q. 당신이 가장 기분 좋았던 칭찬은 무엇인가요?</li>
         </ul>
-        <p>몇 십년을 함께 한 나 자신이지만 아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면 우리 함께 찾아봐요.</p>
+		  <p class="narrow">몇 십년을 함께 한 나 자신이지만<br>아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면<br>우리 함께 찾아봐요.</p>
+		  <p class="wide">몇 십년을 함께 한 나 자신이지만 아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면 우리 함께 찾아봐요.</p>
         <a href="/myself">보다 나은 너를 찾길</a>
       </div>
 
       <div class="contentme">
         <span class="contentme_title">나 알아보기</span>
         <div class="flexbox">
+		  {% for game in gameList %}
           <div class="item">
-            <a href="/myself/polaroid"><img src="/photo/polaroid/polaroid_main.png"></a>
-            <p class="contentme_type">흥미</p>
-            <p class="contentme_name">어릴 때의 내가 좋아했던 것은?</p>
-            <p class="contentme_explain">꿈이 많고 마냥 즐거웠던 어렸을 때의 꿈, 좋아했던 것, 인상깊었던 경험 등을 떠올려보면서 나라는 사람이 어떤 것을 좋아하는 사람이었는지 생각해보는 시간을 가질 수 있어요.</p>
+            <a href="/myself/{{ game.name }}"><img src="{{ game.image }}"></a>
+            <p class="contentme_type">{{ game.category }}</p>
+            <p class="contentme_name">{{ game.title }}</p>
+            <p class="contentme_explain">{{ game.introduction }}</p>
           </div>
-          <div class="item">
-            <a href="/myself/paperplane"><img src="/photo/paperplane/paperplane_main.png"></a>
-            <p class="contentme_type">능력</p>
-            <p class="contentme_name">내가 잘하는 것은? 네가 잘하는 것은!</p>
-            <p class="contentme_explain">때로는 자신이 잘하는 것을 자신이 발견하기는 어렵기도 하죠. 자신의 주변 사람들에게 물어보면서 자신이 무엇을 잘하는 사람인지 탐구해봐요.</p>
-          </div>
+		  {% endfor %}
+			
+		<!--
           <div class="item">
             <a href="#"><img src="/photo/main/world-image.jpg"></a>
             <p class="contentme_type">흥미</p>
@@ -55,14 +53,16 @@
             <p class="contentme_name">콘텐츠 이름</p>
             <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
           </div>
+		-->
+			
         </div>
         <a href="/myself" class="more">VIEW MORE</a>
       </div>
 
       <div class="contentworld">
-        <img src="/photo/main/world-image.jpg" class="world-image">
         <span class="contentworld_title">세상 알아보기</span>
-        <p class="contentworld_explain">현재 세상이 어떻고 어떤 것들을 활용할 수 있는 지 알아봐요.</p>
+        <img src="/photo/main/world-image.jpg" class="world-image">
+        <p class="contentworld_explain">현재 세상이 어떻고 어떤 것들을 활용할 수 있는지 알아봐요.</p>
         <a href="/world" class="more">VIEW MORE</a>
       </div>
 
@@ -76,8 +76,8 @@
         <a href="/notice" class="notice">공지사항</a>
         <div class="line2"></div>
         <a href="/faq" class="FAQ">FAQ</a>
-        <p class="write">만든이: 박찬영, 김민아</p>
-        <p class="contact">Contact: 010-1111-1111</p>
+        <p class="write">만든 이 : 박찬영 & 김민아</p>
+        <p class="contact">Contact : bodamgil@gmail.com</p>
       </div>
 	</div>
 	{% include "menu/menu.html" %}
