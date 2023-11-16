@@ -3,34 +3,9 @@ a{
     color: black;
 }
 
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px; /* 70px */
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-	cursor:pointer;
-}
-.previous{
+.title{
     position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 15px;
-    cursor: pointer;
-}
-
-.notice{
-    position: absolute;
-    left: calc(50% - 38px/2 - 1px);
+	left: calc(50% - 73.6px/2);
     top: 80px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -49,21 +24,29 @@ a{
     margin: 87px 0 0 0;
 }
 .content nav ul li{
-    padding: 20px 30px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
     line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
 }
-.content nav ul li:last-child{
-    border-bottom: none;
+.content nav ul li div {
+    padding: 20px 30px;
+}
+.content nav ul li span{
+    font-family: 'Noto Sans KR';
+	font-weight: 400;
+	font-size: 14px;
+    color:#FF731D;
 }
 .content nav ul li:first-child{
     border-top: 0.3px solid #BFBFBF;
 }
+.content nav ul li:last-child{
+    border-bottom: none;
+}
 .content nav ul li p{
-    padding: 10px 25px;
+    padding: 0px 25px 10px 45px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
@@ -77,10 +60,17 @@ a{
 	right: 25px;
 }
 
+.answer-open{
+    transform: rotate(270deg);
+}
+.answer-close{ 
+    transform: rotate(0deg); 
+}
 
 @media ( min-width: 1025px ) {
-    .notice{
+    .title{
         top: 90px;
+		left: calc(50% - 88.32px/2);
         font-size: 24px;
     }
     .content nav ul{
@@ -88,10 +78,15 @@ a{
     }
     .content nav ul li{
         font-size: 14px;
+    }
+	.content nav ul li div{
         padding: 20px 40px;
+	}
+    .content nav ul li span{
+        font-size: 16px;
     }
     .content nav ul li p{
-        padding: 15px 25px;
+        padding: 0px 25px 10px 60px;
         font-size: 14px;
     }
 	.content img{

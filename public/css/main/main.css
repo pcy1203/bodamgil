@@ -126,7 +126,7 @@ a {
 
     font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     text-align: center;
@@ -153,7 +153,7 @@ a {
 	height: 60%;
 	filter: brightness(1);
   } 
- .contentme .item img:hover{
+  .contentme .item img:hover{
 	filter: brightness(0.);
   } 
 
@@ -238,7 +238,7 @@ a {
 	left: calc(50% - 104.41px/2);
     font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     text-align: left;
@@ -458,9 +458,6 @@ a {
       font-size: 24px;
 	  left: calc(50% - 117.13px/2);
     }
-    .contentme .item .contentme_explain{
-      width: 24%
-    }
 	.content h3{
 		top: 475px;
 	 }
@@ -469,7 +466,6 @@ a {
 
     /*contentworld*/
     .world-image{
-      width: 1024px;
       height: 500px;
     }
     .contentworld_title{

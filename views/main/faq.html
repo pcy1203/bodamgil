@@ -19,30 +19,44 @@
         <nav>
           <ul class="nav">
             <li>
-              <span>Q</span>
-              <a href="#">1질문질문질문질문질문질문질문질문질문</a>
-			  <img src="../../photo/main/right.png" class= "right">
+			  <div class="question question-1">
+                <span>Q</span>
+                <a>1질문질문질문질문질문질문질문질문질문</a>
+			    <img src="/photo/main/right.png" class="arrow-1 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-1">대답대답대답대답</p>
             </li>
             <li>
-              <span>Q</span>
-              <a href="#">2질문질문질문질문질문질문질문질문질문</a>
-		      <img src="../../photo/main/right.png" class= "right">
-              <p>대답대답대답대답</p>
+			  <div class="question question-2">
+                <span>Q</span>
+                <a>2질문질문질문질문질문질문질문질문질문</a>
+		        <img src="/photo/main/right.png" class="arrow-2 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-2">대답대답대답대답</p>
             </li>
             <li>
-              <span>Q</span>
-              <a href="#">3질문질문질문질문질문질문질문질문질문</a>
-			  <img src="../../photo/main/right.png" class= "right">
+			  <div class="question question-3">
+                <span>Q</span>
+                <a>3질문질문질문질문질문질문질문질문질문</a>
+			    <img src="/photo/main/right.png" class="arrow-3 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-3">대답대답대답대답</p>
             </li>
             <li>
-              <span>Q</span>
-              <a href="#">4질문질문질문질문질문질문질문질문질문</a>
-			  <img src="../../photo/main/right.png" class= "right">
+			  <div class="question question-4">
+                <span>Q</span>
+                <a>4질문질문질문질문질문질문질문질문질문</a>
+			    <img src="/photo/main/right.png" class="arrow-4 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-4">대답대답대답대답</p>
             </li>
             <li>
-              <span>Q</span>
-              <a href="#">5질문질문질문질문질문질문질문질문질문</a>
-			  <img src="../../photo/main/right.png" class= "right">
+			  <div class="question question-5">
+                <span>Q</span>
+                <a href="#">5질문질문질문질문질문질문질문질문질문</a>
+			    <img src="/photo/main/right.png" class="arrow-5 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-5">대답대답대답대답</p>
             </li>
           </ul>
         </nav>
@@ -50,4 +64,20 @@
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+  <script>
+	document.querySelectorAll('.question').forEach((question) => {
+	  question.addEventListener('click', (e) => {
+		let answer = document.querySelector(`.answer-${question.classList[1].split("-")[1]}`);
+		answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+		let arrow = document.querySelector(`.arrow-${question.classList[1].split("-")[1]}`);
+		if (arrow.classList[1] === 'answer-close') {
+		  arrow.classList.add('answer-open');
+		  arrow.classList.remove('answer-close');
+		} else {
+		  arrow.classList.add('answer-close');
+		  arrow.classList.remove('answer-open');
+		}
+	  });
+	});
+  </script>
 </html>
