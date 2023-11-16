@@ -49,11 +49,10 @@ a {
     margin: 87px 0 0 0;
 }
 .content nav ul li{
-    padding: 20px 30px;
+    padding: 20px 35px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
-    line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
 }
 .content nav ul li span{
@@ -61,6 +60,8 @@ a {
 	font-weight: 400;
 	font-size: 14px;
     color:#FF731D;
+	line-height: 170%;
+	width: 20%
 }
 .content nav ul li:last-child{
     border-bottom: none;
@@ -74,14 +75,15 @@ a {
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
-    line-height: 100%;
+    line-height: 170%;
     border-bottom: none;
 }
 .content img{
 	position: absolute;
 	width: 10px;
 	height: 10px;
-	right: 25px;
+	right: 20px;
+	padding: 8px 0 0 0;
 }
 
 

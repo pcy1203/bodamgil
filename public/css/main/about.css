@@ -35,24 +35,28 @@ a {
     text-align: center;
     color: #000000;
 }
+.content1 .explain{
+	position: absolute;
+	top: 140px;
+	animation: slide1 1s ease-out;
+	left: calc(50% - 320px/2 + 0.5px);
+	 
+}
 .content1 .aboutexplain1{
     position: absolute;
-    width: 300px;
-    left: calc(50% - 300px/2 + 0.5px);
-    top: 140px;
+    width: 320px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
     line-height: 140%;
     align-items: center;
     text-align: center;
-    color: #000000;    
+    color: #000000;   
+	
 }
 .content1 .aboutexplain2{
     position: absolute;
     width: 320px;
-    left: calc(50% - 320px/2 - 0.5px);
-    top: 260px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 16px;
@@ -60,7 +64,10 @@ a {
     align-items: center;
     text-align: center;
     color: #000000;
+	padding: 120px 0 0 0;
+	
 }
+
 .content1 .aboutphoto{
 	position: absolute;
 	width: 320px;
@@ -87,12 +94,16 @@ a {
     height: 460px;
     background-color: #FDF5DE;
 }
+.content2 .explain{
+	position: absolute;
+	top: 740px;
+	animation: slide2 1s ease-out;
+	left: calc(50% - 320px/2 + 0.5px);
+	 
+}
 .content2 .aboutexplain1{
     position: absolute;
-    width: 300px;
-    height: 60px;
-    left: calc(50% - 300px/2 + 0.5px);
-    top: 740px;
+    width: 320px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
@@ -104,8 +115,6 @@ a {
 .content2 .aboutexplain2{
     position: absolute;
     width: 320px;
-    left: calc(50% - 320px/2 - 0.5px);
-    top: 800px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 16px;
@@ -113,13 +122,12 @@ a {
     align-items: center;
     text-align: center;
     color: #000000;
+	padding: 50px 0 0 0;
 }
 .content2 .aboutexplain3{
     position: absolute;
-    width: 300px;
+    width: 320px;
     height: 60px;
-    left: calc(50% - 300px/2 + 0.5px);
-    top: 880px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
@@ -127,6 +135,7 @@ a {
     align-items: center;
     text-align: center;
     color: #000000;    
+	padding: 130px 0 0 0;
 }
 .content2 .aboutphoto{
 	position: absolute;
@@ -154,13 +163,17 @@ a {
     height: 460px;
     background-color: #E7EEF9;
 }
-
+.content3 .explain{
+	position: absolute;
+	top: 1400px;
+	animation: slide3 1s ease-out;
+	left: calc(50% - 320px/2 + 0.5px);
+	 
+}
 .content3 .aboutexplain1{
     position: absolute;
-    width: 300px;
+    width: 320px;
     height: 60px;
-    left: calc(50% - 300px/2 + 0.5px);
-	top: 1400px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
@@ -172,8 +185,6 @@ a {
 .content3 .aboutexplain2{
     position: absolute;
     width: 320px;
-    left: calc(50% - 320px/2 - 0.5px);
-    top: 1565px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 16px;
@@ -181,6 +192,7 @@ a {
     align-items: center;
     text-align: center;
     color: #000000;
+	padding: 150px 0 0 0;
 }
 .content3 .aboutphoto{
 	position: absolute;
@@ -404,3 +416,16 @@ a {
     text-align: left;
     color: #000000;
   }
+
+@keyframes slide1{
+	from{top: 400px; opacity: 0;}
+	to{top: 140px;opacity: 1;}
+}
+@keyframes slide2{
+	from{top: 1000px; opacity: 0;}
+	to{top: 740px;opacity: 1;}
+}
+@keyframes slide3{
+	from{top: 1700px; opacity: 0;}
+	to{top: 1400px;opacity: 1;}
+}

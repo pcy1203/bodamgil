@@ -63,11 +63,11 @@ a{
     border-top: 0.3px solid #BFBFBF;
 }
 .content nav ul li p{
-    padding: 10px 25px;
+    padding: 15px 25px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
-    line-height: 100%;
+    line-height: 130%;
     border-bottom: none;
 }
 .content img{
