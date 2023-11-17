@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>진로 검사 실시하기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+  		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	  </style> 
+    <link rel="stylesheet" href="../../css/world/site.css">
+    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
+    <link rel="stylesheet" href="../../css/menu/menu.css">
+  </head>
+
+  <body>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}		  
+      <div class="select">
+        <span>진로 검사 실시하기</span>
+		<p>자신을 알고 이해하는 방식으로 다양한 심리검사를 활용하는 것도 좋은 방법이에요.</p>
+      </div>
+      <div class="contentme">
+        <div class="flexbox">
+          <div class="item item-like">
+            <a href="/myself/polaroid"><img src="../../../photo/polaroid/polaroid_main.png"></a>
+            <p class="contentme_type">과제</p>
+            <p class="contentme_name">사이트 이름</p>
+            <p class="contentme_explain">이 사이트는 ~~~~~~~한 내용을 담고 있고 --------할 때 사용하면 이렇게 좋아요.</p>
+          </div>
+          <div class="item item-good">
+            <a href="/myself/paperplane"><img src="../../../photo/paperplane/paperplane_main.png"></a>
+            <p class="contentme_type">외부활동</p>
+            <p class="contentme_name">사이트 이름222</p>
+            <p class="contentme_explain">이 사이트는 ~~~~~~~한 내용을 담고 있고 --------할 때 사용하면 이렇게 좋아요.</p>
+          </div>
+          <!--
+			<div class="item item-goal">
+            <img src="../../photo/main/world-image.jpg">
+            <p class="contentme_type">목표</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div>
+          <div class="item item-value">
+            <img src="../../photo/main/world-image.jpg">
+            <p class="contentme_type">가치관</p>
+            <p class="contentme_name">콘텐츠 이름</p>
+            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
+          </div> -->
+        </div>
+      </div>
+	</div>
+	{% include "menu/menu.html" %}
+  </body>
+  <script>
+	const buttons = document.querySelectorAll('.select button');
+	const changeButtons = (name) => {
+	  buttons.forEach((button) => {
+		if (button.classList[0] === name) {
+	      button.classList.add("checked"); 
+		} else {
+		  button.classList.remove("checked");
+		}
+	  });
+	};
+	  
+	const items = document.querySelectorAll('.item');
+	const changeItems = (name) => {
+	  items.forEach((item) => {
+		if (name === 'all' || item.classList[1].split("-")[1] === name) {
+		  item.style.display = 'block';
+		} else {
+		  item.style.display = 'none';
+		}
+	  });
+	};
+	  
+    buttons.forEach((button) => {
+	  button.addEventListener('click', (e) => {
+	    changeButtons(button.classList[0]);
+		changeItems(button.classList[0]);
+	  });
+	});
+  </script>
+</html>
