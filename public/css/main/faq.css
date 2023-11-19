@@ -3,34 +3,9 @@ a {
     color: black;
 }
 
-.header {
-    position: relative;
-    background-color: white;
-    height: 45px; /* 70px */
-    font-size: 14px;
-    margin: 0;
-    padding: 0px;
-  }
-.menuimage{
-	position: absolute;
-	width: 25px;
-	height: 25px;
-  right: 20px;
-  top: 10px;
-	cursor:pointer;
-}
-.previous{
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 16px;
-    top: 15px;
-    cursor: pointer;
-}
-
 .FAQ{
     position: absolute;
-    left: calc(50% - 38px/2 - 1px);
+	left: calc(50% - 36.86px/2);
     top: 80px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -55,6 +30,11 @@ a {
 	font-size: 12px;
     border-bottom: 0.3px solid #BFBFBF;
 }
+/*
+.content nav ul li div {
+    padding: 20px 30px;
+}
+*/
 .content nav ul li span{
     font-family: 'Noto Sans KR';
 	font-weight: 400;
@@ -71,7 +51,7 @@ a {
 }
 
 .content nav ul li p{
-    padding: 10px 25px;
+    padding: 0px 15px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
@@ -86,11 +66,17 @@ a {
 	padding: 8px 0 0 0;
 }
 
-
+.answer-open{
+    transform: rotate(270deg);
+}
+.answer-close{ 
+    transform: rotate(0deg); 
+}
 
 @media ( min-width: 1025px ) {
     .FAQ{
         top: 90px;
+		left: calc(50% - 44.24px/2);
         font-size: 24px;
     }
     .content nav ul{
@@ -98,13 +84,16 @@ a {
     }
     .content nav ul li{
         font-size: 14px;
-        padding: 20px 40px;
     }
+	/*
+	.content nav ul li div{
+        padding: 20px 40px;
+	}
+	*/
     .content nav ul li span{
         font-size: 16px;
     }
     .content nav ul li p{
-        padding: 15px 25px;
         font-size: 14px;
     }
 	.content img{

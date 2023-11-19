@@ -1,3 +1,4 @@
+const { gameList } = require('../models/initialdata');
 const GameRecord = require('../models/gamerecord');
 
 const setRedirectURL = (req) => {
@@ -14,7 +15,7 @@ const setRedirectURL = (req) => {
 };
 
 exports.renderMain = (req, res, next) => {
-  res.render('main/main');
+  res.render('main/main', { gameList });
 };
 
 exports.renderLogin = (req, res, next) => {
