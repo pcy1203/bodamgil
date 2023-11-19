@@ -5,6 +5,12 @@ a {
 }
 
 /*content*/
+.content {
+	position: relative;
+	height: 550px;
+	background: #fff4ee;
+}
+
 .main-image{
   width: 100%;
   height: 350px;
@@ -15,7 +21,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: 300px;
-  top: 95px;
+  top: 45px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
@@ -40,23 +46,23 @@ a {
 }
 
 .content li:first-child{
-  top: 200px;
+  top: 150px;
 }
 
 .content li:nth-child(2){
-  top: 230px;
+  top: 180px;
 }
 
 .content li:last-child{
-  top: 260px;
+  top: 210px;
 }
 
 .content p{
   position: absolute;
-  left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  top: 420px;
+  width: 100%;
+  top: 370px;
+  left: 50%;
 
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -66,6 +72,11 @@ a {
   text-align: center;
   color: #000000;
 }
+
+.content p.wide {
+	display: none;
+}
+
 .content h3{
   position: absolute;
   left: 50%;
@@ -90,7 +101,7 @@ a {
     transform: translateX(-50%);
     width: 255px;
     height: 50px;
-    top: 520px;
+    top: 470px;
     
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -100,18 +111,22 @@ a {
     text-align: center;
     line-height: 50px;
     color: white;
-  }
+}
+
+.contentme {
+	position: relative;
+}
 
   /*contentme*/
   .contentme_title{
-    position: absolute;
-    left: 50%;
+    position: relative;
+    left: calc(50% - 87.84px/2);
     transform: translateX(-50%);
-    top: 670px;
+    top: 30px;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     text-align: center;
@@ -121,8 +136,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 1.3%;
-    position: relative;
-    top: 310px;
+    margin-top: 60px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -139,7 +153,7 @@ a {
 	height: 60%;
 	filter: brightness(1);
   } 
- .contentme .item img:hover{
+  .contentme .item img:hover{
 	filter: brightness(0.);
   } 
 
@@ -167,7 +181,7 @@ a {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
-	width: 50%;
+	width: 45%;
     color: #000000;
     margin: 45px 0px 20px 0px;
   }
@@ -185,13 +199,13 @@ a {
   }
 
   .contentme .more{
-    position: absolute;
+    position: relative;
+	display: block;
     width: 330px;
     height: 42px;
-    position: absolute;
     left: 50%;
+	top: 20px;
     transform: translateX(-50%);
-    top: 1600px;
     background: #FFFFFF;
     border: 0.5px solid #000000;
     font-family: 'Noto Sans KR';
@@ -203,23 +217,28 @@ a {
     color: #000000;
   }
 
+.contentworld {
+	position: relative;
+	top: 20px;
+}
+
   /*contentworld*/
   .world-image{
-    position: absolute;
+    position: relative;
     width: 97%;
     height: 330px;
-    top: 1660px;
+    top: 80px;
     left: 50%;
     transform: translate(-50%);
   }
 
   .contentworld_title{
-    position: absolute;
-    margin: 0 0 0 10px;
-    top:2010px;
+    position: relative;
+    top: 50px;
+	left: calc(50% - 104.41px/2);
     font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     text-align: left;
@@ -227,9 +246,10 @@ a {
   }
 
   .contentworld_explain{
-    position: absolute;
-    margin: 0 0 0 10px;
-    top: 2040px;
+    position: relative;
+	width: 344px;
+    top: 85px;
+	left: calc(50% - 344px/2);
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -239,14 +259,14 @@ a {
     color: #000000;
   }
 
-  .contentworld .more{
-    position: absolute;                             
+  .contentworld .more{                           
     width: 330px;
     height: 42px;
-    position: absolute;
+    position: relative;
+	display: block;
+	margin-top: 110px;
     left: 50%;
     transform: translateX(-50%);
-    top: 2080px;
     background: #FFFFFF;
     border: 0.5px solid #000000;
     font-family: 'Noto Sans KR';
@@ -261,40 +281,40 @@ a {
   /*footer*/
   .footer {
     position: relative;
+	top: 40px;
     background-color: #D9D9D9;
     height: 225px;
-    top: 890px;
   }
   .footer .logo{
-	position: absolute;
+	position: relative;
 	width: 80px;
 	height: 21px;
-    padding: 17px 0 0 10px;
+    padding: 20px 0 0 20px;
 }
   .instagram{
-    position: absolute;
+    position: relative;
     width: 25px;
     height: 25px;
-    left: 15px;
-    top: 65px;
+    left: 20px;
+    top: 5px;
   }
   .blog{
-    position: absolute;
+    position: relative;
     width: 28px;
     height: 25px;
-    left: 65px;
-    top: 65px;
+    left: 40px;
+    top: 5px;
   }
   .youtube{
-    position: absolute;
+    position: relative;
     width: 25px;
     height: 25px;
-    left: 122px;
-    top: 63px;
+    left: 60px;
+    top: 3px;
   }
   .aboutus{
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -306,14 +326,14 @@ a {
   .line1{
     position: absolute;
     width: 11px;
-    left: 97px;
+    left: 102px;
     top: 122px;
     border: 0.05px solid #7D7D7D;
     transform: rotate(90deg);
   }
   .notice{
     position: absolute;
-    left: 125px;
+    left: 130px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -325,14 +345,14 @@ a {
   .line2{
     position: absolute;
     width: 11px;
-    left: 192px;
+    left: 197px;
     top: 122px;
     border: 0.05px solid #7D7D7D;
     transform: rotate(90deg);
   }
   .FAQ{
     position: absolute;
-    left: 225px;
+    left: 230px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -343,8 +363,8 @@ a {
   }
   .write{
     position: absolute;
-    left: 15px;
-    top: 137px;
+    left: 20px;
+    top: 134px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -354,7 +374,7 @@ a {
   }
   .contact{
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 170px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -372,24 +392,22 @@ a {
   }
   @media ( min-width: 1025px ) {
     #container {
-      width: 1024px;
+      width: 1025px;
       margin: auto;
     }
   
-
     /*header*/
     #container .navigationbar{
         height: 50px;
     }
     #container .nav{
         display: flex;
-
     }
     #container .navigationbar ul li{
       padding: 0px 20px;
       font-family: 'Noto Sans KR';
-	    font-weight: 400;
-	    font-size: 16px;
+	  font-weight: 400;
+	  font-size: 16px;
       line-height: 100%;
     }
 
@@ -399,10 +417,10 @@ a {
 
     /*content*/
     #content {
-      width: 1024px;
+      width: 1025px;
     }
     .main-image{
-      width: 1024px;
+      width: 1025px;
       height: 380px;
     }
     .content h1{
@@ -411,77 +429,81 @@ a {
 
     .content li:first-child{
       font-size: 18px;
-      top: 230px;
+      top: 180px;
     }
     
     .content li:nth-child(2){
       font-size: 18px;
-      top: 270px;
+      top: 220px;
     }
     
     .content li:last-child{
       font-size: 18px;
-      top: 310px;
+      top: 260px;
     }
 
-    .content p{
-      top: 440px;
+    .content p.wide{
+      top: 400px;
+	  width: 1025px;
       font-size: 18px;
+	  display: block;
     }
+	  
+	  .content p.narrow {
+		  display: none;
+	  }
 
     /*contentme*/
     .contentme_title{
       font-size: 24px;
-      top: 655px;
-    }
-    .contentme .item .contentme_explain{
-      width: 24%
+	  left: calc(50% - 117.13px/2);
     }
 	.content h3{
 		top: 475px;
 	 }
     .contentme .more{
-      top: 1200px;
     } 
 
     /*contentworld*/
     .world-image{
-      width: 1024px;
       height: 500px;
-      top: 1270px;
     }
     .contentworld_title{
-      top: 1800px;
       font-size: 24px;
+	  left: calc(50% - 139.21px/2);
     }
     .contentworld_explain{
-      top: 1840px;
       font-size: 20px;
+	  width: 492px;
+	  left: calc(50% - 492px/2);
     }
     .contentworld .more{
-      top: 1920px;
     }
 
     /*footer*/
     .footer {
       clear: both;
-      top: 1165px;
       height: 190px;
     }
     .footer .logo{
-    padding: 25px 0 0 25px;
-}
+      padding: 25px 0 0 25px;
+    }
     .instagram{
-      left: 845px;
-      top: 25px;
+	  position: absolute;
+	  left: 820px;
+	  top: 120px;
+      /*left: 845px;
+      top: 22px;*/
     }
     .blog{
-      left: 898px;
-      top: 25px;
+	  position: absolute;
+	  left: 880px;
+	  top: 120px;
     }
     .youtube{
-      left: 955px;
-      top: 25px;
+	  position: absolute;
+	  left: 945px;
+	  top: 120px;
     }
     .aboutus{
       left: 30px;
@@ -508,7 +530,7 @@ a {
     }
     .write{
       left: 30px;
-      top: 95px;
+      top: 92px;
     }
     .contact{
       left: 30px;

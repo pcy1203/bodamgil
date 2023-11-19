@@ -8,51 +8,43 @@
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
     <link rel="stylesheet" href="/css/main/notice.css">
-    <link rel="stylesheet" href="/css/menu/navigationbar.css">
-    <link rel="stylesheet" href="/css/menu/menu.css">
+	{% include "common.html" %}
   </head>
 
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-      <!--
-	  <div class="header">
-        <a href="#"><img src="/photo/main/previous.png" class= "previous"></a>
-        <a href="#"><img src="/photo/main/menu.png" class="menuimage"></a>
-      </div>
-  	  -->
 	  <div class="content">
-        <span class="notice">공지사항</span>
+        <span class="title">공지사항</span>
         <nav>
           <ul class="nav">
             <li>
-              <a href="#">보람길 서비스 오픈</a>
-			  <img src="/photo/main/right.png" class= "right">
-              <p>2023년 11월, '보다 나은 너를 찾길'이라는 슬로건으로 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+			  <div class="notice notice-1">
+                <a>보담길 서비스 오픈</a>
+			    <img src="/photo/main/right.png" class="arrow-1 answer-close">
+			  </div>
+              <p style="display: none;" class="answer answer-1">2023년 11월, '보다 나은 너를 찾길'이라는 슬로건으로 ~~~~~~~~~~~~~~~~~~~~</p>
             </li>
-			  
-			<!--
-            <li>
-              <a href="#">2질문질문질문질문질문질문질문질문질문</a>
-			  <img src="/photo/main/right.png" class= "right">
-              <p>대답대답대답대답</p>
-            </li>
-            <li>
-              <a href="#">3질문질문질문질문질문질문질문질문질문</a>
-			  <img src="/photo/main/right.png" class= "right">
-            </li>
-            <li>
-              <a href="#">4질문질문질문질문질문질문질문질문질문</a>
-			  <img src="/photo/main/right.png" class= "right">
-            </li>
-            <li>
-              <a href="#">5질문질문질문질문질문질문질문질문질문</a>
-			  <img src="/photo/main/right.png" class= "right">
-            </li>-->
           </ul>
         </nav>
 	  </div>
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+  <script>
+	document.querySelectorAll('.notice').forEach((notice) => {
+	  notice.addEventListener('click', (e) => {
+		let answer = document.querySelector(`.answer-${notice.classList[1].split("-")[1]}`);
+		answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+		let arrow = document.querySelector(`.arrow-${notice.classList[1].split("-")[1]}`);
+		if (arrow.classList[1] === 'answer-close') {
+		  arrow.classList.add('answer-open');
+		  arrow.classList.remove('answer-close');
+		} else {
+		  arrow.classList.add('answer-close');
+		  arrow.classList.remove('answer-open');
+		}
+	  });
+	});
+  </script>
 </html>
