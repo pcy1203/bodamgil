@@ -102,9 +102,11 @@ color: #000000;
     transition: background-color .4s, color .4s;
 }
 
-.main li:hover {
+@media (hover: hover) {
+	.main li:hover {
 	background-color: #5F2987;
 	color: white;
+	}
 }
  
 .main-block img {  

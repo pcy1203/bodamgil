@@ -122,7 +122,7 @@ a {
     position: relative;
     left: calc(50% - 87.84px/2);
     transform: translateX(-50%);
-    top: 30px;
+    top: 90px;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -136,7 +136,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 1.3%;
-    margin-top: 60px;
+    margin-top: 110px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
@@ -217,9 +217,15 @@ a {
     color: #000000;
   }
 
+.contentme .more:hover{
+	color: white;
+	background: black;
+	transition: 0.5s;
+}
+
 .contentworld {
 	position: relative;
-	top: 20px;
+	top: 30px;
 }
 
   /*contentworld*/
@@ -227,15 +233,15 @@ a {
     position: relative;
     width: 97%;
     height: 330px;
-    top: 80px;
+    top: 30px;
     left: 50%;
     transform: translate(-50%);
   }
 
   .contentworld_title{
     position: relative;
-    top: 50px;
-	left: calc(50% - 104.41px/2);
+    top: 402px;
+	left: 20px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
@@ -248,8 +254,8 @@ a {
   .contentworld_explain{
     position: relative;
 	width: 344px;
-    top: 85px;
-	left: calc(50% - 344px/2);
+    top: 67px;
+	left: 20px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
@@ -264,7 +270,7 @@ a {
     height: 42px;
     position: relative;
 	display: block;
-	margin-top: 110px;
+	margin-top: 90px;
     left: 50%;
     transform: translateX(-50%);
     background: #FFFFFF;
@@ -277,6 +283,11 @@ a {
     line-height: 42px;
     color: #000000;
   }
+.contentworld .more:hover{
+	color: white;
+	background: black;
+	transition: 0.5s;
+}
 
   /*footer*/
   .footer {
@@ -470,12 +481,13 @@ a {
     }
     .contentworld_title{
       font-size: 24px;
-	  left: calc(50% - 139.21px/2);
+	  top: 580px;
+	  left: calc(50% - 950px/2);
     }
     .contentworld_explain{
       font-size: 20px;
 	  width: 492px;
-	  left: calc(50% - 492px/2);
+	  left: calc(50% - 950px/2);
     }
     .contentworld .more{
     }
@@ -491,19 +503,19 @@ a {
     .instagram{
 	  position: absolute;
 	  left: 820px;
-	  top: 120px;
+	  top: 25px;
       /*left: 845px;
       top: 22px;*/
     }
     .blog{
 	  position: absolute;
 	  left: 880px;
-	  top: 120px;
+	  top: 25px;
     }
     .youtube{
 	  position: absolute;
 	  left: 945px;
-	  top: 120px;
+	  top:25px;
     }
     .aboutus{
       left: 30px;

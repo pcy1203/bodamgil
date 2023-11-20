@@ -37,35 +37,39 @@ a {
 }
 .content1 .explain{
 	position: absolute;
-	top: 140px;
+	top: 145px;
 	animation: slide1 1s ease-out;
 	left: calc(50% - 320px/2 + 0.5px);
-	 
 }
-.content1 .aboutexplain1{
+.content1 .aboutexplain1_wide{
+	display: none
+}
+.content1 .aboutexplain1_narrow{
     position: absolute;
     width: 320px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;   
-	
 }
-.content1 .aboutexplain2{
+
+.content1 .aboutexplain2_narrow{
     position: absolute;
     width: 320px;
     font-family: 'Noto Sans KR';
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;
 	padding: 120px 0 0 0;
-	
+}
+.content1 .aboutexplain2_wide{
+	display: none
 }
 
 .content1 .aboutphoto{
@@ -101,41 +105,50 @@ a {
 	left: calc(50% - 320px/2 + 0.5px);
 	 
 }
-.content2 .aboutexplain1{
+.content2 .aboutexplain1_narrow{
     position: absolute;
     width: 320px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;    
 }
-.content2 .aboutexplain2{
+.content2 .aboutexplain1_wide{
+	display: none
+}
+.content2 .aboutexplain2_narrow{
     position: absolute;
     width: 320px;
     font-family: 'Noto Sans KR';
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;
-	padding: 50px 0 0 0;
+	padding: 60px 0 0 0;
 }
-.content2 .aboutexplain3{
+.content2 .aboutexplain2_wide{
+	display: none
+}
+.content2 .aboutexplain3_narrow{
     position: absolute;
     width: 320px;
     height: 60px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;    
 	padding: 130px 0 0 0;
+}
+.content2 .aboutexplain3_wide{
+	display: none
 }
 .content2 .aboutphoto{
 	position: absolute;
@@ -170,29 +183,35 @@ a {
 	left: calc(50% - 320px/2 + 0.5px);
 	 
 }
-.content3 .aboutexplain1{
+.content3 .aboutexplain1_narrow{
     position: absolute;
     width: 320px;
     height: 60px;
     font-family: 'Noto Sans KR';
     font-weight: 300;
     font-size: 14px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;    
 }
-.content3 .aboutexplain2{
+.content3 .aboutexplain1_wide{
+	display: none
+}
+.content3 .aboutexplain2_narrow{
     position: absolute;
     width: 320px;
     font-family: 'Noto Sans KR';
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 150%;
     align-items: center;
     text-align: center;
     color: #000000;
 	padding: 150px 0 0 0;
+}
+.content3 .aboutexplain2_wide{
+	display: none
 }
 .content3 .aboutphoto{
 	position: absolute;
@@ -232,85 +251,117 @@ a {
         font-size: 28px;
         text-align: left;
     }
-    .content1 .aboutexplain1{
+	
+	.content1 .explain{
+		top: 210px;
+		animation: slide4 1s ease-out;
+		left: calc(50% - 110px/2 + 123px);
+	 
+}
+    .content1 .aboutexplain1_wide{
         width: 377px;
-        left: calc(50% - 110px/2 + 123px);
-        top: 210px;
-        font-size: 14px;
         text-align: left;
-		line-height: 150%;
+		display: block;
+		line-height: 160%;
     }
-    .content1 .aboutexplain2{
+	.content1 .aboutexplain1_narrow{
+		display: none;
+	}
+    .content1 .aboutexplain2_wide{
         width: 377px;
-        left: calc(50% - 110px/2 + 123px);
-        top: 320px;
         font-size: 20px;
         text-align: left;
-		line-height: 150%;
+		line-height: 160%;
+		padding-top: 15px;
+		display: block;
     }
+	.content1 .aboutexplain2_narrow{
+		display: none;
+	}
     .content1 .aboutphoto{
         width: 512px;
         height: 640px;
         left: calc(50% - 512px/2 - 256px);
         top: 60px;
     }
-
-    .content2 .aboutexplain1{
-        left: calc(50% - 226px/2 - 350px);
+	.content2 .explain{
+		position: absolute;
+		top: 630px;
+		animation: slide5 1s ease-out;
+		left: calc(50% - 226px/2 - 350px);
+}
+    .content2 .aboutexplain1_wide{
         top: 620px;
-        font-size: 14px;
         text-align: left;
-		line-height: 150%;
+		line-height: 160%;
 		width: 377px;
+		display: block;
     }
-    .content2 .aboutexplain2{
-        left: calc(50% - 226px/2 - 350px);
-        top: 670px;
+	.content2 .aboutexplain1_narrow{
+		display: none;
+	}
+    .content2 .aboutexplain2_wide{
         font-size: 20px;
         text-align: left;
-		line-height: 150%;
+		line-height: 160%;
 		width: 377px;
+		padding-top: 10px;
+		display: block;
     }
-	.content2 .aboutexplain3{
+	.content2 .aboutexplain2_narrow{
+		display: none;
+	}
+	.content2 .aboutexplain3_wide{
         left: calc(50% - 226px/2 - 350px);
-        top: 760px;
-        font-size: 14px;
         text-align: left;
-		line-height: 150%;
+		line-height: 160%;
 		width: 377px;
+		display: block;
+		display: block;
     }
+	.content2 .aboutexplain3_narrow{
+		display: none;
+	}
 	.content2 .aboutphoto{
 		width: 512px;
         height: 640px;
         left: calc(50% - 512px/2 + 256px);
 		top: 559px;
     }
-	
-    .content3 .aboutexplain1{
+	.content3 .explain{
+		top: 1130px;
+		animation: slide6 1s ease-out;
+		left: calc(50% - 110px/2 + 123px);
+	}
+    .content3 .aboutexplain1_wide{
         width: 377px;
-        left: calc(50% - 110px/2 + 123px);
-        top: 1150px;
-        font-size: 14px;
         text-align: left;
-		line-height: 150%;
+		line-height: 160%;
+		display: block;
     }
-    .content3 .aboutexplain2{
-       width: 400px;
-        left: calc(50% - 110px/2 + 123px);
-        top: 1300px;
-        font-size: 20px;
-        text-align: center;
-		line-height: 150%;
+	.content3 .aboutexplain1_narrow{
+		display: none;
+	}
+    .content3 .aboutexplain2_wide{
+       width: 377px;
+        font-size: 24px;
+        text-align: left;
+		line-height: 160%;
+		display: block;
+		padding-top: 40px;
+		font-weight: 700;
     }
+	.content3 .aboutexplain2_narrow{
+		display: none;
+	}
 	 .content3 .aboutphoto{
        width: 512px;
         height: 640px;
         left: calc(50% - 512px/2 - 256px);
         top: 1059px;
-    }
-    
-
+	}
 }
+
 /*footer*/
   .footer {
     position: relative;
@@ -419,7 +470,7 @@ a {
 
 @keyframes slide1{
 	from{top: 400px; opacity: 0;}
-	to{top: 140px;opacity: 1;}
+	to{top: 145px;opacity: 1;}
 }
 @keyframes slide2{
 	from{top: 1000px; opacity: 0;}
@@ -428,4 +479,16 @@ a {
 @keyframes slide3{
 	from{top: 1700px; opacity: 0;}
 	to{top: 1400px;opacity: 1;}
+}
+@keyframes slide4{
+	from{top: 600px; opacity: 0;}
+	to{top: 210px;opacity: 1;}
+}
+@keyframes slide5{
+	from{top: 1000px; opacity: 0;}
+	to{top: 630px;opacity: 1;}
+}
+@keyframes slide6{
+	from{top: 1500px; opacity: 0;}
+	to{top: 1130px;opacity: 1;}
 }

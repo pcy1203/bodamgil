@@ -29,6 +29,14 @@ a{
 	font-size: 12px;
     line-height: 100%;
     border-bottom: 0.3px solid #BFBFBF;
+	position: relative;
+}
+.content img{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	right: 25px;
+	top: 50%;
 }
 .content nav ul li div {
     padding: 20px 30px;
@@ -46,25 +54,21 @@ a{
     border-bottom: none;
 }
 .content nav ul li p{
-    padding: 0px 25px 10px 60px;
+    padding: 0px 25px 10px 40px;
     font-family: 'Noto Sans KR';
 	font-weight: 300;
 	font-size: 12px;
     line-height: 130%;
     border-bottom: none;
 }
-.content img{
-	position: absolute;
-	width: 10px;
-	height: 10px;
-	right: 25px;
-}
+
+
 
 .answer-open{
-    transform: rotate(270deg);
+	transform: translateY(-50%) rotate(270deg);
 }
 .answer-close{ 
-    transform: rotate(0deg); 
+    transform: translateY(-50%) rotate(0deg); 
 }
 
 @media ( min-width: 1025px ) {
