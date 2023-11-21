@@ -32,8 +32,7 @@ a {
     font-weight: 300;
     font-size: 14px;
     line-height: 140%;
-    display: flex;
-    align-items: center;
+    display: block;
     text-align: center;
     color: #000000;
 }
@@ -116,7 +115,7 @@ a {
     }
     .content p{
         width: 400px;
-        left: calc(50% - 394px/2 + 241px);
+        left: calc(50% - 400px/2 + 241px);
         font-size: 16px;
         line-height: 160%;
         top: 140px;

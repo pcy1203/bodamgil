@@ -6,14 +6,14 @@ a {
 /*select*/
 .select span{
     position: relative;
-    left: calc(50% - 150px/2);
+    left: calc(50% - 159px/2);
     top: 10px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    display: flex;
-    align-items: center;
+    display: block;
+	width: 159px;
     text-align: center;
     color: #000000;
 }
@@ -21,7 +21,8 @@ a {
 	text-align: center;
 }
 .select_first{
-	margin: 30px 0 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
 }
 .select_first .all{
     position: relative;
@@ -152,7 +153,7 @@ a {
     border: none;
 }
 .select_company{
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
 
 /*대학생활 선택 시 2차 버튼*/
@@ -178,8 +179,7 @@ a {
     border: none;
 }
 .select_college{
-	margin-bottom: 25px;
-	display: none;
+	margin-bottom: 10px;
 }
 
 /*지원 선택 시 2차 버튼*/
@@ -205,11 +205,11 @@ a {
     border: none;
 }
 .select_apply{
-	margin-bottom: 25px;
-	display: none;
+	margin-bottom: 10px;
 }
 
-.checked {
+.select .select_first button.checked, 
+.select .select_second button.checked {
     background-color: #FF731D;
     color: white;
     border: none;
@@ -217,6 +217,10 @@ a {
 
 
 /*contentme*/
+.contentme {
+	padding-bottom: 15px;
+}
+
 .content{
 	position: relative;
 	width: 85%;
@@ -278,47 +282,28 @@ a {
     }
     /*select*/
     .select span{
+		width: 175px;
+		left: calc(50% - 175px/2);
         font-size: 22px;
     }
-    .all{
+    .select .select_first button{
         width: 120px;
         height: 35px;
-        left: calc(50% - 50px/2 - 338px);
-        top: 125px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
-    .company{
-        width: 120px;
+	.select .select_first button.all{
+		margin-left: 0px;
+    }
+    .select .select_second button{
+        width: 105px;
         height: 35px;
-        left: calc(50% - 50px/2 - 188px);
-        top: 125px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 20px;
     }
-    .college{
-        width: 120px;
-        height: 35px;
-        left: calc(50% - 50px/2 - 38px);
-        top: 125px;
-        font-size: 14px;
-        line-height: 20px;
+	.select .select_second button.all{
+		margin-left: 0px;
     }
-    .apply{
-        width: 120px;
-        height: 35px;
-        left: calc(50% - 50px/2 + 112px);
-        top: 125px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .app{
-        width: 120px;
-        height: 35px;
-        left: calc(50% - 66px/2 + 270px);
-        top: 125px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-
   }
