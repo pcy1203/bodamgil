@@ -8,7 +8,7 @@ const isGlassBottleOwner = async (userId, glassBottleId) => {
   try {
 	const glassBottle = await GlassBottle.findOne({ where: { uuid: glassBottleId } });
     return {
-	  isOwner: glassBottle?.owner === userId,
+	  isOwner: !userId ? false : glassBottle?.owner === userId,
 	  glassBottle,
 	};
   } catch (error) {
@@ -44,7 +44,7 @@ exports.makeGlassBottleIfNotExist = async (req, res, next) => {
 exports.renderGlassBottle = async (req, res, next) => {
   const id = req.params.id;
   try {
-	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user.dataValues.id, id);
+	const { isOwner, glassBottle } = await isGlassBottleOwner(req.user?.dataValues.id, id);
 	if (!glassBottle) {
 	  return res.redirect('/myself/paperplane?message=wrongAddressError');
 	}

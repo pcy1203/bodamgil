@@ -21,7 +21,7 @@ router.post('/:id/write', isLoggedIn, writePaperPlane);
 router.get('/:id/view', isLoggedIn, renderPaperPlane);
 
 // GET /myself/paperplane/:id
-router.get('/:id', isLoggedIn, renderGlassBottle);
+router.get('/:id', renderGlassBottle);
 
 // GET /myself/paperplane
 router.get('/', renderMain);

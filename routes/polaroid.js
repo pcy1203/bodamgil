@@ -48,7 +48,7 @@ router.get('/view', isLoggedIn, renderPolaroids);
 router.get('/:id/success', isLoggedIn, renderSuccess);
 
 // GET /myself/polaroid/:id
-router.get('/:id', isLoggedIn, renderPolaroid);
+router.get('/:id', renderPolaroid);
 
 // DELETE /myself/polaroid/:id
 router.delete('/:id', isLoggedIn, deletePolaroid);
