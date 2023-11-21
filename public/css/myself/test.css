@@ -9,14 +9,14 @@ a {
 /*select*/
 .select span{
     position: relative;
-    left: calc(50% - 150px/2);
-     top: 10px;
+	width: 159px;
+    left: calc(50% - 159px/2);
+    top: 10px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    display: flex;
-    align-items: center;
+    display: block;
     text-align: center;
     color: #000000;
 }
@@ -24,7 +24,8 @@ a {
 	text-align: center;
 }
 .select button{
-	margin: 30px 0 10px 0;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 .all{
     position: relative;
@@ -159,6 +160,9 @@ a {
 }
 
 /*contentme*/
+.contentme {
+    padding-bottom: 15px;
+}
 .content{
 	position: relative;
 	width: 85%;
@@ -211,53 +215,48 @@ a {
     /*select*/
     .select span{
         font-size: 22px;
+		width: 174.25px;
+		left: calc(50% - 174.25px/2);
     }
     .all{
         width: 100px;
         height: 35px;
-        left: calc(50% - 50px/2 - 300px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
     }
     .like{
         width: 100px;
         height: 35px;
-        left: calc(50% - 50px/2 - 180px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
     .good{
         width: 100px;
         height: 35px;
-        left: calc(50% - 50px/2 - 60px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
     .goal{
         width: 100px;
         height: 35px;
-        left: calc(50% - 50px/2 + 60px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
     .value{
         width: 100px;
         height: 35px;
-        left: calc(50% - 66px/2 + 180px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
     .etc{
         width: 100px;
         height: 35px;
-        left: calc(50% - 66px/2 + 300px);
-        top: 122px;
         font-size: 14px;
         line-height: 20px;
+		margin-left: 30px;
     }
   }

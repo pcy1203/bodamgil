@@ -1,7 +1,10 @@
 const express = require('express');
-const { renderMain } = require('../controllers/world');
+const { renderMain, renderSite } = require('../controllers/world');
 
 const router = express.Router();
+
+// /world/site
+router.get('/site', renderSite);
 
 // /world
 router.get('/', renderMain);
