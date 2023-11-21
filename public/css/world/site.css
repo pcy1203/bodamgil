@@ -3,25 +3,11 @@ a {
     text-decoration: none;
     color: black;
 }
-.findmecontent{
-    position: absolute;
-    left: 45px;
-    top: 13px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #000000;   
-}
-
 /*select*/
 .select span{
-    position: absolute;
-    left: calc(50% - 74px/2 - 1px);
-    top: 71px;
+    position: relative;
+    left: calc(50% - 150px/2);
+    top: 10px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
@@ -31,13 +17,17 @@ a {
     text-align: center;
     color: #000000;
 }
-.all{
-    position: absolute;
+.select{
+	text-align: center;
+}
+.select_first{
+	margin: 30px 0 10px;
+}
+.select_first .all{
+    position: relative;
     border: 0.5px solid #BFBFBF;
     width: 60px;
     height: 30px;
-    left: calc(50% - 50px/2 - 134px);
-    top: 118px;
     background: white;
     border-radius: 20px;
     font-family: 'Noto Sans KR';
@@ -49,18 +39,16 @@ a {
     color: #BFBFBF;
     cursor: pointer;
 }
-.all:hover{
+.select_first .all:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
-.like{
-    position: absolute;
+.select_first .company{
+    position: relative;
     border: 0.5px solid #BFBFBF;
     width: 60px;
     height: 30px;
-    left: calc(50% - 50px/2 - 67px);
-    top: 118px;
     background: white;
     border-radius: 20px;
     font-family: 'Noto Sans KR';
@@ -72,18 +60,16 @@ a {
     color: #BFBFBF;
     cursor: pointer;
 }
-.like:hover{
+.select_first .company:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
-.good{
-    position: absolute;
+.select_first .college{
+    position: relative;
     border: 0.5px solid #BFBFBF;
     width: 60px;
     height: 30px;
-    left: calc(50% - 50px/2 );
-    top: 118px;
     background: white;
     border-radius: 20px;
     font-family: 'Noto Sans KR';
@@ -95,18 +81,16 @@ a {
     color: #BFBFBF;
     cursor: pointer;
 }
-.good:hover{
+.select_first .college:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
-.goal{
-    position: absolute;
+.select_first .apply{
+    position: relative;
     border: 0.5px solid #BFBFBF;
     width: 60px;
     height: 30px;
-    left: calc(50% - 50px/2 + 65px);
-    top: 118px;
     background: white;
     border-radius: 20px;
     font-family: 'Noto Sans KR';
@@ -118,18 +102,16 @@ a {
     color: #BFBFBF;
     cursor: pointer;
 }
-.goal:hover{
+.select_first .apply:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
-.value{
-    position: absolute;
+.select_first .app{
+    position: relative;
     border: 0.5px solid #BFBFBF;
     width: 60px;
-    height: 30px;
-    left: calc(50% - 50px/2 + 133px);
-    top: 118px;
+    height: 28px;
     background: white;
     border-radius: 20px;
     font-family: 'Noto Sans KR';
@@ -141,94 +123,146 @@ a {
     color: #BFBFBF;
     cursor: pointer;
 }
-.value:hover{
+.select_first .app:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
+
+/*취업 선택 시 2차 버튼*/
+.select_company .all, .company1, .company2, .company3{
+	position: relative;
+    border: 0.5px solid #BFBFBF;
+    width: 60px;
+    height: 28px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.select_company .all:hover, .company1:hover, .company2:hover, .company3:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.select_company{
+	margin-bottom: 25px;
+}
+
+/*대학생활 선택 시 2차 버튼*/
+.select_college .all, .college1, .college2, .college3, .college4{
+	position: relative;
+    border: 0.5px solid #BFBFBF;
+    width: 60px;
+    height: 28px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.select_college .all:hover, .college1:hover, .college2:hover, .college3:hover, .college4:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.select_college{
+	margin-bottom: 25px;
+	display: none;
+}
+
+/*지원 선택 시 2차 버튼*/
+.select_apply .all, .apply1, .apply2{
+	position: relative;
+    border: 0.5px solid #BFBFBF;
+    width: 60px;
+    height: 28px;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+}
+.select_apply .all:hover, .apply1:hover, .apply2:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.select_apply{
+	margin-bottom: 25px;
+	display: none;
+}
+
 .checked {
     background-color: #FF731D;
     color: white;
     border: none;
 }
 
+
 /*contentme*/
-  .flexbox{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.3%;
-    position: relative;
-    top: 130px;
-	margin-left: 10px;
-	margin-right: 10px;
+.content{
+	position: relative;
+	width: 85%;
+	border: 0.5px solid #959595;
+	border-radius: 10px;
+	margin: 8px auto;
+	padding: 13px;
+	cursor: pointer;
 }
-  .item{
-    min-height: 470px;
-    flex-basis: 23.5%;
-    flex-shrink: 1;
-    flex-grow: 0;
-  }
+.content:hover{
+	color: white;
+	background-color: rgba(0,0,0,0.2);
+}
+.content .type{
+	background-color: #FF731D;
+	color: white;
+	display: inline-block;
+	font-size: 10px;
+	padding: 5px 7px;
+	margin-left: 8px;
+	border-radius: 30px;
+	margin-top: 0;
+}
+.content span{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000000;
+	padding-left: 3px;
+}
+.content p{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 140%;
+	color: #000000;
+	padding: 0 10px;
+	margin: 5px 0;
+}
 
-  .contentme .item img{
-    width: 100%;
-    height: 60%;
-  } 
-  .contentme .flexbox img{
-    width: 100%;
-	height: 60%;
-	filter: brightness(1);
-  } 
- .contentme .flexbox img:hover{
-	filter: brightness(0.8);
-  } 
-  .contentme .item .contentme_type{
-    position: absolute;
-    width: 45px;
-    height: 25px;
-    background: #FF731D;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 10px;
-    line-height: 100%;
-    text-align: center;
-    line-height: 25px;
-    color: #FFFFFF;
-    margin: 5px 0px 0px 0px;
-  }
-
-  .contentme .item .contentme_name{
-    position: absolute;
-	width: 50%;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 120%;
-    color: #000000;
-    margin: 40px 0px 30px 0px;
-  }
-
-  .contentme .item .contentme_explain{
-    position: absolute;
-    width: 48%;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 130%;
-    color: #000000;
-    margin: 80px 0px 0px 0px;
-  }
 
 
 
 /*1200px 이상*/
-@media screen and (max-width:1023px){
-    .item{
-        flex-basis: 49%;
-    }
-  }
   @media ( min-width: 1025px ) {
     #container {
       width: 1024px;
@@ -246,13 +280,6 @@ a {
     .select span{
         font-size: 22px;
     }
-    .likejob{
-        width: 140px;
-        height: 40px;
-        left: calc(50% - 140px/2 - 200px);
-        top: 130px;
-        font-size: 14px;
-    }
     .all{
         width: 120px;
         height: 35px;
@@ -261,7 +288,7 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-    .like{
+    .company{
         width: 120px;
         height: 35px;
         left: calc(50% - 50px/2 - 188px);
@@ -269,7 +296,7 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-    .good{
+    .college{
         width: 120px;
         height: 35px;
         left: calc(50% - 50px/2 - 38px);
@@ -277,7 +304,7 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-    .goal{
+    .apply{
         width: 120px;
         height: 35px;
         left: calc(50% - 50px/2 + 112px);
@@ -285,7 +312,7 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-    .value{
+    .app{
         width: 120px;
         height: 35px;
         left: calc(50% - 66px/2 + 270px);
@@ -293,8 +320,5 @@ a {
         font-size: 14px;
         line-height: 20px;
     }
-	/*content*/
-	  .contentme .item .contentme_explain{
-		  width: 23%;
-	  }
+
   }

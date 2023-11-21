@@ -7,9 +7,8 @@
     <style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
-    <link rel="stylesheet" href="../../css/world/site.css">
-    <link rel="stylesheet" href="../../css/menu/navigationbar.css">
-    <link rel="stylesheet" href="../../css/menu/menu.css">
+    <link rel="stylesheet" href="/css/world/site.css">
+	{% include "common.html" %}
   </head>
 
   <body>
@@ -17,40 +16,339 @@
 	  {% include "menu/navigationbar.html" %}		  
       <div class="select">
         <span>도움이 되는 사이트</span>
-        <button class="all checked">전체</button>
-        <button class="like">과제</button>
-        <button class="good">외부활동</button>
-        <button class="goal">정책</button>
-        <button class="value">기타</button>
+		<div class="select_first">
+			<button class="all checked">전체</button>
+			<button class="company">취업</button>
+			<button class="college">대학생활</button>
+			<button class="apply">지원</button>
+			<button class="app">앱</button>
+		</div>
+		<div class="select_company">
+			<button class="all checked">전체</button>
+			<button class="company1">취업정보</button>
+			<button class="company2">직업정보</button>
+			<button class="company3">자격증정보</button>
+		</div>
+		<div class="select_college">
+			<button class="all checked">전체</button>
+			<button class="college1">과제</button>
+			<button class="college2">대외활동</button>
+			<button class="college3">봉사</button>
+			<button class="college4">기타</button>
+		</div>
+		<div class="select_apply">
+			<button class="all checked">전체</button>
+			<button class="apply1">청년정책</button>
+			<button class="apply2">장학금</button>
+		</div>
       </div>
+		
       <div class="contentme">
-        <div class="flexbox">
-          <div class="item item-like">
-            <a href="/myself/polaroid"><img src="../../../photo/polaroid/polaroid_main.png"></a>
-            <p class="contentme_type">과제</p>
-            <p class="contentme_name">사이트 이름</p>
-            <p class="contentme_explain">이 사이트는 ~~~~~~~한 내용을 담고 있고 --------할 때 사용하면 이렇게 좋아요.</p>
-          </div>
-          <div class="item item-good">
-            <a href="/myself/paperplane"><img src="../../../photo/paperplane/paperplane_main.png"></a>
-            <p class="contentme_type">외부활동</p>
-            <p class="contentme_name">사이트 이름222</p>
-            <p class="contentme_explain">이 사이트는 ~~~~~~~한 내용을 담고 있고 --------할 때 사용하면 이렇게 좋아요.</p>
-          </div>
-          <!--
-			<div class="item item-goal">
-            <img src="../../photo/main/world-image.jpg">
-            <p class="contentme_type">목표</p>
-            <p class="contentme_name">콘텐츠 이름</p>
-            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
-          </div>
-          <div class="item item-value">
-            <img src="../../photo/main/world-image.jpg">
-            <p class="contentme_type">가치관</p>
-            <p class="contentme_name">콘텐츠 이름</p>
-            <p class="contentme_explain">콘텐츠 설명에 대해 적어주세요.콘텐츠 설명에 대해 적어주세요.</p>
-          </div> -->
-        </div>
+	  	<div class="company_content">	  
+		   <a href="https://www.saramin.co.kr/zf_user/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>사람인</span>
+				<p>채용 공고부터 기업 정보, 현직자 리뷰, AI 추천 등 취업에 필요한 콘텐츠를 얻을 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.jobkorea.co.kr/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>잡코리아</span>
+				<p>채용 공고부터 기업 정보, 현직자 리뷰, AI 추천 등 취업에 필요한 콘텐츠를 얻을 수 있습니다..</p>
+		   </div></a>
+		   <a href="https://www.catch.co.kr/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>캐치</span>
+				<p>채용 공고부터 기업 정보, 현직자 리뷰, AI 추천 등 취업에 필요한 콘텐츠를 얻을 수 있습니다.</p>
+		   </div></a>
+			   <a href="https://www.incruit.com/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>인크루트</span>
+				<p>채용 공고부터 기업 정보, 현직자 리뷰, AI 추천 등 취업에 필요한 콘텐츠를 얻을 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.worldjob.or.kr/new_index.do" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>월드잡플러스</span>
+				<p>해외취업·창업·인턴·봉사 등 해외진출 관련 정보를 한 곳에서 볼 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.k-startup.go.kr/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>K-Startup 창업지원포털</span>
+				<p>예비창업자와 창업기업을 위해 창업지원사업 정보를 제공하고 창업 교육, 창업 공간 정보 등 창업에 관한 정보를 얻을 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.hrd.go.kr/hrdp/ma/pmmao/newIndexRenewal.do" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>직업훈련포털 HRD-Net</span>
+				<p>역량개발 향상 등을 위해 스스로 직업능력개발훈련을 실시할 수 있도록 훈련비 등 지급하는 국민내일배움카드를 신청할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://job.alio.go.kr/recruit.do" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>공공기관 채용정보시스템</span>
+				<p>공공기관의 모든 채용정보를 한눈에 확인하고 비교할 수 있는 구직자 맞춤형 채용정보서비스를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.scout.co.kr/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>스카우트</span>
+				<p>직종 별 채용공고를 확인할 수 있으며 직종별 전문 스카우터의 컨설팅을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://jasoseol.com/" target="_blank"><div class="content">
+			    <p class="type">취업정보</p>
+				<span>자소설닷컴</span>
+				<p>직종 별 채용공고를 확인할 수 있으며 자기소개서 작성 및 합격자소서 정보를 제공합니다.</p>
+		   </div></a>
+			
+			<a href="https://www.work.go.kr/seekWantedMain.do" target="_blank"><div class="content">
+			    <p class="type">직업정보</p>
+				<span>워크넷</span>
+				<p>취업정보 사이트로서 구직·구인정보와 직업·진로정보를 제공합니다.</p>
+		   </div></a>
+			<a href="https://www.career.go.kr/cnet/front/main/main.do" target="_blank"><div class="content">
+			    <p class="type">직업정보</p>
+				<span>커리어넷</span>
+				<p>진로진학정보 사이트로서 직업정보, 학과정보를 통틀어 진로와 진학에 관련된 정보를 제공합니다.</p>
+		   </div></a>
+			<a href="https://www.ncs.go.kr/index.do" target="_blank"><div class="content">
+			    <p class="type">직업정보</p>
+				<span>국가직무능력표준</span>
+				<p>NCS와 관련한 정보 및 학습모듈과 정보에 대한 내용을 제공합니다.</p>
+		   </div></a>
+			<a href="https://ncs.ksaedu.or.kr/edu/main.user" target="_blank"><div class="content">
+			    <p class="type">직업정보</p>
+				<span>NCS 능력중심채용</span>
+				<p>능력중심 채용 맞춤형 교육을 신청하고 학습할 수 있습니다.</p>
+		   </div></a>
+			<a href="https://www.krivet.re.kr/ku/index.jsp;jsessionid=D1GIC7gqGJqRIGCT1V34RUai58UVLTmOU3ORmeITRe1umFLSnTcBwf4RZjbafvcw.krivet3_servlet_engine5" target="_blank"><div class="content">
+			    <p class="type">직업정보</p>
+				<span>한국직업능력개발원</span>
+				<p>직업교육훈련의 활성화 및 국민의 직업능력 향상에 도움을 주는 사이트로서 직업에 관한 연구 자료를 제공합니다.</p>
+		   </div></a>
+			
+			<a href="https://q-net.or.kr/man001.do?gSite=Q" target="_blank"><div class="content">
+			    <p class="type">자격증정보</p>
+				<span>큐넷</span>
+				<p>국가 기술 및 전문 자격증을 접수 및 확인할 수 있습니다.</p>
+		   </div></a>
+			<a href="https://license.korcham.net/indexmain.jsp" target="_blank"><div class="content">
+			    <p class="type">자격증정보</p>
+				<span>대한상공회의소 자격평가사업단</span>
+				<p>컴퓨터활용능력, 워드프로세서,유통관리사, 전산회계운용사, 무역영어 등의 자격증을 접수 및 확인할 수 있습니다.</p>
+		   </div></a>
+				<a href="https://www.ihd.or.kr/main.do" target="_blank"><div class="content">
+			    <p class="type">자격증정보</p>
+				<span>KAIT 정보통신기술자격검정</span>
+				<p>디지털정보활용능력, 리눅스마스터, 검색광고마케터, SNS광고마케터, 코딩능력마스터 등의 자격증을 접수 및 확인할 수 있습니다.</p>
+		   </div></a>
+			<a href="https://license.kpc.or.kr/kpc/qualfAthrz/index.do;jsessionid=6533FB08944EC49FBC0DA4DD2613C880.worker03" target="_blank"><div class="content">
+			    <p class="type">자격증정보</p>
+				<span>KPC 자격</span>
+				<p>ITQ, GTQ, IEQ, SMAT, HuMAT, SW코딩자격 등의 자격증을 접수 및 확인할 수 있습니다.</p>
+		   </div></a>
+	  	</div>
+		  
+		<div class="college_content">	  
+		   <a href="https://www.riss.kr/index.do" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>RISS</span>
+				<p>다양한 논문 열람 및 학술연구정보서비스를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.copykiller.com/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>카피킬러</span>
+				<p>논문,리포트,자소서,독후감,공모자료 등 모든 글쓰기의 표절 검사 서비스를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.bigkinds.or.kr/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>빅카인즈</span>
+				<p>뉴스 검색 및 분석, 시각화를 도와줍니다. </p>
+		   </div></a>
+		   <a href="https://kostat.go.kr/ansk/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>통계청</span>
+				<p>다양한 주제의 통계 자료를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.gallup.co.kr/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>한국갤럽조사연구소</span>
+				<p>다양한 주제의 여론 조사 결과 자료를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.miricanvas.com/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>미리캔버스</span>
+				<p>디자인 플랫폼 사이트로서 다양한 템플릿을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.canva.com/ko_kr/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>캔바</span>
+				<p>디자인 플랫폼 사이트로서 다양한 템플릿을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.mangoboard.net/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>망고보드</span>
+				<p>디자인 플랫폼 사이트로서 다양한 템플릿을 제공합니다.</p>
+		   </div></a>	
+		   <a href="https://noonnu.cc/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>눈누</span>
+				<p>다양한 종류의 무료 폰트를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.flaticon.com/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>Flaticon</span>
+				<p>다양한 종류의 무료 아이콘을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://pixabay.com/ko/" target="_blank"><div class="content">
+			    <p class="type">과제</p>
+				<span>Pixabey</span>
+				<p>다양한 종류의 무료 이미지를 제공합니다.</p>
+		   </div></a>
+			
+		   <a href="https://www.campuspick.com/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>캠퍼스픽</span>
+				<p>대외활동, 공모전, 동아리 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.wevity.com/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>위비티</span>
+				<p>대외활동, 공모전 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.all-con.co.kr/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>올콘</span>
+				<p>대외활동, 공모전, 각종 교육 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://linkareer.com/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>링커리어</span>
+				<p>대외활동, 공모전, 각종 교육, 채용공고 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.superookie.com/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>슈퍼루키</span>
+				<p>대외활동, 공모전, 각종 교육, 채용공고 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.detizen.com/" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>대티즌닷컴</span>
+				<p>대외활동, 공모전, 각종 교육 정보들을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.thinkcontest.com/thinkgood/index.do#PxyyoRLHIcgvNg6HiHNz_mp_cuclMrohRDGEjn6hvDsggetrTQxNWBBQR1mPnaRxjI93xVlR_kFjCl9g5hFBO1N6UGMkDhLA2ecFAf6UhFU" target="_blank"><div class="content">
+			    <p class="type">대외활동</p>
+				<span>씽굿</span>
+				<p>대외활동, 공모전, 각종 교육 정보들을 제공합니다.</p>
+		   </div></a>
+			
+		   <a href="https://www.donghaeng.seoul.kr/" target="_blank"><div class="content">
+			    <p class="type">봉사</p>
+				<span>서울동행</span>
+				<p>다양한 봉사 정보를 제공하고 봉사활동 확인서를 발급할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.1365.go.kr/vols/main.do" target="_blank"><div class="content">
+			    <p class="type">봉사</p>
+				<span>1365</span>
+				<p>다양한 봉사 정보를 제공하고 봉사활동 확인서를 발급할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://www.vms.or.kr/main.do" target="_blank"><div class="content">
+			    <p class="type">봉사</p>
+				<span>사회복지자원봉사인증관리</span>
+				<p>다양한 봉사 정보를 제공하고 봉사활동 확인서를 발급할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://csv.culture.go.kr/mbl/main.do" target="_blank"><div class="content">
+			    <p class="type">봉사</p>
+				<span>문화품앗이</span>
+				<p>다양한 봉사 정보를 제공하고 봉사활동 확인서를 발급할 수 있습니다.</p>
+		   </div></a>
+	
+		   <a href="http://mail-helper.com/" target="_blank"><div class="content">
+			    <p class="type">기타</p>
+				<span>대설교메</span>
+				<p>대학 생활에서 사용할 만한 메일의 기본 글 양식을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://whattosay.kr/" target="_blank"><div class="content">
+			    <p class="type">기타</p>
+				<span>뭐라고할까</span>
+				<p>다양한 연락 상황에서 사용할 만한 기본 글 양식을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://www.univstore.com/" target="_blank"><div class="content">
+			    <p class="type">기타</p>
+				<span>학생복지스토어</span>
+				<p>대학생 인증 시 다양한 물품을 비교적 저렴한 가격에 구입할 수 있습니다.</p>
+		   </div></a>
+	  	</div>
+		  
+		<div class="apply_content">	  
+		   <a href="https://www.youthcenter.go.kr/main.do" target="_blank"><div class="content">
+			    <p class="type">청년정책</p>
+				<span>온통청년</span>
+				<p>청년 정책에 대한 다양한 정보를 제공하고 안내 및 상담 서비스를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://youth.seoul.go.kr/site/main/home" target="_blank"><div class="content">
+			    <p class="type">청년정책</p>
+				<span>청년몽땅정보통</span>
+				<p>서울특별시의 분야별 청년 정책 정보를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://opcl.kr/" target="_blank"><div class="content">
+			    <p class="type">청년정책</p>
+				<span>열고닫기</span>
+				<p>청년 정책에 대한 다양한 정보를 제공하고 자신에게 맞는 정보를 추천받을 수 있습니다.</p>
+		   </div></a>
+			
+	   		<a href="https://www.kosaf.go.kr/ko/main.do" target="_blank"><div class="content">
+			    <p class="type">장학금</p>
+				<span>한국장학재단</span>
+				<p>국가장학금 및 학자금 대출 서비스를 제공합니다.</p>
+		    </div></a>
+	   		<a href="https://www.dreamspon.com/" target="_blank"><div class="content">
+			    <p class="type">장학금</p>
+				<span>드림스폰</span>
+				<p>다양한 외부 장학금 정보들을 제공합니다.</p>
+		    </div></a>
+	   		<a href="https://www.google.com/search?q=%EB%8C%80%ED%95%99%EA%B5%90+%EC%9E%A5%ED%95%99%EA%B8%88&sca_esv=584255880&sxsrf=AM9HkKkiLCzHymyuIvs9XkXTBLXFEQ_YLw%3A1700562936381&ei=-IdcZbbuFurn1e8Pt5630AU&ved=0ahUKEwi2yvbN8tSCAxXqc_UHHTfPDVoQ4dUDCBA&uact=5&oq=%EB%8C%80%ED%95%99%EA%B5%90+%EC%9E%A5%ED%95%99%EA%B8%88&gs_lp=Egxnd3Mtd2l6LXNlcnAiE-uMgO2Vmeq1kCDsnqXtlZnquIgyChAAGIAEGIoFGEMyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI1A5QAFjjDXABeAGQAQKYAccBoAHVD6oBBDAuMTa4AQPIAQD4AQHCAhEQLhiABBixAxiDARjHARjRA8ICBBAAGAPCAgsQLhiABBixAxiDAcICCxAAGIAEGLEDGIMBwgIgEC4YgAQYsQMYgwEYxwEY0QMYlwUY3AQY3gQY4ATYAQHCAggQABiABBixA-IDBBgAIEGIBgG6BgYIARABGBQ&sclient=gws-wiz-serp" target="_blank"><div class="content">
+			    <p class="type">장학금</p>
+				<span>각 대학교 홈페이지</span>
+				<p>자신의 대학교 홈페이지의 장학금 제도를 확인해주세요. 다양한 교내, 교외 장학금 정보들을 제공합니다.</p>
+		    </div></a>
+	  	</div>
+	
+		<div class="app_content">	
+		   <a href="https://play.google.com/store/apps/details?id=com.everytime.v2&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>에브리타임</span>
+				<p>대학생활, 시간표, 개설과목 등 대학 생활의 전반적인 정보를 제공합니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=com.ted.android&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>TED</span>
+				<p>다양한 주제의 강연 영상을 제공합니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=com.evernote&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>Evernote</span>
+				<p>노트 필기 앱으로서 기록 및 아카이빙을 할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=notion.id&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>Notion</span>
+				<p>필기 앱으로서 기록 및 아카이빙을 할 수 있으며 협업이 가능합니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=com.intsig.camscanner&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>CamScanner</span>
+				<p>문서를 PDF로 스캔할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=com.naver.clova.minute&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>클로바노트</span>
+				<p>음성 녹음을 텍스트로 변환하여 저장할 수 있습니다.</p>
+		   </div></a>
+		   <a href="https://play.google.com/store/apps/details?id=kr.co.kyobobook.KEL&hl=ko-KR" target="_blank"><div class="content">
+			    <p class="type">앱</p>
+				<span>교보문고 전자도서관</span>
+				<p>학교 도서관이 있는 경우 도서관의 책을 온라인으로 대여하여 읽을 수 있습니다.</p>
+		   </div></a>
+		  
+	  	</div>
+		
+		  
       </div>
 	</div>
 	{% include "menu/menu.html" %}
