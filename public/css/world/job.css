@@ -1,0 +1,129 @@
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.select span{
+    position: relative;
+    left: calc(50% - 159px/2);
+    top: 10px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+	width: 159px;
+    text-align: center;
+    color: #000000;
+}
+.select{
+	text-align: center;
+}
+
+.select_first{
+	margin: 25px 20px 20px;
+}
+.select_first button{
+    position: relative;
+    border: 0.5px solid #BFBFBF;
+    background: white;
+    border-radius: 5px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+	padding: 2px 4px;
+	margin: 2px 0;
+}
+.select_first button:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+.select .select_first button.checked {
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+
+
+/*contentme*/
+.contentme {
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.content{
+	position: relative;
+	width: 80%;
+	border: 0.5px solid #959595;
+	border-radius: 10px;
+	margin: 9px auto;
+	padding: 1px 10px 16px 10px ;
+}
+.content p{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	color: #FF731D;
+	text-align: center;
+	width: 100%;
+	padding-bottom: 1px;
+	
+}
+.content button{
+	position: relative;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	color: #000000;
+	border: 0.5px solid #BFBFBF;
+    background: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR';
+    line-height: 14px;
+    align-items: center;
+    text-align: center;
+    color: #BFBFBF;
+    cursor: pointer;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+.content button:hover{
+    background-color: #FF731D;
+    color: white;
+    border: none;
+}
+
+
+/*1200px 이상*/
+  @media ( min-width: 1025px ) {
+    #container {
+      width: 1024px;
+      margin: auto;
+    }
+
+    /*header*/
+    .header{
+        height: 45px;
+    }
+    .menuimage{
+        display: none;
+    }
+    /*select*/
+    .select span{
+		width: 175px;
+		left: calc(50% - 175px/2);
+        font-size: 22px;
+    }
+	.content{
+		padding: 1px 18px 16px 18px ;
+	}
+
+  }
