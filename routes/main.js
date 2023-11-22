@@ -16,14 +16,14 @@ router.get('/signup', isNotLoggedIn, renderSignup);
 // GET /signup/success
 router.get('/signup/success', isNotLoggedIn, renderSignupSuccess);
 
-// GET /myprofile/like
-router.get('/myprofile/like', isLoggedIn, renderMyProfileLike);
-
-// GET /myprofile/game
-router.get('/myprofile/game', isLoggedIn, renderMyProfileGame);
-
 // GET /myprofile
 router.get('/myprofile', isLoggedIn, renderMyProfile);
+
+// GET /myprofile
+router.get('/myprofile/like', isLoggedIn, renderMyProfileLike);
+
+// GET /myprofile
+router.get('/myprofile/game', isLoggedIn, renderMyProfileGame);
 
 // GET /setprofile
 router.get('/setprofile', isLoggedIn, renderSetProfile);

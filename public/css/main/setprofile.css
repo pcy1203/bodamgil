@@ -1,8 +1,24 @@
-
 a {
     text-decoration: none;
     color: black;
 }
+
+.block-1 span.contract {
+	top: 100px;
+}
+
+.block-1 .contract_context {
+	top: 150px;
+}
+
+.block-2 .previous-circle {
+	box-sizing: content-box; 
+}
+
+.block-2 img {
+	box-sizing: content-box; 
+}
+
 .changecontent{
     position: absolute;
     left: 45px;
@@ -35,7 +51,7 @@ a {
 }
 
 /*이미지 선택*/
-#joinForm input#image{
+#setForm input#image{
     position: absolute;
     width: 0;
     height: 0;
@@ -70,37 +86,37 @@ a {
 
 /*폼*/
 
-#joinForm{
+#setForm{
 	width: 300px;
 	margin: 0 auto;
 	margin-top: 320px;
 }
-#joinForm .field{
+#setForm .field{
 	margin: 5px 0;
 	height: 100px;
 }
-#joinForm .fieldgender{
+#setForm .fieldgender{
 	margin: 0 0 5px 0;
 }
-#joinForm .fieldbirth{
+#setForm .fieldbirth{
 	margin: 5px 0 15px 0;
 }
 
-#joinForm span{
+#setForm span{
 	display: block;
 	margin-bottom: 7px;
 	font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 14px;
 }
-#joinForm input{
+#setForm input{
 	border: 1px solid #dadada;
     padding: 15px 0 15px 15px;
-    width: 285px;
+    width: 300px;
     margin-bottom: 5px;
 	border-radius: 10px;
 }
-#joinForm p{
+#setForm p{
 	position: absolute;	
 	font-family: 'Noto Sans KR';
     font-weight: 300;
@@ -111,7 +127,7 @@ a {
 	padding: 0px 0 0 8px;
 	display: none;
 }
-#joinForm select{
+#setForm select{
 	border: 1px solid #dadada;
     padding: 15px;
     width: 300px;
@@ -119,10 +135,10 @@ a {
 	border-radius: 10px;
 	background: #ffffff;
 }
-#joinForm #gender{
+#setForm #gender{
 	width: 300px;
 }
-#joinForm .birth {
+#setForm .birth {
 	width: 300px;
 	display: flex;
 	gap: 3px;
@@ -193,40 +209,40 @@ ul.join_box{
 		left: calc(50% - 1000px/2 + 141px);
 		width: 150px;
 	}
-    #joinForm{
+    #setForm{
 		width: 450px;
 		margin-left: 400px;
 		margin-top: 55px;
 	}
-	#joinForm .field{
+	#setForm .field{
 		margin: 8px 0;
 	}
-	#joinForm .fieldgender{
+	#setForm .fieldgender{
 		margin: 0 0 8px 0;
 	}
-	#joinForm .fieldbirth{
+	#setForm .fieldbirth{
 		margin: 8px 0 25px 0;
 	}
-	#joinForm #name {
-		width: 425px;
+	#setForm #name {
+		width: 456px;
 	}
-	#joinForm #introduction {
-		width: 425px;
+	#setForm #introduction {
+		width: 456px;
 	}
-	#joinForm #gender {
+	#setForm #gender {
 		width: 457px;
 	}
-	#joinForm .birth {
+	#setForm .birth {
 		width: 457px;
 	}
-	#joinForm span{
+	#setForm span{
 		margin-bottom: 8px;
 		font-size: 16px;
 	}
-	#joinForm p{
+	#setForm p{
 		font-size: 12px;
 	}
-	#joinForm input{
+	#setForm input{
 		padding: 15px;
 		margin-bottom: 5px;
 	}
