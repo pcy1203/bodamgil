@@ -17,7 +17,6 @@
 	  <div class="previous-circle">
 		<a href="/myself/paperplane">
 		  <img src="/photo/main/previous.png" class="previous">
-		  <span>메인 화면</span>
 		</a>
 	  </div>    
 	  <form action="/myself/paperplane/{{ id }}/write" method="post">
@@ -45,7 +44,7 @@
 		  </div>
 
 		  <div class="block-3">
-			<h1>{{ owner }} 님과의 관계를 선택해주세요!</h1>
+			<h1><name>{{ owner }}</name> 님과의 관계를 선택해주세요!</h1>
 			<div class="button-relationship">
 			  <input id="relationship-friend" type="radio" name="relationship" value="friend" checked>친구
 			  <input id="relationship-couple" type="radio" name="relationship" value="couple">연인
@@ -69,7 +68,7 @@
 		  </div>
 
 		  <div class="block-4">
-			<h1>{{ owner }} 님이 잘하는 일을 적어주세요!</h1>
+			<h1><name>{{ owner }}</name> 님이 잘하는 일을 적어주세요!</h1>
 			<input id="name" class="name" name="name" placeholder="닉네임을 입력해주세요. (14글자 이내)" maxlength="14" require>
 			<textarea id="content" class="message" name="content" placeholder="메시지를 적어주세요. (437글자 이내)" maxlength="437" require></textarea>
 			<button class="back" type="button">BACK</button>
@@ -158,5 +157,13 @@
 	    tag.classList.add('check');
 	  });
 	});
+	  
+	const name = document.querySelector('name').innerHTML;
+	if (name.length >= 12) {
+		document.querySelector('.main .block-3 h1').style.top = '50px';
+		document.querySelectorAll('name').forEach((nameTag) => {
+		  nameTag.innerHTML = name.slice(0, name.length / 2) + "<br>" + name.slice(name.length / 2);
+		});
+	}
   </script>
 </html>

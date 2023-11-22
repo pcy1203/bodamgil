@@ -1,9 +1,9 @@
 const express = require('express');
 const { isLoggedIn, isNotLoggedIn } = require('../middlewares');
 const { renderMain, renderLogin, renderSignup, renderSignupSuccess, renderMyProfile,
-	   renderMyProfileLike, renderMyProfileGame, renderSetProfile, renderChangePassword,
-	   renderFindId, renderFindIdSuccess, renderFindPassword, renderSetPassword,
-	   renderAbout, renderNotice, renderFaq } = require('../controllers/main');
+	   renderMyProfileNote, renderMyProfileLike, renderMyProfileGame, renderSetProfile,
+	   renderChangePassword, renderFindId, renderFindIdSuccess, renderFindPassword,
+	   renderSetPassword, renderAbout, renderNotice, renderFaq } = require('../controllers/main');
 
 const router = express.Router();
 
@@ -19,10 +19,13 @@ router.get('/signup/success', isNotLoggedIn, renderSignupSuccess);
 // GET /myprofile
 router.get('/myprofile', isLoggedIn, renderMyProfile);
 
-// GET /myprofile
+// GET /myprofile/note
+router.get('/myprofile/note', isLoggedIn, renderMyProfileNote);
+
+// GET /myprofile/like
 router.get('/myprofile/like', isLoggedIn, renderMyProfileLike);
 
-// GET /myprofile
+// GET /myprofile/game
 router.get('/myprofile/game', isLoggedIn, renderMyProfileGame);
 
 // GET /setprofile

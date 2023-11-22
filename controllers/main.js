@@ -37,8 +37,13 @@ exports.renderMyProfile = (req, res, next) => {
   res.render('main/myprofile');
 };
 
+exports.renderMyProfileNote = (req, res, next) => {
+  res.redirect('/myprofile?message=preparation');
+};
+
 exports.renderMyProfileLike = (req, res, next) => {
-  res.render('main/myprofilelike');
+  res.redirect('/myprofile?message=preparation')
+  // res.render('main/myprofilelike');
 };
 
 exports.renderMyProfileGame = async (req, res, next) => {

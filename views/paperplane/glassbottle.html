@@ -17,7 +17,6 @@
 	  <div class="previous-circle">
 		<a href="/myself/paperplane">
 		  <img src="/photo/main/previous.png" class="previous">
-		  <span>메인 화면</span>
 		</a>
 	  </div>    
 	  <div class="main">	  
@@ -25,7 +24,13 @@
 		{% if isOwner %}
   		  <p>내가 잘하는 일은 스스로 생각해봐도 좋지만<br>타인의 의견을 듣는 것도 좋은 방법이죠.<br>링크를 공유해 주변 사람들에게 자신의 장점을 물어보세요.</p>
 		{% else %}
-		  <p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 {{ owner }}님의 장점을 자유롭게 적어주세요.</p>
+		  <p>사람들 모두에게는 각자 배울 점이 있고<br>사람마다 잘하는 일, 장점을 가지고 있지요.<br>내가 생각 했을 때 <name>{{ owner }}</name> 님의 장점을 자유롭게 적어주세요.</p>
+          <script>
+		    const name = document.querySelector('name').innerHTML;
+			if (name.length >= 12) {
+			  document.querySelector('name').innerHTML = name.slice(0, name.length / 2) + "<br>" + name.slice(name.length / 2);
+			}
+		  </script>
 		{% endif %}
 		<ul>
 		  <li class="button1 {% if isOwner %}active{% else %}inactive{% endif %}"><img src="/photo/paperplane/link.png" class="link"><span>물어보기</span></li>
