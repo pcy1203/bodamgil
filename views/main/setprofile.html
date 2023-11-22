@@ -8,12 +8,19 @@
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
     <link rel="stylesheet" href="/css/main/setprofile.css">
+    <link rel="stylesheet" href="/css/main/signup.css">
 	{% include "common.html" %}
   </head>
 
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
+	  {% if not user.gender or not user.birthDate %}
+	  <div class="block-1">
+        {% include "main/contract.html" %}  
+	  </div>
+	  {% endif %}
+	  <div class="block-2" style="{% if user.gender and user.birthDate %}display: block;{% endif %}">
 	  {% if user.gender and user.birthDate %}
 	  <div class="previous-circle">
 		<a href="/myprofile">
@@ -28,7 +35,7 @@
 		</div>
 	  {% endif %}
       <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo">
-	  <form action="/auth/setprofile" method="post" enctype="multipart/form-data" id="joinForm">
+	  <form action="/auth/setprofile" method="post" enctype="multipart/form-data" id="setForm">
 	    <div>
 		  <label class="imagecontext" for="image">파일 선택</label>	  
 	      <input id="image" type="file" name="image" accept="image/*">
@@ -79,6 +86,7 @@
 		</div>
         <button class="fpmgBt">변경사항 저장하기</button>
       </form>
+	  </div>
 	</div>
 	{% include "menu/menu.html" %}
   </body>

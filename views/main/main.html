@@ -35,7 +35,7 @@
           <div class="item">
             <a href="/myself/{{ game.name }}"><img src="{{ game.image }}"></a>
             <p class="contentme_type">{{ game.category }}</p>
-            <p class="contentme_name">{{ game.title }}</p>
+			<a href="/myself/{{ game.name }}"><p class="contentme_name">{{ game.title }}</p></a>
             <p class="contentme_explain">{{ game.introduction }}</p>
           </div>
 		  {% endfor %}

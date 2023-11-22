@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <title>진로 게임(원래 - 후에 다시 돌려두기)</title>
+    <title>진로 게임</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
@@ -15,7 +15,7 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}		  
       <div class="select">
-        <span>진로게임</span>
+        <span>진로 게임</span>
         <button class="all checked">전체</button>
         <button class="like">흥미</button>
         <button class="good">능력</button>
@@ -28,7 +28,7 @@
           <div class="item item-{% if game.category === '흥미' %}like{% elif game.category === '능력' %}good{% elif game.category === '목표' %}goal{% elif game.category === '가치관' %}value{% endif %}">
             <a href="/myself/{{ game.name }}"><img src="{{ game.image }}"></a>
             <p class="contentme_type">{{ game.category }}</p>
-            <p class="contentme_name">{{ game.title }}</p>
+			<a href="/myself/{{ game.name }}"><p class="contentme_name">{{ game.title }}</p></a>
             <p class="contentme_explain">{{ game.introduction }}</p>
           </div>
 		  {% endfor %}

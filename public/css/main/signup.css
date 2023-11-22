@@ -142,6 +142,7 @@ ul.join_box{
     }
     .contract_context{
         font-size: 14px;
+		left: calc(50% - 297.92px/2);
     }
     .checkBox>ul>li:first-child{
         font-size: 16px;
@@ -262,6 +263,7 @@ ul.join_box{
 @media ( min-width: 1025px ) {
     .contract{
         font-size: 18px;
+		left: calc(50% - 104.4px/2);
     }
     #joinForm{
 		width: 500px;

@@ -16,17 +16,17 @@ module.exports = () => {
 		exUser.redirectURL = req.session.redirectURL;
 		req.session.redirectURL = null;
         done(null, exUser);
-	  } else {
+      } else {
         const newUser = await User.create({
-          email: profile._json?.kakao_account?.email,
-          name: profile.displayName,
+          // email: profile._json?.kakao_account?.email,
+          name: profile.displayName?.slice(0, 20),
           snsId: profile.id,
           provider: 'kakao',
         });
 		newUser.redirectURL = req.session.redirectURL;
 		req.session.redirectURL = null;
 		done(null, newUser);
-	  }
+      }
 	} catch (error) {
 	  console.error(error);
 	  done(error);
