@@ -263,13 +263,14 @@ a {
         text-align: left;
 		display: block;
 		line-height: 160%;
+		font-size: 14px;
     }
 	.content1 .aboutexplain1_narrow{
 		display: none;
 	}
     .content1 .aboutexplain2_wide{
         width: 377px;
-        font-size: 20px;
+        font-size: 18px;
         text-align: left;
 		line-height: 160%;
 		padding-top: 15px;
@@ -296,12 +297,13 @@ a {
 		line-height: 160%;
 		width: 377px;
 		display: block;
+		font-size: 14px;
     }
 	.content2 .aboutexplain1_narrow{
 		display: none;
 	}
     .content2 .aboutexplain2_wide{
-        font-size: 20px;
+        font-size: 18px;
         text-align: left;
 		line-height: 160%;
 		width: 377px;
@@ -318,6 +320,8 @@ a {
 		width: 377px;
 		display: block;
 		display: block;
+		font-size: 14px;
+		padding-top: 10px;
     }
 	.content2 .aboutexplain3_narrow{
 		display: none;
@@ -338,6 +342,7 @@ a {
         text-align: left;
 		line-height: 160%;
 		display: block;
+		font-size: 14px;
     }
 	.content3 .aboutexplain1_narrow{
 		display: none;
