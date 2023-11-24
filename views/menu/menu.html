@@ -6,9 +6,9 @@
 	<button class="exit-btn"><img src="/photo/main/exit.png" class="exit"></button>
 	{% if user %}
 		<img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile.png{% endif %}" class="profile">
-		<span class="name">{{ user.name }}</span>
-		<a href="/myprofile" class="mypage">마이페이지</a>
+		<p class="name">{{ user.name }}</p>
 		<p class="intro">{{ user.introduction }}</p>
+		<a href="/myprofile" class="mypage">마이페이지</a>
 	{% endif %}
 </div> 
 <nav>

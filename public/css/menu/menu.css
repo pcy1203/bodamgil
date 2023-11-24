@@ -34,14 +34,14 @@ img {
 .menu-container .header-login{
     position: relative;
     background-color: #FF731D;
-    height: 260px;
+    height: 270px;
     font-size: 14px;
     margin: 0;
     padding: 0px;
 }
 
 .menu-container .header-login .profile {
-    position: absolute;
+    position: relative;
     width: 66px;
     height: 66px;
     left: 23px;
@@ -50,10 +50,10 @@ img {
 }
 
 .menu-container .header-login .name{
-    position: absolute;
-    width: 120px;
+    position: relative;
+	top: 0px;
+    width: 100%;
     left: 102px;
-    top: 73px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
@@ -61,33 +61,49 @@ img {
     display: flex;
     align-items: center;
     color: #FFFFFF;
+	padding: 0;
+	margin: 0;
 }
 
 @media (max-width: 400px) {
 	.menu-container .header-login .name{
-		width: 35%;	
+		width: 60%;	
+	}
+	.menu-container .header-login .intro{
+		width: 10%;	
 	}
 }
-
 @media (min-width: 500px) {
 	.menu-container .header-login .name{
+		width: 60%;	
+	}
+	.menu-container .header-login .intro{
 		width: 45%;	
 	}
 }
-
+.menu-container .header-login .intro{
+    position: relative;
+    width: 60%;
+    left: 102px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
 .menu-container .header-login .mypage{
-    position: absolute;
-    width: 22%;
-    height: 40px;
-    right: 20px;
-    top: 68px;
+    position: relative;
+    width: 30%;
+    height: 30px;
+    left: 102px;
 	display: block;
     background: #FFFFFF;
     border-radius: 10px;
     font-family: 'Noto Sans KR';
     font-weight: 400;
     font-size: 12px;
-    line-height: 40px;
+    line-height: 30px;
     text-align: center;
     color: #FF731D;
 }
@@ -96,18 +112,7 @@ img {
 	background-color:rgba(0, 0, 0, 0.2);
 }
 
-.menu-container .header-login .intro{
-    position: absolute;
-    width: 50%;
-    left: 102px;
-    top: 120px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 140%;
-    color: #FFFFFF;
-}
+
 
 .menu-container a{
     text-decoration: none;
