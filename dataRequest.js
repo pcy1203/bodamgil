@@ -6,7 +6,7 @@ const getJobList = (data) => {
 	if (!(job.aptit_name in jobList)) {
 	    jobList[job.aptit_name] = [];
 	}
-	jobList[job.aptit_name].push(job.job_nm);
+	jobList[job.aptit_name].push([job.job_nm, `https://www.career.go.kr/cnet/front/base/job/jobView.do?SEQ=${job.job_cd}`]);
   });
 };
 

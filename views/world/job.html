@@ -16,6 +16,9 @@
 	  {% include "menu/navigationbar.html" %}
       <div class="select">
         <span>직업 탐구하기</span>
+		{% if not jobList %}
+		<script>alert("데이터를 받고 있는 중이에요. 잠시 후에 다시 접속해보세요!")</script>  
+		{% endif %}
 		<div class="select">
 			<button class="all checked">전체</button>
 			{% for category, jobs in jobList %}
@@ -74,7 +77,7 @@
 		<div class="item {{ loop.index }}_content content">	
 			<p>{{ category }}</p>
 			{% for job in jobs %}
-			<a href="#"><button>{{ job }}</button></a>
+			<a href="{{ job[1] }}"><button>{{ job[0] }}</button></a>
 			{% endfor %}
 		</div>
 		{% endfor %}
