@@ -29,7 +29,7 @@
       </div>
 
       <div class="contentme">
-        <span class="contentme_title">나 알아보기</span>
+        <span class="contentme_title opacity_change">나 알아보기</span>
         <div class="flexbox">
 		  {% for game in gameList %}
           <div class="item">
@@ -60,7 +60,7 @@
       </div>
 
       <div class="contentworld">
-        <span class="contentworld_title">세상 알아보기</span>
+        <span class="contentworld_title opacity_change">세상 알아보기</span>
         <img src="/photo/main/world-image.jpg" class="world-image">
         <p class="contentworld_explain">현재 세상이 어떻고 어떤 것들을 활용할 수 있는지 알아봐요.</p>
         <a href="/world" class="more">VIEW MORE</a>
@@ -97,5 +97,16 @@
 	  }
 	}
 	
+	const observer = new IntersectionObserver((e) => {
+	  e.forEach((element) => {
+		if (element.isIntersecting) {
+			element.target.style.opacity = 1;
+		}
+	  });
+	});
+	  
+	document.querySelectorAll('.opacity_change').forEach((element) => {
+	  observer.observe(element);
+	});
   </script>
 </html>

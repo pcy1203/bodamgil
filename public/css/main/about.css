@@ -25,7 +25,7 @@ a {
 
 .about{
     position: absolute;
-    left: calc(50% - 85px/2 - 0.5px);
+    left: calc(50% - 87.63px/2);
     top: 96px;
     font-family: 'Noto Sans KR';
     font-weight: 700;
@@ -37,8 +37,9 @@ a {
 }
 .content1 .explain{
 	position: absolute;
-	top: 145px;
-	animation: slide1 1s ease-out;
+	top: 215px; /* 145px */
+	opacity: 0;
+	transition: top 1s ease-out, opacity 1s ease-out;
 	left: calc(50% - 320px/2 + 0.5px);
 }
 .content1 .aboutexplain1_wide{
@@ -100,8 +101,9 @@ a {
 }
 .content2 .explain{
 	position: absolute;
-	top: 740px;
-	animation: slide2 1s ease-out;
+	top: 810px; /* 740px */
+	opacity: 0;
+	transition: top 1s ease-out, opacity 1s ease-out;
 	left: calc(50% - 320px/2 + 0.5px);
 	 
 }
@@ -178,8 +180,9 @@ a {
 }
 .content3 .explain{
 	position: absolute;
-	top: 1400px;
-	animation: slide3 1s ease-out;
+	top: 1470px; /* 1400px */
+	opacity: 0;
+	transition: top 1s ease-out, opacity 1s ease-out;
 	left: calc(50% - 320px/2 + 0.5px);
 	 
 }
@@ -251,13 +254,12 @@ a {
         font-size: 28px;
         text-align: left;
     }
-	
 	.content1 .explain{
-		top: 210px;
-		animation: slide4 1s ease-out;
+		top: 280px; /* 210px */
+		opacity: 0;
+		transition: top 1s ease-out, opacity 1s ease-out;
 		left: calc(50% - 110px/2 + 123px);
-	 
-}
+	}
     .content1 .aboutexplain1_wide{
         width: 377px;
         text-align: left;
@@ -287,10 +289,11 @@ a {
     }
 	.content2 .explain{
 		position: absolute;
-		top: 630px;
-		animation: slide5 1s ease-out;
+		top: 700px; /* 630px */
+		opacity: 0;
+		transition: top 1s ease-out, opacity 1s ease-out;
 		left: calc(50% - 226px/2 - 350px);
-}
+	}
     .content2 .aboutexplain1_wide{
         top: 620px;
         text-align: left;
@@ -333,8 +336,9 @@ a {
 		top: 559px;
     }
 	.content3 .explain{
-		top: 1130px;
-		animation: slide6 1s ease-out;
+		top: 1220px; /* 1150px */
+		opacity: 0;
+		transition: top 1s ease-out, opacity 1s ease-out;
 		left: calc(50% - 110px/2 + 123px);
 	}
     .content3 .aboutexplain1_wide{
@@ -368,42 +372,42 @@ a {
 }
 
 /*footer*/
-  .footer {
-    position: relative;
+.footer {
+	position: relative;
+	top: 40px;
     background-color: #D9D9D9;
     height: 225px;
-    top: 20px;
-  }
-  .footer .logo{
-	position: absolute;
+}
+.footer .logo{
+	position: relative;
 	width: 80px;
 	height: 21px;
-    padding: 17px 0 0 10px;
+    padding: 20px 0 0 20px;
 }
-  .instagram{
-    position: absolute;
+.instagram{
+    position: relative;
     width: 25px;
     height: 25px;
-    left: 15px;
-    top: 65px;
-  }
-  .blog{
-    position: absolute;
+    left: 20px;
+    top: 5px;
+}
+.blog{
+    position: relative;
     width: 28px;
     height: 25px;
-    left: 65px;
-    top: 65px;
-  }
-  .youtube{
-    position: absolute;
+    left: 40px;
+    top: 5px;
+}
+.youtube{
+    position: relative;
     width: 25px;
     height: 25px;
-    left: 122px;
-    top: 63px;
-  }
-  .aboutus{
+    left: 60px;
+    top: 3px;
+}
+.aboutus{
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -411,18 +415,18 @@ a {
     font-size: 14px;
     text-align: center;
     color: #000000;
-  }
-  .line1{
+}
+.line1{
     position: absolute;
     width: 11px;
-    left: 97px;
+    left: 102px;
     top: 122px;
     border: 0.05px solid #7D7D7D;
     transform: rotate(90deg);
-  }
-  .notice{
+}
+.notice{
     position: absolute;
-    left: 125px;
+    left: 130px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -430,18 +434,18 @@ a {
     font-size: 14px;
     text-align: center;
     color: #000000;
-  }
-  .line2{
+}
+.line2{
     position: absolute;
     width: 11px;
-    left: 192px;
+    left: 197px;
     top: 122px;
     border: 0.05px solid #7D7D7D;
     transform: rotate(90deg);
-  }
-  .FAQ{
+}
+.FAQ{
     position: absolute;
-    left: 225px;
+    left: 230px;
     top: 112px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -449,21 +453,21 @@ a {
     font-size: 14px;
     text-align: center;
     color: #000000;
-  }
-  .write{
+}
+.write{
     position: absolute;
-    left: 15px;
-    top: 137px;
+    left: 20px;
+    top: 134px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
     text-align: left;
     color: #000000;
-  }
-  .contact{
+}
+.contact{
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 170px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -471,8 +475,9 @@ a {
     font-size: 14px;
     text-align: left;
     color: #000000;
-  }
+}
 
+/*
 @keyframes slide1{
 	from{top: 400px; opacity: 0;}
 	to{top: 145px;opacity: 1;}
@@ -496,4 +501,91 @@ a {
 @keyframes slide6{
 	from{top: 1500px; opacity: 0;}
 	to{top: 1130px;opacity: 1;}
+}
+*/
+
+.content1 .explain.show {
+	top: 145px;
+	opacity: 1;
+}
+.content2 .explain.show {
+	top: 740px;
+	opacity: 1;
+}
+.content3 .explain.show {
+	top: 1400px;
+	opacity: 1;
+}
+@media ( min-width: 1025px ) {
+	.content1 .explain.show {
+		top: 210px;
+		opacity: 1;	
+	}
+	.content2 .explain.show {
+		top: 630px;
+		opacity: 1;	
+	}
+	.content3 .explain.show {
+		top: 1150px;
+		opacity: 1;	
+	}
+	
+	
+    /*footer*/
+    .footer {
+      clear: both;
+      height: 190px;
+    }
+    .footer .logo{
+      padding: 25px 0 0 25px;
+    }
+    .instagram{
+	  position: absolute;
+	  left: 820px;
+	  top: 25px;
+      /*left: 845px;
+      top: 22px;*/
+    }
+    .blog{
+	  position: absolute;
+	  left: 880px;
+	  top: 25px;
+    }
+    .youtube{
+	  position: absolute;
+	  left: 945px;
+	  top:25px;
+    }
+    .aboutus{
+      left: 30px;
+      top: 70px;
+      font-size: 16px;
+    }
+    .line1{
+      left: 120px;
+      top: 81px;
+    }
+    .notice{
+      left: 153px;
+      top: 70px;
+      font-size: 16px;
+    }
+    .line2{
+      left: 233px;
+      top: 81px;
+    }
+    .FAQ{
+      left: 270px;
+      top: 70px;
+      font-size: 16px;
+    }
+    .write{
+      left: 30px;
+      top: 92px;
+    }
+    .contact{
+      left: 30px;
+      top: 125px;
+    }
+
 }

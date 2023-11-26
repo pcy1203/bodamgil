@@ -25,7 +25,7 @@
 			그런데 세상에 나와 살아가다보니 <br> 그 꿈은 바쁜 현실에 가려 잊혀지고 있습니다. <br>
 				자신이 무엇을 원하고, 어떤 것을 좋아하는지에 대한 <br>생각을 하기조차 어렵습니다. </p>
 			<p class="aboutexplain2_narrow">이런 정신없는 현실 속에서 우리는 자신의 꿈과 <br>취향에 대해 잃어버리곤 합니다.</p>
-			<p class="aboutexplain2_wide">이런 정신없는 현실 속에서 우리는 자신의 <br>꿈과 취향에 대해 잃어버리곤 합니다.</p>
+			<p class="aboutexplain2_wide">이런 정신없는 현실 속에서 우리는 <br>자신의 꿈과 취향에 대해 잃어버리곤 합니다.</p>
 		</div>
         <img src="/photo/main/about1-2.jpg" class="aboutphoto">
       </div>
@@ -78,6 +78,19 @@
 	</div>
 	{% include "menu/menu.html" %}
   </body>
-
+  <script>
+	
+	const observer = new IntersectionObserver((e) => {
+	  e.forEach((element) => {
+		if (element.isIntersecting) {
+			element.target.classList.add("show");
+		}
+	  });
+	});
+	  
+	document.querySelectorAll('.explain').forEach((element) => {
+	  observer.observe(element);
+	});
+  </script>
 	
 </html>
