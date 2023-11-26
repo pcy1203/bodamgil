@@ -11,6 +11,7 @@ const passport = require('passport');
 dotenv.config();
 const { sequelize } = require('./models');
 const { initializeGameDB } = require('./models/initialdata');
+const { getCareerNetJobData } = require('./dataRequest');
 const passportConfig = require('./passport');
 const mainRouter = require('./routes/main');
 const authRouter = require('./routes/auth');
@@ -35,6 +36,14 @@ sequelize.sync({ force: false })
   .catch((err) => {
 	console.error(err);
   });
+
+try {
+  (async () => {
+    global.jobList = await getCareerNetJobData();
+  })();
+} catch (error) {
+  console.log(error);
+}
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));

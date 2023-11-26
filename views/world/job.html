@@ -16,9 +16,12 @@
 	  {% include "menu/navigationbar.html" %}
       <div class="select">
         <span>직업 탐구하기</span>
-		<div class="select_first">
+		<div class="select">
 			<button class="all checked">전체</button>
-			<button class="select1">운동 관련직</button>
+			{% for category, jobs in jobList %}
+			<button class="{{ loop.index }}">{{ category }}</button>
+			{% endfor %}
+			<!--
 			<button class="select2">무용 관련직</button>
 			<button class="select3">안전 관련직</button>
 			<button class="select4">일반운전 관련직</button>
@@ -61,11 +64,21 @@
 			<button class="select41">환경관련 전문직</button>
 			<button class="select42">법률 및 사회활동 관련직</button>
 			<button class="select43">이학 전문직</button>
+			-->
 		</div>
 		
       </div>
 		
     <div class="contentme">
+		{% for category, jobs in jobList %}
+		<div class="item {{ loop.index }}_content content">	
+			<p>{{ category }}</p>
+			{% for job in jobs %}
+			<a href="#"><button>{{ job }}</button></a>
+			{% endfor %}
+		</div>
+		{% endfor %}
+		<!--
 		<div class="content">	
 			<p>운동 관련직</p>
 			<a href="#"><button>경영관리</button></a>
@@ -282,16 +295,14 @@
 			<a href="#"><button>REP(제안요청서)</button></a>
 			<a href="#"><button>UI/UX</button></a>
 		</div>
-		   
+		   -->
 	</div>
 	{% include "menu/menu.html" %}
 	</div>
   </body>
   <script>
-	const buttons = document.querySelectorAll('.select_first button');
-	const subButtons = document.querySelectorAll('.select_second button');
-	  
-	const changeButtons = (name, buttons) => {
+	const buttons = document.querySelectorAll('.select button');
+	const changeButtons = (name) => {
 	  buttons.forEach((button) => {
 		if (button.classList[0] === name) {
 	      button.classList.add("checked"); 
@@ -299,20 +310,10 @@
 		  button.classList.remove("checked");
 		}
 	  });
-	}
-	  
-	const changeSubButtonDisplay = (name) => {
-	  document.querySelectorAll('.select_second').forEach((buttonBlock) => {
-		buttonBlock.style.display = 'none';
-	  });
-	  if (name === 'company' || name === 'college' || name === 'apply') {
-		document.querySelector(`.select_${name}`).style.display = 'block';
-	  }
-	}
+	};
 	  
 	const items = document.querySelectorAll('.item');
-	  
-	const changeItems = (name, items) => {
+	const changeItems = (name) => {
 	  items.forEach((item) => {
 		if (name === 'all' || item.classList[1].split("_")[0] === name) {
 		  item.style.display = 'block';
@@ -324,21 +325,8 @@
 	  
     buttons.forEach((button) => {
 	  button.addEventListener('click', (e) => {
-	    changeButtons(button.classList[0], buttons);
-		changeSubButtonDisplay(button.classList[0]);
-		changeItems(button.classList[0], items);
-		if (button.classList[0] === 'all') {
-		  document.querySelectorAll('.select_second button.all').forEach((element) => {element.click();});
-		}
-	  });
-	});
-	  
-	subButtons.forEach((button) => {
-	  button.addEventListener('click', (e) => {
-		let buttons = document.querySelectorAll(`.select_${button.classList[1]} button`);
-	    changeButtons(button.classList[0], buttons);
-	    let subItems = document.querySelectorAll(`.subitem-${button.classList[1]}`);
-		changeItems(button.classList[0], subItems);
+	    changeButtons(button.classList[0]);
+		changeItems(button.classList[0]);
 	  });
 	});
   </script>

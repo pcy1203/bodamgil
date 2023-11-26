@@ -21,10 +21,10 @@ a {
 	text-align: center;
 }
 
-.select_first{
+.select{
 	margin: 25px 20px 20px;
 }
-.select_first button{
+.select button{
     position: relative;
     border: 0.5px solid #BFBFBF;
     background: white;
@@ -39,12 +39,12 @@ a {
 	padding: 2px 4px;
 	margin: 2px 0;
 }
-.select_first button:hover{
+.select button:hover{
     background-color: #FF731D;
     color: white;
     border: none;
 }
-.select .select_first button.checked {
+.select button.checked {
     background-color: #FF731D;
     color: white;
     border: none;

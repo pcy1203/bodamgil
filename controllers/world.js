@@ -7,7 +7,7 @@ exports.renderDuty = (req, res, next) => {
 };
 
 exports.renderJob = (req, res, next) => {
-  res.render('world/job');
+  res.render('world/job', { jobList: global.jobList });
 };
 
 exports.renderSite = (req, res, next) => {
