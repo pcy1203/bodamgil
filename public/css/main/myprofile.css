@@ -225,7 +225,7 @@ a {
     align-items: center;
     text-align: center;
     color: #6E6E6E;     
-    margin: 0 0 50px 0; 
+	margin: 0 0 50px 0;
 }
 .profile-logout:hover{
     background-color: #FF731D;
@@ -233,6 +233,10 @@ a {
     border: none;
     font-weight: 400;
 }
+.nothing{
+	height: 350px;
+}
+
 
 @media ( min-width: 1025px ) {
       /*content*/
@@ -345,7 +349,7 @@ a {
         left: calc(50% - 201px);
         top: 350px;
         font-size: 12px;
-		margin: 0 0 30px 0;
+		margin: 0 0 500px 0;
       }
 }
 

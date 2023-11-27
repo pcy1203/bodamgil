@@ -138,6 +138,7 @@ html {
 	right: 10%;
 	top: 578px;
 	cursor: pointer;
+	padding: 50px;
 }
 
 /*back 버튼*/
@@ -148,4 +149,5 @@ html {
 	left: 10%;
 	top: 578px;
 	cursor: pointer;
+	padding: 50px;
 }

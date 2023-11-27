@@ -124,6 +124,7 @@ h1{
 	height: calc(128*2.5px);
 	left: calc(50% - 83*2.5px/2 + 0.5px);
 	top: 315px;
+	padding-bottom: 50px;
 }
 
 

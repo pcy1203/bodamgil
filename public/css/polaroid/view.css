@@ -426,6 +426,7 @@ html {
 	right: 15%;
 	top: 600px;
 	cursor: pointer;
+	padding-bottom: 50px;
 }
 
 /*back 버튼*/
@@ -436,6 +437,7 @@ html {
 	left: 15%;
 	top: 600px;
 	cursor: pointer;
+	padding-bottom: 50px;
 }
 
 /*이미지 삭제 => 휴지통 버튼 누르면 뜨도록*/
