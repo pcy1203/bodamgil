@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
-const axios = require('axios');
 const { v4 } = require('uuid');
 const nodemailer = require('nodemailer');
 const User = require('../models/user');
