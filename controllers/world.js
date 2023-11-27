@@ -3,7 +3,8 @@ exports.renderMain = (req, res, next) => {
 };
 
 exports.renderDuty = (req, res, next) => {
-  res.render('world/duty');
+  res.redirect('/world?message=preparation');
+  // res.render('world/duty');
 };
 
 exports.renderJob = (req, res, next) => {

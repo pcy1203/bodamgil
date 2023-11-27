@@ -5,21 +5,21 @@
     <title>보담길</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description"
-      content="" />
-	<meta name="keywords" content="보담길, 진로, 직업, 직무, 대학생, 꿈, 진로 게임, 심리 검사, 진로 검사" />
+      content="자신을 탐구하고 진로를 찾을 수 있는 웹사이트. 보다 나은 삶을 살기를 바라는 보담길. 우리와 함께, 보담길을 걸어가요." />
+	<meta name="keywords" content="보담길,진로,진로사이트,진로고민,진로교육,진로게임,진로이야기,진로여정,꿈,꿈찾기,대학생,대학생진로,직업,직무,심리검사,진로검사" />
 	<meta name="robots" content="index,nofollow">
 	<meta property="og:site_name" content="보담길" />
-	<meta property="og:title" content="보담길 - 메인 페이지" />
+	<meta property="og:title" content="보담길" />
 	<meta property="og:description"
-      content="내용" />
+      content="보다 나은 너를 찾길" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.bodamgil.com" />
 	<meta property="og:image"
-      content="/photo/main/weblogo.png" />
+      content="/photo/main/og-image.png" />
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="보담길 - 메인 페이지">
-    <meta name="twitter:description" content="설명">
-    <meta name="twitter:image" content="/photo/main/weblogo.png">
+    <meta name="twitter:title" content="보담길">
+    <meta name="twitter:description" content="보다 나은 너를 찾길">
+    <meta name="twitter:image" content="/photo/main/og-image.png">
     <style>
   	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style> 
@@ -30,21 +30,23 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-      <div class="content">
+      <div class="content main_animation">
         <img src="/photo/main/main-image.jpg" class="main-image">
-        <h1>Who are you?</h1>
+        <h1 class="opacity_change">Who are you?</h1>
         <ul>
-          <li>Q. 당신이 가장 행복했던 순간은 언제인가요? </li>
-          <li>Q. 당신은 어떤 사람으로 기억되고 싶나요?</li>
-          <li>Q. 당신에게 가장 기분 좋았던 칭찬은 무엇인가요?</li>
+          <li class="opacity_change">Q. 당신이 가장 행복했던 순간은 언제인가요? </li>
+          <li class="opacity_change">Q. 당신은 어떤 사람으로 기억되고 싶나요?</li>
+          <li class="opacity_change">Q. 당신에게 가장 기분 좋았던 칭찬은 무엇인가요?</li>
         </ul>
+		<div class="opacity_change">
 		  <p class="narrow">몇 십년을 함께 한 나 자신이지만<br>아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면<br>우리 함께 찾아봐요.</p>
 		  <p class="wide">몇 십년을 함께 한 나 자신이지만 아직도 내가 누구인지, 내가 어떤 사람인지 모르겠다면 우리 함께 찾아봐요.</p>
-        <a href="/myself">보다 나은 너를 찾길</a>
+		</div>
+        <a class="opacity_change" href="/myself">보다 나은 너를 찾길</a>
       </div>
 
       <div class="contentme">
-        <span class="contentme_title opacity_change">나 알아보기</span>
+        <span class="contentme_title">나 알아보기</span>
         <div class="flexbox">
 		  {% for game in gameList %}
           <div class="item">
@@ -75,7 +77,7 @@
       </div>
 
       <div class="contentworld">
-        <span class="contentworld_title opacity_change">세상 알아보기</span>
+        <span class="contentworld_title">세상 알아보기</span>
         <img src="/photo/main/world-image.jpg" class="world-image">
         <p class="contentworld_explain">현재 세상이 어떻고 어떤 것들을 활용할 수 있는지 알아봐요.</p>
         <a href="/world" class="more">VIEW MORE</a>
@@ -112,15 +114,25 @@
 	  }
 	}
 	
+	const mainAnimation = () => {
+	  let index = 0;
+	  document.querySelectorAll('.opacity_change').forEach((element) => {
+	    setTimeout(() => {
+		  element.style.opacity = 1;
+		}, 500 * index + (index > 3 ? 800 * (index - 3) : 0));
+		index++;
+	  });
+	};
+	
 	const observer = new IntersectionObserver((e) => {
 	  e.forEach((element) => {
 		if (element.isIntersecting) {
-			element.target.style.opacity = 1;
-		}
+		  mainAnimation();
+	    }
 	  });
 	});
 	  
-	document.querySelectorAll('.opacity_change').forEach((element) => {
+	document.querySelectorAll('.main_animation').forEach((element) => {
 	  observer.observe(element);
 	});
   </script>
