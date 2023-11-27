@@ -243,6 +243,9 @@ exports.unregister = async (req, res, next) => {
 	await GameRecord.destroy({
       where: { user: req.user.dataValues.id },
 	});
+    if (req.user.dataValues.image) {
+      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);	
+	}
 	await User.destroy({
       where: { id: req.user.dataValues.id },
 	});
