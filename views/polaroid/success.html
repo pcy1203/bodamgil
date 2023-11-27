@@ -123,9 +123,17 @@
         });
 	
   // 이미지 저장  
+  let scale = 3.5;
   document.querySelector('.image-download').addEventListener('click', (e) => {
-    domtoimage.toBlob(document.querySelector('.polaroid-download')).then(function (blob) {
-      window.saveAs(blob, 'image.png');
+    domtoimage.toBlob(document.querySelector('.polaroid-download'), {
+	  width: document.querySelector('.polaroid-download').clientWidth * scale,
+	  height: document.querySelector('.polaroid-download').clientHeight * scale,
+	  style: {
+        transform: `scale(${scale})`,
+        transformOrigin: 'top left',
+	  }
+	}).then(function (blob) {
+      window.saveAs(blob, 'bodamgil_polaroid.png');
     }); 
   });
   </script>

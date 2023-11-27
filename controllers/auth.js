@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
+const axios = require('axios');
 const { v4 } = require('uuid');
 const nodemailer = require('nodemailer');
 const User = require('../models/user');
@@ -228,9 +229,15 @@ exports.unregister = async (req, res, next) => {
   	  }
 	});
 	*/
+	const polaroids = await Polaroid.findAll({
+	  where: { writer: req.user.dataValues.id },
+    });
+    for (let polaroid of polaroids) {
+	  fs.unlinkSync(`uploads/${polaroid.image}`);
+	}/*
 	await Polaroid.destroy({
       where: { writer: req.user.dataValues.id },
-	});
+	});*/
 	await GlassBottle.destroy({
       where: { owner: req.user.dataValues.id },
 	});
