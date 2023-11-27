@@ -30,6 +30,7 @@
             <div class="sticker polaroid-{{ polaroid.color }}"></div>
             <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
             <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
+			<img src="/photo/main/weblogo.png" class="polaroid-logo">
     	  </div>	  
 		</div>
         <div class="button">
@@ -123,9 +124,17 @@
         });
 	
   // 이미지 저장  
+  let scale = 3.5;
   document.querySelector('.image-download').addEventListener('click', (e) => {
-    domtoimage.toBlob(document.querySelector('.polaroid-download')).then(function (blob) {
-      window.saveAs(blob, 'image.png');
+    domtoimage.toBlob(document.querySelector('.polaroid-download'), {
+	  width: document.querySelector('.polaroid-download').clientWidth * scale,
+	  height: document.querySelector('.polaroid-download').clientHeight * scale,
+	  style: {
+        transform: `scale(${scale})`,
+        transformOrigin: 'top left',
+	  }
+	}).then(function (blob) {
+      window.saveAs(blob, 'bodamgil_polaroid.png');
     }); 
   });
   </script>

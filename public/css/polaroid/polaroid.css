@@ -150,3 +150,12 @@ html {
     text-align: center;
     color: #000000;
 }
+
+.polaroid-download .polaroid-logo {
+	position: relative;
+    width: 40px;
+    height: 10.6px;
+    top: 85px;
+    left: 238px;
+	overflow: visible;
+}

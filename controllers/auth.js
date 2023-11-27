@@ -228,15 +228,24 @@ exports.unregister = async (req, res, next) => {
   	  }
 	});
 	*/
+	const polaroids = await Polaroid.findAll({
+	  where: { writer: req.user.dataValues.id },
+    });
+    for (let polaroid of polaroids) {
+	  fs.unlinkSync(`uploads/${polaroid.image}`);
+	}/*
 	await Polaroid.destroy({
       where: { writer: req.user.dataValues.id },
-	});
+	});*/
 	await GlassBottle.destroy({
       where: { owner: req.user.dataValues.id },
 	});
 	await GameRecord.destroy({
       where: { user: req.user.dataValues.id },
 	});
+    if (req.user.dataValues.image) {
+      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);	
+	}
 	await User.destroy({
       where: { id: req.user.dataValues.id },
 	});

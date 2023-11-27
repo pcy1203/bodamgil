@@ -83,6 +83,25 @@
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+  <script>
+
+	// 사진 미리보기
+	document.querySelector('input#image').addEventListener('change', (e) => {
+	  const maxSize = 5 * 1024 * 1024;
+	  if (e.target.files[0].size > maxSize) {
+		alert('5MB를 초과하는 파일은 업로드할 수 없습니다!');
+		document.querySelector('input#image').value = '';
+		document.querySelector('.upload-view').setAttribute("src", null);
+	  } else {
+		let reader = new FileReader();
+	    reader.onload = function(event) {
+		  document.querySelector('.upload-view').setAttribute("src", event.target.result);
+	    };
+	    reader.readAsDataURL(e.target.files[0]);  
+	  }
+	});
+	
+  </script>
   <script src="/js/polaroidcolor.js"></script>
   <script src="/js/polaroidsize.js"></script>
   <script>
@@ -169,16 +188,7 @@
 		checkSize(size.classList[0].split("-")[1]);
 	  });
 	});
-
-	// 사진 미리보기
-	document.querySelector('input#image').addEventListener('change', (e) => {
-	  let reader = new FileReader();
-	  reader.onload = function(event) {
-		document.querySelector('.upload-view').setAttribute("src", event.target.result);
-	  };
-	  reader.readAsDataURL(event.target.files[0]);
-	});		
-
+	  
 	document.querySelector('.main > ul > li:nth-child(3)').addEventListener('click', (e) => {
 	  document.querySelector('.example-block').style.display = 'block';
 	});
