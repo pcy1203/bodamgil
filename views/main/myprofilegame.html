@@ -16,7 +16,7 @@
 	  {% include "menu/navigationbar.html" %}
 	  <div class="previous-circle">
 		<a href="/myprofile">
-		  <img src="/photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
 		  <span>마이페이지</span>
 		</a>
 	  </div>    
@@ -29,7 +29,7 @@
 		{% for record in records %}
         <div class="content">
           <a href="{{ record.url }}">
-			<img src="{{ record.image }}" class="photo">
+			<img src="{{ record.image }}" class="photo" alt="게임사진">
 		  </a>
           <span>{{ record.title }}</span>
           <p class="explain">{{ record.introduction }}</p>
@@ -38,7 +38,7 @@
 		{% endfor %}
 		{% if records.length === 0 %}
         <div class="contentnone">
-            <img src="/photo/main/note.png" class="note">
+            <img src="/photo/main/note.png" class="note" alt="노트아이콘">
             <p class="contentnone_content">완료한 게임이 없습니다.</p>
         </div>
 		{% endif %}

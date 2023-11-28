@@ -24,7 +24,7 @@
 	  {% if user.gender and user.birthDate %}
 	  <div class="previous-circle">
 		<a href="/myprofile">
-		  <img src="/photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
 		  <span>마이페이지</span>
 		</a>
 	  </div>    
@@ -34,7 +34,7 @@
 		  프로필 작성을 완료해주세요!
 		</div>
 	  {% endif %}
-      <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo">
+      <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo" alt="프로필사진">
 	  <form action="/auth/setprofile" method="post" enctype="multipart/form-data" id="setForm">
 	    <div>
 		  <label class="imagecontext" for="image">파일 선택</label>	  

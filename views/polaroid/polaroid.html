@@ -16,15 +16,15 @@
 	  {% include "menu/navigationbar.html" %}   
 	  <div class="previous-circle">
 		<a href="/myself/polaroid">
-		  <img src="/photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
 		</a>
 	  </div>    
       <div class="main polaroid-{{ polaroid.color }}">
         <div class="polaroid polaroid-{{ polaroid.size }}"></div>
         <div class="sticker polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }}"></div>
-        <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+        <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}"  alt="폴라로이드">
         <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
-		<img src="/photo/main/weblogo.png" class="polaroid-logo">
+		<img src="/photo/main/weblogo.png" class="polaroid-logo"  alt="보담길 로고">
 	  </div>	  
     </div>
 	{% include "menu/menu.html" %}

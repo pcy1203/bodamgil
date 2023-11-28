@@ -16,11 +16,11 @@
 	  {% include "menu/navigationbar.html" %}    
 	  <div class="previous-circle">
 		<a href="/myself/polaroid">
-		  <img src="/photo/main/previous.png" class="previous">
+		  <img src="/photo/main/previous.png" class="previous"  alt="뒤로가기">
 		</a>
 	  </div>     
 	  <div class="trash-circle">
-		<img src="/photo/polaroid/trash.png" class="trash">
+		<img src="/photo/polaroid/trash.png" class="trash"  alt="휴지통">
 	  </div>
       <div class="main polaroid-{{ polaroids[0].color }}">
         <span class="name1">1</span>
@@ -32,25 +32,25 @@
 		    <div class="polaroid-download polaroid-{{ polaroid.color }} polaroid-{{ polaroid.size }} contents-{{ loop.index }} id-{{ polaroid.uuid }}" style="{% if loop.index > 1 %}display: none;{% endif %}">
               <div class="polaroid polaroid-{{ polaroid.size }}"></div>
               <div class="sticker polaroid-{{ polaroid.color }}"></div>
-              <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}">
+              <img src="{{ polaroid.image }}" class="photo polaroid-{{ polaroid.size }}"  alt="폴라로이드">
               <p class="polaroid-content polaroid-{{ polaroid.size }}">{{ polaroid.content }}</p>
-			  <img src="/photo/main/weblogo.png" class="polaroid-logo">
+			  <img src="/photo/main/weblogo.png" class="polaroid-logo"  alt="보담길 로고">
 		    </div>
 		  </div>
 		{% endfor %}
 		<div>
-		  <button class="link-copy"><img src="/photo/polaroid/last-link.png" class="last-link"><span class="last-link-content">링크 복사하기</span></button>
-		  <button class="image-download"><img src="/photo/polaroid/last-image.png" class="last-image"><span class="last-image-content">이미지로 저장</span></button>
+		  <button class="link-copy"><img src="/photo/polaroid/last-link.png" class="last-link"  alt="링크"><span class="last-link-content">링크 복사하기</span></button>
+		  <button class="image-download"><img src="/photo/polaroid/last-image.png" class="last-image"  alt="저장"><span class="last-image-content">이미지로 저장</span></button>
         </div>
         <div class="link-select-box" style="display: none;">
           <div class="link-select"></div>
 		  {% for polaroid in polaroids %}
-          <button class="kakao-send contents-{{ loop.index }} id-{{ polaroid.uuid }}"><img src="/photo/polaroid/kakaotalk.png" class="kakaotalk"><span class="kakaotalkcontent">카카오톡</span></button>
-		  <button class="url-copy contents-{{ loop.index }}" data-clipboard-text="{{ polaroid.uuid }}"><img src="/photo/polaroid/link.png" class="link"><span class="linkcontent">주소 복사</span></button>
+          <button class="kakao-send contents-{{ loop.index }} id-{{ polaroid.uuid }}"><img src="/photo/polaroid/kakaotalk.png" class="kakaotalk"  alt="카카오톡"><span class="kakaotalkcontent">카카오톡</span></button>
+		  <button class="url-copy contents-{{ loop.index }}" data-clipboard-text="{{ polaroid.uuid }}"><img src="/photo/polaroid/link.png" class="link"  alt="링크"><span class="linkcontent">주소 복사</span></button>
 		  {% endfor %}
         </div>
-		<img src="/photo/paperplane/back.png" class="back">
-		<img src="/photo/paperplane/next.png" class="next">
+		<img src="/photo/paperplane/back.png" class="back"  alt="이전">
+		<img src="/photo/paperplane/next.png" class="next"  alt="이후">
 	  </div>	
 	  <div class="delete" style="display: none;">
 		<div class="black"></div>

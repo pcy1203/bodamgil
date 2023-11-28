@@ -1,5 +1,5 @@
 <div class="navigationbar">
-  <div class="title"><a href="/"><img src="/photo/main/weblogo.png" class="logo"></a></div>
+  <div class="title"><a href="/"><img src="/photo/main/weblogo.png" class="logo" alt="보담길 로고"></a></div>
   <nav>
 	<ul class="nav">
 	  <li><a href="/about">소개</a></li>
@@ -23,7 +23,7 @@
 		  <li><a href="/notice">공지사항</a></li>
 		</ul>
 	  </li>
-	  <li><a href="/myprofile"><img src="/photo/main/person.png" class="person"></a>
+	  <li><a href="/myprofile"><img src="/photo/main/person.png" class="person" alt="사람아이콘"></a>
 		<ul>
 		  {% if user %}
 	      <li><a href="/auth/logout">로그아웃</a></li>
@@ -36,7 +36,7 @@
 	  </li>
 	</ul>
   </nav>
-  <li><img src="/photo/main/menu.png" class="menuimage menu-btn"></li>
+  <li><img src="/photo/main/menu.png" class="menuimage menu-btn" alt="메뉴"></li>
 </div>
 <script>
   document.querySelector('.navigationbar nav > ul > li:nth-child(2)').addEventListener('mouseover', () => {

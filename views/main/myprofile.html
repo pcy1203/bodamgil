@@ -16,7 +16,7 @@
 	  {% include "menu/navigationbar.html" %}
       <div class="content">
 		<span class="mypage">마이페이지 MYPAGE</span>
-        <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo">
+        <img src="{% if user.image %}{{ user.image }}{% else %}/photo/main/profile_square.png{% endif %}" class="photo" alt="프로필사진">
         <div>
           <span class="name">이름/Name</span>  
           <p class="namecontent">{{ user.name }}</p>
@@ -42,15 +42,15 @@
 		  <div class="contentme">
 			<div class="line"></div>
 			<div>
-			  <img src="/photo/main/write.png" class="write">
+			  <img src="/photo/main/write.png" class="write" alt="기록">
 			  <a href="/myprofile/note" class="writecontent">내 기록보기</a>  
 			</div>
 			<div>
-			  <img src="/photo/main/heart.png" class="heart">
+			  <img src="/photo/main/heart.png" class="heart" alt="관심">
 			  <a href="/myprofile/like" class="heartcontent">관심목록</a>  
 			</div>
 			<div>
-			  <img src="/photo/main/success.png" class="success">
+			  <img src="/photo/main/success.png" class="success" alt="완료">
 			  <a href="/myprofile/game" class="successcontent">완료한 진로 게임</a>  
 			</div>
 		  </div>
