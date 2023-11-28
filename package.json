@@ -1,10 +1,11 @@
 {
   "name": "com-pass",
   "version": "1.0.0",
-  "description": "web page providing self-discovery contents for college students",
+  "description": "자신을 탐구하고 진로를 찾을 수 있는 웹사이트. 보다 나은 삶을 살기를 바라는 보담길. 우리와 함께, 보담길을 걸어가요. A website where you can explore yourself and find a career path. Bodamgil for a better life. Walk down Bodamgil along with us.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "cross-env NODE_ENV=production PORT=80 pm2 start server.js -i 0",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,14 @@
   "dependencies": {
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
+    "connect-redis": "^7.1.0",
     "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.6.1",
@@ -33,10 +38,14 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-kakao": "^1.0.1",
     "passport-local": "^1.0.0",
+    "pm2": "^5.3.0",
+    "redis": "^4.6.11",
+    "sanitize-html": "^2.11.0",
     "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.1",
     "sharp": "^0.32.6",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
