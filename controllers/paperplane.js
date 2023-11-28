@@ -1,4 +1,5 @@
 const { v4 } = require('uuid');
+const sanitizeHtml = require('sanitize-html');
 const User = require('../models/user');
 const PaperPlane = require('../models/paperplane');
 const GlassBottle = require('../models/glassbottle');
@@ -118,8 +119,8 @@ exports.writePaperPlane = async (req, res, next) => {
     }
 	const paperplane = await PaperPlane.create({
 	  relationship,
-	  name,
-	  content,
+	  name: sanitizeHtml(name),
+	  content: sanitizeHtml(content),
 	  writer: req.user.dataValues.id,
 	  recipient: glassBottle.id,
 	});

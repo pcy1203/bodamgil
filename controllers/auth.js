@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const fs = require('fs');
 const { v4 } = require('uuid');
+const sanitizeHtml = require('sanitize-html');
 const nodemailer = require('nodemailer');
 const User = require('../models/user');
 const Polaroid = require('../models/polaroid');
@@ -60,9 +61,9 @@ exports.signup = async (req, res, next) => {
 	  return res.redirect('/signup?message=existSameTelError');
 	}
 	const newUser = await User.create({
-	  email,
+	  email: sanitizeHtml(email),
 	  password: hashedPassword,
-	  name,
+	  name: sanitizeHtml(name),
 	  tel,
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),
@@ -82,8 +83,8 @@ exports.setprofile = async (req, res, next) => {
   const hasImage = req.file?.filename !== undefined;
   try {
 	await User.update({
-	  name,
-	  introduction,
+	  name: sanitizeHtml(name),
+	  introduction: sanitizeHtml(introduction),
 	  image: hasImage ? `/profile/${req.file.filename}` : req.user.dataValues.image,
 	  gender,
 	  birthDate: new Date(birthyear, Number(birthmonth) - 1, birthday),

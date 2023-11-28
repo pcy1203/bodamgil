@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { v4 } = require('uuid');
+const sanitizeHtml = require('sanitize-html');
 const Polaroid = require('../models/polaroid');
 const GameRecord = require('../models/gamerecord');
 
@@ -83,7 +84,7 @@ exports.writePolaroid = async (req, res, next) => {
 	const polaroid = await Polaroid.create({
 	  uuid: v4(),
 	  image: `/polaroid/${req.file.filename}`,
-	  content,
+	  content: sanitizeHtml(content),
 	  color,
 	  size,
 	  writer: req.user.dataValues.id,
