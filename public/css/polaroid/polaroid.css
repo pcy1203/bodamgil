@@ -151,11 +151,15 @@ html {
     color: #000000;
 }
 
-.polaroid-download .polaroid-logo {
+.polaroid-logo {
 	position: relative;
     width: 40px;
     height: 10.6px;
-    top: 85px;
-    left: 238px;
+    top: 155px;
+    left: calc(50% - 360px/2 + 238px);
 	overflow: visible;
+}
+
+.polaroid-vertical + .polaroid-logo {
+    top: 106px;
 }

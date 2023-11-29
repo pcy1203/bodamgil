@@ -1,5 +1,5 @@
 {
-  "name": "com-pass",
+  "name": "bodamgil",
   "version": "1.0.0",
   "description": "자신을 탐구하고 진로를 찾을 수 있는 웹사이트. 보다 나은 삶을 살기를 바라는 보담길. 우리와 함께, 보담길을 걸어가요. A website where you can explore yourself and find a career path. Bodamgil for a better life. Walk down Bodamgil along with us.",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pcy1203/com-pass.git"
+    "url": "https://github.com/pcy1203/bodamgil.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["보담길","진로","진로사이트","진로고민","진로교육","진로게임","진로이야기","진로여정","꿈","꿈찾기","대학생","대학생진로","직업","직무","심리검사","진로검사"],
+  "author": "박찬영, 김민아",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pcy1203/com-pass/issues"
+    "url": "https://github.com/pcy1203/bodamgil/issues"
   },
-  "homepage": "https://github.com/pcy1203/com-pass#readme",
+  "homepage": "https://github.com/pcy1203/bodamgil#readme",
   "dependencies": {
     "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
