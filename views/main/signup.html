@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>회원가입</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	{% include "metatag.html" %}
     <style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	  </style> 
@@ -58,7 +59,7 @@
 			  <div class="birth">
 				  <select name="birthyear" class="box" id="birthyear">
 					<option disabled selected>년도</option>
-					  {% for i in range(1900, 2024) %}
+					  {% for i in range(2023, 1899, -1) %}
 						<option value="{{ i }}">{{ i }}년</option>
 					  {% endfor %}
 				  </select>
