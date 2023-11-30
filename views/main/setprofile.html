@@ -91,6 +91,24 @@
 	</div>
 	{% include "menu/menu.html" %}
   </body>
+<script>
+	// 사진 미리보기
+	const maxSize = 5 * 1024 * 1024;
+	const originalPhotoSrc = document.querySelector('.photo').getAttribute("src");
+	document.querySelector('input#image').addEventListener('change', (e) => {
+      let reader = new FileReader();
+	  reader.onload = function(event) {
+		if (e.target.files[0].size > maxSize) {
+		  document.querySelector('input#image').value = '';
+		  document.querySelector('.photo').setAttribute("src", originalPhotoSrc);
+		  alert('5MB를 초과하는 파일은 업로드할 수 없습니다!');
+		} else {
+		  document.querySelector('.photo').setAttribute("src", event.target.result);
+		}
+	  };
+	  reader.readAsDataURL(e.target.files[0]);  
+	});	
+</script>
 <script defer>
   exports = {};
 </script>
@@ -129,21 +147,5 @@
 	  document.querySelector(`.option-month-${Number(dateArray[1])}`).selected = true;
 	  document.querySelector(`.option-day-${Number(dateArray[2])}`).selected = true;
 	}
-	  
-	// 사진 미리보기
-	document.querySelector('input#image').addEventListener('change', (e) => {
-	  const maxSize = 5 * 1024 * 1024;
-	  if (e.target.files[0].size > maxSize) {
-		alert('5MB를 초과하는 파일은 업로드할 수 없습니다!');
-		document.querySelector('input#image').value = '';
-		document.querySelector('.photo').setAttribute("src", null);
-	  } else {
-		let reader = new FileReader();
-	    reader.onload = function(event) {
-		  document.querySelector('.photo').setAttribute("src", event.target.result);
-	    };
-	    reader.readAsDataURL(e.target.files[0]);  
-	  }
-	});
   </script>
 </html>
