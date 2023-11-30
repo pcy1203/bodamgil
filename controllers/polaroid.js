@@ -102,7 +102,7 @@ exports.deletePolaroid = async (req, res, next) => {
 	const id = req.params.id;
     const { isOwner, polaroid } = await isPolaroidOwner(req.user.dataValues.id, id);
     if (isOwner && polaroid) {
-      fs.unlinkSync(`uploads/${polaroid.image}`);
+      fs.unlinkSync(`uploads${polaroid.image}`);
 	  await Polaroid.destroy({
 	    where: { uuid: id },
 	  });

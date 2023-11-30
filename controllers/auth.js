@@ -94,7 +94,7 @@ exports.setprofile = async (req, res, next) => {
   	  }
 	});
 	if (hasImage && req.user.dataValues.image) {
-      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);
+      fs.unlinkSync(`uploads${req.user.dataValues.image}`);
 	}
 	if (req.session.redirectURL) {
 	  const redirectURL = req.session.redirectURL;
@@ -216,6 +216,7 @@ exports.setpassword = async (req, res, next) => {
 
 exports.unregister = async (req, res, next) => {
   try {
+	  console.log(req.headers);
 	if (!req.headers.referer?.includes("myprofile")) {
 	  return res.redirect('/?message=invalidRequestError');
 	}
@@ -233,7 +234,7 @@ exports.unregister = async (req, res, next) => {
 	  where: { writer: req.user.dataValues.id },
     });
     for (let polaroid of polaroids) {
-	  fs.unlinkSync(`uploads/${polaroid.image}`);
+	  fs.unlinkSync(`uploads${polaroid.image}`);
 	}/*
 	await Polaroid.destroy({
       where: { writer: req.user.dataValues.id },

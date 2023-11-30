@@ -115,7 +115,7 @@ app.use((req, res, next) => {  // 404 응답 미들웨어
 });
 
 app.use((err, req, res, next) => {  // 에러 처리 미들웨어
-  logger.error(error.message);
+  logger.error(err.message);
   res.locals.message = err.message;
   res.locals.error = process.env.NODE_ENV !== 'production' ? err : {};
   res.status(err.status || 500);
