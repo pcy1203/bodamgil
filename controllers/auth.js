@@ -164,7 +164,7 @@ exports.findpassword = async (req, res, next) => {
 	}, {
       where: { email }
 	});
-	const setPasswordUrl = req.headers.referer.split("?")[0].slice(0, -13);
+	const setPasswordUrl = req.headers.origin;
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
