@@ -264,6 +264,11 @@ a {
     color: #000000;
   }
 
+@media ( max-width: 370px ) {
+    .contentworld_title, .contentworld_explain {
+    	left: 10px;
+    }
+}
   .contentworld .more{                           
     width: 330px;
     height: 42px;
