@@ -94,7 +94,10 @@ exports.setprofile = async (req, res, next) => {
   	  }
 	});
 	if (hasImage && req.user.dataValues.image) {
-      fs.unlinkSync(`uploads${req.user.dataValues.image}`);
+	  let filePath = `uploads${req.user.dataValues.image}`;
+      fs.exists(filePath, (existFile) => {
+	    if (existFile) fs.unlinkSync(filePath);
+	  });
 	}
 	if (req.session.redirectURL) {
 	  const redirectURL = req.session.redirectURL;
@@ -234,7 +237,10 @@ exports.unregister = async (req, res, next) => {
 	  where: { writer: req.user.dataValues.id },
     });
     for (let polaroid of polaroids) {
-	  fs.unlinkSync(`uploads${polaroid.image}`);
+	  let filePath = `uploads${polaroid.image}`;
+      fs.exists(filePath, (existFile) => {
+	    if (existFile) fs.unlinkSync(filePath);
+	  });
 	}/*
 	await Polaroid.destroy({
       where: { writer: req.user.dataValues.id },
