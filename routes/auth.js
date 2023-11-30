@@ -99,6 +99,6 @@ router.post('/findpassword', isNotLoggedIn, findpassword);
 router.post('/setpassword', isNotLoggedIn, setpassword);
 
 // GET /auth/unregister
-router.get('/unregister', isLoggedIn, unregister);
+router.post('/unregister', isLoggedIn, unregister);
 
 module.exports = router;

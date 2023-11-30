@@ -219,8 +219,7 @@ exports.setpassword = async (req, res, next) => {
 
 exports.unregister = async (req, res, next) => {
   try {
-	  console.log(req.headers);
-	if (!req.headers.referer?.includes("myprofile")) {
+	if (req.body.check !== "unregister") {
 	  return res.redirect('/?message=invalidRequestError');
 	}
 	/*
@@ -252,7 +251,10 @@ exports.unregister = async (req, res, next) => {
       where: { user: req.user.dataValues.id },
 	});
     if (req.user.dataValues.image) {
-      fs.unlinkSync(`uploads/${req.user.dataValues.image}`);	
+	  let filePath = `uploads/${req.user.dataValues.image}`;
+      fs.exists(filePath, (existFile) => {
+	    if (existFile) fs.unlinkSync(filePath);
+	  });
 	}
 	await User.destroy({
       where: { id: req.user.dataValues.id },

@@ -59,12 +59,15 @@
 		  <div class="nothing"></div>
 		</div>	
 		   
-		<div class="delete" style="display: none;">
-			  <div class="black"></div>
+		<div class="delete" style="display: none;">		  
+		  <form action="/auth/unregister" method="post">	  
+			<div class="black"></div>
 			  <div class="alert"></div>
 			  <p>회원 탈퇴를 진행하시겠습니까?</p>
+			  <input id="check" name="check" value="unregister" readonly style="display: none;">
 			  <button class="no" type="button">취소</button>
-			  <button class="yes" type="submit"><a href="/auth/unregister">확인</a></button>
+			  <button class="yes" type="submit">확인</button>
+		  </form>
 		 </div>
 		 </div>
 		 
