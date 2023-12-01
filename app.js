@@ -11,6 +11,7 @@ dotenv.config();
 const { sequelize } = require('./models');
 const { initializeGameDB } = require('./models/initialdata');
 const { getCareerNetJobData } = require('./dataRequest');
+const { countVisitors } = require('./middlewares/countVisitors');
 const redis = require('redis');
 const RedisStore = require('connect-redis').default;
 
@@ -95,6 +96,7 @@ if (process.env.NODE_ENV === 'production') {
   sessionOption.cookie.secure = true;
 }
 app.use(session(sessionOption));
+app.use(countVisitors);
 
 app.use(passport.initialize());
 app.use(passport.session());

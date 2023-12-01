@@ -1,5 +1,6 @@
 const { gameList } = require('../models/initialdata');
 const GameRecord = require('../models/gamerecord');
+// const Counter = require('../models/counter');
 
 const setRedirectURL = (req) => {
   const originalUrl = req.headers.referer;
@@ -14,7 +15,13 @@ const setRedirectURL = (req) => {
   }
 };
 
-exports.renderMain = (req, res, next) => {
+exports.renderMain = async (req, res, next) => {
+  // let now = new Date();
+  // now.setHours(now.getHours() + 9);
+  // let date = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`;
+  // const todayVisitors = (await Counter.findOne({ where: { date }}))?.count;
+  // const totalVisitors = (await Counter.findOne({ where: { date: 'total' }}))?.count;
+  // res.render('main/main', { gameList, todayVisitors, totalVisitors });
   res.render('main/main', { gameList });
 };
 
