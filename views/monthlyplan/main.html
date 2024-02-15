@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title><!-- 제목 --></title>	  
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--
+	<meta name="description"
+      content="" />
+	<meta name="keywords" content="보담길,진로,진로사이트,진로고민,진로교육,진로게임,진로이야기,진로여정,꿈,꿈찾기,대학생,대학생진로,직업,직무,심리검사,진로검사" />
+	<meta name="robots" content="index,nofollow">
+	<meta property="og:site_name" content="보담길" />
+	<meta property="og:title" content="보담길" />
+	<meta property="og:description"
+      content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.bodamgil.com" />
+	<meta property="og:image"
+      content="" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="보담길">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+	-->
+	<style>
+  	  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+	</style>  
+	<link rel="stylesheet" href="/css/monthlyplan/main.css">
+	{% include "common.html" %}
+  </head>
+  <body>
+    <div id="container">
+	  {% include "menu/navigationbar.html" %}  
+	  <div class="main">	
+	    <!-- HTML 작업 공간 -->
+	  </div>	  
+	</div>
+	{% include "menu/menu.html" %}
+	<script>
+	window.onload = () => {
+	  let message = (new URLSearchParams(location.search)).get('message');
+	
+	  if (message) {
+		switch (message) {
+  		  // TO-DO
+		}
+	  }
+	};  
+	</script>
+  </body>
+</html>
