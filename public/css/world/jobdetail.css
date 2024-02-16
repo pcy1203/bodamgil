@@ -1,0 +1,319 @@
+
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+}
+
+
+/*top*/
+.top .maintitle{
+    position: relative;
+    top: 10px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    align-items: center;
+    color: #000000;
+    margin: 0 auto;
+}
+
+.top .category{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    background: #FF731D;
+    border-radius: 30px;
+    margin-top: 50px;
+    padding: 5px 20px;
+}
+
+.top .name{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content : center;
+    color:  black;
+    margin-top: 20px;
+    
+}
+/*heart*/
+.heart{
+    display: flex;
+    align-items: left;
+    gap: 1rem;
+    justify-content : center;
+}
+#like{ 
+    width: 30px; 
+    fill: #ddd; 
+    margin-top: 15px;
+}
+#like.click{ 
+    fill: red;
+}
+
+/*전체 적용*/
+.middletitle{
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    background: #FF731D;
+    border-radius: 30px;
+    padding: 5px 20px;
+}
+
+p{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    color: #000000;
+    text-align: left;
+}
+
+/*explain1*/
+.explain1{
+    position: relative;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    margin-top: 40px;   
+    text-align: center;
+}
+
+/*explain2*/
+.explain2{
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    justify-content : center;
+    margin-top: 10px; 
+}
+.explain2-1{
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    text-align: center;
+}
+
+.explain2-2{
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    text-align: center;
+}
+
+/*explain3-1*/
+.explain3{
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    justify-content : center;
+    margin-top: 10px; 
+}
+.explain3-1{
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    text-align: center;
+}
+.explain3-1 .outer{
+    display: grid; 
+    grid-template-columns: 50% 50%;
+    margin: 8px 0 8px 0;
+    padding: 0;
+}
+.explain3-1 ul{
+    margin: 0;
+    padding: 0;
+}
+
+.explain3-1 img{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+.explain3-1 .state{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000000;
+
+}
+.explain3-1  li{
+    display: block;
+    margin: 10px;
+}
+
+.explain3-2{
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    text-align: left;
+}
+.explain3-2 p{
+    margin-top: 10px;
+    margin-left: 7px;
+}
+.explain3-2 li{
+    margin-top: 30px;
+}
+.explain3-2 li:first-child{
+    margin-top: 0;
+}
+.explain3-2 ul{
+    padding-left: 0;
+    margin: 0 10px;
+}
+
+/*explain4*/
+.explain4{
+    position: relative;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    margin-top: 10px;   
+    text-align: center;
+}
+.explain4 .subtitle{
+    position: relative;
+    color: #FF731D;
+    text-align: left;
+    display: block;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+}
+
+.explain4 li{
+    margin-top: 25px;
+}
+
+.explain4 li:first-child{
+    margin-top: 10px;
+}
+
+.explain4 p{
+    margin-top: 5px;
+}
+
+.explain4 ul{
+    padding-left: 0;
+    margin: 0 10px;
+}
+
+
+/*explain5*/
+.explain5{
+    position: relative;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1.5px solid #505050;
+    border-radius: 5px;
+    padding: 15px 15px 10px 15px;
+    margin-top: 10px;   
+    text-align: center;
+}
+
+#container button{
+	position: relative;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: #000000;
+    background: #BFBFBF;
+    border-radius: 10px;
+    font-family: 'Noto Sans KR';
+    line-height: 10px;
+    display: block;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+	padding: 10px 15px;
+    margin: 30px auto 50px;
+    border: none;
+    width: 120px;
+    height: 35px;  
+}
+
+
+
+/*1200px 이상*/
+  @media ( min-width: 1025px ) {
+    #container {
+      width: 1024px;
+      margin: auto;
+    }
+
+    /*header*/
+    .header{
+        height: 45px;
+    }
+    .menuimage{
+        display: none;
+    }
+    /*select*/
+    .select span{
+		width: 175px;
+		left: calc(50% - 175px/2);
+        font-size: 22px;
+    }
+	.content{
+		padding: 1px 18px 16px 18px ;
+	}
+
+  }
