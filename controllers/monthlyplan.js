@@ -1,8 +1,7 @@
 const { v4 } = require('uuid');
 const sanitizeHtml = require('sanitize-html');
 const User = require('../models/user');
-// TO-DO
-// const MonthlyPlan = require('../models/monthlyplan');
+const MonthlyPlan = require('../models/monthlyplan');
 
 /* Need to check owner
 const isMonthlyPlanOwner = async (userId, monthlyPlanId) => {
@@ -19,18 +18,22 @@ const isMonthlyPlanOwner = async (userId, monthlyPlanId) => {
 */
 
 exports.renderMain = (req, res, next) => {
-  // TO-DO
   res.render('monthlyplan/main');
 };
 
-exports.renderView = (req, res, next) => {
-  // TO-DO
-  res.render('monthlyplan/view');
+exports.renderView = async (req, res, next) => {
+  const monthlyplans = await MonthlyPlan.findAll({
+	where: { writer: req.user.dataValues.id },
+	order: [[ 'createdAt', 'DESC' ]],
+  });
+  res.render('monthlyplan/view', { monthlyplans });
 };
 
 exports.renderSelect = (req, res, next) => {
-  // TO-DO
-  res.render('monthlyplan/select');
+  const today = new Date();
+  const defaultYear = today.getFullYear();
+  const defaultMonth = today.getMonth() + 1
+  res.render('monthlyplan/select', { defaultYear, defaultMonth });
 };
 
 exports.renderWrite = (req, res, next) => {

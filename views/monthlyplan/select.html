@@ -28,9 +28,25 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
+	  <div class="previous-circle">
+		<a href="/myself/monthlyplan">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
+		</a>
+	  </div>
 	  <div class="main">	
 	    <!-- HTML 작업 공간 -->
-	  </div>	  
+		<div>
+		  <button id="decreaseYear">-1</button>
+		  <div class="year">{{ defaultYear }} 년</div>
+		  <button id="increaseYear">+1</button>
+		</div>
+		<div>
+		  {% for i in range(1, 13) %}
+			<div class="month month-{{ i }} {% if i == defaultMonth %}selected{% endif %}">{{ i }} 월</div>
+		  {% endfor %}
+		</div>
+		<a href="/myself/monthlyplan/write?year={{ defaultYear }}&month={{ defaultMonth }}" class="writelink">NEXT</a>
+	  </div>
     </div>
   {% include "menu/menu.html" %}
   </body>
@@ -43,6 +59,36 @@
 		  // To-DO
 	    }
 	  }
-    };  
+    };
+	  
+	const writeLink = document.querySelector('.writelink');
+	const searchParams = new URL(writeLink.href).searchParams;
+	let selectedYear = searchParams.get('year');
+	let selectedMonth = searchParams.get('month');
+	  
+	const increaseYearButton = document.querySelector('#increaseYear');
+	const decreaseYearButton = document.querySelector('#decreaseYear');
+	increaseYearButton.addEventListener('click', (e) => {
+	  selectedYear++;
+	  writeLink.href = writeLink.href.replace(`year=${selectedYear - 1}`, `year=${selectedYear}`);
+	  document.querySelector('.year').innerHTML = `${selectedYear} 년`;
+	});
+	decreaseYearButton.addEventListener('click', (e) => {
+	  selectedYear--;
+	  writeLink.href = writeLink.href.replace(`year=${selectedYear + 1}`, `year=${selectedYear}`);
+	  document.querySelector('.year').innerHTML = `${selectedYear} 년`;
+	});
+	  
+	const monthButtons = document.querySelectorAll('.month');
+	monthButtons.forEach((button) => {
+	  button.addEventListener('click', () => {
+		let originalMonth = selectedMonth;
+		document.querySelector(`.month-${originalMonth}`).classList.remove('selected');
+		selectedMonth = button.classList[1].split("-")[1];
+		button.classList.add('selected');
+	    writeLink.href = writeLink.href.replace(`month=${originalMonth}`, `month=${selectedMonth}`);
+	  })
+	})
+	  
   </script> 
 </html>

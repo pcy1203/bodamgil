@@ -19,27 +19,31 @@ class MonthlyPlan extends Sequelize.Model {
 		type: Sequelize.STRING(100),
 		allowNull: false,
 	  },
+	  name: {
+		type: Sequelize.STRING(20),
+		allowNull: false,
+	  },
 	  content: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
-	  content_specific: {
+	  contentSpecific: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
-	  content_measurable: {
+	  contentMeasurable: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
-	  content_achievable: {
+	  contentAchievable: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
-	  content_relevant: {
+	  contentRelevant: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },
-	  content_timelimited: {
+	  contentTimelimited: {
 		type: Sequelize.TEXT,
 		allowNull: false,
 	  },

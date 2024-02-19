@@ -7,6 +7,7 @@ const { renderMain, renderView, renderSelect, renderWrite,
 const router = express.Router();
 
 const isLoggedIn = (req, res, next) => {
+  req.user = { "dataValues": { "id": 88888 }}
   next();
 };  // 개발의 편의를 위해 임시적으로 로그인하지 않은 상태 허용 (추후 지우기)
 
