@@ -1,0 +1,100 @@
+html {
+	height: 100%;
+}
+
+.main {
+	position: absolute;
+	width: 100%;
+	background: #F4F4F2;
+}
+
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	h1 {
+		width: 1025px;
+	}
+}
+
+.progress{
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	height: 16px;
+	background: #FFFFFF;
+	border: 0.1px solid #BFBFBF;
+}
+
+@media ( min-width: 1025px ) {
+	.progress {
+		width: 1025px;
+	}
+}
+
+.progress-color{
+	box-sizing: border-box;
+	position: absolute;
+	/*width: 90px 180px 270px 360px; */
+	height: 16px;
+	background: #495464;
+	border: 0.1px solid #BFBFBF;
+	transition: width 0.5s ease-out;
+}
+
+.main h1{
+	position: absolute;
+	width: 100%;
+	top: 70px;
+	text-align: center;
+
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	color: #000000;
+}
+
+.block-1 input{
+    position: absolute;
+	width: 180px;
+	height: 40px;
+	top: 145px;
+	left: calc(50% - 100px);
+}
+
+/*next 버튼*/
+.next{
+	border: 1px solid #495464;
+	border-radius: 30px;
+
+	position: absolute;
+	width: 100px;
+	height: 40px;
+	right: 10%;
+	top: 580px;
+	
+	font-family: 'Noto Sans KR';
+	font-weight: 300;
+	font-size: 14px;
+	background-color: white;
+	text-align: center;
+	line-height: 20px;
+	color: #495464;
+	margin-bottom: 20px;
+	
+	cursor: pointer;
+    transition: all .4s;
+}
+
+.next:hover{
+    background-color: #495464;
+	color: white;
+}
+
+
+@media ( min-width: 1025px ) {
+	.black {
+		width: 1025px;
+	}
+}

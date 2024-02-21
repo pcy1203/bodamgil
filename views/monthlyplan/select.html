@@ -29,11 +29,20 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  <div class="main">	
-	    <!-- HTML 작업 공간 -->
-	  </div>	  
+	  <form action="#" method="post">
+		  <div class="progress"></div>
+		  <div class="progress-color"></div>
+
+		  <div class="block-1">
+			<h1>어떤 날의 목표를 세울 건가요?</h1>
+			<input type="month" name="birthmoon">
+			<button class="next" type="button">NEXT</button>
+		  </div>
+	  </form>
     </div>
   {% include "menu/menu.html" %}
   </body>
+	  
   <script>
     window.onload = () => {
 	  let message = (new URLSearchParams(location.search)).get('message');

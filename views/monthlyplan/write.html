@@ -29,8 +29,142 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  <div class="main">	
-	    <!-- HTML 작업 공간 -->
-	  </div>	  
+	   <div class="progress"></div>
+		  <div class="progress-color"></div>
+
+		  <div class="block-1">
+			<h1>지난 달을 다시 되돌아봐요</h1>
+			<div class="answer">
+				<p>1. 지난 달에 주로 어떤 일을 하셨나요?</p>		
+				<textarea name="opinion" cols="55" rows="10" wrap="soft"></textarea>
+			</div>
+			<div class="answer">
+				<p>2. 지난 달에 가장 재미있었거나 기억에 남는 일은 무엇인가요?</p>		
+				<textarea name="opinion" cols="55" rows="10" wrap="soft"></textarea>
+			</div>
+			<div class="answer">
+				<p>3. 지난 달에 가장 아쉬웠던 일은 무엇인가요?</p>		
+				<textarea name="opinion" cols="55" rows="10" wrap="soft"></textarea>
+			</div>
+			<div class="answer">
+				<p>4. 지난 달에 가장 신경쓰지 못했던 일은 무엇인가요?</p>		
+				<textarea name="opinion" cols="55" rows="10" wrap="soft"></textarea>
+			</div>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">NEXT</button>
+		  </div>
+
+		  <div class="block-2">
+			<h1>2024.01</h1>
+			<h1>이번 달의 컨셉을 정해보세요!</h1>
+			<div class="write">
+				<label for="label">이번 달의 컨셉</label>
+				<input type="text" id="concept">
+			</div>
+			<div class="write">
+				<label for="label">관련 이미지</label>
+				<input type="file" name="file" id="file">
+			</div>
+			<div class="show">
+				<img src="images/beach.jpg">
+				<p>ooo의 달</p>
+				<span>2024.01</span>
+			</div>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">NEXT</button>
+		  </div>
+
+		  <div class="block-3">
+			<h1>이번 달의 목표를 자세히 적어주세요</h1>
+			<div class="firstgoal">
+				<p>2024년 1월: OOO의 달</p>
+				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
+			</div>
+			<div class="line"></div>
+			<div class="goal">
+				<p class="alphabet">Specific (구체적)</p>
+				<p class="alphabetcontent">목표가 모호하면 그만큼 달성하기 어려워요. 최대한 구체적으로 작성해주세요.</p>
+				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월동안 3kg 감량하기 위해 매일 저녁 8시에 걷기 운동을 한다."></textarea>
+			</div>
+			<div class="goal">
+				<p class="alphabet">Measurable (측정 가능한)</p>
+				<p class="alphabetcontent">단계별 목표, 목표 달성 여부 등 자신의 목표 상황 파악을 위해 수량화를 해주세요.</p>
+				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월 간 일주일 다섯 번 만 보 걸으면 스마트워치로 측정한다."></textarea>
+			</div>
+			<div class="goal">
+				<p class="alphabet">Achievable (달성 가능한)</p>
+				<p class="alphabetcontent">현실적인 능력 내의 목표를 세워야 해요. 자신의 목표가 현실적인지 살펴보세요.</p>
+				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 체력이 약하기에 처음부터 주 5회 만 보 걷기는 힘들 듯하다. 주 3회를 먼저 한 후 점점 늘려가는 것이 좋을 듯하다."></textarea>
+			</div>
+			<div class="goal">
+				<p class="alphabet">Relevant (관련있는)</p>
+				<p class="alphabetcontent">이 목표가 나와 관련된 목표인지 목표의 방향성이 잘 설정되어있는지 살펴보세요.</p>
+				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 운동을 꾸준히 하면 건강하게 다이어트할 수 있기에 현명한 방법인 것 같다."></textarea>
+			</div>
+			<div class="goal">
+				<p class="alphabet">Time-limited (시간제한하기)</p>
+				<p class="alphabetcontent">목표에는 마감기한이 있어야 성공할 확률이 높아요. 자신만의 마감 기한을 설정해보세요.</p>
+				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 2월 1일부터 한 달에 1kg씩, 4월 30일까지 3개월동안 총 3kg을 감량한다."></textarea>
+			</div>
+			<div class="line"></div>
+			<div class="goal">
+			  <p class="sumgoal">2024년 1월의 목표를 정리해서 적어보세요</p>
+			  <textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="구체화된 목표를 정리해서 적어주세요"></textarea>
+		  	</div>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">NEXT</button>
+		  </div>
+		 
+		  <div class="block-4">
+			<h1>주별 목표를 통해 목표를 세분화해보세요</h1>
+			<div class="firstgoal">
+				<p>2024년 1월: OOO의 달</p>
+				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
+			</div>
+			<div class="week">
+				<h1>1주차</h1>
+				<div id="inputField">
+				  <input type="text" id="todoInput" placeholder="주별 목표를 추가해주세요">
+				  <button type="button" id="addBtn">
+					<span></span>
+					<span></span>
+				  </button>
+				</div>
+				<ul id="todoList">
+					<li>
+						<span>목표를 적어주세요</span>
+						<img src="/photo/monthlyplan/trash.png" class="trash">
+					</li>
+					<li>
+						<span>목표를 적어주세요</span>
+						<img src="/photo/monthlyplan/trash.png" class="trash">
+					</li>
+				</ul>
+			</div>
+			<div class="week">
+				<h1>2주차</h1>
+				<div id="inputField">
+				  <input type="text" id="todoInput" placeholder="주별 목표를 추가해주세요">
+				  <button type="button" id="addBtn">
+					<span></span>
+					<span></span>
+				  </button>
+				</div>
+				<ul id="todoList">
+					<li>
+						<span>목표를 적어주세요</span>
+						<img src="/photo/monthlyplan/trash.png" class="trash">
+					</li>
+					<li>
+						<span>목표를 적어주세요</span>
+						<img src="/photo/monthlyplan/trash.png" class="trash">
+					</li>
+				</ul>
+			</div>
+			<button class="back" type="button">BACK</button>
+			<button class="next" type="button">SAVE</button>
+	  </div>
+	  </div>
     </div>
   {% include "menu/menu.html" %}
   </body>

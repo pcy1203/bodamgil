@@ -28,9 +28,61 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-	  <div class="main">	
-	    <!-- HTML 작업 공간 -->
-	  </div>	  
+	  <div class="previous-circle">
+		<a href="#">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
+		</a>
+	  </div> 
+		
+	 <div class="main">	 
+			<h1>나의 이번 달의 모습은?</h1>
+
+			<div class="firstgoal">
+				<p class="month">2024년 1월</p>
+				<div class="show">
+					<img src="/photo/polaroid/beach.jpg">
+					<p>ooo의 달</p>
+					<span>2024.01</span>
+				</div>
+				<div class="monthgoal">
+					<p class="monthgoalContent">2024년 1월의 목표</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="week">
+					<h1 class="week1">1주차</h1>
+					<ul id="todoList">
+						<li><span>목표를 적어주세요</span></li>
+						<li><span>목표를 적어주세요</span></li>
+					</ul>
+				</div>
+
+				<div class="week">
+					<h1>2주차</h1>
+					<ul id="todoList">
+						<li><span>목표를 적어주세요</span></li>
+						<li><span>목표를 적어주세요</span></li>
+					</ul>
+				</div>
+
+				<div class="week">
+					<h1>3주차</h1>
+					<ul id="todoList">
+						<li><span>목표를 적어주세요</span></li>
+						<li><span>목표를 적어주세요</span></li>
+					</ul>
+				</div>
+
+				<div class="week">
+					<h1>4주차</h1>
+					<ul id="todoList">
+						<li><span>목표를 적어주세요</span></li>
+						<li><span>목표를 적어주세요</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="list">목록으로</div>
+		</div>		  
     </div>
   {% include "menu/menu.html" %}
   </body>

@@ -1,0 +1,215 @@
+
+html {
+	height: 100%;
+}
+
+a{
+  text-decoration-line: none;
+}
+
+body{
+	position: relative;
+	width: 100%;
+	background: #F4F4F2;
+}
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	h1 {
+		width: 1025px;
+	}
+}
+.main h1{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	color: #000000;
+	margin-bottom: 0;
+}
+.main img{
+	position: relative;
+	width:22px;
+	height: 22px;
+	cursor: pointer;
+	padding: 5px 50px 5px 5px;
+	float: right;
+}
+
+.firstgoal{
+	position: relative;
+	
+}
+.firstgoal .month{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #495464;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 12px 0;
+}
+/*show*/
+.firstgoal .show{
+	position: relative;
+}
+.firstgoal .show img{
+	position: absolute;
+	left: calc(50% - 320px/2);
+	width: 320px;
+	height: 280px;
+	margin: -16px 0 0 0; 
+	padding: 0;
+}
+
+.firstgoal .show p{
+	position: absolute;
+	left: calc(50% - 210px/2 - 41px);
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 142%;
+	color: black;
+	margin: 0;
+}
+
+.firstgoal .show span{
+	position: absolute;
+	left: calc(50% - 55px/2 + 124.5px);
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 142%;
+	text-align: right;
+	color: black;
+	margin-top: 230px;
+}
+.firstgoal .monthgoal{
+	position: relative;
+	width: 320px;
+	height: 100px;
+	left: calc(50% - 320px/2);
+	background: #FFFFFF;
+	border-radius: 0px 0px 10px 10px;
+	margin-top: 280px;
+}
+
+.firstgoal .monthgoalContent{
+	position: absolute;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 142%;
+	border:none;
+	color: #000000;
+	width: 300px;
+	height: 90px;
+	padding: 0 10px;
+	left: calc(50% - 320px/2);
+}
+
+
+/*1주차*/
+
+.week{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #FFFFFF;
+	border-radius: 0px 0px 10px 10px;
+	padding-bottom: 10px;
+	margin-bottom: -60px;
+}
+
+.week h1{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #495464;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 12px 0;
+	margin-top: 70px;
+}
+.week .week1{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #495464;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 12px 0;
+	margin-top: 10px;
+}
+.week #todoList li{
+	margin: 5px 5px 10px 0;
+	position: relative;
+}
+.week #todoList span{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 142%;
+	color: #000000;
+}
+
+.list{
+	position: relative;
+	left: calc(50% - 320px/2 + 64px);
+	margin: 80px 0 30px 0;
+	position: relative;
+	border: 1px solid #495464;
+	background-color: white;
+	border-radius: 30px;
+	width: 180px;
+	height: 35px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	color: #495464;
+	cursor:pointer;
+}
+.list:hover{
+	background-color:#495464 ;
+	color: white;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+
+html {
+	height: 100%;
+}
+
+a{
+  text-decoration-line: none;
+}
+
+body{
+	position: relative;
+	width: 100%;
+	background: #F4F4F2;
+}
+@media ( min-width: 1025px ) {
+	.main {
+		width: 1025px;
+	}
+	h1 {
+		width: 1025px;
+	}
+}
+.main h1{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	color: #000000;
+	margin-bottom: 0;
+}
+.main img{
+	position: relative;
+	width:22px;
+	height: 22px;
+	cursor: pointer;
+	padding: 5px 50px 5px 5px;
+	float: right;
+}
+
+.firstgoal{
+	position: relative;
+	top: 30px;
+}
+
+.firstgoal .month{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #495464;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 12px 0;
+}
+
+.firstgoal .monthgoal{
+	position: relative;
+	margin-top: -20px;
+	width: 320px;
+	height: 100px;
+	left: calc(50% - 320px/2);
+	background: #FFFFFF;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.firstgoal .monthgoalContent{
+	position: absolute;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 142%;
+	border:none;
+	color: #000000;
+	width: 300px;
+	height: 90px;
+	padding: 0 10px;
+	left: calc(50% - 320px/2);
+}
+.firstgoal ul{
+	position: relative;
+	list-style-type: none;
+	left: calc(50% - 320px/2 - 20px);
+}
+.firstgoal li .alphabet{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 22px;
+	color: #495464;
+	float: left;
+	margin: 0;
+}
+.firstgoal li .alphabetcontent{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 250;
+	font-size: 12px;
+	color: #000000;
+	padding: 8px 0 8px 30px;
+	margin: 0;
+}
+
+/*1주차*/
+.week h1{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #495464;
+	border-radius: 10px 10px 0px 0px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 12px 0;
+	margin-top: 80px;
+}
+
+.week{
+	position: relative;
+	width: 320px;
+	left: calc(50% - 320px/2);
+	background: #FFFFFF;
+	border-radius: 0px 0px 10px 10px;
+	padding-bottom: 10px;
+	margin-bottom: -60px;
+}
+
+.week #todoList li{
+	margin: 5px 5px 10px 0;
+	position: relative;
+}
+.week #todoList span{
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 142%;
+	color: #000000;
+}
+
+.button {
+	position: relative;
+	display: grid;
+	place-content: center;
+	margin-top: 100px;
+}
+
+.button .save{
+	position: relative;
+	border: 1px solid #495464;
+	background-color: white;
+	border-radius: 30px;
+	width: 180px;
+	height: 35px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	color: #495464;
+	cursor: pointer;
+}
+.button .edit{
+	position: relative;
+	border: 1px solid #495464;
+	background-color: white;
+	border-radius: 30px;
+	width: 180px;
+	height: 35px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	color: #495464;
+	margin: 5px 0 30px 0;
+}
+
+.button .save:hover{
+	background-color:#495464 ;
+	color: white;
+}
+
+.button .edit:hover{
+	background-color:#495464 ;
+	color: white;
+}
+
+
+
+
