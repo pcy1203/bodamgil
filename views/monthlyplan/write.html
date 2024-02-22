@@ -28,9 +28,41 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-	  <div class="main">	
+	  <div class="previous-circle">
+		<a href="/myself/monthlyplan">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
+		</a>
+	  </div>
+	  <form action="/myself/monthlyplan/write" method="post" enctype="multipart/form-data">
+	    <div class="main">	
 	    <!-- HTML 작업 공간 -->
-	  </div>	  
+		  <div class="block-1">
+			<textarea id="contentReview1" name="contentReview1" placeholder="지난 달 돌아보기 1번" maxlength="500"></textarea>
+			<textarea id="contentReview2" name="contentReview2" placeholder="지난 달 돌아보기 2번" maxlength="500"></textarea>
+			<textarea id="contentReview3" name="contentReview3" placeholder="지난 달 돌아보기 3번" maxlength="500"></textarea>
+			<textarea id="contentReview4" name="contentReview4" placeholder="지난 달 돌아보기 4번" maxlength="500"></textarea>
+		  </div>
+		  <div class="block-2">
+			<input id="name" name="name" placeholder="이번 달 컨셉" maxlength="20" required>
+		    <div class="photo">
+		      <img class="upload-view">
+		  	  <label for="image">파일 선택</label>
+		      <input id="image" type="file" name="image" accept="image/*">
+		    </div>  
+		  </div>
+		  <div class="block-3">
+			<textarea id="contentSpecific" name="contentSpecific" placeholder="Specific" maxlength="500" required></textarea>
+			<textarea id="contentMeasurable" name="contentMeasurable" placeholder="Measurable" maxlength="500" required></textarea>
+			<textarea id="contentAchievable" name="contentAchievable" placeholder="Achievable" maxlength="500" required></textarea>
+			<textarea id="contentRelevant" name="contentRelevant" placeholder="Relevant" maxlength="500" required></textarea>
+			<textarea id="contentTimelimited" name="contentTimelimited" placeholder="Timelimited" maxlength="500" required></textarea>
+			<textarea id="content" name="content" placeholder="목표" maxlength="500" require></textarea>
+		  </div>
+		  <div class="block-4">
+			<button class="yes" type="submit">SAVE</button>
+		  </div>
+	    </div>	      
+	  </form>
     </div>
   {% include "menu/menu.html" %}
   </body>
@@ -43,6 +75,29 @@
 		  // To-DO
 	    }
 	  }
-    };  
+    }; 
+	  
+	const form = document.querySelector('form');
+	const searchParams = new URL(window.location.href).searchParams;
+	let year = searchParams.get('year');
+	let month = searchParams.get('month');
+	form.action = form.action.split("?")[0] + `?year=${year}&month=${month}`;
   </script> 
+  <script>
+	// 사진 미리보기
+	const maxSize = 5 * 1024 * 1024;
+	document.querySelector('input#image').addEventListener('change', (e) => {
+	  let reader = new FileReader();
+	  reader.onload = function(event) {
+		if (e.target.files[0].size > maxSize) {
+		  document.querySelector('input#image').value = '';
+		  document.querySelector('.upload-view').setAttribute("src", null);
+		  alert('5MB를 초과하는 파일은 업로드할 수 없습니다!');
+		} else {
+		  document.querySelector('.upload-view').setAttribute("src", event.target.result);
+		}
+	  };
+	  reader.readAsDataURL(e.target.files[0]);  
+	});
+  </script>
 </html>

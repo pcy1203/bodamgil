@@ -78,6 +78,7 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/photo', express.static(path.join(__dirname, 'photo')));
 app.use('/profile', express.static(path.join(__dirname, 'uploads/profile')));
 app.use('/polaroid', express.static(path.join(__dirname, 'uploads/polaroid')));
+app.use('/monthlyplan', express.static(path.join(__dirname, 'uploads/monthlyplan')));
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 const sessionOption = {
