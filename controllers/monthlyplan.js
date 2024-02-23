@@ -122,13 +122,16 @@ exports.writeMonthlyPlan = async (req, res, next) => {
   }
 };
 
-exports.renderMonthlyPlan = async (req, res, next) => {
+exports.renderMonthlyPlan = (req, res, next) => {
+  res.render('monthlyplan/monthlyplan');
+  /*
   const id = req.params.id;
   const { isOwner, monthlyPlan } = await isMonthlyPlanOwner(req.user.dataValues.id, id);
   if (!monthlyPlan || !isOwner) {
 	return res.redirect('/myself/monthlyplan?message=wrongAddressError');
   }
   res.render('monthlyplan/monthlyplan', { monthlyPlan });
+  */
 };
 
 exports.deleteMonthlyPlan = (req, res, next) => {
