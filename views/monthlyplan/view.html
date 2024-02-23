@@ -27,9 +27,13 @@
   </head>
   <body>
     <div id="container">
-	  {% include "menu/navigationbar.html" %}
+	  {% include "menu/navigationbar.html" %}   
+	  <div class="previous-circle">
+		<a href="/myself/monthlyplan">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
+		</a>
+	  </div>
 	  <div class="main">	
-
 	    <div class="previous-circle">
 		<a href="/monthlyplan/main">
 		  <img src="images/previous.png" class="previous"  alt="뒤로가기">
@@ -75,7 +79,21 @@
 </div>
 </div>	  
 
-
+	    <!--
+		{% for monthlyPlan in monthlyPlans %}
+		  <img src="{{ monthlyPlan.image }}" width="100" alt="대표이미지">
+		  <div>{{ monthlyPlan.year }}</div>
+		  <div>{{ monthlyPlan.month }}</div>
+		  <a href="/myself/monthlyplan/{{ monthlyPlan.uuid }}">{{ monthlyPlan.name }}</a>
+		  <br />
+		{% endfor %}
+		{% if monthlyPlans.length == 0 %}
+		  <div>컨텐츠 없음</div>
+		{% endif %}
+		<a href="/myself/monthlyplan/select">작성</a>
+	  </div>	  
+    </div>
+	-->
   {% include "menu/menu.html" %}
   </body>
   <script>
