@@ -22,13 +22,14 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="/css/monthlyplan/monthlyplan.css">
+	<link rel="stylesheet" href="/css/monthlyplan/select.css">
 	{% include "common.html" %}
   </head>
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  <div class="main">	
+
 	  <form action="#" method="post">
 		  <div class="progress"></div>
 		  <div class="progress-color"></div>
@@ -40,9 +41,12 @@
 		  </div>
 	  </form>
     </div>
+	</div>
   {% include "menu/menu.html" %}
   </body>
 	  
+
+
   <script>
     window.onload = () => {
 	  let message = (new URLSearchParams(location.search)).get('message');

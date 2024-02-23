@@ -17,10 +17,10 @@ router.get('/view', isLoggedIn, renderView);
 router.get('/select', isLoggedIn, renderSelect);
 
 // GET /myself/monthlyplan/write
-router.get('/:month/write', isLoggedIn, renderWrite);
+router.get('/write', isLoggedIn, renderWrite);
 
 // POST /myself/monthlyplan/write
-router.post('/:month/write', isLoggedIn, writeMonthlyPlan);
+router.post('/write', isLoggedIn, writeMonthlyPlan);
 
 // GET /myself/monthlyplan/:id/detail
 router.get('/:id/detail', isLoggedIn, renderPlanDetail);
