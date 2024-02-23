@@ -59,6 +59,22 @@
 			<textarea id="content" name="content" placeholder="목표" maxlength="500" require></textarea>
 		  </div>
 		  <div class="block-4">
+			<div class="week-1">
+			  <button id="detail-plus-1" class="detail-plus" type="button">+</button>
+			  <input id="detail-1-1" name="detail1" placeholder="내용 입력">
+			</div>
+			<div class="week-2">
+			  <button id="detail-plus-2" class="detail-plus" type="button">+</button>
+			  <input id="detail-2-1" name="detail2" placeholder="내용 입력">
+			</div>
+			<div class="week-3">
+			  <button id="detail-plus-3" class="detail-plus" type="button">+</button>
+			  <input id="detail-3-1" name="detail3" placeholder="내용 입력">
+			</div>
+			<div class="week-4">
+			  <button id="detail-plus-4" class="detail-plus" type="button">+</button>
+			  <input id="detail-4-1" name="detail4" placeholder="내용 입력">
+			</div>
 			<button class="yes" type="submit">SAVE</button>
 		  </div>
 	    </div>	      
@@ -82,6 +98,18 @@
 	let year = searchParams.get('year');
 	let month = searchParams.get('month');
 	form.action = form.action.split("?")[0] + `?year=${year}&month=${month}`;
+	  
+	document.querySelectorAll('.detail-plus').forEach((button) => {
+	  button.addEventListener('click', (e) => {
+		let week = button.id.split("-")[2];
+		let count = document.querySelectorAll(`.week-${week} input`).length;
+		let newInput = document.createElement('input');
+		newInput.id = `detail-${week}-${count}`;
+		newInput.name = `detail${week}`;
+		newInput.placeholder = '추가';
+		document.querySelector(`.week-${week}`).appendChild(newInput);
+	  });
+	});
   </script> 
   <script>
 	// 사진 미리보기

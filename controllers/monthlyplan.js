@@ -2,6 +2,7 @@ const { v4 } = require('uuid');
 const sanitizeHtml = require('sanitize-html');
 const User = require('../models/user');
 const MonthlyPlan = require('../models/monthlyplan');
+const PlanDetail = require('../models/plandetail');
 const GameRecord = require('../models/gamerecord');
 
 const getDefaultValue = () => {
@@ -11,19 +12,17 @@ const getDefaultValue = () => {
   return { defaultYear, defaultMonth };
 };
 
-/* Need to check owner
 const isMonthlyPlanOwner = async (userId, monthlyPlanId) => {
   try {
 	const monthlyPlan = await MonthlyPlan.findOne({ where: { uuid: monthlyPlanId } });
     return {
-	  isOwner: !userId ? false : monthlyPlan?.owner === userId,
+	  isOwner: !userId ? false : monthlyPlan?.writer === userId,
 	  monthlyPlan,
 	};
   } catch (error) {
 	throw error;
   }
-}
-*/
+};
 
 /* Neet to make game record
 const makeRecord = async (userId) => {
@@ -52,11 +51,11 @@ exports.renderMain = (req, res, next) => {
 };
 
 exports.renderView = async (req, res, next) => {
-  const monthlyplans = await MonthlyPlan.findAll({
+  const monthlyPlans = await MonthlyPlan.findAll({
 	where: { writer: req.user.dataValues.id },
 	order: [[ 'createdAt', 'DESC' ]],
   });
-  res.render('monthlyplan/view', { monthlyplans });
+  res.render('monthlyplan/view', { monthlyPlans });
 };
 
 exports.renderSelect = (req, res, next) => {
@@ -74,14 +73,14 @@ exports.renderWrite = (req, res, next) => {
 
 exports.writeMonthlyPlan = async (req, res, next) => {
   const { name, content, contentSpecific, contentMeasurable,
-    contentAchievable, contentRelevant, contentTimelimited } = req.body;
+    contentAchievable, contentRelevant, contentTimelimited,
+	detail1, detail2, detail3, detail4 } = req.body;
   const year = req.query?.year ? req.query?.year : getDefaultValue().defaultYear;
   const month = req.query?.month ? req.query?.month : getDefaultValue().defaultMonth;
   const contentLengthList = [content.length, contentSpecific.length, contentMeasurable.length,
 	contentAchievable.length, contentRelevant.length, contentTimelimited.length];
   const maxContentLength = 500;  // Need to Modify
   const checkMaxLength = (length) => length <= maxContentLength;
-	console.log(req.file);
   if (!req.file) return res.redirect(`/myself/monthlyplan/write?year=${year}&month=${month}&message=noPhotoError`);
   if (name.length === 0 || contentLengthList.includes(0)) return res.redirect(`/myself/monthlyplan/write?year=${year}&month=${month}&message=noDataError`);	
   if (name.length > 20 || contentLengthList.filter(checkMaxLength).length === 0) return res.redirect(`/myself/monthlyplan/write?year=${year}&month=${month}&message=longDataError`);
@@ -100,6 +99,21 @@ exports.writeMonthlyPlan = async (req, res, next) => {
 	  contentTimelimited,
 	  writer: req.user.dataValues.id,
 	});
+	let week = 0;
+	for await (let arr of [detail1, detail2, detail3, detail4]) {
+	  week++;
+	  for await (let detail of arr) {
+		if (detail !== "") {
+		  const planDetail = await PlanDetail.create({
+			uuid: v4(),
+			week,
+			checked: false,
+			content: detail,
+		    plan: monthlyPlan.id,
+		  });
+		}
+	  }
+	};
 	// await makeRecord(req.user.dataValues.id);
 	return res.redirect(`/myself/monthlyplan/view`);
   } catch (error) {
@@ -108,9 +122,13 @@ exports.writeMonthlyPlan = async (req, res, next) => {
   }
 };
 
-exports.renderMonthlyPlan = (req, res, next) => {
-  // TO-DO
-  res.render('monthlyplan/monthlyplan');
+exports.renderMonthlyPlan = async (req, res, next) => {
+  const id = req.params.id;
+  const { isOwner, monthlyPlan } = await isMonthlyPlanOwner(req.user.dataValues.id, id);
+  if (!monthlyPlan || !isOwner) {
+	return res.redirect('/myself/monthlyplan?message=wrongAddressError');
+  }
+  res.render('monthlyplan/monthlyplan', { monthlyPlan });
 };
 
 exports.deleteMonthlyPlan = (req, res, next) => {

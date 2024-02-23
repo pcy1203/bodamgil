@@ -30,6 +30,14 @@
 	  {% include "menu/navigationbar.html" %}
 	  <div class="main">	
 	    <!-- HTML 작업 공간 -->
+		<div>{{ monthlyPlan.year }} 년 {{ monthlyPlan.month }} 월</div>
+		<div>{{ monthlyPlan.name }}</div>
+		<div>{{ monthlyPlan.content }}</div>
+		<div>{{ monthlyPlan.contentSpecific }}</div>
+		<div>{{ monthlyPlan.contentMeasurable }}</div>
+		<div>{{ monthlyPlan.contentAchievable }}</div>
+		<div>{{ monthlyPlan.contentRelevant }}</div>
+		<div>{{ monthlyPlan.contentTimelimited }}</div>
 	  </div>	  
     </div>
   {% include "menu/menu.html" %}

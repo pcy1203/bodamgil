@@ -35,13 +35,14 @@
 	  </div>
 	  <div class="main">	
 	    <!-- HTML 작업 공간 -->
-		{% for monthlyplan in monthlyplans %}
-		  <img src="{{ monthlyplan.image }}" alt="대표이미지">
-		  <div>{{ monthlyplan.year }}</div>
-		  <div>{{ monthlyplan.month }}</div>
-		  <div>{{ monthlyplan.name }}</div>
+		{% for monthlyPlan in monthlyPlans %}
+		  <img src="{{ monthlyPlan.image }}" width="100" alt="대표이미지">
+		  <div>{{ monthlyPlan.year }}</div>
+		  <div>{{ monthlyPlan.month }}</div>
+		  <a href="/myself/monthlyplan/{{ monthlyPlan.uuid }}">{{ monthlyPlan.name }}</a>
+		  <br />
 		{% endfor %}
-		{% if monthlyplans.length == 0 %}
+		{% if monthlyPlans.length == 0 %}
 		  <div>컨텐츠 없음</div>
 		{% endif %}
 		<a href="/myself/monthlyplan/select">작성</a>
