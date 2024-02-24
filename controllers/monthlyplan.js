@@ -74,7 +74,7 @@ exports.renderWrite = (req, res, next) => {
 exports.writeMonthlyPlan = async (req, res, next) => {
   const { name, content, contentSpecific, contentMeasurable,
     contentAchievable, contentRelevant, contentTimelimited,
-	detail1, detail2, detail3, detail4 } = req.body;
+	detail1, detail2, detail3, detail4, detail5 } = req.body;
   const year = req.query?.year ? req.query?.year : getDefaultValue().defaultYear;
   const month = req.query?.month ? req.query?.month : getDefaultValue().defaultMonth;
   const contentLengthList = [content.length, contentSpecific.length, contentMeasurable.length,
@@ -100,8 +100,9 @@ exports.writeMonthlyPlan = async (req, res, next) => {
 	  writer: req.user.dataValues.id,
 	});
 	let week = 0;
-	for await (let arr of [detail1, detail2, detail3, detail4]) {
+	for await (let arr of [detail1, detail2, detail3, detail4, detail5]) {
 	  week++;
+	  if (!arr) continue;
 	  for await (let detail of arr) {
 		if (detail !== "") {
 		  const planDetail = await PlanDetail.create({
@@ -122,16 +123,21 @@ exports.writeMonthlyPlan = async (req, res, next) => {
   }
 };
 
-exports.renderMonthlyPlan = (req, res, next) => {
-  res.render('monthlyplan/monthlyplan');
-  /*
+exports.renderMonthlyPlan = async (req, res, next) => {
   const id = req.params.id;
   const { isOwner, monthlyPlan } = await isMonthlyPlanOwner(req.user.dataValues.id, id);
   if (!monthlyPlan || !isOwner) {
 	return res.redirect('/myself/monthlyplan?message=wrongAddressError');
   }
-  res.render('monthlyplan/monthlyplan', { monthlyPlan });
-  */
+  const planDetails = await PlanDetail.findAll({
+	where: { plan: monthlyPlan.id },
+	order: [[ 'createdAt', 'ASC' ]],
+  });
+  const planDetailArray = Array.from(Array(5), () => new Array());
+  for await (let planDetail of planDetails) {
+	planDetailArray[planDetail.week - 1].push(planDetail);
+  }
+  res.render('monthlyplan/monthlyplan', { monthlyPlan, planDetailArray });
 };
 
 exports.deleteMonthlyPlan = (req, res, next) => {

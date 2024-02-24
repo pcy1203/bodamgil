@@ -34,37 +34,22 @@
 		</a>
 	  </div>
 	  <div class="main">
-	  <form action="#" method="post">
+	  
 		  <div class="progress"></div>
 		  <div class="progress-color"></div>
 
 		  <div class="block-1">
 			<h1>어떤 날의 목표를 세울 건가요?</h1>
-			<input type="month" name="birthmoon">
-			<button class="next" type="button">NEXT</button>
+			<input type="month" name="birthmoon" value="{{ defaultYear }}-{% if defaultMonth < 10 %}0{% endif %}{{ defaultMonth }}">
+			  <a href="/myself/monthlyplan/write?year={{ defaultYear }}&month={{ defaultMonth }}" id="writelink">
+				<button class="next" type="button">NEXT</button>
+			  </a>
 		  </div>
-	  </form>
-	    <!--
-		<div>
-		  <button id="decreaseYear">-1</button>
-		  <div class="year">{{ defaultYear }} 년</div>
-		  <button id="increaseYear">+1</button>
-		</div>
-		<div>
-		  {% for i in range(1, 13) %}
-			<div class="month month-{{ i }} {% if i == defaultMonth %}selected{% endif %}">{{ i }} 월</div>
-		  {% endfor %}
-		</div>
-		<a href="/myself/monthlyplan/write?year={{ defaultYear }}&month={{ defaultMonth }}" class="writelink">NEXT</a>
-	  </div>
-		-->
+	  
     </div>
 	</div>
   {% include "menu/menu.html" %}
   </body>
-	  
-
-
   <script>
     window.onload = () => {
 	  let message = (new URLSearchParams(location.search)).get('message');
@@ -76,33 +61,19 @@
 	  }
     };
 	  
-	const writeLink = document.querySelector('.writelink');
+	const writeLink = document.querySelector('#writelink');
 	const searchParams = new URL(writeLink.href).searchParams;
 	let selectedYear = searchParams.get('year');
 	let selectedMonth = searchParams.get('month');
 	  
-	const increaseYearButton = document.querySelector('#increaseYear');
-	const decreaseYearButton = document.querySelector('#decreaseYear');
-	increaseYearButton.addEventListener('click', (e) => {
-	  selectedYear++;
-	  writeLink.href = writeLink.href.replace(`year=${selectedYear - 1}`, `year=${selectedYear}`);
-	  document.querySelector('.year').innerHTML = `${selectedYear} 년`;
+	document.querySelector('input[type=month]').addEventListener('change', (e) => {
+	  let selectedValue = e.target.value.split("-");
+	  selectedValue = selectedValue.map((value) => parseInt(value));
+	  writeLink.href = writeLink.href
+		.replace(`year=${selectedYear}`, `year=${selectedValue[0]}`)
+		.replace(`month=${selectedMonth}`, `month=${selectedValue[1]}`);
+	  selectedYear = selectedValue[0];
+	  selectedMonth = selectedValue[1];
 	});
-	decreaseYearButton.addEventListener('click', (e) => {
-	  selectedYear--;
-	  writeLink.href = writeLink.href.replace(`year=${selectedYear + 1}`, `year=${selectedYear}`);
-	  document.querySelector('.year').innerHTML = `${selectedYear} 년`;
-	});
-	  
-	const monthButtons = document.querySelectorAll('.month');
-	monthButtons.forEach((button) => {
-	  button.addEventListener('click', () => {
-		let originalMonth = selectedMonth;
-		document.querySelector(`.month-${originalMonth}`).classList.remove('selected');
-		selectedMonth = button.classList[1].split("-")[1];
-		button.classList.add('selected');
-	    writeLink.href = writeLink.href.replace(`month=${originalMonth}`, `month=${selectedMonth}`);
-	  })
-	})
   </script> 
 </html>

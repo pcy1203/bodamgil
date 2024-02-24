@@ -28,10 +28,15 @@
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
+	  <div class="previous-circle">
+		<a href="/myself/monthlyplan">
+		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
+		</a>
+	  </div>
 	  <div class="main">	
-	   <div class="progress"></div>
-		  <div class="progress-color"></div>
-
+	    <div class="progress"></div>
+		<div class="progress-color"></div>
+		<form action="/myself/monthlyplan/write" method="post" enctype="multipart/form-data">
 		  <div class="block-1">
 			<h1>지난 달을 다시 되돌아봐요</h1>
 			<div class="answer">
@@ -50,25 +55,25 @@
 				<p>4. 지난 달에 가장 신경쓰지 못했던 일은 무엇인가요?</p>		
 				<textarea name="opinion" cols="55" rows="10" wrap="soft"></textarea>
 			</div>
-			<button class="back" type="button">BACK</button>
+			<a href="/myself/monthlyplan/select"><button class="back" type="button">BACK</button></a>
 			<button class="next" type="button">NEXT</button>
 		  </div>
 
 		  <div class="block-2">
-			<h1>2024.01</h1>
+			<h1 class="year-month-parameter">[year].[month]</h1>
 			<h1>이번 달의 컨셉을 정해보세요!</h1>
 			<div class="write">
 				<label for="label">이번 달의 컨셉</label>
-				<input type="text" id="concept">
+				<input type="text" name="name" id="concept" required>
 			</div>
 			<div class="write">
 				<label for="label">관련 이미지</label>
-				<input type="file" name="file" id="file">
+				<input type="file" name="image" id="image" accept="image/*">
 			</div>
 			<div class="show">
-				<img src="images/beach.jpg">
-				<p>ooo의 달</p>
-				<span>2024.01</span>
+				<img src="" class="upload-view">
+				<p class="name-parameter"></p>
+				<span class="year-month-parameter">[year].[month]</span>
 			</div>
 			<button class="back" type="button">BACK</button>
 			<button class="next" type="button">NEXT</button>
@@ -77,39 +82,39 @@
 		  <div class="block-3">
 			<h1>이번 달의 목표를 자세히 적어주세요</h1>
 			<div class="firstgoal">
-				<p>2024년 1월: OOO의 달</p>
+				<p class="year-month-parameter">[year]년 [month]월: <span class="name-parameter"></span></p>
 				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
 			</div>
 			<div class="line"></div>
 			<div class="goal">
 				<p class="alphabet">Specific (구체적)</p>
 				<p class="alphabetcontent">목표가 모호하면 그만큼 달성하기 어려워요. 최대한 구체적으로 작성해주세요.</p>
-				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월동안 3kg 감량하기 위해 매일 저녁 8시에 걷기 운동을 한다."></textarea>
+				<textarea id="contentSpecific" name="contentSpecific" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월동안 3kg 감량하기 위해 매일 저녁 8시에 걷기 운동을 한다." required></textarea>
 			</div>
 			<div class="goal">
 				<p class="alphabet">Measurable (측정 가능한)</p>
 				<p class="alphabetcontent">단계별 목표, 목표 달성 여부 등 자신의 목표 상황 파악을 위해 수량화를 해주세요.</p>
-				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월 간 일주일 다섯 번 만 보 걸으면 스마트워치로 측정한다."></textarea>
+				<textarea id="contentMeasurable" name="contentMeasurable" cols="55" rows="10" wrap="soft" placeholder="ex. 3개월 간 일주일 다섯 번 만 보 걸으면 스마트워치로 측정한다." required></textarea>
 			</div>
 			<div class="goal">
 				<p class="alphabet">Achievable (달성 가능한)</p>
 				<p class="alphabetcontent">현실적인 능력 내의 목표를 세워야 해요. 자신의 목표가 현실적인지 살펴보세요.</p>
-				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 체력이 약하기에 처음부터 주 5회 만 보 걷기는 힘들 듯하다. 주 3회를 먼저 한 후 점점 늘려가는 것이 좋을 듯하다."></textarea>
+				<textarea id="contentAchievable" name="contentAchievable" cols="55" rows="10" wrap="soft" placeholder="ex. 체력이 약하기에 처음부터 주 5회 만 보 걷기는 힘들 듯하다. 주 3회를 먼저 한 후 점점 늘려가는 것이 좋을 듯하다." required></textarea>
 			</div>
 			<div class="goal">
 				<p class="alphabet">Relevant (관련있는)</p>
 				<p class="alphabetcontent">이 목표가 나와 관련된 목표인지 목표의 방향성이 잘 설정되어있는지 살펴보세요.</p>
-				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 운동을 꾸준히 하면 건강하게 다이어트할 수 있기에 현명한 방법인 것 같다."></textarea>
+				<textarea id="contentRelevant" name="contentRelevant" cols="55" rows="10" wrap="soft" placeholder="ex. 운동을 꾸준히 하면 건강하게 다이어트할 수 있기에 현명한 방법인 것 같다." required></textarea>
 			</div>
 			<div class="goal">
 				<p class="alphabet">Time-limited (시간제한하기)</p>
 				<p class="alphabetcontent">목표에는 마감기한이 있어야 성공할 확률이 높아요. 자신만의 마감 기한을 설정해보세요.</p>
-				<textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="ex. 2월 1일부터 한 달에 1kg씩, 4월 30일까지 3개월동안 총 3kg을 감량한다."></textarea>
+				<textarea id="contentTimelimited" name="contentTimelimited" cols="55" rows="10" wrap="soft" placeholder="ex. 2월 1일부터 한 달에 1kg씩, 4월 30일까지 3개월동안 총 3kg을 감량한다." required></textarea>
 			</div>
 			<div class="line"></div>
 			<div class="goal">
-			  <p class="sumgoal">2024년 1월의 목표를 정리해서 적어보세요</p>
-			  <textarea name="opinion" cols="55" rows="10" wrap="soft" placeholder="구체화된 목표를 정리해서 적어주세요"></textarea>
+			  <p class="sumgoal year-month-parameter">[year]년 [month]월의 목표를 정리해서 적어보세요</p>
+			  <textarea id="content" name="content" cols="55" rows="10" wrap="soft" placeholder="구체화된 목표를 정리해서 적어주세요" required></textarea>
 		  	</div>
 			<button class="back" type="button">BACK</button>
 			<button class="next" type="button">NEXT</button>
@@ -118,106 +123,34 @@
 		  <div class="block-4">
 			<h1>주별 목표를 통해 목표를 세분화해보세요</h1>
 			<div class="firstgoal">
-				<p>2024년 1월: OOO의 달</p>
+				<p class="year-month-parameter">[year]년 [month]월: <span class="name-parameter"></span></p>
 				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
 			</div>
-			<div class="week">
-				<h1>1주차</h1>
+			{% for i in range(1, 6) %}
+			<div class="week week-{{ i }}">
+				<h1>{{ i }}주차</h1>
 				<div id="inputField">
 				  <input type="text" id="todoInput" placeholder="주별 목표를 추가해주세요">
-				  <button type="button" id="addBtn">
+				  <button type="button" id="addBtn" class="week-{{ i }}-add">
 					<span></span>
 					<span></span>
 				  </button>
 				</div>
 				<ul id="todoList">
-					<li>
+					<!--
+					<li id="todo-1">
 						<span>목표를 적어주세요</span>
-						<img src="/photo/monthlyplan/trash.png" class="trash">
+						<img src="/photo/monthlyplan/trash.png" class="trash plan-{{ i }}-delete">
 					</li>
-					<li>
-						<span>목표를 적어주세요</span>
-						<img src="/photo/monthlyplan/trash.png" class="trash">
-					</li>
+					-->
 				</ul>
 			</div>
-			<div class="week">
-				<h1>2주차</h1>
-				<div id="inputField">
-				  <input type="text" id="todoInput" placeholder="주별 목표를 추가해주세요">
-				  <button type="button" id="addBtn">
-					<span></span>
-					<span></span>
-				  </button>
-				</div>
-				<ul id="todoList">
-					<li>
-						<span>목표를 적어주세요</span>
-						<img src="/photo/monthlyplan/trash.png" class="trash">
-					</li>
-					<li>
-						<span>목표를 적어주세요</span>
-						<img src="/photo/monthlyplan/trash.png" class="trash">
-					</li>
-				</ul>
-			</div>
+			{% endfor %}
 			<button class="back" type="button">BACK</button>
-			<button class="next" type="button">SAVE</button>
+			<button class="next" type="submit">SAVE</button>
+		  </div>
+		</form>
 	  </div>
-	  </div>
-
-	  <!--
-	  <div class="previous-circle">
-		<a href="/myself/monthlyplan">
-		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
-		</a>
-	  </div>
-	  <form action="/myself/monthlyplan/write" method="post" enctype="multipart/form-data">
-	    <div class="main">
-		  <div class="block-1">
-			<textarea id="contentReview1" name="contentReview1" placeholder="지난 달 돌아보기 1번" maxlength="500"></textarea>
-			<textarea id="contentReview2" name="contentReview2" placeholder="지난 달 돌아보기 2번" maxlength="500"></textarea>
-			<textarea id="contentReview3" name="contentReview3" placeholder="지난 달 돌아보기 3번" maxlength="500"></textarea>
-			<textarea id="contentReview4" name="contentReview4" placeholder="지난 달 돌아보기 4번" maxlength="500"></textarea>
-		  </div>
-		  <div class="block-2">
-			<input id="name" name="name" placeholder="이번 달 컨셉" maxlength="20" required>
-		    <div class="photo">
-		      <img class="upload-view">
-		  	  <label for="image">파일 선택</label>
-		      <input id="image" type="file" name="image" accept="image/*">
-		    </div>  
-		  </div>
-		  <div class="block-3">
-			<textarea id="contentSpecific" name="contentSpecific" placeholder="Specific" maxlength="500" required></textarea>
-			<textarea id="contentMeasurable" name="contentMeasurable" placeholder="Measurable" maxlength="500" required></textarea>
-			<textarea id="contentAchievable" name="contentAchievable" placeholder="Achievable" maxlength="500" required></textarea>
-			<textarea id="contentRelevant" name="contentRelevant" placeholder="Relevant" maxlength="500" required></textarea>
-			<textarea id="contentTimelimited" name="contentTimelimited" placeholder="Timelimited" maxlength="500" required></textarea>
-			<textarea id="content" name="content" placeholder="목표" maxlength="500" require></textarea>
-		  </div>
-		  <div class="block-4">
-			<div class="week-1">
-			  <button id="detail-plus-1" class="detail-plus" type="button">+</button>
-			  <input id="detail-1-1" name="detail1" placeholder="내용 입력">
-			</div>
-			<div class="week-2">
-			  <button id="detail-plus-2" class="detail-plus" type="button">+</button>
-			  <input id="detail-2-1" name="detail2" placeholder="내용 입력">
-			</div>
-			<div class="week-3">
-			  <button id="detail-plus-3" class="detail-plus" type="button">+</button>
-			  <input id="detail-3-1" name="detail3" placeholder="내용 입력">
-			</div>
-			<div class="week-4">
-			  <button id="detail-plus-4" class="detail-plus" type="button">+</button>
-			  <input id="detail-4-1" name="detail4" placeholder="내용 입력">
-			</div>
-			<button class="yes" type="submit">SAVE</button>
-		  </div>
-	    </div>	      
-	  </form>
-	-->
     </div>
   {% include "menu/menu.html" %}
   </body>
@@ -232,21 +165,91 @@
 	  }
     }; 
 	  
-	const form = document.querySelector('form');
+	let page = 1;
+	const changePage = (currentPage) => {
+	  for (let i = 1; i <= 4; i++) {
+		if (i !== currentPage) {
+	      document.querySelector(`.block-${i}`).style.display = 'none';
+		} else {
+	      document.querySelector(`.block-${i}`).style.display = 'block';
+		}
+	  }  
+	    document.querySelector('.progress-color').style.width = `${25 * currentPage}%`;
+	};
+	changePage(page);
+	
+	document.querySelectorAll('.back').forEach((button) => {
+	  button.addEventListener('click', () => {
+		if (page !== 0) {
+		  page--;
+	      changePage(page);
+		}
+	  });
+	});
+	
+	document.querySelectorAll('.next').forEach((button) => {
+	  button.addEventListener('click', () => {
+		if (page !== 4) {
+		  page++;
+		  changePage(page);
+		}
+	  });
+	});
+	  
 	const searchParams = new URL(window.location.href).searchParams;
 	let year = searchParams.get('year');
 	let month = searchParams.get('month');
+	const form = document.querySelector('form');
 	form.action = form.action.split("?")[0] + `?year=${year}&month=${month}`;
+	if (month < 10) month = "0" + month;
+	document.querySelectorAll('.year-month-parameter').forEach((element) => {
+	  element.innerHTML = element.innerHTML.replace('[year]', year).replace('[month]', month);
+	});
+	
+	// Page 2 - Nameinput type="text" name="name" id="concept"
+	const nameList = document.querySelectorAll('.name-parameter');
+	document.querySelector('input#concept').addEventListener('input', (e) => {
+	  nameList.forEach((element) => {
+		if (!e.target.value) {
+		  element.innerHTML = "";
+		} else {
+		  element.innerHTML = e.target.value + "의 달";
+		};
+	  });
+	});
 	  
-	document.querySelectorAll('.detail-plus').forEach((button) => {
+	// Page 4 - Todo List
+	const makeTodoList = (id, week, content) => {
+	  let liElement = document.createElement('li');
+	  liElement.id = `todo-${id}`;
+	  let spanElement = document.createElement('span');
+	  spanElement.innerHTML = content;
+	  let imgElement = document.createElement('img');
+	  imgElement.src = '/photo/monthlyplan/trash.png';
+	  imgElement.classList.add('trash');
+	  imgElement.classList.add(`plan-${id}-delete`);
+	  imgElement.addEventListener('click', () => {
+	    document.querySelector(`#todo-${id}`).remove(); 
+	  });
+	  let inputElement = document.createElement('input');
+	  inputElement.value = content;
+	  inputElement.name = `detail${week}`;
+	  inputElement.readOnly = true;
+	  inputElement.hidden = true;
+	  liElement.appendChild(spanElement);
+	  liElement.appendChild(imgElement);
+	  liElement.appendChild(inputElement);
+	  return liElement;
+	};
+	  
+	let id = 0;
+	document.querySelectorAll('#addBtn').forEach((button) => {
 	  button.addEventListener('click', (e) => {
-		let week = button.id.split("-")[2];
-		let count = document.querySelectorAll(`.week-${week} input`).length;
-		let newInput = document.createElement('input');
-		newInput.id = `detail-${week}-${count}`;
-		newInput.name = `detail${week}`;
-		newInput.placeholder = '추가';
-		document.querySelector(`.week-${week}`).appendChild(newInput);
+		let week = button.classList[0].split("-")[1];
+		let inputElement = document.querySelector(`.week-${week} input#todoInput`);
+		let todoList = makeTodoList(++id, week, inputElement.value);
+		document.querySelector(`.week-${week} ul#todoList`).appendChild(todoList);
+		inputElement.value = '';
 	  });
 	});
   </script> 
