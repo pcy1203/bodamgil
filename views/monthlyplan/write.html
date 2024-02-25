@@ -2,23 +2,25 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title><!-- 제목 --></title>	  
+	<title>나만의 이번 달 컨셉과 목표 세우기 - 작성하기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!--
+	<meta name="description"
+      content="목표를 정해 내가 향할 목적지를 미리 설정해두며 실행력을 높일 수 있어요. 작심삼일이 아닌 꾸준히 이룰 수 있게 하기 위해 제대로 된 목표를 함께 세워봐요." />
+	<meta name="keywords" content="보담길,진로,진로사이트,진로고민,진로교육,진로게임,진로이야기,진로여정,꿈,꿈찾기,대학생,대학생진로,직업,직무,심리검사,진로검사" />
+	<meta name="robots" content="index,nofollow">
 	<meta property="og:site_name" content="보담길" />
 	<meta property="og:title" content="보담길" />
 	<meta property="og:description"
-      content="" />
+      content="나만의 이번 달 컨셉과 목표 세우기" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.bodamgil.com" />
 	<meta property="og:image"
-      content="" />
+      content="https://bodamgil.com/photo/monthlyplan/monthlyplan_kakaotalk.png" />
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="보담길">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
-	-->
+    <meta name="twitter:description" content="나만의 이번 달 컨셉과 목표 세우기">
+    <meta name="twitter:image" content="https://bodamgil.com/photo/monthlyplan/monthlyplan_kakaotalk.png">
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
@@ -29,7 +31,7 @@
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
 	  <div class="previous-circle">
-		<a href="/myself/monthlyplan">
+		<a href="/myself/monthlyplan/select">
 		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
 		</a>
 	  </div>
@@ -83,7 +85,7 @@
 			<h1>이번 달의 목표를 자세히 적어주세요</h1>
 			<div class="firstgoal">
 				<p class="year-month-parameter">[year]년 [month]월: <span class="name-parameter"></span></p>
-				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
+				<div><textarea cols="55" rows="10" wrap="soft" placeholder="이번 달의 목표를 적어주세요" required></textarea></div>
 			</div>
 			<div class="line"></div>
 			<div class="goal">
@@ -113,7 +115,7 @@
 			</div>
 			<div class="line"></div>
 			<div class="goal">
-			  <p class="sumgoal year-month-parameter">[year]년 [month]월의 목표를 정리해서 적어보세요</p>
+			  <p class="sumgoal year-month-parameter">위의 SMART 기법을 통해 만들어진 <br> [year]년 [month]월의 목표를 정리해서 구체적으로 적어보세요</p>
 			  <textarea id="content" name="content" cols="55" rows="10" wrap="soft" placeholder="구체화된 목표를 정리해서 적어주세요" required></textarea>
 		  	</div>
 			<button class="back" type="button">BACK</button>

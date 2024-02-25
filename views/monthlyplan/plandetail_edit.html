@@ -2,7 +2,7 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title>나만의 이번 달 컨셉과 목표 세우기 - 작성하기</title>	  
+	<title>나만의 이번 달 컨셉과 목표 세우기 - 확인하기</title>	  
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description"
@@ -24,32 +24,85 @@
 	<style>
   		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 	</style>  
-	<link rel="stylesheet" href="/css/monthlyplan/select.css">
+	<link rel="stylesheet" href="/css/monthlyplan/plandetail_edit.css">
 	{% include "common.html" %}
   </head>
   <body>
     <div id="container">
 	  {% include "menu/navigationbar.html" %}
-	  <div class="previous-circle">
-		<a href="/myself/monthlyplan/view">
-		  <img src="/photo/main/previous.png" class="previous" alt="뒤로가기">
-		</a>
-	  </div>
-	  <div class="main">
-	  
-		  <div class="progress"></div>
-		  <div class="progress-color"></div>
+  
+	<div class="main">	 
+			<h1>2024년 1월</h1>
 
-		  <div class="block-1">
-			<h1>어떤 날의 목표를 세울 건가요?</h1>
-			<input type="month" name="birthmoon" value="{{ defaultYear }}-{% if defaultMonth < 10 %}0{% endif %}{{ defaultMonth }}">
-			  <a href="/myself/monthlyplan/write?year={{ defaultYear }}&month={{ defaultMonth }}" id="writelink">
-				<button class="next" type="button">NEXT</button>
-			  </a>
-		  </div>
+		 	<div class="firstgoal">
+				<p class="month">2024년 1월: OOO의 달</p>
+				<div class="monthgoal">
+					<p class="monthgoalContent">2024년 1월의 목표</p>
+				</div>
+			
+				<ul>
+					<li>
+						<p class="alphabet">S<p>
+						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+					</li>
+					<li>
+						<p class="alphabet">M<p>
+						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+					</li>
+					<li>
+						<p class="alphabet">A<p>
+						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+					</li>
+					<li>
+						<p class="alphabet">R<p>
+						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+					</li>
+					<li>
+						<p class="alphabet">T<p>
+						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+					</li>
+				</ul>
+				
+			</div>
+
+			<div class="week">
+				<h1>1주차</h1>
+				<ul id="todoList">
+					<li><span>목표를 적어주세요</span></li>
+					<li><span>목표를 적어주세요</span></li>
+				</ul>
+			</div>
+
+			<div class="week">
+				<h1>2주차</h1>
+				<ul id="todoList">
+					<li><span>목표를 적어주세요</span></li>
+					<li><span>목표를 적어주세요</span></li>
+				</ul>
+			</div>
+
+			<div class="week">
+				<h1>3주차</h1>
+				<ul id="todoList">
+					<li><span>목표를 적어주세요</span></li>
+					<li><span>목표를 적어주세요</span></li>
+				</ul>
+			</div>
+
+			<div class="week">
+				<h1>4주차</h1>
+				<ul id="todoList">
+					<li><span>목표를 적어주세요</span></li>
+					<li><span>목표를 적어주세요</span></li>
+				</ul>
+			</div>
+			<div class="button">
+				<div class="save">저장하기</div>
+			</div>
+		</div>
 	  
+  
     </div>
-	</div>
   {% include "menu/menu.html" %}
   </body>
   <script>
@@ -61,21 +114,6 @@
 		  // To-DO
 	    }
 	  }
-    };
-	  
-	const writeLink = document.querySelector('#writelink');
-	const searchParams = new URL(writeLink.href).searchParams;
-	let selectedYear = searchParams.get('year');
-	let selectedMonth = searchParams.get('month');
-	  
-	document.querySelector('input[type=month]').addEventListener('change', (e) => {
-	  let selectedValue = e.target.value.split("-");
-	  selectedValue = selectedValue.map((value) => parseInt(value));
-	  writeLink.href = writeLink.href
-		.replace(`year=${selectedYear}`, `year=${selectedValue[0]}`)
-		.replace(`month=${selectedMonth}`, `month=${selectedValue[1]}`);
-	  selectedYear = selectedValue[0];
-	  selectedMonth = selectedValue[1];
-	});
+    };  
   </script> 
 </html>

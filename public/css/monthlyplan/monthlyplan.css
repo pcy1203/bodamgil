@@ -29,21 +29,21 @@ body{
 	font-weight: 700;
 	font-size: 16px;
 	color: #000000;
-	margin-bottom: 0;
-}
-.main img{
-	position: relative;
-	width:22px;
-	height: 22px;
-	cursor: pointer;
-	padding: 5px 50px 5px 5px;
-	float: right;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .firstgoal{
 	position: relative;
-	
 }
+.firstgoal .logo{
+	position: relative;
+    width: 48px;
+    height: 12px;
+    top: 12px;
+    left: calc(50% - 320px/2);
+}
+
 .firstgoal .month{
 	position: relative;
 	width: 320px;
@@ -59,6 +59,7 @@ body{
 	color: #FFFFFF;
 	padding: 12px 0;
 }
+
 /*show*/
 .firstgoal .show{
 	position: relative;
@@ -93,7 +94,7 @@ body{
 	font-size: 12px;
 	line-height: 142%;
 	text-align: right;
-	color: black;
+	color: white;
 	margin-top: 230px;
 }
 .firstgoal .monthgoal{
@@ -149,6 +150,7 @@ body{
 	color: #FFFFFF;
 	padding: 12px 0;
 	margin-top: 70px;
+	margin-bottom: -2px;
 }
 .week .week1{
 	position: relative;
@@ -166,6 +168,7 @@ body{
 	padding: 12px 0;
 	margin-top: 10px;
 }
+
 .week #todoList li{
 	margin: 5px 5px 10px 0;
 	position: relative;
@@ -179,10 +182,10 @@ body{
 	color: #000000;
 }
 
-.list{
+.monthsave{
 	position: relative;
 	left: calc(50% - 320px/2 + 64px);
-	margin: 80px 0 30px 0;
+	margin: 15px 0 30px 0;
 	position: relative;
 	border: 1px solid #495464;
 	background-color: white;
@@ -200,12 +203,38 @@ body{
 	color: #495464;
 	cursor:pointer;
 }
-.list:hover{
+.weeksave{
+	position: relative;
+	left: calc(50% - 320px/2 + 64px);
+	margin: 75px 0 30px 0;
+	position: relative;
+	border: 1px solid #495464;
+	background-color: white;
+	border-radius: 30px;
+	width: 180px;
+	height: 35px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	color: #495464;
+	cursor:pointer;
+}
+.monthsave:hover, .weeksave:hover{
 	background-color:#495464 ;
 	color: white;
 }
-
-
+.content .logo{
+	position: relative;
+    width: 48px;
+    height: 12px;
+    top: 5px;
+    left: calc(50% - 320px/2);
+}
 
 
 
