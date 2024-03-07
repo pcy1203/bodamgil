@@ -5,7 +5,8 @@ const path = require('path');
 const { isLoggedIn } = require('../middlewares');
 const { renderMain, renderView, renderSelect, renderWrite,
 	   writeMonthlyPlan, renderMonthlyPlan, deleteMonthlyPlan,
-	   renderPlanDetail, updatePlanDetail } = require('../controllers/monthlyplan');
+	   renderPlanDetail, updatePlanDetail, renderPlanDetailEdit,
+	   updatePlanDetailCheck } = require('../controllers/monthlyplan');
 
 const router = express.Router();
 
@@ -48,11 +49,17 @@ router.get('/write', isLoggedIn, renderWrite);
 // POST /myself/monthlyplan/write
 router.post('/write', isLoggedIn, upload.single('image'), writeMonthlyPlan);
 
+// PATCH /myself/monthlyplan/:id/:detailid/check
+router.patch('/:id/:detailid/check', isLoggedIn, updatePlanDetailCheck);
+
 // GET /myself/monthlyplan/:id/detail
 router.get('/:id/detail', isLoggedIn, renderPlanDetail);
 
-// GET /myself/monthlyplan/:id/detail
-router.patch('/:id/detail', isLoggedIn, updatePlanDetail);
+// GET /myself/monthlyplan/:id/edit
+router.get('/:id/edit', isLoggedIn, renderPlanDetailEdit);
+
+// PATCH /myself/monthlyplan/:id/detail
+router.patch('/:id/edit', isLoggedIn, updatePlanDetail);
 
 // GET /myself/monthlyplan/:id
 router.get('/:id', isLoggedIn, renderMonthlyPlan);

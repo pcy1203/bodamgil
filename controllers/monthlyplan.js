@@ -123,11 +123,11 @@ exports.writeMonthlyPlan = async (req, res, next) => {
   }
 };
 
-exports.renderMonthlyPlan = async (req, res, next) => {
+const getMonthlyPlan = async (req, res) => {
   const id = req.params.id;
   const { isOwner, monthlyPlan } = await isMonthlyPlanOwner(req.user.dataValues.id, id);
   if (!monthlyPlan || !isOwner) {
-	return res.redirect('/myself/monthlyplan?message=wrongAddressError');
+	return { monthlyPlan: undefined, planDetailArray: undefined };
   }
   const planDetails = await PlanDetail.findAll({
 	where: { plan: monthlyPlan.id },
@@ -137,6 +137,12 @@ exports.renderMonthlyPlan = async (req, res, next) => {
   for await (let planDetail of planDetails) {
 	planDetailArray[planDetail.week - 1].push(planDetail);
   }
+  return { monthlyPlan, planDetailArray };
+};
+
+exports.renderMonthlyPlan = async (req, res, next) => {
+  const { monthlyPlan, planDetailArray } = await getMonthlyPlan(req, res);
+  if (!monthlyPlan) return res.redirect('/myself/monthlyplan?message=wrongAddressError');
   res.render('monthlyplan/monthlyplan', { monthlyPlan, planDetailArray });
 };
 
@@ -145,12 +151,30 @@ exports.deleteMonthlyPlan = (req, res, next) => {
   res.redirect('/');
 };
 
-exports.renderPlanDetail = (req, res, next) => {
-  // TO-DO
-  res.render('monthlyplan/plandetail');
+exports.renderPlanDetail = async (req, res, next) => {
+  const { monthlyPlan, planDetailArray } = await getMonthlyPlan(req, res);
+  if (!monthlyPlan) return res.redirect('/myself/monthlyplan?message=wrongAddressError');
+  res.render('monthlyplan/plandetail', { monthlyPlan, planDetailArray });
+};
+
+exports.renderPlanDetailEdit = async (req, res, next) => {
+  const { monthlyPlan, planDetailArray } = await getMonthlyPlan(req, res);
+  if (!monthlyPlan) return res.redirect('/myself/monthlyplan?message=wrongAddressError');
+  res.render('monthlyplan/plandetail_edit', { monthlyPlan, planDetailArray });
 };
 
 exports.updatePlanDetail = (req, res, next) => {
   // TO-DO
   res.redirect('/');
+};
+
+exports.updatePlanDetailCheck = async (req, res, next) => {
+  const id = req.params.id;
+  const detailid = req.params.detailid;
+  await PlanDetail.update({
+    checked: req.body.newChecked === 'checked' ? true : false,
+  }, {
+	where: { id: detailid },
+  });
+  return res.send('success');
 };

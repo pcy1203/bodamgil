@@ -16,6 +16,13 @@ const gameList = [
 	"introduction": "때로는 자신이 잘하는 것을 자신이 발견하기는 어렵기도 하죠. 자신의 주변 사람들에게 물어보면서 자신이 무엇을 잘하는 사람인지 탐구해봐요.",
 	"image": "/photo/paperplane/paperplane_main.png",
   },
+  {
+	"name": "monthlyplan",
+	"category": "목표",
+	"title": "나만의 이번 달 컨셉과 목표 세우기",
+	"introduction": "목표를 정해 내가 향할 목적지를 미리 설정해두며 실행력을 높일 수 있어요. 작심삼일이 아닌 꾸준히 이룰 수 있게 하기 위해 제대로 된 목표를 함께 세워봐요.",
+	"image": "/photo/monthlyplan/monthlyplan_main.png",
+  },
 ];
 
 exports.gameList = gameList;

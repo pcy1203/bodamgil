@@ -73,7 +73,7 @@
 				<input type="file" name="image" id="image" accept="image/*">
 			</div>
 			<div class="show">
-				<img src="" class="upload-view">
+				<img src="/photo/monthlyplan/basic.png" class="upload-view">
 				<p class="name-parameter"></p>
 				<span class="year-month-parameter">[year].[month]</span>
 			</div>
@@ -84,7 +84,7 @@
 		  <div class="block-3">
 			<h1>이번 달의 목표를 자세히 적어주세요</h1>
 			<div class="firstgoal">
-				<p class="year-month-parameter">[year]년 [month]월: <span class="name-parameter"></span></p>
+				<p class="year-month-parameter">[year]년 [month]월 : <span class="name-parameter"></span></p>
 				<div><textarea cols="55" rows="10" wrap="soft" placeholder="이번 달의 목표를 적어주세요" required></textarea></div>
 			</div>
 			<div class="line"></div>
@@ -125,8 +125,9 @@
 		  <div class="block-4">
 			<h1>주별 목표를 통해 목표를 세분화해보세요</h1>
 			<div class="firstgoal">
-				<p class="year-month-parameter">[year]년 [month]월: <span class="name-parameter"></span></p>
-				<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>
+				<p class="year-month-parameter">[year]년 [month]월 : <span class="name-parameter"></span></p>
+				<!--<div><input type="text" placeholder="이번 달의 목표를 적어주세요"></div>-->
+				<div><p class="content-again"></p></div>
 			</div>
 			{% for i in range(1, 6) %}
 			<div class="week week-{{ i }}">
@@ -208,16 +209,22 @@
 	  element.innerHTML = element.innerHTML.replace('[year]', year).replace('[month]', month);
 	});
 	
-	// Page 2 - Nameinput type="text" name="name" id="concept"
+	// Page 2 - Name Input
 	const nameList = document.querySelectorAll('.name-parameter');
 	document.querySelector('input#concept').addEventListener('input', (e) => {
 	  nameList.forEach((element) => {
 		if (!e.target.value) {
 		  element.innerHTML = "";
 		} else {
-		  element.innerHTML = e.target.value + "의 달";
+		  element.innerHTML = e.target.value;
 		};
 	  });
+	});
+	  
+	// Page 3 ~ 4 - Content Input
+	const contentBox = document.querySelector('.content-again');
+	document.querySelector('textarea#content').addEventListener('input', (e) => {
+	  contentBox.innerHTML = e.target.value;
 	});
 	  
 	// Page 4 - Todo List

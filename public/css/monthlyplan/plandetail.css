@@ -142,9 +142,11 @@ body{
 	margin: 5px 5px 10px 0;
 	position: relative;
 }
-.week #todoList{
+.week #todoList.checked{
 	list-style-image: url("/photo/monthlyplan/check.png");
-
+}
+.week #todoList.notchecked{
+	list-style-image: url("/photo/monthlyplan/nocheck.png");
 }
 .week #todoList li::maker{
 		padding: 10px 15px 0px 0;

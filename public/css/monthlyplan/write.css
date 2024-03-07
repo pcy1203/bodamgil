@@ -311,7 +311,7 @@ margin: 10px;
 }
 
 /*block4*/
-.block-4 .firstgoal p{
+.block-4 .firstgoal > p{
 	position: relative;
 	width: 320px;
 	left: calc(50% - 320px/2);
@@ -338,7 +338,7 @@ margin: 10px;
 	border-radius: 0px 0px 10px 10px;
 }
 
-.block-4 .firstgoal input{
+.block-4 .firstgoal div p{
 	position: absolute;
 	font-family: 'Noto Sans KR';
 	font-style: normal;

@@ -32,70 +32,49 @@
 	  {% include "menu/navigationbar.html" %}
   
 	<div class="main">	 
-			<h1>2024년 1월</h1>
+			<h1>{{ monthlyPlan.year }}년 {{ monthlyPlan.month }}월</h1>
 
 		 	<div class="firstgoal">
-				<p class="month">2024년 1월: OOO의 달</p>
+				<p class="month">{{ monthlyPlan.year }}년 {{ monthlyPlan.month }}월 : {{ monthlyPlan.name }}</p>
 				<div class="monthgoal">
-					<p class="monthgoalContent">2024년 1월의 목표</p>
+					<p class="monthgoalContent">{{ monthlyPlan.content }}</p>
 				</div>
 			
 				<ul>
 					<li>
 						<p class="alphabet">S<p>
-						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+						<p class="alphabetcontent">{{ monthlyPlan.contentSpecific }}</p>
 					</li>
 					<li>
 						<p class="alphabet">M<p>
-						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+						<p class="alphabetcontent">{{ monthlyPlan.contentMeasurable }}</p>
 					</li>
 					<li>
 						<p class="alphabet">A<p>
-						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+						<p class="alphabetcontent">{{ monthlyPlan.contentAchievable }}</p>
 					</li>
 					<li>
 						<p class="alphabet">R<p>
-						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+						<p class="alphabetcontent">{{ monthlyPlan.contentRelevant }}</p>
 					</li>
 					<li>
 						<p class="alphabet">T<p>
-						<p class="alphabetcontent">2024년 1월의 적어둔 목표</p>
+						<p class="alphabetcontent">{{ monthlyPlan.contentTimelimited }}</p>
 					</li>
 				</ul>
 				
 			</div>
 
+			{% for i in range(1, 6) %}
 			<div class="week">
-				<h1>1주차</h1>
+				<h1>{{ loop.index }}주차</h1>
 				<ul id="todoList">
-					<li><span>목표를 적어주세요</span></li>
-					<li><span>목표를 적어주세요</span></li>
+					{% for planDetail in planDetailArray[loop.index - 1] %}
+					  <li><span>{{ planDetail.content }}</span></li>
+					{% endfor %}
 				</ul>
 			</div>
-
-			<div class="week">
-				<h1>2주차</h1>
-				<ul id="todoList">
-					<li><span>목표를 적어주세요</span></li>
-					<li><span>목표를 적어주세요</span></li>
-				</ul>
-			</div>
-
-			<div class="week">
-				<h1>3주차</h1>
-				<ul id="todoList">
-					<li><span>목표를 적어주세요</span></li>
-					<li><span>목표를 적어주세요</span></li>
-				</ul>
-			</div>
-
-			<div class="week">
-				<h1>4주차</h1>
-				<ul id="todoList">
-					<li><span>목표를 적어주세요</span></li>
-					<li><span>목표를 적어주세요</span></li>
-				</ul>
-			</div>
+			{% endfor %}
 			<div class="button">
 				<div class="save">저장하기</div>
 			</div>

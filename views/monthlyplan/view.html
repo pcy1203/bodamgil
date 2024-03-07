@@ -46,7 +46,7 @@
 			<a href="/myself/monthlyplan/{{ monthlyPlan.uuid }}">
 				<div class="flexbox">
 					<img src="{{ monthlyPlan.image }}" class="monthimage" alt="월별사진">
-					<p class="monthdate">{{ monthlyPlan.year }}년 {{ monthlyPlan.month }}월</p>
+					<p class="monthdate">{{ monthlyPlan.year }}년 {% if monthlyPlan.month < 10 %}0{% endif %}{{ monthlyPlan.month }}월</p>
 					<p class="monthconcept">{{ monthlyPlan.name }}</p>
 				</div>
 			</a>
