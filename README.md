@@ -100,12 +100,11 @@
   |:---:|:---:|:---:|
   |<img src="https://github.com/user-attachments/assets/2f9568c0-9706-437d-9a25-ac8b6ce44984" width="400" />|**진로 게임 메인 화면**|진로 게임 메인 화면|
   |<img src="https://github.com/user-attachments/assets/ffa16301-5fff-4196-aa4e-241ca72bf343" width="400" />|**본인 편지함**|본인 편지함 확인, 링크 복사, 카카오톡 공유 가능|
-  |<img src="https://github.com/user-attachments/assets/d55dbac2-c154-4028-be4b-93322bab4719" width="400" />|**편지함 카카오톡 공유**|카카오톡 공유 메시지|
+  |<img src="https://github.com/user-attachments/assets/d55dbac2-c154-4028-be4b-93322bab4719" width="200" />|**편지함 카카오톡 공유**|카카오톡 공유 메시지|
   |<img src="https://github.com/user-attachments/assets/27faddd7-3d56-4dd7-a2a1-074c26433ea1" width="400" />|**타인 편지함**|편지 작성 가능 (확인은 본인만 가능함)|
   |<img src="https://github.com/user-attachments/assets/bd7e0882-04dd-4658-9613-7d4e06793e01" width="400" />|**편지 작성**|가이드라인 확인 및 편지 작성|
   |<img src="https://github.com/user-attachments/assets/dfef531e-9043-4ac2-8ff2-987a162bba9b" width="400" />|**편지 전송**|작성 완료 및 전송|
-  |<img src="https://github.com/user-attachments/assets/bb42c23f-e3bb-45e2-b515-407ac9b5f256" width="400" />|**본인 편지함 확**|전송 완료 및 링크|
-  |<img src="https://github.com/user-attachments/assets/bb42c23f-e3bb-45e2-b515-407ac9b5f256" width="400" />|**본인 편지함 확**|전송 완료 및 링크|
+  |<img src="https://github.com/user-attachments/assets/bb42c23f-e3bb-45e2-b515-407ac9b5f256" width="400" />|**본인 편지함 확인**|전송 완료 및 링크|
   |<img src="https://github.com/user-attachments/assets/a43d9aac-41a6-495c-8990-0f9b9afbabd2" width="400" />|**편지 확인**|전달받은 편지 내용 확인|
   
 - **세상 알아보기**
