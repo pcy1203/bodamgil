@@ -155,7 +155,7 @@
 <br/>
 
 
-# 🌟 5. Database ERD (수행 역할 & 결과물)
+# 🌟 5. Database ERD
 
 ![image](https://github.com/user-attachments/assets/1b4c8439-28e3-4ca7-966d-466f64416637)
 
